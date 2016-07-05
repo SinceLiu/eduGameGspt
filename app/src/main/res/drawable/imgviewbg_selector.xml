@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item android:maxLevel="0" android:drawable="@drawable/gspt_chxy03_000" />
+	<item android:maxLevel="1" android:drawable="@drawable/gspt_zjnmf02_000" />
+	<item android:maxLevel="2" android:drawable="@drawable/gspt_zjnmf01_000" />
+	<item android:maxLevel="3" android:drawable="@drawable/gspt_zgpty01_000" />
+	<item android:maxLevel="4" android:drawable="@drawable/gspt_tssblm02_000" />
+	<item android:maxLevel="5" android:drawable="@drawable/gspt_tssblm01_000" />
+	<item android:maxLevel="6" android:drawable="@drawable/gspt_wkym01_000" />
+	<item android:maxLevel="7" android:drawable="@drawable/gspt_sld01_000" />
+	<item android:maxLevel="8" android:drawable="@drawable/gspt_szsss01_000" />
+	<item android:maxLevel="9" android:drawable="@drawable/gspt_mhwcs01_000" />
+	<item android:maxLevel="10" android:drawable="@drawable/gspt_hgs02_000" />
+	<item android:maxLevel="11" android:drawable="@drawable/gspt_hgs01_000" />
+	<item android:maxLevel="12" android:drawable="@drawable/gspt_chxy02_000" />
+	<item android:maxLevel="13" android:drawable="@drawable/gspt_chxy01_000" />
+	<item android:maxLevel="14" android:drawable="@drawable/gspt_bjbsf02_000" />
+	<item android:maxLevel="15" android:drawable="@drawable/gspt_bjbsf01_000" />
+			
+</level-list>
+

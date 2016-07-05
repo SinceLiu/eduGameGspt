@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rLayoutOptViewPagers"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@null" >
+
+    <GridView
+        android:id="@+id/gridViewOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@android:color/transparent"
+        android:choiceMode="singleChoice"
+        android:divider="@color/pagertrans_white"
+        android:dividerHeight="0dp"
+        android:gravity="center"
+        android:horizontalSpacing="40dp"
+        android:listSelector="@null"
+        android:longClickable="false"
+        android:numColumns="3"
+        android:paddingLeft="175dp"
+        android:paddingRight="175dp"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="40dp" />
+
+</RelativeLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 
+    	按钮及按钮对应的功能
+    	imgbtnid按钮ID名
+    	imgdstid按钮对应的图片名，就是要拼图的图片名
+    	InterludeInfoName胜利动画名
+    	nopassgate是否已经通过了
+    -->
+    <imgbtnatuoinfo imgbtnsumnum="16" 
+		imgbtnid1="@+id/imgBtn111" imgdstid1="@drawable/gspt_chxy03_000" InterludeInfoName1="gspt_chxy03" gssndid1="@raw/gspt_gsjm_08" 
+		imgbtnid2="@+id/imgBtn112" imgdstid2="@drawable/gspt_zjnmf02_000" InterludeInfoName2="gspt_zjnmf02" gssndid2="@raw/gspt_gsjm_01" 
+		imgbtnid3="@+id/imgBtn113" imgdstid3="@drawable/gspt_zjnmf01_000" InterludeInfoName3="gspt_zjnmf01" gssndid3="@raw/gspt_gsjm_00" 
+		imgbtnid4="@+id/imgBtn121" imgdstid4="@drawable/gspt_zgpty01_000" InterludeInfoName4="gspt_zgpty01" gssndid4="@raw/gspt_gsjm_16" 
+		imgbtnid5="@+id/imgBtn122" imgdstid5="@drawable/gspt_tssblm02_000" InterludeInfoName5="gspt_tssblm02" gssndid5="@raw/gspt_gsjm_10" 
+		imgbtnid6="@+id/imgBtn123" imgdstid6="@drawable/gspt_tssblm01_000" InterludeInfoName6="gspt_tssblm01" gssndid6="@raw/gspt_gsjm_09" 
+		imgbtnid7="@+id/imgBtn211" imgdstid7="@drawable/gspt_wkym01_000" InterludeInfoName7="gspt_wkym01" gssndid7="@raw/gspt_gsjm_15" 
+		imgbtnid8="@+id/imgBtn212" imgdstid8="@drawable/gspt_sld01_000" InterludeInfoName8="gspt_sld01" gssndid8="@raw/gspt_gsjm_05" 
+		imgbtnid9="@+id/imgBtn213" imgdstid9="@drawable/gspt_szsss01_000" InterludeInfoName9="gspt_szsss01" gssndid9="@raw/gspt_gsjm_14" 
+		imgbtnid10="@+id/imgBtn221" imgdstid10="@drawable/gspt_mhwcs01_000" InterludeInfoName10="gspt_mhwcs01" gssndid10="@raw/gspt_gsjm_02" 
+		imgbtnid11="@+id/imgBtn222" imgdstid11="@drawable/gspt_hgs02_000" InterludeInfoName11="gspt_hgs02" gssndid11="@raw/gspt_gsjm_04" 
+		imgbtnid12="@+id/imgBtn223" imgdstid12="@drawable/gspt_hgs01_000" InterludeInfoName12="gspt_hgs01" gssndid12="@raw/gspt_gsjm_03" 
+		imgbtnid13="@+id/imgBtn311" imgdstid13="@drawable/gspt_chxy02_000" InterludeInfoName13="gspt_chxy02" gssndid13="@raw/gspt_gsjm_06" 
+		imgbtnid14="@+id/imgBtn312" imgdstid14="@drawable/gspt_chxy01_000" InterludeInfoName14="gspt_chxy01" gssndid14="@raw/gspt_gsjm_07" 
+		imgbtnid15="@+id/imgBtn313" imgdstid15="@drawable/gspt_bjbsf02_000" InterludeInfoName15="gspt_bjbsf02" gssndid15="@raw/gspt_gsjm_12" 
+		imgbtnid16="@+id/imgBtn321" imgdstid16="@drawable/gspt_bjbsf01_000" InterludeInfoName16="gspt_bjbsf01" gssndid16="@raw/gspt_gsjm_11" />
+    
+    <imgbtnatuoinfoext imgbtnsumnum="2" 
+		imgbtnid1="@+id/imgBtn111" imgdstid1="@drawable/gspt_day01_000" InterludeInfoName1="gspt_ex_day01" gssndid1="@raw/gspt_ex_pass_day_0" 
+		imgbtnid2="@+id/imgBtn112" imgdstid2="@drawable/gspt_night01_000" InterludeInfoName2="gspt_ex_night01" gssndid2="@raw/gspt_ex_pass_night_0" />    
+    
+    <!-- 图片基准大小，为多大屏设计的 -->
+    <gamebaseinfo screenw="1280" screenh="800" />
+    
+    <!-- 
+		游戏里动画的名字以及相关属性
+		name动画的名字
+		isLooping是否循环播放显示
+		ImgSumNumber 要显示的图片总数
+		ImgStartId 图片开始的ID号，这个连续着来
+		SndSumNumber要播放的声音总数
+		SndPlayerID播放声音的ID号
+    -->
+    <!-- 第一次进入要显示的动画 -->
+    <InterludeInfo name="startin" imgszpt="100|66|750|438" isLooping="false" ImgSumNumber="32" ImgStartId="@drawable/gspt_startyzpt_000" SndSumNumber="0" />
+    <!-- 小仙女 -->
+    <InterludeInfo name="opt_xxn" imgszpt="0|360|250|350" isLooping="true" ImgSumNumber="5" ImgStartId="@drawable/gspt_xxn_000" SndSumNumber="0" />
+    <!-- 小仙女眨眼 -->
+    <InterludeInfo name="opt_xxnzy" imgszpt="0|360|250|350" isLooping="true" ImgSumNumber="25" ImgStartId="@drawable/gspt_xxnzy_000" SndSumNumber="0" />
+    <!-- 八戒拜师傅01 -->
+    <InterludeInfo name="gspt_bjbsf01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="10" ImgStartId="@drawable/gspt_bjbsf01_000" SndSumNumber="0" />
+    <!-- 八戒拜师傅02 -->
+    <InterludeInfo name="gspt_bjbsf02" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="8" ImgStartId="@drawable/gspt_bjbsf02_000" SndSumNumber="0" />
+    <!-- 出海学艺01 -->
+	<InterludeInfo name="gspt_chxy01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="7" ImgStartId="@drawable/gspt_chxy01_000" SndSumNumber="0" />
+	<!-- 出海学艺02 -->
+	<InterludeInfo name="gspt_chxy02" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="7" ImgStartId="@drawable/gspt_chxy02_000" SndSumNumber="0" />
+	<!-- 出海学艺03 -->
+	<InterludeInfo name="gspt_chxy03" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="7" ImgStartId="@drawable/gspt_chxy03_000" SndSumNumber="0" />
+	<!-- 花果山01 -->
+	<InterludeInfo name="gspt_hgs01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="6" ImgStartId="@drawable/gspt_hgs01_000" SndSumNumber="0" />
+	<!-- 花果山02 -->
+	<InterludeInfo name="gspt_hgs02" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="10" ImgStartId="@drawable/gspt_hgs02_000" SndSumNumber="0" />
+	<!-- 美猴王出世01 -->
+	<InterludeInfo name="gspt_mhwcs01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="1" ImgStartId="@drawable/gspt_mhwcs01_000" SndSumNumber="0" />
+	<!-- 水帘洞01 -->
+	<InterludeInfo name="gspt_sld01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="7" ImgStartId="@drawable/gspt_sld01_000" SndSumNumber="0" />
+	<!-- 三藏收沙僧01 -->
+	<InterludeInfo name="gspt_szsss01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="9" ImgStartId="@drawable/gspt_szsss01_000" SndSumNumber="0" />
+	<!-- 三藏收白龙马01 -->
+	<InterludeInfo name="gspt_tssblm01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="1" ImgStartId="@drawable/gspt_tssblm01_000" SndSumNumber="0" />
+	<!-- 三藏收白龙马02 -->
+	<InterludeInfo name="gspt_tssblm02" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="1" ImgStartId="@drawable/gspt_tssblm02_000" SndSumNumber="0" />
+	<!-- 悟空养马01 -->
+	<InterludeInfo name="gspt_wkym01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="9" ImgStartId="@drawable/gspt_wkym01_000" SndSumNumber="0" />
+	<!-- 掌管蟠桃园01 -->
+	<InterludeInfo name="gspt_zgpty01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="7" ImgStartId="@drawable/gspt_zgpty01_000" SndSumNumber="0" />
+	<!-- 醉酒闹冥府01 -->
+	<InterludeInfo name="gspt_zjnmf01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="8" ImgStartId="@drawable/gspt_zjnmf01_000" SndSumNumber="0" />
+	<!-- 醉酒闹冥府02 -->
+	<InterludeInfo name="gspt_zjnmf02" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="8" ImgStartId="@drawable/gspt_zjnmf02_000" SndSumNumber="0" />
+			
+
+	<!-- ex白天01 -->
+	<InterludeInfo name="gspt_ex_day01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="17" ImgStartId="@drawable/gspt_day01_000" SndSumNumber="0" />
+	<!-- ex黑夜01 -->
+	<InterludeInfo name="gspt_ex_night01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="14" ImgStartId="@drawable/gspt_night01_000" SndSumNumber="0" />
+
+
+
+</resources>

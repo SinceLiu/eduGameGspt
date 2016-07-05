@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 20
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "com.readboy.Q.Gspt"
+        minSdkVersion 17
+        targetSdkVersion 17
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('\\tools\\proguard\\proguard-android.txt'), 'proguard-project.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:20.0.0'
+    compile files('libs/AutoUpdate.jar')
+    compile files('libs/reward.jar')
+    provided 'com.readboy.support:readboy-support-g30:1.0'
+}

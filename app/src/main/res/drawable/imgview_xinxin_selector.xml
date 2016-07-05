@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:maxLevel="0" android:drawable="@drawable/gept_xinxin_000" />
+    <item android:maxLevel="1" android:drawable="@drawable/gept_xinxin_001" />
+    <item android:maxLevel="2" android:drawable="@drawable/gept_xinxin_002" />
+    <item android:maxLevel="3" android:drawable="@drawable/gept_xinxin_003" />
+    <item android:maxLevel="4" android:drawable="@drawable/gept_xinxin_004" />
+    <item android:maxLevel="5" android:drawable="@drawable/gept_xinxin_005" />
+    <item android:maxLevel="6" android:drawable="@drawable/gept_xinxin_006" />
+    <item android:maxLevel="7" android:drawable="@drawable/gept_xinxin_007" />
+    <item android:maxLevel="8" android:drawable="@drawable/gept_xinxin_008" />
+    <item android:maxLevel="9" android:drawable="@drawable/gept_xinxin_009" />
+    <item android:maxLevel="10" android:drawable="@drawable/gept_xinxin_010" />
+    <item android:maxLevel="11" android:drawable="@drawable/gept_xinxin_011" />
+    <item android:maxLevel="12" android:drawable="@drawable/gept_xinxin_012" />
+    <item android:maxLevel="13" android:drawable="@drawable/gept_xinxin_013" />
+    <item android:maxLevel="14" android:drawable="@drawable/gept_xinxin_014" />
+    <item android:maxLevel="15" android:drawable="@drawable/gept_xinxin_015" />
+    <item android:maxLevel="16" android:drawable="@drawable/gept_xinxin_016" />
+    <item android:maxLevel="17" android:drawable="@drawable/gept_xinxin_017" />
+
+</level-list>

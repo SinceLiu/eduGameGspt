@@ -1,0 +1,13 @@
+<resources>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="scrollview_nor">#00EFECDC</color>
+    <color name="scrollview_focus">#0080FFFF</color>
+    
+    <color name="imageviewchoose_nor">#00EFECDC</color>
+    <color name="imageviewchoose_focus">#0080FFFF</color>    
+    
+    <color name="pagertrans_white">#00FFFFFF</color>
+    
+</resources>

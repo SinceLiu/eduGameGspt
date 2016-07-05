@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">益智拼图</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    
+    <!-- self use for sharps start -->
+	<item type="id" name="imgViewSharps_00" />
+	<item type="id" name="imgViewSharps_01" />
+	<item type="id" name="imgViewSharps_02" />
+	<item type="id" name="imgViewSharps_03" />
+	<item type="id" name="imgViewSharps_04" />
+	<item type="id" name="imgViewSharps_05" />
+	<item type="id" name="imgViewSharps_06" />
+	<item type="id" name="imgViewSharps_07" />
+	<item type="id" name="imgViewSharps_08" />
+	<item type="id" name="imgViewSharps_09" />
+	<item type="id" name="imgViewSharps_10" />
+	<item type="id" name="imgViewSharps_11" />
+	<item type="id" name="imgViewSharps_12" />
+	<item type="id" name="imgViewSharps_13" />
+	<item type="id" name="imgViewSharps_14" />
+	<item type="id" name="imgViewSharps_15" />
+	<item type="id" name="imgViewSharps_16" />
+	<item type="id" name="imgViewSharps_17" />
+	<item type="id" name="imgViewSharps_18" />
+	<item type="id" name="imgViewSharps_19" />
+	<item type="id" name="imgViewSharps_20" />
+	<item type="id" name="imgViewSharps_21" />
+	<item type="id" name="imgViewSharps_22" />
+	<item type="id" name="imgViewSharps_23" />
+	<item type="id" name="imgViewSharps_24" />
+	<item type="id" name="imgViewSharps_25" />
+	<item type="id" name="imgViewSharps_26" />
+	<item type="id" name="imgViewSharps_27" />
+	<item type="id" name="imgViewSharps_28" />
+	<item type="id" name="imgViewSharps_29" />
+	<item type="id" name="imgViewSharps_30" />
+	<item type="id" name="imgViewSharps_31" />
+	<item type="id" name="imgViewSharps_32" />
+	<item type="id" name="imgViewSharps_33" />
+	<item type="id" name="imgViewSharps_34" />
+	<item type="id" name="imgViewSharps_35" />
+	<item type="id" name="imgViewSharps_36" />
+	<item type="id" name="imgViewSharps_37" />
+	<item type="id" name="imgViewSharps_38" />
+	<item type="id" name="imgViewSharps_39" />
+	<item type="id" name="imgViewSharps_40" />
+	<item type="id" name="imgViewSharps_41" />
+	<item type="id" name="imgViewSharps_42" />
+	<item type="id" name="imgViewSharps_43" />
+	<item type="id" name="imgViewSharps_44" />
+	<item type="id" name="imgViewSharps_45" />
+	<item type="id" name="imgViewSharps_46" />
+	<item type="id" name="imgViewSharps_47" />
+	<!-- self use for sharps end -->
+	
+	<!-- set tag index start -->
+	<item type="id" name="tag_first_dataframe"></item>
+	<item type="id" name="tag_second_bgbitmap"></item>
+	<item type="id" name="tag_third_smallbitmap"></item>
+	<item type="id" name="tag_four_graybitmap"></item>
+	<item type="id" name="tag_grid_holder"></item>
+	<item type="id" name="tag_grid_index"></item>
+	<item type="id" name="tag_grid_object"></item>
+	<!-- set tag index end -->
+
+</resources>
