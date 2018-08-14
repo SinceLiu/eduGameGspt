@@ -32,19 +32,6 @@
  */
 package com.readboy.Q.Shares;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
-
-import org.xmlpull.v1.XmlPullParserException;
-
-import com.readboy.Q.Activity.GsptMainActivity;
-import com.readboy.Q.Gspt.R;
-
-import android.R.string;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -53,29 +40,39 @@ import android.content.res.XmlResourceParser;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.Picture;
 import android.graphics.Point;
 import android.graphics.PointF;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.StateListDrawable;
-import android.hardware.Camera.Size;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.support.v4.util.LogWriter;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.readboy.Q.Activity.GsptMainActivity;
+import com.readboy.Q.Gspt.R;
+import com.readboy.Q.db.MessageCenter;
+import com.readboy.Q.db.SystemDataBase;
+
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
+
 public class GsptRunDataFrame {
-	
+
+	/**
+	 * 默认用户ID
+	 */
+	private static final int USER_ID_DEFAULT = 1;
 	/**
 	 * 数据库的Uri
 	 */
@@ -786,10 +783,14 @@ public class GsptRunDataFrame {
 								gsptImgBtnAuto.imgdstptid[number] = xrp.getAttributeResourceValue(count++, 0);
 								gsptImgBtnAuto.InterludeInfoName[number] = xrp.getAttributeValue(count++);
 								gsptImgBtnAuto.gssndid[number] = xrp.getAttributeResourceValue(count++, 0);
-								if (gsptSharedPreferences != null){
-									gsptImgBtnAuto.nowinpass[number] = gsptSharedPreferences.
-											getBoolean(gsptImgBtnAuto.InterludeInfoName[number] + GsptMainActivity.getSystemUserAge() + (bGsptGameStyle ? "hard" : "normal"), true);
-								}
+
+								MessageCenter msgCenter = SystemDataBase.queryMsgCS(gsptImgBtnAuto.InterludeInfoName[number] + GsptMainActivity.getSystemUserAge() + (bGsptGameStyle ? "hard" : "normal"), USER_ID_DEFAULT);
+								gsptImgBtnAuto.nowinpass[number] = (msgCenter == null || (msgCenter != null && !TextUtils.isEmpty(msgCenter.msgc_content) && msgCenter.msgc_content.equals("1")));
+//								Log.d("", number+"======divhee=========read==1=="+(gsptImgBtnAuto.InterludeInfoName[number] + GsptMainActivity.getSystemUserAge() + (bGsptGameStyle ? "hard" : "normal")) + "======nowinpass====" + gsptImgBtnAuto.nowinpass[number]);
+//								if (gsptSharedPreferences != null){
+//									gsptImgBtnAuto.nowinpass[number] = gsptSharedPreferences.
+//											getBoolean(gsptImgBtnAuto.InterludeInfoName[number] + GsptMainActivity.getSystemUserAge() + (bGsptGameStyle ? "hard" : "normal"), true);
+//								}
 							}
 						}
 					} else if (tagname.equals("imgbtnatuoinfoext") && ENTER_EXTCALL == systemEnterMode) {
@@ -814,10 +815,14 @@ public class GsptRunDataFrame {
 								gsptImgBtnAuto.imgdstptid[number] = xrp.getAttributeResourceValue(count++, 0);
 								gsptImgBtnAuto.InterludeInfoName[number] = xrp.getAttributeValue(count++);
 								gsptImgBtnAuto.gssndid[number] = xrp.getAttributeResourceValue(count++, 0);
-								if (gsptSharedPreferences != null){
-									gsptImgBtnAuto.nowinpass[number] = gsptSharedPreferences.
-											getBoolean(gsptImgBtnAuto.InterludeInfoName[number] + GsptMainActivity.getSystemUserAge() + (bGsptGameStyle ? "hard" : "normal"), true);
-								}
+
+								MessageCenter msgCenter = SystemDataBase.queryMsgCS(gsptImgBtnAuto.InterludeInfoName[number] + GsptMainActivity.getSystemUserAge() + (bGsptGameStyle ? "hard" : "normal"), USER_ID_DEFAULT);
+								gsptImgBtnAuto.nowinpass[number] = (msgCenter == null || (msgCenter != null && !TextUtils.isEmpty(msgCenter.msgc_content) && msgCenter.msgc_content.equals("1")));
+//								Log.d("", number+"======divhee=========read==2=="+(gsptImgBtnAuto.InterludeInfoName[number] + GsptMainActivity.getSystemUserAge() + (bGsptGameStyle ? "hard" : "normal")) + "======nowinpass====" + gsptImgBtnAuto.nowinpass[number]);
+//								if (gsptSharedPreferences != null){
+//									gsptImgBtnAuto.nowinpass[number] = gsptSharedPreferences.
+//											getBoolean(gsptImgBtnAuto.InterludeInfoName[number] + GsptMainActivity.getSystemUserAge() + (bGsptGameStyle ? "hard" : "normal"), true);
+//								}
 							}
 						}
 					}
@@ -843,11 +848,21 @@ public class GsptRunDataFrame {
 	 * @return 难度值
 	 */
 	public int readSPUserAgeLevelConfig() {
-		if (gsptSharedPreferences == null){
-			gsptSharedPreferences = frameContext.getSharedPreferences(gstpSpWinPassConfig, Context.MODE_PRIVATE);
-		}
-		if (gsptSharedPreferences != null) {
-			return gsptSharedPreferences.getInt("FormerUserLevel", 1);
+//		if (gsptSharedPreferences == null){
+//			gsptSharedPreferences = frameContext.getSharedPreferences(gstpSpWinPassConfig, Context.MODE_PRIVATE);
+//		}
+//		if (gsptSharedPreferences != null) {
+//			return gsptSharedPreferences.getInt("FormerUserLevel", 1);
+//		}
+//		return 1;
+		Log.d("", "======divhee=========readSPUserAgeLevelConfig====");
+		try {
+			MessageCenter msgCenter = SystemDataBase.queryMsgCS("FormerUserLevel", USER_ID_DEFAULT);
+			if (msgCenter != null && !TextUtils.isEmpty(msgCenter.msgc_content)) {
+				return Integer.parseInt(msgCenter.msgc_content);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return 1;
 	}
@@ -858,15 +873,21 @@ public class GsptRunDataFrame {
 	 * @return 无
 	 */
 	public void readSPConfigLevelChange() {
-		// 获取SharedPreferences对象
-		if (gsptSharedPreferences == null){
-			gsptSharedPreferences = frameContext.getSharedPreferences(gstpSpWinPassConfig, Context.MODE_PRIVATE);
-		}		
-		if (gsptSharedPreferences != null){
-			for (int number = 0; number < gsptImgBtnAuto.imgbtnsum; number++) {
-				gsptImgBtnAuto.nowinpass[number] = gsptSharedPreferences.
-						getBoolean(gsptImgBtnAuto.InterludeInfoName[number] + GsptMainActivity.getSystemUserAge() + (bGsptGameStyle ? "hard" : "normal"), true);
-			}		
+//		// 获取SharedPreferences对象
+//		if (gsptSharedPreferences == null){
+//			gsptSharedPreferences = frameContext.getSharedPreferences(gstpSpWinPassConfig, Context.MODE_PRIVATE);
+//		}
+//		if (gsptSharedPreferences != null){
+//			for (int number = 0; number < gsptImgBtnAuto.imgbtnsum; number++) {
+//				gsptImgBtnAuto.nowinpass[number] = gsptSharedPreferences.
+//						getBoolean(gsptImgBtnAuto.InterludeInfoName[number] + GsptMainActivity.getSystemUserAge() + (bGsptGameStyle ? "hard" : "normal"), true);
+//			}
+//		}
+//		Log.d("", "======divhee=========readSPConfigLevelChange====");
+		for (int number = 0; number < gsptImgBtnAuto.imgbtnsum; number++) {
+			MessageCenter msgCenter = SystemDataBase.queryMsgCS(gsptImgBtnAuto.InterludeInfoName[number] + GsptMainActivity.getSystemUserAge() + (bGsptGameStyle ? "hard" : "normal"), USER_ID_DEFAULT);
+			gsptImgBtnAuto.nowinpass[number] = (msgCenter == null || (msgCenter != null && !TextUtils.isEmpty(msgCenter.msgc_content) && msgCenter.msgc_content.equals("1")));
+//			Log.d("", number+"======divhee=========read==3=="+(gsptImgBtnAuto.InterludeInfoName[number] + GsptMainActivity.getSystemUserAge() + (bGsptGameStyle ? "hard" : "normal")) + "====nowinpass==" + gsptImgBtnAuto.nowinpass[number] + "===" + msgCenter.msgc_content);
 		}
 	}
 	
@@ -878,38 +899,69 @@ public class GsptRunDataFrame {
 	 * @return 无
 	 */
 	public void saveSPPlayerConfig(boolean bLastExit) {
-
-		// 获取SharedPreferences对象
-		if (gsptSharedPreferences == null){
-			gsptSharedPreferences = frameContext.getSharedPreferences(gstpSpWinPassConfig, Context.MODE_PRIVATE);
-		}
 		try {
-			if (gsptSharedPreferences != null){
-				if (bLastExit){
-					Editor editor = gsptSharedPreferences.edit();
-//					editor.clear();
-//					editor.commit();
-					long ltime = System.currentTimeMillis();
-					editor.putLong("LastDestory", ltime);
-					editor.putInt("FormerUserLevel", GsptMainActivity.getSystemUserAge());
-//					Log.w("edugame", "===saveSPPlayerConfig===" + ltime);
-					editor.commit();					
-				} else {
-					// 存入数据
-					Editor editor = gsptSharedPreferences.edit();
-//					editor.clear();
-//					editor.commit();
-					for (int number = 0; number < gsptImgBtnAuto.imgbtnsum; number++) {
-						editor.putBoolean(gsptImgBtnAuto.InterludeInfoName[number] 
-								+ GsptMainActivity.getSystemUserAge() + (bGsptGameStyle ? "hard" : "normal"), gsptImgBtnAuto.nowinpass[number]);
+//			Log.d("", GsptMainActivity.getSystemUserAge()+"======divhee=========saveSPPlayerConfig===="+bLastExit);
+			if (bLastExit){
+				MessageCenter msgCenter = new MessageCenter();
+				msgCenter.msgc_vid = "FormerUserLevel";
+				msgCenter.msgc_content = GsptMainActivity.getSystemUserAge()+"";
+				msgCenter.uid = USER_ID_DEFAULT;
+				SystemDataBase.insertMsgCS(msgCenter);
+			} else {
+				// 存入数据
+				MessageCenter msgCenter = null;
+				for (int number = 0; number < gsptImgBtnAuto.imgbtnsum ; number++) {
+					msgCenter = new MessageCenter();
+					msgCenter.msgc_vid = gsptImgBtnAuto.InterludeInfoName[number] + GsptMainActivity.getSystemUserAge() + (bGsptGameStyle ? "hard" : "normal");
+					msgCenter.msgc_content = gsptImgBtnAuto.nowinpass[number] ? "1" : "0";
+					msgCenter.uid = USER_ID_DEFAULT;
+					if (SystemDataBase.queryMsgCS(msgCenter.msgc_vid, USER_ID_DEFAULT) == null) {
+						SystemDataBase.insertMsgCS(msgCenter);
+					} else {
+						SystemDataBase.updateMsgCS(msgCenter);
 					}
-					editor.putInt("FormerUserLevel", GsptMainActivity.getSystemUserAge());
-					editor.commit();
+//					Log.d("", number+"==divhee==save==18=="+msgCenter.msgc_vid  + "==nowinpass==" + msgCenter.msgc_content);
 				}
+				msgCenter = new MessageCenter();
+				msgCenter.msgc_vid = "FormerUserLevel";
+				msgCenter.msgc_content = GsptMainActivity.getSystemUserAge()+"";
+				msgCenter.uid = USER_ID_DEFAULT;
+				SystemDataBase.insertMsgCS(msgCenter);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+//		// 获取SharedPreferences对象
+//		if (gsptSharedPreferences == null){
+//			gsptSharedPreferences = frameContext.getSharedPreferences(gstpSpWinPassConfig, Context.MODE_PRIVATE);
+//		}
+//		try {
+//			if (gsptSharedPreferences != null){
+//				if (bLastExit){
+//					Editor editor = gsptSharedPreferences.edit();
+////					editor.clear();
+////					editor.commit();
+//					long ltime = System.currentTimeMillis();
+//					editor.putLong("LastDestory", ltime);
+//					editor.putInt("FormerUserLevel", GsptMainActivity.getSystemUserAge());
+////					Log.w("edugame", "===saveSPPlayerConfig===" + ltime);
+//					editor.commit();
+//				} else {
+//					// 存入数据
+//					Editor editor = gsptSharedPreferences.edit();
+////					editor.clear();
+////					editor.commit();
+//					for (int number = 0; number < gsptImgBtnAuto.imgbtnsum; number++) {
+//						editor.putBoolean(gsptImgBtnAuto.InterludeInfoName[number]
+//								+ GsptMainActivity.getSystemUserAge() + (bGsptGameStyle ? "hard" : "normal"), gsptImgBtnAuto.nowinpass[number]);
+//					}
+//					editor.putInt("FormerUserLevel", GsptMainActivity.getSystemUserAge());
+//					editor.commit();
+//				}
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 	}
 
 	/**

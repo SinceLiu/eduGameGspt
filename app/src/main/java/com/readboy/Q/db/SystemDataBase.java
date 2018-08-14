@@ -1,4 +1,4 @@
-package com.readboy.ftmlus.db;
+package com.readboy.Q.db;
 
 import android.database.Cursor;
 import android.database.SQLException;
@@ -8,7 +8,7 @@ import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.readboy.ftmlus.app.App;
+import com.readboy.Q.app.App;
 
 import java.io.File;
 
@@ -121,7 +121,7 @@ public class SystemDataBase {
 	 * @param msgcs
 	 * @return
 	 */
-	public static boolean insertMsgCS(com.readboy.ftmlus.db.MessageCenter msgcs){
+	public static boolean insertMsgCS(MessageCenter msgcs){
 		SystemDataBase service = new SystemDataBase();
 		if(!service.init()){
 			service.close();
@@ -136,14 +136,14 @@ public class SystemDataBase {
 	 * 查询第一条msginfo
 	 * @return
 	 */
-	public static com.readboy.ftmlus.db.MessageCenter queryMsgCS(int uid){
+	public static MessageCenter queryMsgCS(int uid){
 		SystemDataBase service = new SystemDataBase();
 		if(service.init()==false){
 			service.close();
 			return null;
 		}
 	
-		com.readboy.ftmlus.db.MessageCenter msgcs = service.queryFirstMsgCS(uid);
+		MessageCenter msgcs = service.queryFirstMsgCS(uid);
 		service.close();
 		return msgcs;
 	}
@@ -153,7 +153,7 @@ public class SystemDataBase {
 	 * @param msgcs
 	 * @return
 	 */
-	public static boolean updateMsgCS(com.readboy.ftmlus.db.MessageCenter msgcs){
+	public static boolean updateMsgCS(MessageCenter msgcs){
 		SystemDataBase service = new SystemDataBase();
 		if(!service.init()){
 			service.close();
@@ -203,31 +203,31 @@ public class SystemDataBase {
 	 * @param msgc_vid
 	 * @return
 	 */
-	public static com.readboy.ftmlus.db.MessageCenter queryMsgCS(String msgc_vid, int uid){
+	public static MessageCenter queryMsgCS(String msgc_vid, int uid){
 		SystemDataBase service = new SystemDataBase();
 		if(service.init()==false){
 			service.close();
 			return null;
 		}
 		
-		com.readboy.ftmlus.db.MessageCenter msgcs = service.queryMsgCSInfo(msgc_vid,uid);
+		MessageCenter msgcs = service.queryMsgCSInfo(msgc_vid,uid);
 		service.close();
 		return msgcs;
 	}
 	
 	/**
 	 * 根据msgc_vid查询msginfo
-	 * @param msgc_vid
+	 * @param uid
 	 * @return
 	 */
-	public static com.readboy.ftmlus.db.MessageCenter[] queryAllMsgCS(int pid, int uid){
+	public static MessageCenter[] queryAllMsgCS(int pid, int uid){
 		SystemDataBase service = new SystemDataBase();
 		if(service.init()==false){
 			service.close();
 			return null;
 		}
 		
-		com.readboy.ftmlus.db.MessageCenter[] msgcs = service.queryAllMsgCSInfo(pid,uid);
+		MessageCenter[] msgcs = service.queryAllMsgCSInfo(pid,uid);
 		service.close();
 		return msgcs;
 	}
@@ -236,8 +236,8 @@ public class SystemDataBase {
 	 * 查询第一条msginfo
 	 * @return
 	 */
-	private com.readboy.ftmlus.db.MessageCenter queryFirstMsgCS(int uid){
-		com.readboy.ftmlus.db.MessageCenter msgcs = null;
+	private MessageCenter queryFirstMsgCS(int uid){
+		MessageCenter msgcs = null;
 		String sql = "SELECT * FROM messagecenter where uid = " + uid + " limit 1";
 		try {
 			mPlanCursor = mDB.rawQuery(sql, null);
@@ -257,7 +257,7 @@ public class SystemDataBase {
 			mPlanCursor = null;
 			return null;
 		}
-		msgcs = new com.readboy.ftmlus.db.MessageCenter();
+		msgcs = new MessageCenter();
 		if (mPlanCursor.moveToFirst() == false) {
 			mPlanCursor.close();
 			mPlanCursor = null;
@@ -304,8 +304,8 @@ public class SystemDataBase {
 	 * @param msgc_vid
 	 * @return
 	 */
-	private com.readboy.ftmlus.db.MessageCenter queryMsgCSInfo(String msgc_vid, int uid){
-		com.readboy.ftmlus.db.MessageCenter msgcs = null;
+	private MessageCenter queryMsgCSInfo(String msgc_vid, int uid){
+		MessageCenter msgcs = null;
 //		msgc_vid = MessageCenter.sqliteEscape(msgc_vid, true);
 		String sql = "SELECT * FROM messagecenter where msgc_vid = '" + msgc_vid + "' and uid = " + uid;
 		try {
@@ -326,7 +326,7 @@ public class SystemDataBase {
 			mPlanCursor = null;
 			return null;
 		}
-		msgcs = new com.readboy.ftmlus.db.MessageCenter();
+		msgcs = new MessageCenter();
 		try {
 			msgcs.msgc_vid = mPlanCursor.getString(mPlanCursor.getColumnIndex("msgc_vid"));
 			msgcs.uid = mPlanCursor.getInt(mPlanCursor.getColumnIndex("uid"));
@@ -364,11 +364,11 @@ public class SystemDataBase {
 	
 	/**
 	 * 根据msgc_vid查询msginfo
-	 * @param msgc_vid
+	 * @param uid
 	 * @return
 	 */
-	private com.readboy.ftmlus.db.MessageCenter[] queryAllMsgCSInfo(int pid, int uid){
-		com.readboy.ftmlus.db.MessageCenter[] msgcs = null;
+	private MessageCenter[] queryAllMsgCSInfo(int pid, int uid){
+		MessageCenter[] msgcs = null;
 //		msgc_vid = MessageCenter.sqliteEscape(msgc_vid, true);
 		String sql = "SELECT * FROM messagecenter where pid = " + pid + " and uid = " + uid;
 		try {
@@ -391,10 +391,10 @@ public class SystemDataBase {
 		}
 		
 		
-		msgcs = new com.readboy.ftmlus.db.MessageCenter[mPlanCursor.getCount()];
+		msgcs = new MessageCenter[mPlanCursor.getCount()];
 		try {
 			for (int inum = 0; inum < msgcs.length; inum++) {
-				msgcs[inum] = new com.readboy.ftmlus.db.MessageCenter();
+				msgcs[inum] = new MessageCenter();
 				msgcs[inum].msgc_vid = mPlanCursor.getString(mPlanCursor.getColumnIndex("msgc_vid"));
 				msgcs[inum].uid = mPlanCursor.getInt(mPlanCursor.getColumnIndex("uid"));
 				msgcs[inum].msgc_title = mPlanCursor.getString(mPlanCursor.getColumnIndex("msgc_title"));
@@ -440,7 +440,7 @@ public class SystemDataBase {
 	 * @param msgcs
 	 * @return
 	 */
-	private boolean insertMsgCSInfo(com.readboy.ftmlus.db.MessageCenter msgcs){
+	private boolean insertMsgCSInfo(MessageCenter msgcs){
 //		// 标准化
 //		msgcs.sqliteStandard(true);
 		boolean isSuccess = true;
@@ -556,7 +556,7 @@ public class SystemDataBase {
 	 * @param msgcs
 	 * @return
 	 */
-	private boolean updateMsgCSInfo(com.readboy.ftmlus.db.MessageCenter msgcs){
+	private boolean updateMsgCSInfo(MessageCenter msgcs){
 //		// 标准化
 //		msgcs.sqliteStandard(true);
 		boolean bSuccess = true;

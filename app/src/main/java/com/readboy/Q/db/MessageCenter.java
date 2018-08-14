@@ -1,4 +1,4 @@
-package com.readboy.ftmlus.db;
+package com.readboy.Q.db;
 
 import java.io.Serializable;
 
