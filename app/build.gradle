@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 20
-    buildToolsVersion "23.0.3"
+    buildToolsVersion "26.0.3"
 
     defaultConfig {
         applicationId "com.readboy.Q.Gspt"
@@ -10,10 +10,51 @@ android {
         targetSdkVersion 17
     }
 
+    signingConfigs {
+        readboy_rbsoft {
+            storeFile file('D:/Android/P100_qian_ming/readboy.key')
+            storePassword "soft@readboy.com"
+            keyAlias "rbsoft"
+            keyPassword "23378528"
+//            storeFile file('D:/Android/P100_qian_ming/c3.key')
+//            storePassword "readboy_c3@readboy.com"
+//            keyAlias "c3"
+//            keyPassword "23378528"
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('\\tools\\proguard\\proguard-android.txt'), 'proguard-project.txt'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            signingConfig signingConfigs.readboy_rbsoft
+
+            applicationVariants.all { variant ->
+                def file = variant.outputs[0].outputFile
+                if(variant.buildType.name.equals("release")){ // ?§Ø?????????
+                    variant.outputs[0].outputFile = new File(
+                            (String) file.parent,
+                            (String) ("eduGameGspt.apk")
+                    )
+                }
+            }
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable true
+            signingConfig signingConfigs.readboy_rbsoft
+
+            applicationVariants.all { variant ->
+                def file = variant.outputs[0].outputFile
+                if(variant.buildType.name.equals("debug")){ // ?§Ø?????????
+                    variant.outputs[0].outputFile = new File(
+                            (String) file.parent,
+                            (String) ("eduGameGspt.apk")
+                    )
+                }
+            }
         }
     }
 }
@@ -22,5 +63,5 @@ dependencies {
     compile 'com.android.support:support-v4:20.0.0'
     compile files('libs/AutoUpdate.jar')
     compile files('libs/reward.jar')
-    provided 'com.readboy.support:readboy-support-g30:1.0'
+//    provided 'com.readboy.support:readboy-support-g30:1.0'
 }
