@@ -14,7 +14,7 @@ android {
         readboy_rbsoft {
             storeFile file('D:/Android/P100_qian_ming/readboy.key')
             storePassword "soft@readboy.com"
-            keyAlias "rbsoft"
+            keyAlias "q5"
             keyPassword "23378528"
 //            storeFile file('D:/Android/P100_qian_ming/c3.key')
 //            storePassword "readboy_c3@readboy.com"
