@@ -1,30 +1,30 @@
 /**
- * @aim GsptRunDataFrameÀà 
- * ÊµÏÖ³õÊ¼»¯Ò»Ğ©Êı¾İ£¬¶ÁÈ¡ÅäÖÃÎÄ¼ş³õÊ¼»¯¶¯»­Ïà¹ØĞÅÏ¢
- * ÒÔ¼°ViewPagerÖĞµÄ°´Å¥µã»÷µÄÏà¹ØÌø×ª£¬Ê¤Àû¶¯»­µÈĞÅÏ¢
- * ¶¨Òå×Ô¶¯»ñÈ¡Í¼Æ¬ÇĞ¿éµÄº¯Êı£¬°Ñ±³¾°Í¼Æ¬·ÖÄê¼¶»®·ÖÎª
- * ²»Í¬µÄ¿éÊıÓë²»Í¬µÄĞÎ×´×éºÏ
+ * @aim GsptRunDataFrameç±» 
+ * å®ç°åˆå§‹åŒ–ä¸€äº›æ•°æ®ï¼Œè¯»å–é…ç½®æ–‡ä»¶åˆå§‹åŒ–åŠ¨ç”»ç›¸å…³ä¿¡æ¯
+ * ä»¥åŠViewPagerä¸­çš„æŒ‰é’®ç‚¹å‡»çš„ç›¸å…³è·³è½¬ï¼Œèƒœåˆ©åŠ¨ç”»ç­‰ä¿¡æ¯
+ * å®šä¹‰è‡ªåŠ¨è·å–å›¾ç‰‡åˆ‡å—çš„å‡½æ•°ï¼ŒæŠŠèƒŒæ™¯å›¾ç‰‡åˆ†å¹´çº§åˆ’åˆ†ä¸º
+ * ä¸åŒçš„å—æ•°ä¸ä¸åŒçš„å½¢çŠ¶ç»„åˆ
  * 
- * GsptRunDataFrameµÄÊµÏÖ£º
- * 1¡¢Í¨¹ı¶ÁÈ¡XMLÎÄ¼ş¼ĞÏÂÊÇsettings.xmlÖĞµÄÅäÖÃĞÅÏ¢
- * 2¡¢³õÊ¼»¯²åÍ¼¶¯»­µÄÏà¹ØĞÅÏ¢£¬ÊµÀı»¯Ã¿Ò»¸ö²åÍ¼¶¯»­Interlude
- * 3¡¢³õÊ¼Í¼Æ¬µÄ»ù×¼ĞÅÏ¢
- * 4¡¢¶ÁÈ¡ViewPagerÖĞÃ¿Ò»ÆÁ¶ÔÓ¦µÄ°´Å¥µÄÌø×ª¼°Ê¤ÀûºóµÄ¶¯»­ĞÅÏ¢
+ * GsptRunDataFrameçš„å®ç°ï¼š
+ * 1ã€é€šè¿‡è¯»å–XMLæ–‡ä»¶å¤¹ä¸‹æ˜¯settings.xmlä¸­çš„é…ç½®ä¿¡æ¯
+ * 2ã€åˆå§‹åŒ–æ’å›¾åŠ¨ç”»çš„ç›¸å…³ä¿¡æ¯ï¼Œå®ä¾‹åŒ–æ¯ä¸€ä¸ªæ’å›¾åŠ¨ç”»Interlude
+ * 3ã€åˆå§‹å›¾ç‰‡çš„åŸºå‡†ä¿¡æ¯
+ * 4ã€è¯»å–ViewPagerä¸­æ¯ä¸€å±å¯¹åº”çš„æŒ‰é’®çš„è·³è½¬åŠèƒœåˆ©åçš„åŠ¨ç”»ä¿¡æ¯
  * 
- * ²»Í¬µÄÍ¼ĞÎµÄÊµÏÖ£º
- * 1¡¢ÏÈ°ÑÍ¼Æ¬µÈ·Ö³É3+1·Ö£¬±ÈÈç3:3:3:1  ×îºó1·İÎªËæ»ú¿í¶È£¬Ëæ»ú·ÖÅäµ½Ç°±ß3·İµ±ÖĞ
- * 2¡¢¸ù¾İÄÑ¶È¼¶±ğ·Ö¸î²»Í¬µÄÍ¼ĞÎ£¬¶¼ÊÇÒÔ9¹¬¸ñÎª»ù´¡£¬Ã¿¸ö¸ñ´óĞ¡²»¶¨
- * µ«ÊÇºáÏò»òÕß×İÏò±ØÓĞÒ»¸ö·½ÏòÊÇ¹Ì¶¨µÄ£¬¼´ºáÏòÎªÁ½¸ùÖ±Ïß»òÕß×İÏòÎªÁ½¸ùÖ±Ïß
- * ÇĞ¸îÈı½ÇĞÎ·ÖÇĞ¸îÏßÊÇ"/"»òÕß"\"(×¢£º1±í"/" 2±í"\")
- * a¡¢µÍÄÑ¶ÈµÄÊ±ºò£¬Ëæ»úºáÏò»òÕß×İÏòÖ»·Ö³ÉÁ½·İ£¬´óĞ¡Ëæ»ú¡£±ä³É6¸ö¸ñ
- * b¡¢ÖĞµÈÄÑ¶ÈµÄÊ±ºò£¬ÔÚ9¹¬¸ñÀïºÏ²¢¾ØĞÎ»òÕßÇĞ¸îÈı½ÇĞÎ£¬Ëæ»ú×óÇĞ¸î»òÕßÓÒÇĞ¸î
- * c¡¢¸ßµÈÄÑ¶ÈµÄÊ±ºò£¬3¸ö¸ñºÏ²¢È»ºóÇĞ¸î³öÌİĞÎ»òÕßÆ½ĞĞËÄ±ßĞÎ£¬ÒÔ¼°Èı½ÇĞÎ
- * ÆäËûÇøÓò¿ÉÒÔÊÇ³¤·½ĞÎ»òÕßÇĞ¸î³ÉÁ½¸öÈı½ÇĞÎ
- * 3¡¢¸ù¾İÇĞ¸îºÃµÄÍ¼ĞÎµÄÂ·¾¶£¬²ÉÓÃsetXfermode·½·¨»æÖÆ³ö²»Í¬µÄĞÎ×´À´
+ * ä¸åŒçš„å›¾å½¢çš„å®ç°ï¼š
+ * 1ã€å…ˆæŠŠå›¾ç‰‡ç­‰åˆ†æˆ3+1åˆ†ï¼Œæ¯”å¦‚3:3:3:1  æœ€å1ä»½ä¸ºéšæœºå®½åº¦ï¼Œéšæœºåˆ†é…åˆ°å‰è¾¹3ä»½å½“ä¸­
+ * 2ã€æ ¹æ®éš¾åº¦çº§åˆ«åˆ†å‰²ä¸åŒçš„å›¾å½¢ï¼Œéƒ½æ˜¯ä»¥9å®«æ ¼ä¸ºåŸºç¡€ï¼Œæ¯ä¸ªæ ¼å¤§å°ä¸å®š
+ * ä½†æ˜¯æ¨ªå‘æˆ–è€…çºµå‘å¿…æœ‰ä¸€ä¸ªæ–¹å‘æ˜¯å›ºå®šçš„ï¼Œå³æ¨ªå‘ä¸ºä¸¤æ ¹ç›´çº¿æˆ–è€…çºµå‘ä¸ºä¸¤æ ¹ç›´çº¿
+ * åˆ‡å‰²ä¸‰è§’å½¢åˆ†åˆ‡å‰²çº¿æ˜¯"/"æˆ–è€…"\"(æ³¨ï¼š1è¡¨"/" 2è¡¨"\")
+ * aã€ä½éš¾åº¦çš„æ—¶å€™ï¼Œéšæœºæ¨ªå‘æˆ–è€…çºµå‘åªåˆ†æˆä¸¤ä»½ï¼Œå¤§å°éšæœºã€‚å˜æˆ6ä¸ªæ ¼
+ * bã€ä¸­ç­‰éš¾åº¦çš„æ—¶å€™ï¼Œåœ¨9å®«æ ¼é‡Œåˆå¹¶çŸ©å½¢æˆ–è€…åˆ‡å‰²ä¸‰è§’å½¢ï¼Œéšæœºå·¦åˆ‡å‰²æˆ–è€…å³åˆ‡å‰²
+ * cã€é«˜ç­‰éš¾åº¦çš„æ—¶å€™ï¼Œ3ä¸ªæ ¼åˆå¹¶ç„¶ååˆ‡å‰²å‡ºæ¢¯å½¢æˆ–è€…å¹³è¡Œå››è¾¹å½¢ï¼Œä»¥åŠä¸‰è§’å½¢
+ * å…¶ä»–åŒºåŸŸå¯ä»¥æ˜¯é•¿æ–¹å½¢æˆ–è€…åˆ‡å‰²æˆä¸¤ä¸ªä¸‰è§’å½¢
+ * 3ã€æ ¹æ®åˆ‡å‰²å¥½çš„å›¾å½¢çš„è·¯å¾„ï¼Œé‡‡ç”¨setXfermodeæ–¹æ³•ç»˜åˆ¶å‡ºä¸åŒçš„å½¢çŠ¶æ¥
  * 
- * ÅäÖÃĞÅÏ¢µÄ±£´æ£º
- * ¼ÇÂ¼ÔÚ/data/data/com.readboy.Q.Gspt/shared_prefsÄ¿Â¼ÏÂÉú³ÉÁËÒ»¸öGsptSpCfg.xmlÎÄ¼şÀï
- * °ÑÓÃ»§Íê³ÉÁËÄÄĞ©Æ´Í¼£¬ÄÄĞ©Æ´Í¼Ã»ÓĞÍê³É¼ÇÂ¼ÏÂÀ´£¬Ã»ÓĞÍê³ÉµÄ¼ÓËø£¬Íê³ÉÁËµÄ½âËø 
+ * é…ç½®ä¿¡æ¯çš„ä¿å­˜ï¼š
+ * è®°å½•åœ¨/data/data/com.readboy.Q.Gspt/shared_prefsç›®å½•ä¸‹ç”Ÿæˆäº†ä¸€ä¸ªGsptSpCfg.xmlæ–‡ä»¶é‡Œ
+ * æŠŠç”¨æˆ·å®Œæˆäº†å“ªäº›æ‹¼å›¾ï¼Œå“ªäº›æ‹¼å›¾æ²¡æœ‰å®Œæˆè®°å½•ä¸‹æ¥ï¼Œæ²¡æœ‰å®Œæˆçš„åŠ é”ï¼Œå®Œæˆäº†çš„è§£é” 
  * 
  * @time 2013.08.10;
  * @author divhee
@@ -40,6 +40,7 @@ import android.content.res.XmlResourceParser;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.graphics.Path;
 import android.graphics.Point;
 import android.graphics.PointF;
@@ -55,6 +56,7 @@ import android.widget.ImageView;
 
 import com.readboy.Q.Activity.GsptMainActivity;
 import com.readboy.Q.Gspt.R;
+import com.readboy.Q.app.App;
 import com.readboy.Q.db.MessageCenter;
 import com.readboy.Q.db.SystemDataBase;
 
@@ -70,53 +72,53 @@ import java.util.Random;
 public class GsptRunDataFrame {
 
 	/**
-	 * Ä¬ÈÏÓÃ»§ID
+	 * é»˜è®¤ç”¨æˆ·ID
 	 */
 	private static final int USER_ID_DEFAULT = 1;
 	/**
-	 * Êı¾İ¿âµÄUri
+	 * æ•°æ®åº“çš„Uri
 	 */
 	public static final Uri databaseUri = Uri.parse("content://com.readboy.Q.share/userdata");	
 	
 	/**
-	 * ´òÓ¡±ê¼Ç
+	 * æ‰“å°æ ‡è®°
 	 */
 	public static final String Loginfo = "GsptInfo";
 	
 	/**
-	 * ¼ÇÂ¼ÓÃ»§ÊÇ·ñÍê³É¹ıÆ´Í¼µÄÅäÖÃĞÅÏ¢ÎÄ¼ş"GsptSpCfg"
+	 * è®°å½•ç”¨æˆ·æ˜¯å¦å®Œæˆè¿‡æ‹¼å›¾çš„é…ç½®ä¿¡æ¯æ–‡ä»¶"GsptSpCfg"
 	 */
 	public static final String gstpSpWinPassConfig = "GsptSpCfg";
 	
 	/**
-	 * ½øÈëµÄÄ£Ê½
+	 * è¿›å…¥çš„æ¨¡å¼
 	 */
 	private int systemEnterMode = ENTER_NORMAL;
 	
 	/**
-	 * µ±Ç°µÄ×´Ì¬£¬½øÈëonResumeÓë·ñ
+	 * å½“å‰çš„çŠ¶æ€ï¼Œè¿›å…¥onResumeä¸å¦
 	 */
 	public static boolean bMainCurrentOnResumed = false;
 	public static boolean bIngameCurrentOnResumed = false;
 	
 	/**
-	 * µÚÒ»´Î½øÈëÓÎÏ·Ö÷½çÃæ£¬Ò»Ğ©ºÄÊ±µÄ²Ù×÷£¬ºó±ß×ö
+	 * ç¬¬ä¸€æ¬¡è¿›å…¥æ¸¸æˆä¸»ç•Œé¢ï¼Œä¸€äº›è€—æ—¶çš„æ“ä½œï¼Œåè¾¹åš
 	 */
 	public EgameStep enumEnterMain = EgameStep.STEP_0;
 	
 	/**
-	 * µÚÒ»´Î½øÈëÓÎÏ·Ingame½çÃæ£¬Ò»Ğ©ºÄÊ±µÄ²Ù×÷£¬ºó±ß×ö
+	 * ç¬¬ä¸€æ¬¡è¿›å…¥æ¸¸æˆIngameç•Œé¢ï¼Œä¸€äº›è€—æ—¶çš„æ“ä½œï¼Œåè¾¹åš
 	 */
 	public EgameStep enumEnterIngame = EgameStep.STEP_0;
 	
 	/**
-	 * ½øÈëÆ´Í¼ºóµÄÓÎÏ·×´Ì¬
+	 * è¿›å…¥æ‹¼å›¾åçš„æ¸¸æˆçŠ¶æ€
 	 * 
-	 * STEP_0Ã»ÓĞÓÎÏ·
-	 * STEP_1¸Õ½øÈëÓÎÏ·onCreatÅÜÍê
-	 * STEP_2ÅÜÍêonResum
-	 * STEP_3½øÈëÁËonPause
-	 * STEP_4Ã»ÓĞÅÜÍêonResum¾ÍÅÜonPause
+	 * STEP_0æ²¡æœ‰æ¸¸æˆ
+	 * STEP_1åˆšè¿›å…¥æ¸¸æˆonCreatè·‘å®Œ
+	 * STEP_2è·‘å®ŒonResum
+	 * STEP_3è¿›å…¥äº†onPause
+	 * STEP_4æ²¡æœ‰è·‘å®ŒonResumå°±è·‘onPause
 	 * @author divhee
 	 *
 	 */
@@ -125,13 +127,13 @@ public class GsptRunDataFrame {
 	}	
 	
 	/**
-	 * ÓÎÏ·µÄËùÓĞ×´Ì¬:
+	 * æ¸¸æˆçš„æ‰€æœ‰çŠ¶æ€:
 	 * 
-	 * STEP_STARTIN ¸Õ½øÈë¶¯»­½×¶Î
-	 * STEP_INOPT Ñ¡ÔñÍ¼Æ¬½×¶Î
-	 * STEP_WINNER Æ´Í¼Íê³É½×¶Î
-	 * STEP_INGAME Æ´Í¼ÓÎÏ·¹ı³Ì½×¶Î
-	 * STEP_OTHER ÆäËû½×¶Î
+	 * STEP_STARTIN åˆšè¿›å…¥åŠ¨ç”»é˜¶æ®µ
+	 * STEP_INOPT é€‰æ‹©å›¾ç‰‡é˜¶æ®µ
+	 * STEP_WINNER æ‹¼å›¾å®Œæˆé˜¶æ®µ
+	 * STEP_INGAME æ‹¼å›¾æ¸¸æˆè¿‡ç¨‹é˜¶æ®µ
+	 * STEP_OTHER å…¶ä»–é˜¶æ®µ
 	 * 
 	 * @author divhee
 	 * 
@@ -141,138 +143,138 @@ public class GsptRunDataFrame {
 	}
 
 	/**
-	 * µ±Ç°ÓÎÏ·×´Ì¬ÔÚµÚ¼¸²½
+	 * å½“å‰æ¸¸æˆçŠ¶æ€åœ¨ç¬¬å‡ æ­¥
 	 */
 	public GameStep GsptCurrentStep = GameStep.STEP_OTHER;
 
 	/**
-	 * ĞèÒªÇĞ»»µ½ÏÂÒ»¸ö×´Ì¬
+	 * éœ€è¦åˆ‡æ¢åˆ°ä¸‹ä¸€ä¸ªçŠ¶æ€
 	 */
 	public GameStep GsptNeedJumpStep = GameStep.STEP_OTHER;
 	
 	/**
-	 * ÓÎÏ·Ê¤ÀûºóÒª²¥·ÅµÄÉùÒôÒÔ¼°¶¯×÷µÄ²½´Õ
-	 * Õâ¸öÖ÷ÒªÊÇÒª¼àÌıÉùÒô²¥·Å½áÊøÊÂ¼ş
+	 * æ¸¸æˆèƒœåˆ©åè¦æ’­æ”¾çš„å£°éŸ³ä»¥åŠåŠ¨ä½œçš„æ­¥å‡‘
+	 * è¿™ä¸ªä¸»è¦æ˜¯è¦ç›‘å¬å£°éŸ³æ’­æ”¾ç»“æŸäº‹ä»¶
 	 */
 	public int bGsPlayEndShowNext = 0;
 
 	/**
-	 * SurfaceViewÍ¨¹ıÏß³ÌË¢ĞÂµÄ¿ìÂı£¬¾ÍÊÇÒªDelayµÄÊ±¼ä³¤¶Ì
+	 * SurfaceViewé€šè¿‡çº¿ç¨‹åˆ·æ–°çš„å¿«æ…¢ï¼Œå°±æ˜¯è¦Delayçš„æ—¶é—´é•¿çŸ­
 	 */
 	public static final int myThreadDelayTime = 80;	
 	
 	/**
-	 * Á½ÖÖ×´Ì¬£¬ÔÚÑ¡Ôñ½çÃæ»òÕßÔÚÓÎÏ·½çÃæ
+	 * ä¸¤ç§çŠ¶æ€ï¼Œåœ¨é€‰æ‹©ç•Œé¢æˆ–è€…åœ¨æ¸¸æˆç•Œé¢
 	 */
 	public static final int WM_OPTION_GAME = 0;
 	public static final int WM_PLAYING_GAME1 = 0x900;
 	public static final int WM_PLAYING_GAME2 = 0x901;
 	
 	/**
-	 * IngameActivity²¥·ÅÊ¤ÀûÒô1ÒÔ¼°1½áÊø
+	 * IngameActivityæ’­æ”¾èƒœåˆ©éŸ³1ä»¥åŠ1ç»“æŸ
 	 */
 	public static final int WM_PLAY_WIN_SND1 = 0x1002;
 	public static final int WM_END_WIN_SND1 = 0x1003;
 	
 	/**
-	 * IngameActivity²¥·ÅÊ¤ÀûÒô2ÒÔ¼°2½áÊø
+	 * IngameActivityæ’­æ”¾èƒœåˆ©éŸ³2ä»¥åŠ2ç»“æŸ
 	 */
 	public static final int WM_PLAY_WIN_SND2 = 0x1004;
 	public static final int WM_END_WIN_SND2 = 0x1005;
 	
 	/**
-	 * Ê¤ÀûÈö»¨
+	 * èƒœåˆ©æ’’èŠ±
 	 */
 	public static final int WM_PLAY_WIN_SND3 = 0x1006;
 	public static final int WM_END_WIN_SND3 = 0x1007;	
 	
 	/**
-	 * ¼ÇÂ¼ÏßÌõµÄÖµ£¬ºáÏòÍ¬XÖá
+	 * è®°å½•çº¿æ¡çš„å€¼ï¼Œæ¨ªå‘åŒXè½´
 	 */
 	public PointF [] prepareBaseH = null;
 
 	/**
-	 * ¼ÇÂ¼ÏßÌõµÄÖµ£¬ÊúÏòÍ¬YÖá
+	 * è®°å½•çº¿æ¡çš„å€¼ï¼Œç«–å‘åŒYè½´
 	 */
 	public PointF [] prepareBaseV = null;	
 	
 	/**
-	 * ¼ÇÂ¼°¼Ïİ»òÕßÍ»³öÇøÓòµÄ×ø±ê£¬ºáÏò(Í¬XÖáÏßÉÏ)
+	 * è®°å½•å‡¹é™·æˆ–è€…çªå‡ºåŒºåŸŸçš„åæ ‡ï¼Œæ¨ªå‘(åŒXè½´çº¿ä¸Š)
 	 */
 	public Point [] preparePtH = null;
 
 	/**
-	 * ¼ÇÂ¼°¼Ïİ»òÕßÍ»³öÇøÓòµÄ×ø±ê£¬ÊúÏò(Í¬YÖáÏßÉÏ)
+	 * è®°å½•å‡¹é™·æˆ–è€…çªå‡ºåŒºåŸŸçš„åæ ‡ï¼Œç«–å‘(åŒYè½´çº¿ä¸Š)
 	 */
 	public Point [] preparePtV = null;
 
 	/**
-	 * Í¼Æ¬µÄ»ù×¼¿íĞÅÏ¢
+	 * å›¾ç‰‡çš„åŸºå‡†å®½ä¿¡æ¯
 	 */
 	public static int baseWidth = 1280;
 	
 	/**
-	 * Í¼Æ¬µÄ»ù×¼¸ßĞÅÏ¢
+	 * å›¾ç‰‡çš„åŸºå‡†é«˜ä¿¡æ¯
 	 */	
 	public static int baseHeight = 800;
 	
 	/**
-	 * ÆÕÍ¨Ä£Ê½½øÈë
+	 * æ™®é€šæ¨¡å¼è¿›å…¥
 	 */
 	public static final int ENTER_NORMAL = 0x03;
 	
 	/**
-	 * ÆäËûÄ£¿éµ÷ÓÃ
+	 * å…¶ä»–æ¨¡å—è°ƒç”¨
 	 */
 	public static final int ENTER_EXTCALL = 0x02;
 	
 	/**
-	 * ÓÎÏ·ÀàĞÍ
+	 * æ¸¸æˆç±»å‹
 	 */
 	public boolean bGsptGameStyle = false;
 	
 	/**
-	 * µ±Ç°Òª²¥·ÅµÄ¶¯»­Ãû
+	 * å½“å‰è¦æ’­æ”¾çš„åŠ¨ç”»å
 	 */
 	public String[] GsptInterludeName = null;
 	
 	/**
-	 * SharedPreferencesÊµÀıÓÃÓÚ¶ÁÈ¡ÅäÖÃĞÅÏ¢£¬ÊÇ·ñÍê³É¹ı¸ÃÆ´Í¼
-	 * Èç¹ûÃ»ÓĞÍê³ÉµÄÆ´Í¼£¬ÒªÏÔÊ¾¼ÓËøµÄ±³¾°£¬Èç¹ûÍê³ÉÁËµÄÆ´Í¼
-	 * Í¼Æ¬°´Å¥²»¼ÓËø£¬ÎÒÃÇÍ¨¹ıgsptSharedPreferences¼ÇÂ¼ÕâĞ©ĞÅÏ¢
+	 * SharedPreferenceså®ä¾‹ç”¨äºè¯»å–é…ç½®ä¿¡æ¯ï¼Œæ˜¯å¦å®Œæˆè¿‡è¯¥æ‹¼å›¾
+	 * å¦‚æœæ²¡æœ‰å®Œæˆçš„æ‹¼å›¾ï¼Œè¦æ˜¾ç¤ºåŠ é”çš„èƒŒæ™¯ï¼Œå¦‚æœå®Œæˆäº†çš„æ‹¼å›¾
+	 * å›¾ç‰‡æŒ‰é’®ä¸åŠ é”ï¼Œæˆ‘ä»¬é€šè¿‡gsptSharedPreferencesè®°å½•è¿™äº›ä¿¡æ¯
 	 */
 	public SharedPreferences gsptSharedPreferences = null;
 	
 	/**
-	 * ²åÍ¼¶¯»­ĞÅÏ¢µÄArrayList
+	 * æ’å›¾åŠ¨ç”»ä¿¡æ¯çš„ArrayList
 	 */
 	public ArrayList<Interlude> gsptInterlude = new ArrayList<Interlude>();
 	
 	/**
-	 * Í¼Æ¬°´Å¥×Ô¶¯Ìø×ªĞÅÏ¢
+	 * å›¾ç‰‡æŒ‰é’®è‡ªåŠ¨è·³è½¬ä¿¡æ¯
 	 */
 	private ImgBtnAuto gsptImgBtnAuto = new ImgBtnAuto();
 
 	/**
-	 * ÉÏÏÂÎÄContext
+	 * ä¸Šä¸‹æ–‡Context
 	 */
 	private Context frameContext = null;
 	
 	/**
-	 * Êı¾İ½á¹¹ÊµÀı
+	 * æ•°æ®ç»“æ„å®ä¾‹
 	 */
 	private static GsptRunDataFrame gsptRunData = null;
 
 	/**
-	 * ¼ÇÂ¼ÉÏÒ»´Î°´Å¥µã»÷µÄÊ±¼ä
+	 * è®°å½•ä¸Šä¸€æ¬¡æŒ‰é’®ç‚¹å‡»çš„æ—¶é—´
 	 */
 	private static long lastClickTime = 0;
 	
 	/**
-	 * @aim ÅĞ¶ÏÊÇ·ñÊÇ¿ìËÙµã»÷
-	 * @param ÎŞ
-	 * @return true ·Ç¿ìËÙµã»÷
-	 * 			false ¿ìËÙµã»÷
+	 * @aim åˆ¤æ–­æ˜¯å¦æ˜¯å¿«é€Ÿç‚¹å‡»
+	 * @param æ— 
+	 * @return true éå¿«é€Ÿç‚¹å‡»
+	 * 			false å¿«é€Ÿç‚¹å‡»
 	 */
 	public static boolean bNotFastDoubleClick() {
 		long time = System.currentTimeMillis();
@@ -285,16 +287,16 @@ public class GsptRunDataFrame {
 	}	
 	
 	/**
-	 * ¹¹Ôì³õÊ¼»¯
+	 * æ„é€ åˆå§‹åŒ–
 	 */
 	public GsptRunDataFrame(Context context) {
 		this.frameContext = context;
 	}
 
 	/**
-	 * @aim »ñÈ¡ÊµÀıGsptDataPagerAdapter
-	 * @param ÎŞ
-	 * @return GsptRunDataFrameÊµÀı£¬Î¨Ò»ÊµÀı
+	 * @aim è·å–å®ä¾‹GsptDataPagerAdapter
+	 * @param æ— 
+	 * @return GsptRunDataFrameå®ä¾‹ï¼Œå”¯ä¸€å®ä¾‹
 	 */
 	public static GsptRunDataFrame getInstance(Context context) {
 		if (gsptRunData == null) {
@@ -304,7 +306,7 @@ public class GsptRunDataFrame {
 	}
 
 	/**
-	 * @aim »ñÈ¡×Ü¹²ÓĞ¼¸Ò³
+	 * @aim è·å–æ€»å…±æœ‰å‡ é¡µ
 	 * @return
 	 */
 	public static int getPagerTotal() {
@@ -322,7 +324,7 @@ public class GsptRunDataFrame {
 	}
 	
 	/**
-	 * @aim »ñÈ¡×Ü¹²ÓĞ¼¸Ò³
+	 * @aim è·å–æ€»å…±æœ‰å‡ é¡µ
 	 * @return
 	 */
 	public static boolean bEnterModeExtCall() {
@@ -333,7 +335,7 @@ public class GsptRunDataFrame {
 	}	
 
 	/**
-	 * @aim ÉèÖÃ×Ü¹²ÓĞ¼¸Ò³
+	 * @aim è®¾ç½®æ€»å…±æœ‰å‡ é¡µ
 	 * @return
 	 */
 	public static void setAppEnterMode(int mode) {
@@ -342,14 +344,14 @@ public class GsptRunDataFrame {
 			if (gsptRunData.systemEnterMode != ENTER_EXTCALL && gsptRunData.systemEnterMode != ENTER_NORMAL) {
 				gsptRunData.systemEnterMode = ENTER_NORMAL;
 			}
-			// ¶ÁÈ¡XMLÎÄ¼ş¼ĞÏÂsettings.xmlÎÄ¼şÖĞµÄÅäÖÃĞÅÏ¢
-			// ³õÊ¼»¯Öî¶àĞÅÏ¢
+			// è¯»å–XMLæ–‡ä»¶å¤¹ä¸‹settings.xmlæ–‡ä»¶ä¸­çš„é…ç½®ä¿¡æ¯
+			// åˆå§‹åŒ–è¯¸å¤šä¿¡æ¯
 			gsptRunData.initXmlConfigInfo();				
 		}
 	}
 	
 	/**
-	 * @aim ÉèÖÃÓÎÏ·Ä£Ê½£¬Èı½ÇĞÎ»òÕß²»¹æÔòÍ¼ĞÎ
+	 * @aim è®¾ç½®æ¸¸æˆæ¨¡å¼ï¼Œä¸‰è§’å½¢æˆ–è€…ä¸è§„åˆ™å›¾å½¢
 	 * @return
 	 */
 	public static void setAppGameStyle(boolean bStyle) {
@@ -359,9 +361,9 @@ public class GsptRunDataFrame {
 	}	
 	
 	/**
-	 * @aim ÉùÒô²¥·Å½áÊøºó£¬¼àÌı½áÊø
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @aim å£°éŸ³æ’­æ”¾ç»“æŸåï¼Œç›‘å¬ç»“æŸ
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	public void setGsptMediaPlayEnd() {
 		if (bGsPlayEndShowNext == WM_OPTION_GAME){
@@ -378,7 +380,7 @@ public class GsptRunDataFrame {
 	}	
 	
 	/**
-	 * ´ÓÊı¾İ¿â»ñÈ¡key¶ÔÓ¦µÄÊı¾İ
+	 * ä»æ•°æ®åº“è·å–keyå¯¹åº”çš„æ•°æ®
 	 * @param key
 	 * @param defValue
 	 * @return
@@ -401,36 +403,36 @@ public class GsptRunDataFrame {
 	}
 	
 	/**
-	 * @aim »ñÈ¡µ±Ç°ÓÎÏ·×´Ì¬
-	 * @param ÎŞ
-	 * @return GameStep ÓÎÏ·×´Ì¬µÄ GsptCurrentStep
+	 * @aim è·å–å½“å‰æ¸¸æˆçŠ¶æ€
+	 * @param æ— 
+	 * @return GameStep æ¸¸æˆçŠ¶æ€çš„ GsptCurrentStep
 	 */
 	public GameStep getCrrentGameStep() {
 		return GsptCurrentStep;
 	}
 
 	/**
-	 * @aim »ñÈ¡Í¼Æ¬µÄ»ù×¼¿í
-	 * @param ÎŞ
-	 * @return int ·µ»ØÍ¼Æ¬µÄ»ù×¼¿í
+	 * @aim è·å–å›¾ç‰‡çš„åŸºå‡†å®½
+	 * @param æ— 
+	 * @return int è¿”å›å›¾ç‰‡çš„åŸºå‡†å®½
 	 */
 	public static int getBaseWidth() {
 		return baseWidth;
 	}
 
 	/**
-	 * @aim »ñÈ¡Í¼Æ¬µÄ»ù×¼¸ß
-	 * @param ÎŞ
-	 * @return int ·µ»ØÍ¼Æ¬µÄ»ù×¼¸ß
+	 * @aim è·å–å›¾ç‰‡çš„åŸºå‡†é«˜
+	 * @param æ— 
+	 * @return int è¿”å›å›¾ç‰‡çš„åŸºå‡†é«˜
 	 */
 	public static int getBaseHeight() {
 		return baseHeight;
 	}
 
 	/**
-	 * @aim »ñÈ¡µ±Ç°Ñ¡ÖĞµÄÊÇÄÄÒ»¸öImageButton
-	 * @param ÎŞ
-	 * @return µ±Ç°Ñ¡ÖĞµÄ°´Å¥£¬¾ÍÊÇÒªÍæµÄÓÎÏ·
+	 * @aim è·å–å½“å‰é€‰ä¸­çš„æ˜¯å“ªä¸€ä¸ªImageButton
+	 * @param æ— 
+	 * @return å½“å‰é€‰ä¸­çš„æŒ‰é’®ï¼Œå°±æ˜¯è¦ç©çš„æ¸¸æˆ
 	 */
 	public int getImgBtnAutoIndex() {
 		if (gsptImgBtnAuto != null) {
@@ -441,9 +443,9 @@ public class GsptRunDataFrame {
 	}
 
 	/**
-	 * @aim »ñÈ¡×Ü¹²ÓĞ¶àÉÙ°´Å¥
-	 * @param ÎŞ
-	 * @return int °´Å¥×ÜÊı
+	 * @aim è·å–æ€»å…±æœ‰å¤šå°‘æŒ‰é’®
+	 * @param æ— 
+	 * @return int æŒ‰é’®æ€»æ•°
 	 */
 	public int getImgBtnAutoSum() {
 		if (gsptImgBtnAuto != null) {
@@ -454,16 +456,16 @@ public class GsptRunDataFrame {
 	}
 
 	/**
-	 * @aim »ñÈ¡°´Å¥ĞÅÏ¢ÊµÀı
-	 * @param ÎŞ
-	 * @return °´Å¥ĞÅÏ¢ÊµÀı
+	 * @aim è·å–æŒ‰é’®ä¿¡æ¯å®ä¾‹
+	 * @param æ— 
+	 * @return æŒ‰é’®ä¿¡æ¯å®ä¾‹
 	 */
 	public ImgBtnAuto getImgBtnAuto() {
 		return gsptImgBtnAuto;
 	}
 	
 	/**
-	 * @aim »ñÈ¡°´Å¥Ó¦¸ÃÏÔÊ¾µÄ×´Ì¬
+	 * @aim è·å–æŒ‰é’®åº”è¯¥æ˜¾ç¤ºçš„çŠ¶æ€
 	 * @param index
 	 * @return
 	 */
@@ -476,10 +478,10 @@ public class GsptRunDataFrame {
 	}
 
 	/**
-	 * @aim ÉèÖÃµ±Ç°Ñ¡ÖĞµÄÊÇÄÄÒ»¸öImageButton
+	 * @aim è®¾ç½®å½“å‰é€‰ä¸­çš„æ˜¯å“ªä¸€ä¸ªImageButton
 	 * @param tag
-	 *            ÒªÉèÖÃµÄĞòºÅ
-	 * @return true ³É¹¦ false ²»³É¹¦
+	 *            è¦è®¾ç½®çš„åºå·
+	 * @return true æˆåŠŸ false ä¸æˆåŠŸ
 	 */
 	public boolean setImgBtnAutoIndex(int tag) {
 		
@@ -493,9 +495,9 @@ public class GsptRunDataFrame {
 	}
 
 	/**
-	 * @aim ¸ù¾İ×ÊÔ´id¼ÓÔØÍ¼Æ¬µ½ÎÄ¼şÁ÷
-	 * @param resID ×ÊÔ´IDºÅ
-	 * @return ·µ»Øbitmap¶ÔÏó
+	 * @aim æ ¹æ®èµ„æºidåŠ è½½å›¾ç‰‡åˆ°æ–‡ä»¶æµ
+	 * @param resID èµ„æºIDå·
+	 * @return è¿”å›bitmapå¯¹è±¡
 	 */
 	public Bitmap loadResById(int resID) {
 		BitmapFactory.Options opt = new BitmapFactory.Options();
@@ -507,11 +509,34 @@ public class GsptRunDataFrame {
 		return BitmapFactory.decodeStream(is, null, opt);
 	}
 
+	public Bitmap loadResById(int resID,float scale) {
+		BitmapFactory.Options opt = new BitmapFactory.Options();
+		opt.inPreferredConfig = Bitmap.Config.RGB_565;
+		opt.inPurgeable = true;
+		opt.inInputShareable = true;
+		opt.inJustDecodeBounds = false;
+		InputStream is = frameContext.getResources().openRawResource(resID);
+		Bitmap bitmap = BitmapFactory.decodeStream(is, null, opt);
+		if (scale>1.0f) {
+			int w = bitmap.getWidth();
+			int h = bitmap.getHeight();
+			Matrix matrix = new Matrix();
+			matrix.postScale(scale, scale, 0, 0);
+			Bitmap bmp = Bitmap.createBitmap(bitmap, 0, 0, w, h, matrix, true);
+			if (bitmap != null && !bitmap.equals(bmp) && !bitmap.isRecycled()) {
+				bitmap.recycle();
+				bitmap = null;
+			}
+			bitmap = bmp;
+		}
+		return bitmap;
+	}
+
 //	/**
-//	 * @aim ¶¯Ì¬¼ÓÔØ
-//	 * @param idNormal Æ½³£×´Ì¬µÄÍ¼Æ¬
-//	 * @param idPressed °´ÏÂ×´Ì¬µÄÍ¼Æ¬
-//	 * @param idSelected Ñ¡ÖĞ×´Ì¬µÄÍ¼Æ¬
+//	 * @aim åŠ¨æ€åŠ è½½
+//	 * @param idNormal å¹³å¸¸çŠ¶æ€çš„å›¾ç‰‡
+//	 * @param idPressed æŒ‰ä¸‹çŠ¶æ€çš„å›¾ç‰‡
+//	 * @param idSelected é€‰ä¸­çŠ¶æ€çš„å›¾ç‰‡
 //	 * @return
 //	 */
 //	public StateListDrawable createSelector(int idNormal, int idPressed, int idSelected) { 
@@ -521,7 +546,7 @@ public class GsptRunDataFrame {
 //		BitmapDrawable selected = idSelected == -1 ? null : new BitmapDrawable(loadResById(idSelected)); 
 //		// View.PRESSED_ENABLED_STATE_SET 
 //		bg.addState(new int[] { android.R.attr.state_pressed, android.R.attr.state_enabled }, pressed); 
-//		// View.ENABLED_STATE_SET -±íÊ¾false×´Ì¬
+//		// View.ENABLED_STATE_SET -è¡¨ç¤ºfalseçŠ¶æ€
 //		bg.addState(new int[] { android.R.attr.state_selected }, selected); 
 //		// View.EMPTY_STATE_SET 
 //		bg.addState(new int[] {}, normal);
@@ -530,10 +555,10 @@ public class GsptRunDataFrame {
 //	}
 
 	/**
-	 * @aim »ñÈ¡×ÊÔ´ ×ÊÔ´°´ÕÕ string+numË³ĞòÃüÃû
-	 * @param name ×ÊÔ´Ãû
-	 * @param index ×ÊÔ´Ãûºó´øµÄÊı×Ö
-	 * @return ·µ»Øbitmap
+	 * @aim è·å–èµ„æº èµ„æºæŒ‰ç…§ string+numé¡ºåºå‘½å
+	 * @param name èµ„æºå
+	 * @param index èµ„æºååå¸¦çš„æ•°å­—
+	 * @return è¿”å›bitmap
 	 */
 	public Bitmap loadResByName(String name, int index) {
 		int resID = frameContext.getResources().getIdentifier(name + index, "drawable",
@@ -542,186 +567,186 @@ public class GsptRunDataFrame {
 	}	
 	
 	/**
-	 * @aim ViewPagerÖĞµÄÃ¿Ò»¸öImageButton¶ÔÓ¦µÄÏà¹ØĞÅÏ¢
+	 * @aim ViewPagerä¸­çš„æ¯ä¸€ä¸ªImageButtonå¯¹åº”çš„ç›¸å…³ä¿¡æ¯
 	 * 
-	 * 			currentindex µ±Ç°Ñ¡ÖĞµÄÊÇÄÄÒ»¸ö°´Å¥
-	 * 			imgbtnsum ËùÓĞµÄ°´Å¥×Ü¹²ÊıÁ¿
-	 * 			imgbtnid °´Å¥IDÃû 
-	 * 			imgdstid °´Å¥¶ÔÓ¦µÄÍ¼Æ¬Ãû£¬¾ÍÊÇÒªÆ´Í¼µÄÍ¼Æ¬Ãû
-	 * 			InterludeInfoName Ê¤Àû¶¯»­Ãû
-	 * 			alreadypass ÊÇ·ñÒÑ¾­Í¨¹ıÁË
+	 * 			currentindex å½“å‰é€‰ä¸­çš„æ˜¯å“ªä¸€ä¸ªæŒ‰é’®
+	 * 			imgbtnsum æ‰€æœ‰çš„æŒ‰é’®æ€»å…±æ•°é‡
+	 * 			imgbtnid æŒ‰é’®IDå 
+	 * 			imgdstid æŒ‰é’®å¯¹åº”çš„å›¾ç‰‡åï¼Œå°±æ˜¯è¦æ‹¼å›¾çš„å›¾ç‰‡å
+	 * 			InterludeInfoName èƒœåˆ©åŠ¨ç”»å
+	 * 			alreadypass æ˜¯å¦å·²ç»é€šè¿‡äº†
 	 * 
 	 * @author divhee
 	 */
 	public class ImgBtnAuto {
 
 		/**
-		 * µ±Ç°Ñ¡ÖĞµÄÊÇÄÄÒ»¸öÍ¼Æ¬
+		 * å½“å‰é€‰ä¸­çš„æ˜¯å“ªä¸€ä¸ªå›¾ç‰‡
 		 */
 		public int currentindex = 0;
 
 		/**
-		 * ViewPagerËùÓĞÒ³ÃæÉÏµÄÍ¼Æ¬°´Å¥µÄ×ÜºÍ£¬Ò»¹²ÓĞ¶àÉÙ¸ö°´Å¥
+		 * ViewPageræ‰€æœ‰é¡µé¢ä¸Šçš„å›¾ç‰‡æŒ‰é’®çš„æ€»å’Œï¼Œä¸€å…±æœ‰å¤šå°‘ä¸ªæŒ‰é’®
 		 */
 		public int imgbtnsum = 0;
 
 		/**
-		 * Í¼Æ¬°´Å¥Ãû¼¯ºÏ
+		 * å›¾ç‰‡æŒ‰é’®åé›†åˆ
 		 */
 		public int[] imgbtnid = null;
 
 		/**
-		 * ¶ÔÓ¦µÄÒªÌø×ªµÄÍ¼Æ¬Ãû¼¯ºÏ
+		 * å¯¹åº”çš„è¦è·³è½¬çš„å›¾ç‰‡åé›†åˆ
 		 */
 		public int[] imgdstptid = null;
 
 		/**
-		 * ¶ÔÓ¦µÄÓÎÏ·Ê¤Àû¶¯»­Ãû¼¯ºÏ
+		 * å¯¹åº”çš„æ¸¸æˆèƒœåˆ©åŠ¨ç”»åé›†åˆ
 		 */
 		public String[] InterludeInfoName = null;
 
 		/**
-		 * ¸ÃÍ¼Æ¬ÊÇ·ñÒÑ¾­³É¹¦Íê³ÉÆ´Í¼
+		 * è¯¥å›¾ç‰‡æ˜¯å¦å·²ç»æˆåŠŸå®Œæˆæ‹¼å›¾
 		 */
 		public boolean [] nowinpass = null;
 
 		/**
-		 * ÓÎÏ·Ê¤Àûºó¹ÊÊÂÇé½ÚÉùÒô¼¯ºÏ
+		 * æ¸¸æˆèƒœåˆ©åæ•…äº‹æƒ…èŠ‚å£°éŸ³é›†åˆ
 		 */
 		public int [] gssndid = null;
 		
 		/**
-		 * ¹¹Ôì
+		 * æ„é€ 
 		 */
 		public ImgBtnAuto() {
 		}
 	}
 
 	/**
-	 * @aim Ã¿¸ö¶¯»­¶ÔÓ¦µÄÒ»Ğ©ÌØĞÔ 
+	 * @aim æ¯ä¸ªåŠ¨ç”»å¯¹åº”çš„ä¸€äº›ç‰¹æ€§ 
 	 * 
-	 * 			°üÀ¨Ãû×Ö£¬IDºÅ£¬Í¼Æ¬£¬ÉùÒô£¬ÏÔÊ¾Óë·ñ£¬Ñ­»·Óë·ñ
-	 * 			²¥·ÅÉùÒô£¬ÒÔ¼°Î»ÖÃ¿í¸ßµÈĞÅÏ¢
+	 * 			åŒ…æ‹¬åå­—ï¼ŒIDå·ï¼Œå›¾ç‰‡ï¼Œå£°éŸ³ï¼Œæ˜¾ç¤ºä¸å¦ï¼Œå¾ªç¯ä¸å¦
+	 * 			æ’­æ”¾å£°éŸ³ï¼Œä»¥åŠä½ç½®å®½é«˜ç­‰ä¿¡æ¯
 	 * 
 	 * @author divhee
 	 */
 	public class Interlude {
 
 		/**
-		 * ¶ÔÓ¦µÄIndexÃû×Ö±ãÓÚ²éÕÒ
+		 * å¯¹åº”çš„Indexåå­—ä¾¿äºæŸ¥æ‰¾
 		 */
 		public String myIndex = null;
 
 		/**
-		 * ¸Ã¶¯»­Òª¶¯»­µÄÃû×Ö±ãÓÚ²éÕÒ
+		 * è¯¥åŠ¨ç”»è¦åŠ¨ç”»çš„åå­—ä¾¿äºæŸ¥æ‰¾
 		 */
 		public String name = null;
 
 		/**
-		 * ¸Ã¶¯»­ÒªÒªÏÔÊ¾µÄÍ¼Æ¬×ÜÊı
+		 * è¯¥åŠ¨ç”»è¦è¦æ˜¾ç¤ºçš„å›¾ç‰‡æ€»æ•°
 		 */
 		public int ImgSumNumber = 0;
 
 		/**
-		 * ¸Ã¶¯»­ÒªÍ¼Æ¬¿ªÊ¼µÄIDºÅ£¬Õâ¸öÁ¬Ğø×ÅÀ´
+		 * è¯¥åŠ¨ç”»è¦å›¾ç‰‡å¼€å§‹çš„IDå·ï¼Œè¿™ä¸ªè¿ç»­ç€æ¥
 		 */
 		public int ImgStartId = 0;
 
 		/**
-		 * ¸Ã¶¯»­ÒªÏÔÊ¾µÄÍ¼Æ¬µ±Ç°µÄĞòºÅ
+		 * è¯¥åŠ¨ç”»è¦æ˜¾ç¤ºçš„å›¾ç‰‡å½“å‰çš„åºå·
 		 */
 		public int ImgCurrentNumber = 0;
 
 		/**
-		 * ¸Ã¶¯»­ÒªÒª²¥·ÅµÄÉùÒô×ÜÊı
+		 * è¯¥åŠ¨ç”»è¦è¦æ’­æ”¾çš„å£°éŸ³æ€»æ•°
 		 */
 		public int SndSumNumber = 0;
 
 		/**
-		 * ¸Ã¶¯»­Òª²¥·ÅÉùÒôµÄIDºÅ
+		 * è¯¥åŠ¨ç”»è¦æ’­æ”¾å£°éŸ³çš„IDå·
 		 */
 		public int SndPlayerID[] = null;
 
 		/**
-		 * ¸Ã¶¯»­Òª²¥·ÅµÄÉùÒôµÄÊµÀı
+		 * è¯¥åŠ¨ç”»è¦æ’­æ”¾çš„å£°éŸ³çš„å®ä¾‹
 		 */
 		public MediaPlayer interludeMediaPlayer = null;
 
 		/**
-		 * ¸Ã¶¯»­ÊÇ·ñÒş²Ø²»ÏÔÊ¾
-		 * true Òş²Ø
-		 * false ÏÔÊ¾
+		 * è¯¥åŠ¨ç”»æ˜¯å¦éšè—ä¸æ˜¾ç¤º
+		 * true éšè—
+		 * false æ˜¾ç¤º
 		 */
 		public boolean isHide = true;
 
 		/**
-		 * ¸Ã¶¯»­ÊÇ·ñÑ­»·ÏÔÊ¾²¥·Å
-		 * true Ñ­»·
-		 * false ²»Ñ­»·
+		 * è¯¥åŠ¨ç”»æ˜¯å¦å¾ªç¯æ˜¾ç¤ºæ’­æ”¾
+		 * true å¾ªç¯
+		 * false ä¸å¾ªç¯
 		 */
 		public boolean isLooping = false;
 
 		/**
-		 * Í¼Æ¬µÄÏÔÊ¾Î»ÖÃ¼°Í¼Æ¬µÄ¿í¸ßÊôĞÔµÄString
+		 * å›¾ç‰‡çš„æ˜¾ç¤ºä½ç½®åŠå›¾ç‰‡çš„å®½é«˜å±æ€§çš„String
 		 */
 		public String imgSzPtInfo = null;
 		
 		/**
-		 * Í¼Æ¬µÄÏÔÊ¾Î»ÖÃ¼°Í¼Æ¬µÄ¿í¸ßµÄRect
-		 * leftºÍtop±íÊ¾Î»ÖÃµÄXºÍY
-		 * rightºÍbottom±íÊ¾¿íºÍ¸ß
+		 * å›¾ç‰‡çš„æ˜¾ç¤ºä½ç½®åŠå›¾ç‰‡çš„å®½é«˜çš„Rect
+		 * leftå’Œtopè¡¨ç¤ºä½ç½®çš„Xå’ŒY
+		 * rightå’Œbottomè¡¨ç¤ºå®½å’Œé«˜
 		 */
 		public Rect imgSzPtRect = new Rect(0, 0, 0, 0);
 		
 		/**
-		 * ¹¹Ôì
+		 * æ„é€ 
 		 */
 		public Interlude() {
 		}
 	}
 
 	/**
-	 * @aim ¶ÁÈ¡XMLÎÄ¼ş¼ĞÏÂµÄsettings.xmlÖĞµÄÅäÖÃĞÅÏ¢
+	 * @aim è¯»å–XMLæ–‡ä»¶å¤¹ä¸‹çš„settings.xmlä¸­çš„é…ç½®ä¿¡æ¯
 	 * 
-	 * 			1¡¢³õÊ¼»¯²åÍ¼¶¯»­µÄÏà¹ØĞÅÏ¢£¬ÊµÀı»¯Ã¿Ò»¸ö²åÍ¼¶¯»­Interlude
-	 * 			²¢ÇÒ°ÑËùÓĞµÄ²åÍ¼¶¯»­´æÈëÒ»¸öArrayList(gsptInterlude)ÖĞ
-	 * 			name ¶¯»­µÄÃû×Ö
-	 * 			isLooping ÊÇ·ñÑ­»·²¥·ÅÏÔÊ¾
-	 * 			ImgSumNumber ÒªÏÔÊ¾µÄÍ¼Æ¬×ÜÊı
-	 *          ImgStartId Í¼Æ¬¿ªÊ¼µÄIDºÅ£¬Õâ¸öÁ¬Ğø×ÅÀ´ SndSumNumberÒª²¥·ÅµÄÉùÒô×ÜÊı
-	 *          SndPlayerID ²¥·ÅÉùÒôµÄIDºÅ
+	 * 			1ã€åˆå§‹åŒ–æ’å›¾åŠ¨ç”»çš„ç›¸å…³ä¿¡æ¯ï¼Œå®ä¾‹åŒ–æ¯ä¸€ä¸ªæ’å›¾åŠ¨ç”»Interlude
+	 * 			å¹¶ä¸”æŠŠæ‰€æœ‰çš„æ’å›¾åŠ¨ç”»å­˜å…¥ä¸€ä¸ªArrayList(gsptInterlude)ä¸­
+	 * 			name åŠ¨ç”»çš„åå­—
+	 * 			isLooping æ˜¯å¦å¾ªç¯æ’­æ”¾æ˜¾ç¤º
+	 * 			ImgSumNumber è¦æ˜¾ç¤ºçš„å›¾ç‰‡æ€»æ•°
+	 *          ImgStartId å›¾ç‰‡å¼€å§‹çš„IDå·ï¼Œè¿™ä¸ªè¿ç»­ç€æ¥ SndSumNumberè¦æ’­æ”¾çš„å£°éŸ³æ€»æ•°
+	 *          SndPlayerID æ’­æ”¾å£°éŸ³çš„IDå·
 	 *          
-	 *          2¡¢³õÊ¼Í¼Æ¬µÄ»ù×¼ĞÅÏ¢
-	 *          baseWidth Í¼Æ¬µÄ»ù×¼¿í£¬Ä¬ÈÏÊÇ800
-	 *          baseHeight Í¼Æ¬µÄ»ù×¼¸ß£¬Ä¬ÈÏÊÇ480
+	 *          2ã€åˆå§‹å›¾ç‰‡çš„åŸºå‡†ä¿¡æ¯
+	 *          baseWidth å›¾ç‰‡çš„åŸºå‡†å®½ï¼Œé»˜è®¤æ˜¯800
+	 *          baseHeight å›¾ç‰‡çš„åŸºå‡†é«˜ï¼Œé»˜è®¤æ˜¯480
 	 *          
-	 *          3¡¢¶ÁÈ¡ViewPagerÖĞÃ¿Ò»ÆÁ¶ÔÓ¦µÄ°´Å¥µÄÌø×ª¼°Ê¤ÀûºóµÄ¶¯»­ĞÅÏ¢
-	 *          imgbtnsum Í¼Æ¬°´Å¥µÄ×ÜÊı
-	 *          imgbtnid Í¼Æ¬°´Å¥µÄIDºÅ
-	 *          imgdstptid ¶ÔÓ¦ÒªÆ´Í¼µÄÍ¼Æ¬IDºÅ
-	 *          InterludeInfoName ¶ÔÓ¦Æ´Í¼³É¹¦ºóÒªÏÔÊ¾µÄ¶¯»­µÄ¶¯»­Ãû
-	 *          alreadypass ÊÇ·ñÒÑ¾­Í¨¹ıÁË
+	 *          3ã€è¯»å–ViewPagerä¸­æ¯ä¸€å±å¯¹åº”çš„æŒ‰é’®çš„è·³è½¬åŠèƒœåˆ©åçš„åŠ¨ç”»ä¿¡æ¯
+	 *          imgbtnsum å›¾ç‰‡æŒ‰é’®çš„æ€»æ•°
+	 *          imgbtnid å›¾ç‰‡æŒ‰é’®çš„IDå·
+	 *          imgdstptid å¯¹åº”è¦æ‹¼å›¾çš„å›¾ç‰‡IDå·
+	 *          InterludeInfoName å¯¹åº”æ‹¼å›¾æˆåŠŸåè¦æ˜¾ç¤ºçš„åŠ¨ç”»çš„åŠ¨ç”»å
+	 *          alreadypass æ˜¯å¦å·²ç»é€šè¿‡äº†
 	 *          
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	public void initXmlConfigInfo() {
 
-		// »ñÈ¡SharedPreferences¶ÔÏó
+		// è·å–SharedPreferenceså¯¹è±¡
 		if (gsptSharedPreferences == null){
 			gsptSharedPreferences = frameContext.getSharedPreferences(gstpSpWinPassConfig, Context.MODE_PRIVATE);
 		}
-		// ³õÊ¼»¯¸öÊı¼°±í
+		// åˆå§‹åŒ–ä¸ªæ•°åŠè¡¨
 		if (gsptInterlude != null && gsptInterlude.size() > 0) {
 			gsptInterlude.clear();
 		}
 		Resources res = frameContext.getResources();
 		XmlResourceParser xrp = res.getXml(R.xml.settings);
 		try {
-			// ÅĞ¶ÏÊÇ·ñµ½ÁËÎÄ¼şµÄ½áÎ²
+			// åˆ¤æ–­æ˜¯å¦åˆ°äº†æ–‡ä»¶çš„ç»“å°¾
 			while (xrp.getEventType() != XmlResourceParser.END_DOCUMENT) {
-				// ÎÄ¼şµÄÄÚÈİµÄÆğÊ¼±êÇ©¿ªÊ¼£¬×¢ÒâÕâÀïµÄÆğÊ¼±êÇ©ÊÇsettings.xmlÎÄ¼şÀïÃæµÄ
-				// <resources>±êÇ©ÏÂÃæµÄ±êÇ©µÄÆğÊ¼Ãû×Ö
+				// æ–‡ä»¶çš„å†…å®¹çš„èµ·å§‹æ ‡ç­¾å¼€å§‹ï¼Œæ³¨æ„è¿™é‡Œçš„èµ·å§‹æ ‡ç­¾æ˜¯settings.xmlæ–‡ä»¶é‡Œé¢çš„
+				// <resources>æ ‡ç­¾ä¸‹é¢çš„æ ‡ç­¾çš„èµ·å§‹åå­—
 				if (xrp.getEventType() == XmlResourceParser.START_TAG) {
 					String tagname = xrp.getName();
 					if (tagname.equals("InterludeInfo")) {
@@ -751,23 +776,23 @@ public class GsptRunDataFrame {
 							tmpInterlude.imgSzPtRect.set(szpt[0], szpt[1], szpt[2], szpt[3]);
 						}
 
-						// Ìí¼Ó½øArrayList±í
+						// æ·»åŠ è¿›ArrayListè¡¨
 						gsptInterlude.add(tmpInterlude);
 						
 					} else if (tagname.equals("gamebaseinfo")) {
-						// »ñÈ¡Í¼Æ¬»ù×¼ĞÅÏ¢£¬ËùÓĞÍ¼Æ¬¶¼ÊÇÒÔÕâ¸ö»ù×¼À´ÅäÖÃµÄ
-						// Èç¹û¶ÁÈ¡²»µ½Ä¬ÈÏÊÇ800 * 480´óĞ¡
+						// è·å–å›¾ç‰‡åŸºå‡†ä¿¡æ¯ï¼Œæ‰€æœ‰å›¾ç‰‡éƒ½æ˜¯ä»¥è¿™ä¸ªåŸºå‡†æ¥é…ç½®çš„
+						// å¦‚æœè¯»å–ä¸åˆ°é»˜è®¤æ˜¯800 * 480å¤§å°
 						int count = 0;
 						baseWidth = xrp.getAttributeIntValue(count++, 1280);
 						baseHeight = xrp.getAttributeIntValue(count++, 800);
 						
 					} else if (tagname.equals("imgbtnatuoinfo") && ENTER_NORMAL == systemEnterMode) {
-						// »ñÈ¡Í¼Æ¬°´Å¥µÄÏà¹ØÅäÖÃĞÅÏ¢
-						// imgbtnsum Í¼Æ¬°´Å¥µÄ×ÜÊı
-						// imgbtnid Í¼Æ¬°´Å¥µÄIDºÅ
-						// imgdstptid ¶ÔÓ¦ÒªÆ´Í¼µÄÍ¼Æ¬IDºÅ
-						// InterludeInfoName ¶ÔÓ¦Æ´Í¼³É¹¦ºóÒªÏÔÊ¾µÄ¶¯»­µÄ¶¯»­Ãû
-						// nowinpass ÊÇ·ñÒÑ¾­Í¨¹ıÁË
+						// è·å–å›¾ç‰‡æŒ‰é’®çš„ç›¸å…³é…ç½®ä¿¡æ¯
+						// imgbtnsum å›¾ç‰‡æŒ‰é’®çš„æ€»æ•°
+						// imgbtnid å›¾ç‰‡æŒ‰é’®çš„IDå·
+						// imgdstptid å¯¹åº”è¦æ‹¼å›¾çš„å›¾ç‰‡IDå·
+						// InterludeInfoName å¯¹åº”æ‹¼å›¾æˆåŠŸåè¦æ˜¾ç¤ºçš„åŠ¨ç”»çš„åŠ¨ç”»å
+						// nowinpass æ˜¯å¦å·²ç»é€šè¿‡äº†
 						int count = 0;
 						gsptImgBtnAuto.currentindex = -1;
 						gsptImgBtnAuto.imgbtnsum = xrp.getAttributeIntValue(
@@ -794,12 +819,12 @@ public class GsptRunDataFrame {
 							}
 						}
 					} else if (tagname.equals("imgbtnatuoinfoext") && ENTER_EXTCALL == systemEnterMode) {
-						// »ñÈ¡Í¼Æ¬°´Å¥µÄÏà¹ØÅäÖÃĞÅÏ¢
-						// imgbtnsum Í¼Æ¬°´Å¥µÄ×ÜÊı
-						// imgbtnid Í¼Æ¬°´Å¥µÄIDºÅ
-						// imgdstptid ¶ÔÓ¦ÒªÆ´Í¼µÄÍ¼Æ¬IDºÅ
-						// InterludeInfoName ¶ÔÓ¦Æ´Í¼³É¹¦ºóÒªÏÔÊ¾µÄ¶¯»­µÄ¶¯»­Ãû
-						// nowinpass ÊÇ·ñÒÑ¾­Í¨¹ıÁË
+						// è·å–å›¾ç‰‡æŒ‰é’®çš„ç›¸å…³é…ç½®ä¿¡æ¯
+						// imgbtnsum å›¾ç‰‡æŒ‰é’®çš„æ€»æ•°
+						// imgbtnid å›¾ç‰‡æŒ‰é’®çš„IDå·
+						// imgdstptid å¯¹åº”è¦æ‹¼å›¾çš„å›¾ç‰‡IDå·
+						// InterludeInfoName å¯¹åº”æ‹¼å›¾æˆåŠŸåè¦æ˜¾ç¤ºçš„åŠ¨ç”»çš„åŠ¨ç”»å
+						// nowinpass æ˜¯å¦å·²ç»é€šè¿‡äº†
 						int count = 0;
 						gsptImgBtnAuto.currentindex = -1;
 						gsptImgBtnAuto.imgbtnsum = xrp.getAttributeIntValue(
@@ -843,9 +868,9 @@ public class GsptRunDataFrame {
 	}
 	
 	/**
-	 * @aim »ñÈ¡ÉÏÒ»´Î±£´æµÄÓÃ»§ÄÑ¶ÈÖµ
-	 * @param ÎŞ
-	 * @return ÄÑ¶ÈÖµ
+	 * @aim è·å–ä¸Šä¸€æ¬¡ä¿å­˜çš„ç”¨æˆ·éš¾åº¦å€¼
+	 * @param æ— 
+	 * @return éš¾åº¦å€¼
 	 */
 	public int readSPUserAgeLevelConfig() {
 //		if (gsptSharedPreferences == null){
@@ -868,12 +893,12 @@ public class GsptRunDataFrame {
 	}
 	
 	/**
-	 * @aim Äê¼¶¸Ä±ä£¬¶ÁÈ¡µ±Ç°Äê¼¶µÄÅäÖÃÖµ
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @aim å¹´çº§æ”¹å˜ï¼Œè¯»å–å½“å‰å¹´çº§çš„é…ç½®å€¼
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	public void readSPConfigLevelChange() {
-//		// »ñÈ¡SharedPreferences¶ÔÏó
+//		// è·å–SharedPreferenceså¯¹è±¡
 //		if (gsptSharedPreferences == null){
 //			gsptSharedPreferences = frameContext.getSharedPreferences(gstpSpWinPassConfig, Context.MODE_PRIVATE);
 //		}
@@ -892,11 +917,11 @@ public class GsptRunDataFrame {
 	}
 	
 	/**
-	 * @aim ¼ÇÂ¼ÔÚ/data/data/com.readboy.Q.Gspt/shared_prefsÄ¿Â¼ÏÂÉú³ÉÁËÒ»¸öGsptSpCfg.xmlÎÄ¼şÀï
-	 * 			°ÑÓÃ»§Íê³ÉÁËÄÄĞ©Æ´Í¼£¬ÄÄĞ©Æ´Í¼Ã»ÓĞÍê³É¼ÇÂ¼ÏÂÀ´£¬Ã»ÓĞÍê³ÉµÄ¼ÓËø£¬Íê³ÉÁËµÄ½âËø
+	 * @aim è®°å½•åœ¨/data/data/com.readboy.Q.Gspt/shared_prefsç›®å½•ä¸‹ç”Ÿæˆäº†ä¸€ä¸ªGsptSpCfg.xmlæ–‡ä»¶é‡Œ
+	 * 			æŠŠç”¨æˆ·å®Œæˆäº†å“ªäº›æ‹¼å›¾ï¼Œå“ªäº›æ‹¼å›¾æ²¡æœ‰å®Œæˆè®°å½•ä¸‹æ¥ï¼Œæ²¡æœ‰å®Œæˆçš„åŠ é”ï¼Œå®Œæˆäº†çš„è§£é”
 	 *          
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	public void saveSPPlayerConfig(boolean bLastExit) {
 		try {
@@ -908,7 +933,7 @@ public class GsptRunDataFrame {
 				msgCenter.uid = USER_ID_DEFAULT;
 				SystemDataBase.insertMsgCS(msgCenter);
 			} else {
-				// ´æÈëÊı¾İ
+				// å­˜å…¥æ•°æ®
 				MessageCenter msgCenter = null;
 				for (int number = 0; number < gsptImgBtnAuto.imgbtnsum ; number++) {
 					msgCenter = new MessageCenter();
@@ -931,7 +956,7 @@ public class GsptRunDataFrame {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-//		// »ñÈ¡SharedPreferences¶ÔÏó
+//		// è·å–SharedPreferenceså¯¹è±¡
 //		if (gsptSharedPreferences == null){
 //			gsptSharedPreferences = frameContext.getSharedPreferences(gstpSpWinPassConfig, Context.MODE_PRIVATE);
 //		}
@@ -947,7 +972,7 @@ public class GsptRunDataFrame {
 ////					Log.w("edugame", "===saveSPPlayerConfig===" + ltime);
 //					editor.commit();
 //				} else {
-//					// ´æÈëÊı¾İ
+//					// å­˜å…¥æ•°æ®
 //					Editor editor = gsptSharedPreferences.edit();
 ////					editor.clear();
 ////					editor.commit();
@@ -965,10 +990,10 @@ public class GsptRunDataFrame {
 	}
 
 	/**
-	 * @aim »ñÈ¡²åÍ¼¶¯»­µÄÊµÀıĞÅÏ¢
+	 * @aim è·å–æ’å›¾åŠ¨ç”»çš„å®ä¾‹ä¿¡æ¯
 	 * @param name
-	 *            ²åÍ¼¶¯»­Ãû
-	 * @return Interlude ÏàÓ¦µÄ²åÍ¼ÀàÊµÀıĞÅÏ¢
+	 *            æ’å›¾åŠ¨ç”»å
+	 * @return Interlude ç›¸åº”çš„æ’å›¾ç±»å®ä¾‹ä¿¡æ¯
 	 */
 	public Interlude getInterludeByName(String name) {
 
@@ -984,14 +1009,14 @@ public class GsptRunDataFrame {
 	}
 
 	/**
-	 * @aim »æÖÆÇúÏßÓÃµÄÀà
+	 * @aim ç»˜åˆ¶æ›²çº¿ç”¨çš„ç±»
 	 * @author Administrator
 	 *
 	 */
 	public class Cubic {
 
 		/**
-		 * ÖØÒª²ÎÊı£¬Á½µãÖ®¼ä·ÖÎª¼¸¶ÎÃè»­£¬Êı×ÖÓú´ó·Ö¶ÎÔ½¶à£¬Ãè»­µÄÇúÏß¾ÍÔ½¾«Ï¸.
+		 * é‡è¦å‚æ•°ï¼Œä¸¤ç‚¹ä¹‹é—´åˆ†ä¸ºå‡ æ®µæç”»ï¼Œæ•°å­—æ„ˆå¤§åˆ†æ®µè¶Šå¤šï¼Œæç”»çš„æ›²çº¿å°±è¶Šç²¾ç»†.
 		 */
 		public static final int STEPS = 12;		
 		
@@ -1001,7 +1026,7 @@ public class GsptRunDataFrame {
 		private float a = 0, b = 0, c = 0, d = 0;
 
 		/**
-		 * @aim ¹¹Ôìº¯Êı
+		 * @aim æ„é€ å‡½æ•°
 		 * @param a
 		 * @param b
 		 * @param c
@@ -1023,60 +1048,60 @@ public class GsptRunDataFrame {
 	}	
 	
 	/**
-	 * @aim °ÑÒ»ÕÅ³¤·½ĞÎ»òÕß¾ØĞÎµÄÍ¼Æ¬°´ÓÎÏ·µÈ¼¶ÇĞ¸î³É6¿é¡¢8¿é¡¢12¿ìµÈ²»¾ùµÄ¿éÊı
-	 * 			ÇĞ¸î³öÀ´µÄÍ¼Æ¬·ÖÎª³¤·½ĞÎ£¬Õı·½ĞÎ£¬Èı½ÇĞÎ£¬Æ½ĞĞËÄ±ßĞÎ£¬µÈ±ßÌİĞÎµÈ¡£
-	 * 			ÕâÀï±£´æÕâÕâĞ©ĞÎ×´µÄĞÅÏ¢
-	 * 			srcSharpPath Í¼Æ¬ÏÔÊ¾Â·¾¶
-	 * 			srcSharpRect Í¼Æ¬¾ØĞÎÇøÓò´óĞ¡
-	 * 			smlSharpPath ÏÔÊ¾Ğ¡Í¼Æ¬µÄÊ±ºòµÄÂ·¾¶
-	 * 			smlSharpRect ÏÔÊ¾Ğ¡Í¼Æ¬µÄ¾ØĞÎÇøÓò
-	 * 			srcPoint Í¼Æ¬ÔÚ´óÍ¼Æ¬ÀïµÄÖØĞÄÎ»ÖÃ
-	 * 			smlPoint ÔÚĞ¡Í¼Æ¬ÀïµÄÖØĞÄÎ»ÖÃ
-	 * 			imgViewInScrollView Òª´´½¨µÄĞ¡Í¼Æ¬ÊµÀıµÈ
+	 * @aim æŠŠä¸€å¼ é•¿æ–¹å½¢æˆ–è€…çŸ©å½¢çš„å›¾ç‰‡æŒ‰æ¸¸æˆç­‰çº§åˆ‡å‰²æˆ6å—ã€8å—ã€12å¿«ç­‰ä¸å‡çš„å—æ•°
+	 * 			åˆ‡å‰²å‡ºæ¥çš„å›¾ç‰‡åˆ†ä¸ºé•¿æ–¹å½¢ï¼Œæ­£æ–¹å½¢ï¼Œä¸‰è§’å½¢ï¼Œå¹³è¡Œå››è¾¹å½¢ï¼Œç­‰è¾¹æ¢¯å½¢ç­‰ã€‚
+	 * 			è¿™é‡Œä¿å­˜è¿™è¿™äº›å½¢çŠ¶çš„ä¿¡æ¯
+	 * 			srcSharpPath å›¾ç‰‡æ˜¾ç¤ºè·¯å¾„
+	 * 			srcSharpRect å›¾ç‰‡çŸ©å½¢åŒºåŸŸå¤§å°
+	 * 			smlSharpPath æ˜¾ç¤ºå°å›¾ç‰‡çš„æ—¶å€™çš„è·¯å¾„
+	 * 			smlSharpRect æ˜¾ç¤ºå°å›¾ç‰‡çš„çŸ©å½¢åŒºåŸŸ
+	 * 			srcPoint å›¾ç‰‡åœ¨å¤§å›¾ç‰‡é‡Œçš„é‡å¿ƒä½ç½®
+	 * 			smlPoint åœ¨å°å›¾ç‰‡é‡Œçš„é‡å¿ƒä½ç½®
+	 * 			imgViewInScrollView è¦åˆ›å»ºçš„å°å›¾ç‰‡å®ä¾‹ç­‰
 	 * @author divhee
 	 *
 	 */
 	public class GameSharps {
 
 		/**
-		 * Í¼ĞÎµÄ¾ØĞÎ
+		 * å›¾å½¢çš„çŸ©å½¢
 		 */
 		public Rect srcSharpRect = new Rect();
 
 		/**
-		 * Í¼ĞÎµÄÂ·¾¶
+		 * å›¾å½¢çš„è·¯å¾„
 		 */
 		public Path srcSharpPath = new Path();
 
 		/**
-		 * ÖØĞÄÎ»ÖÃ
+		 * é‡å¿ƒä½ç½®
 		 */
 		public Point srcPoint = new Point();
 
 		/**
-		 * ÖØĞÄÎ»ÖÃ
+		 * é‡å¿ƒä½ç½®
 		 */
 		public Point smlPoint = new Point();
 
 		/**
-		 * »æÖÆĞ¡Í¼µÄÊ±ºòµÄÂ·¾¶
+		 * ç»˜åˆ¶å°å›¾çš„æ—¶å€™çš„è·¯å¾„
 		 */
 		public Path smlSharpPath = new Path();
 
 		/**
-		 * »æÖÆĞ¡Í¼µÄÊ±ºòµÄÇøÓò
+		 * ç»˜åˆ¶å°å›¾çš„æ—¶å€™çš„åŒºåŸŸ
 		 */
 		public Rect smlSharpRect = new Rect();
 
 		/**
-		 * ¶ÔÓ¦µÄViewÔÚScrollViewµ±ÖĞ
+		 * å¯¹åº”çš„Viewåœ¨ScrollViewå½“ä¸­
 		 */
 		public ImageView imgViewInScrollView = null;
 
 	}
 	
 	/**
-	 * ÄêÁä¶Î£¬Í¼Æ¬Çø·ÖÓÃ
+	 * å¹´é¾„æ®µï¼Œå›¾ç‰‡åŒºåˆ†ç”¨
 	 */
 	public static final int levelSml = 0;
 	public static final int levelMid = 1;
@@ -1084,58 +1109,58 @@ public class GsptRunDataFrame {
 	public static final int levelSum = 3;
 	
 	/**
-	 * Ëæ»úÊı
+	 * éšæœºæ•°
 	 */
 	private static Random rand = new Random(System.currentTimeMillis());	
 	
 	/**
-	 * ÒªÇĞ¸î³öÀ´µÄÇøÓòĞÅÏ¢¶àÉÙ¸öÇøÓò
+	 * è¦åˆ‡å‰²å‡ºæ¥çš„åŒºåŸŸä¿¡æ¯å¤šå°‘ä¸ªåŒºåŸŸ
 	 */
 	private ArrayList<GameSharps> areaSharps = new ArrayList<GameSharps>();	
 	
 	/**
-	 * Æ´Í¼Í¼Æ¬µÄ¿í¶È
+	 * æ‹¼å›¾å›¾ç‰‡çš„å®½åº¦
 	 */
 	private static int gsptBmpWidth = 776;
 	
 	/**
-	 * Æ´Í¼Í¼Æ¬µÄ¸ß¶È
+	 * æ‹¼å›¾å›¾ç‰‡çš„é«˜åº¦
 	 */
 	private static int gsptBmpHeight = 566;	
 	
 	/**
-	 * ÄêÁä´óĞ¡
+	 * å¹´é¾„å¤§å°
 	 */
 	private static int userAgeLevel = 0;
 
 	/**
-	 * ÄÄĞ©ÒªÇĞ³ÉÌØÊâÍ¼ĞÎ£¬ÌİĞÎ»òÕßÆ½ĞĞËÄ±ßĞÎ
+	 * å“ªäº›è¦åˆ‡æˆç‰¹æ®Šå›¾å½¢ï¼Œæ¢¯å½¢æˆ–è€…å¹³è¡Œå››è¾¹å½¢
 	 */
 	private int[] espsharpstwo = new int[3];
 	
 	/**
-	 * ÄÄĞ©ÒªÇĞ³ÉÈı½ÇĞÎ
+	 * å“ªäº›è¦åˆ‡æˆä¸‰è§’å½¢
 	 */
 	private int[] espsharpsthree = new int[6];
 	
 	/**
-	 * ÌØÊâÍ¼ĞÎË³Ğò
+	 * ç‰¹æ®Šå›¾å½¢é¡ºåº
 	 */
 	private int espsharpsthreeindex = 0;	
 	
 	/**
-	 * @aim »ñÈ¡Ëæ¼´Êı
-	 * @param ÎŞ
-	 * @return int ĞÍËæ»úÊı£¬È¡¾ø¶ÔÖµ£¬È«ÊÇÕıÊı
+	 * @aim è·å–éšå³æ•°
+	 * @param æ— 
+	 * @return int å‹éšæœºæ•°ï¼Œå–ç»å¯¹å€¼ï¼Œå…¨æ˜¯æ­£æ•°
 	 */
 	public static int getRandom() {
 		return Math.abs(rand.nextInt());
 	}
 	
 	/**
-	 * @aim »ñÈ¡ËùÓĞĞÎ×´µÄĞÎ×´ÁĞ±í
-	 * @param ÎŞ
-	 * @return ArrayList<GameSharps>ĞÎ×´ÁĞ±í
+	 * @aim è·å–æ‰€æœ‰å½¢çŠ¶çš„å½¢çŠ¶åˆ—è¡¨
+	 * @param æ— 
+	 * @return ArrayList<GameSharps>å½¢çŠ¶åˆ—è¡¨
 	 */
 	public ArrayList<GameSharps> getGameSharps(){
 		
@@ -1143,14 +1168,14 @@ public class GsptRunDataFrame {
 	}
 	
 	/**
-	 * @aim ÕæÕıÍ¨¹ı¸ø¶¨¾ØĞÎ¿é£¬Éú³ÉÒ»¸ö¾ØĞÎĞÎ×´£¬¼ÇÂ¼¸ÃĞÎ×´µÄÏà¹ØĞÅÏ¢
-	 * 			Éú³ÉµÄÍ¼ĞÎĞÅÏ¢¼ÇÂ¼ÓÚArrayList±äÁ¿areaSharpsÖĞ
-	 * @param rtF Ô´¾ØĞÎÓÃÀ´Éú³É¾ØĞÎĞÎ×´
-	 * @return ÎŞ
+	 * @aim çœŸæ­£é€šè¿‡ç»™å®šçŸ©å½¢å—ï¼Œç”Ÿæˆä¸€ä¸ªçŸ©å½¢å½¢çŠ¶ï¼Œè®°å½•è¯¥å½¢çŠ¶çš„ç›¸å…³ä¿¡æ¯
+	 * 			ç”Ÿæˆçš„å›¾å½¢ä¿¡æ¯è®°å½•äºArrayListå˜é‡areaSharpsä¸­
+	 * @param rtF æºçŸ©å½¢ç”¨æ¥ç”ŸæˆçŸ©å½¢å½¢çŠ¶
+	 * @return æ— 
 	 */
 	public void getRealRectangleSharp_Son(RectF rtF) {
 		
-		// ²úÉú¾ØĞÎÍ¼ĞÎ
+		// äº§ç”ŸçŸ©å½¢å›¾å½¢
 		GameSharps ngameSharps = new GameSharps();
 		ngameSharps.srcSharpPath.addRect(rtF, Path.Direction.CW);
 		ngameSharps.srcSharpRect.set((int) rtF.left, (int) rtF.top, (int) rtF.right, (int) rtF.bottom);
@@ -1161,20 +1186,20 @@ public class GsptRunDataFrame {
 		ngameSharps.smlPoint.set((int) (rtF.width() / 2),
 				(int) (rtF.height() / 2));
 		
-		// Ëæ¼´´æÈëareaSharpsÖĞ£¬²»ÒªË³Ğò´æÈ¡£¬·ñÔòµ½Ê±ºò»¹ĞèÒª´òÂÒ
-		// Æ´Í¼µÄÍ¼ĞÎÁĞ±í²»ÄÜÓĞ¹æÂÉµÄË³Ğò°Ú·Å
+		// éšå³å­˜å…¥areaSharpsä¸­ï¼Œä¸è¦é¡ºåºå­˜å–ï¼Œå¦åˆ™åˆ°æ—¶å€™è¿˜éœ€è¦æ‰“ä¹±
+		// æ‹¼å›¾çš„å›¾å½¢åˆ—è¡¨ä¸èƒ½æœ‰è§„å¾‹çš„é¡ºåºæ‘†æ”¾
 		areaSharps.add(getRandom() % (areaSharps.size() + 1), ngameSharps);
 	}
 
 	/**
-	 * @aim ÕæÕıÍ¨¹ı¸ø¶¨¾ØĞÎ¿é£¬Éú³ÉÒ»¸öÈı½ÇĞÎĞÎ×´£¬¼ÇÂ¼¸ÃĞÎ×´µÄÏà¹ØĞÅÏ¢
-	 * 			ÇĞ¸îÈı½ÇĞÎ·ÖÇĞ¸îÏßÊÇ"/"»òÕß"\"(×¢£º1±í"/" 2±í"\")
-	 * 			ÇĞ¸îÏßÊÇ"/"ÔòÇĞ¸îÏß×ó±ßµÄÎªµÚÒ»¸öÈı½ÇĞÎ£¬ÓÒ±ßÎªµÚ¶ş¸öÈı½ÇĞÎ
-	 * 			ÇĞ¸îÏßÊÇ"\"ÔòÇĞ¸îÏß×ó±ßµÄÎªµÚÒ»¸öÈı½ÇĞÎ£¬ÓÒ±ßÎªµÚ¶ş¸öÈı½ÇĞÎ
-	 * @param rtF Ô´¾ØĞÎÓÃÀ´Éú³ÉÈı½ÇĞÎ
-	 * @param leftRight ÇĞ¸îÏßÊÇ"/"»¹ÊÇ"\"
-	 * @param cutLeftRight È¡µÚÒ»¸öÈı½ÇĞÎ»¹ÊÇµÚ¶ş¸öÈı½ÇĞÎ
-	 * @return ÎŞ
+	 * @aim çœŸæ­£é€šè¿‡ç»™å®šçŸ©å½¢å—ï¼Œç”Ÿæˆä¸€ä¸ªä¸‰è§’å½¢å½¢çŠ¶ï¼Œè®°å½•è¯¥å½¢çŠ¶çš„ç›¸å…³ä¿¡æ¯
+	 * 			åˆ‡å‰²ä¸‰è§’å½¢åˆ†åˆ‡å‰²çº¿æ˜¯"/"æˆ–è€…"\"(æ³¨ï¼š1è¡¨"/" 2è¡¨"\")
+	 * 			åˆ‡å‰²çº¿æ˜¯"/"åˆ™åˆ‡å‰²çº¿å·¦è¾¹çš„ä¸ºç¬¬ä¸€ä¸ªä¸‰è§’å½¢ï¼Œå³è¾¹ä¸ºç¬¬äºŒä¸ªä¸‰è§’å½¢
+	 * 			åˆ‡å‰²çº¿æ˜¯"\"åˆ™åˆ‡å‰²çº¿å·¦è¾¹çš„ä¸ºç¬¬ä¸€ä¸ªä¸‰è§’å½¢ï¼Œå³è¾¹ä¸ºç¬¬äºŒä¸ªä¸‰è§’å½¢
+	 * @param rtF æºçŸ©å½¢ç”¨æ¥ç”Ÿæˆä¸‰è§’å½¢
+	 * @param leftRight åˆ‡å‰²çº¿æ˜¯"/"è¿˜æ˜¯"\"
+	 * @param cutLeftRight å–ç¬¬ä¸€ä¸ªä¸‰è§’å½¢è¿˜æ˜¯ç¬¬äºŒä¸ªä¸‰è§’å½¢
+	 * @return æ— 
 	 */
 	public void getRealTriangleSharp_Son(RectF rtF, int leftRight, int cutLeftRight) {
 		
@@ -1183,7 +1208,7 @@ public class GsptRunDataFrame {
 			if (leftRight == 1) {
 				GameSharps ngameSharps = new GameSharps();
 				if (cutLeftRight == 1) {
-					// ×óÇĞµÚÒ»¸öÈı½ÇĞÎ
+					// å·¦åˆ‡ç¬¬ä¸€ä¸ªä¸‰è§’å½¢
 					ngameSharps.srcSharpPath.moveTo(rtF.left, rtF.top);
 					ngameSharps.srcSharpPath.lineTo(rtF.right, rtF.top);
 					ngameSharps.srcSharpPath.lineTo(rtF.left, rtF.bottom);
@@ -1198,7 +1223,7 @@ public class GsptRunDataFrame {
 					ngameSharps.smlPoint.set((int) (rtF.width() * 1 / 4),
 							(int) (rtF.height() * 1 / 4));
 				} else if (cutLeftRight == 2) {
-					// ×óÇĞµÚ¶ş¸öÈı½ÇĞÎ
+					// å·¦åˆ‡ç¬¬äºŒä¸ªä¸‰è§’å½¢
 					ngameSharps.srcSharpPath.moveTo(rtF.right, rtF.bottom);
 					ngameSharps.srcSharpPath.lineTo(rtF.right, rtF.top);
 					ngameSharps.srcSharpPath.lineTo(rtF.left, rtF.bottom);
@@ -1216,13 +1241,13 @@ public class GsptRunDataFrame {
 				ngameSharps.srcSharpRect.set((int) rtF.left, (int) rtF.top, (int) rtF.right, (int) rtF.bottom);
 				ngameSharps.smlSharpRect.set(0, 0, (int) rtF.width(), (int) rtF.height());
 				
-				// Ëæ¼´´æÈëareaSharpsÖĞ£¬²»ÒªË³Ğò´æÈ¡£¬·ñÔòµ½Ê±ºò»¹ĞèÒª´òÂÒ
-				// Æ´Í¼µÄÍ¼ĞÎÁĞ±í²»ÄÜÓĞ¹æÂÉµÄË³Ğò°Ú·Å				
+				// éšå³å­˜å…¥areaSharpsä¸­ï¼Œä¸è¦é¡ºåºå­˜å–ï¼Œå¦åˆ™åˆ°æ—¶å€™è¿˜éœ€è¦æ‰“ä¹±
+				// æ‹¼å›¾çš„å›¾å½¢åˆ—è¡¨ä¸èƒ½æœ‰è§„å¾‹çš„é¡ºåºæ‘†æ”¾				
 				areaSharps.add(getRandom() % (areaSharps.size() + 1), ngameSharps);
 			} else if (leftRight == 2) {
 				GameSharps ngameSharps = new GameSharps();
 				if (cutLeftRight == 1) {
-					// ÓÒÇĞµÚÒ»¸öÈı½ÇĞÎ
+					// å³åˆ‡ç¬¬ä¸€ä¸ªä¸‰è§’å½¢
 					ngameSharps.srcSharpPath.moveTo(rtF.left, rtF.top);
 					ngameSharps.srcSharpPath.lineTo(rtF.left, rtF.bottom);
 					ngameSharps.srcSharpPath.lineTo(rtF.right, rtF.bottom);
@@ -1237,7 +1262,7 @@ public class GsptRunDataFrame {
 					ngameSharps.smlPoint.set((int) (rtF.width() * 1 / 4),
 							(int) (rtF.height() * 3 / 4));
 				} else if (cutLeftRight == 2) {
-					// ÓÒÇĞµÚ¶ş¸öÈı½ÇĞÎ
+					// å³åˆ‡ç¬¬äºŒä¸ªä¸‰è§’å½¢
 					ngameSharps.srcSharpPath.moveTo(rtF.left, rtF.top);
 					ngameSharps.srcSharpPath.lineTo(rtF.right, rtF.top);
 					ngameSharps.srcSharpPath.lineTo(rtF.right, rtF.bottom);
@@ -1256,20 +1281,20 @@ public class GsptRunDataFrame {
 				ngameSharps.srcSharpRect.set((int) rtF.left, (int) rtF.top, (int) rtF.right, (int) rtF.bottom);
 				ngameSharps.smlSharpRect.set(0, 0, (int) rtF.width(), (int) rtF.height());
 				
-				// Ëæ¼´´æÈëareaSharpsÖĞ£¬²»ÒªË³Ğò´æÈ¡£¬·ñÔòµ½Ê±ºò»¹ĞèÒª´òÂÒ
-				// Æ´Í¼µÄÍ¼ĞÎÁĞ±í²»ÄÜÓĞ¹æÂÉµÄË³Ğò°Ú·Å				
+				// éšå³å­˜å…¥areaSharpsä¸­ï¼Œä¸è¦é¡ºåºå­˜å–ï¼Œå¦åˆ™åˆ°æ—¶å€™è¿˜éœ€è¦æ‰“ä¹±
+				// æ‹¼å›¾çš„å›¾å½¢åˆ—è¡¨ä¸èƒ½æœ‰è§„å¾‹çš„é¡ºåºæ‘†æ”¾				
 				areaSharps.add(getRandom() % (areaSharps.size() + 1), ngameSharps);
 			}
 		}
 	}
 
 	/**
-	 * @aim ÕæÕıÍ¨¹ı¸ø¶¨¾ØĞÎ¿é£¬Éú³ÉÁ½¸öÈı½ÇĞÎĞÎ×´£¬ÒÔ¼°Ò»¸öÌİĞÎ»òÕßÆ½ĞĞËÄ±ßĞÎ¼ÇÂ¼¸ÃĞÎ×´µÄÏà¹ØĞÅÏ¢
-	 * 			ÇĞ¸îÈı½ÇĞÎ·ÖÇĞ¸îÏßÊÇ"/"»òÕß"\"(×¢£º1±í"/" 2±í"\")
-	 * @param rtF1 ¸ø¶¨×ó±ß¾ØĞÎÓÃÓÚÉú³É×ó±ßµÄµÚ¶ş¸öÈı½ÇĞÎ¡¢ºÏ²¢µ½ÌİĞÎ»òÕßÆ½ĞĞËÄ±ßĞÎÖĞ
-	 * @param rtF2 ¸ø¶¨ÖĞ¼ä¾ØĞÎÓÃÓÚÉú³ÉÌİĞÎ»òÕßÆ½ĞĞËÄ±ßĞÎ
-	 * @param rtF3 ¸ø¶¨×ó±ß¾ØĞÎÓÃÓÚÉú³ÉÓÒ±ßµÄµÚÒ»¸öÈı½ÇĞÎ¡¢ºÏ²¢µ½ÌİĞÎ»òÕßÆ½ĞĞËÄ±ßĞÎÖĞ
-	 * @param leftRight ×öÇĞ»¹ÊÇÓÖÇĞ
+	 * @aim çœŸæ­£é€šè¿‡ç»™å®šçŸ©å½¢å—ï¼Œç”Ÿæˆä¸¤ä¸ªä¸‰è§’å½¢å½¢çŠ¶ï¼Œä»¥åŠä¸€ä¸ªæ¢¯å½¢æˆ–è€…å¹³è¡Œå››è¾¹å½¢è®°å½•è¯¥å½¢çŠ¶çš„ç›¸å…³ä¿¡æ¯
+	 * 			åˆ‡å‰²ä¸‰è§’å½¢åˆ†åˆ‡å‰²çº¿æ˜¯"/"æˆ–è€…"\"(æ³¨ï¼š1è¡¨"/" 2è¡¨"\")
+	 * @param rtF1 ç»™å®šå·¦è¾¹çŸ©å½¢ç”¨äºç”Ÿæˆå·¦è¾¹çš„ç¬¬äºŒä¸ªä¸‰è§’å½¢ã€åˆå¹¶åˆ°æ¢¯å½¢æˆ–è€…å¹³è¡Œå››è¾¹å½¢ä¸­
+	 * @param rtF2 ç»™å®šä¸­é—´çŸ©å½¢ç”¨äºç”Ÿæˆæ¢¯å½¢æˆ–è€…å¹³è¡Œå››è¾¹å½¢
+	 * @param rtF3 ç»™å®šå·¦è¾¹çŸ©å½¢ç”¨äºç”Ÿæˆå³è¾¹çš„ç¬¬ä¸€ä¸ªä¸‰è§’å½¢ã€åˆå¹¶åˆ°æ¢¯å½¢æˆ–è€…å¹³è¡Œå››è¾¹å½¢ä¸­
+	 * @param leftRight åšåˆ‡è¿˜æ˜¯åˆåˆ‡
 	 * @param cutLeftRight
 	 */
 	public void getRealQuadrangleSharp_Son(RectF rtF1, RectF rtF2, RectF rtF3,
@@ -1349,8 +1374,8 @@ public class GsptRunDataFrame {
 		ngameSharps.srcPoint.set((int) (rtF2.left + rtF2.width() / 2), (int) (rtF2.top + rtF2.height() / 2));
 		ngameSharps.smlPoint.set((int) (rtF2.width() / 2), (int) (rtF2.height() / 2));
 		
-		// Ëæ¼´´æÈëareaSharpsÖĞ£¬²»ÒªË³Ğò´æÈ¡£¬·ñÔòµ½Ê±ºò»¹ĞèÒª´òÂÒ
-		// Æ´Í¼µÄÍ¼ĞÎÁĞ±í²»ÄÜÓĞ¹æÂÉµÄË³Ğò°Ú·Å		
+		// éšå³å­˜å…¥areaSharpsä¸­ï¼Œä¸è¦é¡ºåºå­˜å–ï¼Œå¦åˆ™åˆ°æ—¶å€™è¿˜éœ€è¦æ‰“ä¹±
+		// æ‹¼å›¾çš„å›¾å½¢åˆ—è¡¨ä¸èƒ½æœ‰è§„å¾‹çš„é¡ºåºæ‘†æ”¾		
 		areaSharps.add(getRandom() % (areaSharps.size() + 1), ngameSharps);
 		
 		// Log.w("divhee_edugame", "==getQuadrangleSharp==15=(" + rtF1.left +
@@ -1364,59 +1389,59 @@ public class GsptRunDataFrame {
 	}
 
 	/**
-	 * @aim µÍÄÑ¶È£¬·Ç¿Õ¾ØĞÎÈ«²¿Éú³É¾ØĞÎĞÎ×´
-	 * @param rtF1 µÚÒ»¸öÔ´¾ØĞÎ
-	 * @param rtF2 µÚ¶ş¸öÔ´¾ØĞÎ
-	 * @param rtF3 µÚÈı¸öÔ´¾ØĞÎ
-	 * @return ÎŞ
+	 * @aim ä½éš¾åº¦ï¼Œéç©ºçŸ©å½¢å…¨éƒ¨ç”ŸæˆçŸ©å½¢å½¢çŠ¶
+	 * @param rtF1 ç¬¬ä¸€ä¸ªæºçŸ©å½¢
+	 * @param rtF2 ç¬¬äºŒä¸ªæºçŸ©å½¢
+	 * @param rtF3 ç¬¬ä¸‰ä¸ªæºçŸ©å½¢
+	 * @return æ— 
 	 */
 	public void getSharpTypeRectangle(RectF rtF1, RectF rtF2, RectF rtF3) {
 		
-		// Éú³ÉµÚÒ»¸ö¾ØĞÎĞÎ×´
+		// ç”Ÿæˆç¬¬ä¸€ä¸ªçŸ©å½¢å½¢çŠ¶
 		if (rtF1 != null && !rtF1.isEmpty()) {
 			getRealRectangleSharp_Son(rtF1);
 		}
 		
-		// Éú³ÉµÚ¶ş¸ö¾ØĞÎĞÎ×´
+		// ç”Ÿæˆç¬¬äºŒä¸ªçŸ©å½¢å½¢çŠ¶
 		if (rtF2 != null && !rtF2.isEmpty()) {
 			getRealRectangleSharp_Son(rtF2);
 		}
 		
-		// Éú³ÉµÚÈı¸ö¾ØĞÎĞÎ×´
+		// ç”Ÿæˆç¬¬ä¸‰ä¸ªçŸ©å½¢å½¢çŠ¶
 		if (rtF3 != null && !rtF3.isEmpty()) {
 			getRealRectangleSharp_Son(rtF3);
 		}
 	}
 
 	/**
-	 * @aim Éú²úÈı½ÇĞÎºÍ¾ØĞÎÍ¼ĞÎ
-	 * @param rtF1 Ô´¾ØĞÎÓÃÓÚÉú³ÉÁ½¸öÈı½ÇĞÎĞÎ×´
-	 * @param rtF2 Ô´¾ØĞÎÓÃÓÚÉú³É¾ØĞÎĞÎ×´
-	 * @param leftRight Èı½ÇĞÎÇĞ¸îÏßÊÇ"/"»¹ÊÇ"\"(×¢£º1±í"/" 2±í"\")
-	 * @return ÎŞ
+	 * @aim ç”Ÿäº§ä¸‰è§’å½¢å’ŒçŸ©å½¢å›¾å½¢
+	 * @param rtF1 æºçŸ©å½¢ç”¨äºç”Ÿæˆä¸¤ä¸ªä¸‰è§’å½¢å½¢çŠ¶
+	 * @param rtF2 æºçŸ©å½¢ç”¨äºç”ŸæˆçŸ©å½¢å½¢çŠ¶
+	 * @param leftRight ä¸‰è§’å½¢åˆ‡å‰²çº¿æ˜¯"/"è¿˜æ˜¯"\"(æ³¨ï¼š1è¡¨"/" 2è¡¨"\")
+	 * @return æ— 
 	 */
 	public void getSharpTypeTriangleRectangle(RectF rtF1, RectF rtF2, int leftRight) {
 		
-		// ÇĞ¸îÓë·ñ,0²»,1×óÇĞ¸î,2ÓÒÇĞ¸î
+		// åˆ‡å‰²ä¸å¦,0ä¸,1å·¦åˆ‡å‰²,2å³åˆ‡å‰²
 		if (leftRight == 1) {
 			if (rtF1 != null && !rtF1.isEmpty()) {
-				// ×óÇĞµÚÒ»¸öÈı½ÇĞÎ
+				// å·¦åˆ‡ç¬¬ä¸€ä¸ªä¸‰è§’å½¢
 				getRealTriangleSharp_Son(rtF1, leftRight, 1);
-				// ×óÇĞµÚ¶ş¸öÈı½ÇĞÎ
+				// å·¦åˆ‡ç¬¬äºŒä¸ªä¸‰è§’å½¢
 				getRealTriangleSharp_Son(rtF1, leftRight, 2);
 			}
-			// ³¤·½ĞÎ
+			// é•¿æ–¹å½¢
 			if (rtF2 != null && !rtF2.isEmpty()) {
 				getRealRectangleSharp_Son(rtF2);
 			}
 		} else if (leftRight == 2) {
 			if (rtF1 != null && !rtF1.isEmpty()) {
-				// ÓÒÇĞµÚÒ»¸öÈı½ÇĞÎ
+				// å³åˆ‡ç¬¬ä¸€ä¸ªä¸‰è§’å½¢
 				getRealTriangleSharp_Son(rtF1, leftRight, 1);
-				// ÓÒÇĞµÚ¶ş¸öÈı½ÇĞÎ
+				// å³åˆ‡ç¬¬äºŒä¸ªä¸‰è§’å½¢
 				getRealTriangleSharp_Son(rtF1, leftRight, 2);
 			}
-			// ³¤·½ĞÎ
+			// é•¿æ–¹å½¢
 			if (rtF2 != null && !rtF2.isEmpty()) {
 				getRealRectangleSharp_Son(rtF2);
 			}
@@ -1424,16 +1449,16 @@ public class GsptRunDataFrame {
 	}
 
 	/**
-	 * @aim Í¨¹ıÈı¸ö¾ØĞÎ£¬ÇĞ¸î³ÉÁ´Á½¸öÈı½ÇĞĞĞÎ×´ºÍÒ»¸öÌİĞÎĞÎ×´(»òÆ½ĞĞËÄ±ßĞÎĞÎ×´)¼ÇÂ¼ÇÒ±£´æĞÎ×´ĞÅÏ¢
-	 * 			ÕâÈı¸ö¾ØĞÎÒªÃ´topÒ»ÖÂ£¬ÒªÃ´leftÒ»ÖÂ£¬³öÖĞ¼ä¾ØĞÎÍâ£¬ÁíÍâÁ½¸ö¾ØĞÎÒ»Ñù´óĞ¡£¬
-	 * 			±£Ö¤ÇĞ³öÀ´µÄÆ½ĞĞËÄ±ßĞÎ»òÕßÌİĞÎÊÇÆ½ĞĞµÄ»òÕßµÈ±ßµÄ£¬Í¼Æ¬±È½ÏÃÀ¹Û
-	 * 			ÇĞ¸îÈı½ÇĞÎ·ÖÇĞ¸îÏßÊÇ"/"»òÕß"\"(×¢£º1±í"/" 2±í"\")
-	 * 			ÇĞ¸îÏßÊÇ"/"ÔòÇĞ¸îÏß×ó±ßµÄÎªµÚÒ»¸öÈı½ÇĞÎ£¬ÓÒ±ßÎªµÚ¶ş¸öÈı½ÇĞÎ
-	 * 			ÇĞ¸îÏßÊÇ"\"ÔòÇĞ¸îÏß×ó±ßµÄÎªµÚÒ»¸öÈı½ÇĞÎ£¬ÓÒ±ßÎªµÚ¶ş¸öÈı½ÇĞÎ
-	 * @param rtF1 µÚÈı¸öÔ´¾ØĞÎ
-	 * @param rtF2 µÚÈı¸öÔ´¾ØĞÎ
-	 * @param rtF3 µÚÈı¸öÔ´¾ØĞÎ
-	 * @return ÎŞ
+	 * @aim é€šè¿‡ä¸‰ä¸ªçŸ©å½¢ï¼Œåˆ‡å‰²æˆé“¾ä¸¤ä¸ªä¸‰è§’è¡Œå½¢çŠ¶å’Œä¸€ä¸ªæ¢¯å½¢å½¢çŠ¶(æˆ–å¹³è¡Œå››è¾¹å½¢å½¢çŠ¶)è®°å½•ä¸”ä¿å­˜å½¢çŠ¶ä¿¡æ¯
+	 * 			è¿™ä¸‰ä¸ªçŸ©å½¢è¦ä¹ˆtopä¸€è‡´ï¼Œè¦ä¹ˆleftä¸€è‡´ï¼Œå‡ºä¸­é—´çŸ©å½¢å¤–ï¼Œå¦å¤–ä¸¤ä¸ªçŸ©å½¢ä¸€æ ·å¤§å°ï¼Œ
+	 * 			ä¿è¯åˆ‡å‡ºæ¥çš„å¹³è¡Œå››è¾¹å½¢æˆ–è€…æ¢¯å½¢æ˜¯å¹³è¡Œçš„æˆ–è€…ç­‰è¾¹çš„ï¼Œå›¾ç‰‡æ¯”è¾ƒç¾è§‚
+	 * 			åˆ‡å‰²ä¸‰è§’å½¢åˆ†åˆ‡å‰²çº¿æ˜¯"/"æˆ–è€…"\"(æ³¨ï¼š1è¡¨"/" 2è¡¨"\")
+	 * 			åˆ‡å‰²çº¿æ˜¯"/"åˆ™åˆ‡å‰²çº¿å·¦è¾¹çš„ä¸ºç¬¬ä¸€ä¸ªä¸‰è§’å½¢ï¼Œå³è¾¹ä¸ºç¬¬äºŒä¸ªä¸‰è§’å½¢
+	 * 			åˆ‡å‰²çº¿æ˜¯"\"åˆ™åˆ‡å‰²çº¿å·¦è¾¹çš„ä¸ºç¬¬ä¸€ä¸ªä¸‰è§’å½¢ï¼Œå³è¾¹ä¸ºç¬¬äºŒä¸ªä¸‰è§’å½¢
+	 * @param rtF1 ç¬¬ä¸‰ä¸ªæºçŸ©å½¢
+	 * @param rtF2 ç¬¬ä¸‰ä¸ªæºçŸ©å½¢
+	 * @param rtF3 ç¬¬ä¸‰ä¸ªæºçŸ©å½¢
+	 * @return æ— 
 	 */
 	public void getSharpTypeTrapeziaTriangle(RectF rtF1, RectF rtF2, RectF rtF3) {
 		
@@ -1442,50 +1467,50 @@ public class GsptRunDataFrame {
 
 		if (rtF1 != null && !rtF1.isEmpty() && rtF2 != null && !rtF2.isEmpty()
 				&& rtF3 != null && !rtF3.isEmpty()) {
-			// ×îºóµÄ²ÎÊı±íÊ¾Ñ¡µÚÒ»¸ö»¹ÊÇµÚ¶ş¸öÈı½ÇĞÎ
+			// æœ€åçš„å‚æ•°è¡¨ç¤ºé€‰ç¬¬ä¸€ä¸ªè¿˜æ˜¯ç¬¬äºŒä¸ªä¸‰è§’å½¢
 			if (rtF1.left == rtF3.left) {
 				if (dirLeft == 1) {
-					// rtF1×óÇĞµÚÒ»¸ö
+					// rtF1å·¦åˆ‡ç¬¬ä¸€ä¸ª
 					getRealTriangleSharp_Son(rtF1, dirLeft, 1);
 				} else if (dirLeft == 2) {
-					// rtF1ÓÒÇĞµÚ¶ş¸ö
+					// rtF1å³åˆ‡ç¬¬äºŒä¸ª
 					getRealTriangleSharp_Son(rtF1, dirLeft, 2);
 				}
 				if (dirRight == 1) {
-					// rtF3 ×óÇĞµÚ¶ş¸ö
+					// rtF3 å·¦åˆ‡ç¬¬äºŒä¸ª
 					getRealTriangleSharp_Son(rtF3, dirRight, 2);
 				} else if (dirRight == 2) {
-					// rtF3ÓÒÇĞµÚÒ»¸ö
+					// rtF3å³åˆ‡ç¬¬ä¸€ä¸ª
 					getRealTriangleSharp_Son(rtF3, dirRight, 1);
 				}
 			} else if (rtF1.top == rtF3.top) {
-				// ×óÇĞ×óµÚÒ»¸öÈı½ÇĞĞ»òÕßÓÒÇĞ×óµÚÒ»¸öÈı½ÇĞÎ
+				// å·¦åˆ‡å·¦ç¬¬ä¸€ä¸ªä¸‰è§’è¡Œæˆ–è€…å³åˆ‡å·¦ç¬¬ä¸€ä¸ªä¸‰è§’å½¢
 				getRealTriangleSharp_Son(rtF1, dirLeft, 1);
 
-				// ×óÇĞÓÒµÚ¶ş¸öÈı½ÇĞÎ»òÕßÓÒÇĞÓÒµÚ¶ş¸öÈı½ÇĞÎ
+				// å·¦åˆ‡å³ç¬¬äºŒä¸ªä¸‰è§’å½¢æˆ–è€…å³åˆ‡å³ç¬¬äºŒä¸ªä¸‰è§’å½¢
 				getRealTriangleSharp_Son(rtF3, dirRight, 2);
 			}
 
-			// Éú²úËÄ½ÇĞĞ£¬µÈ±ßÌİĞÎ£¬Æ½ĞĞËÄ±ßĞÎ
+			// ç”Ÿäº§å››è§’è¡Œï¼Œç­‰è¾¹æ¢¯å½¢ï¼Œå¹³è¡Œå››è¾¹å½¢
 			getRealQuadrangleSharp_Son(rtF1, rtF2, rtF3, dirLeft, dirRight);
 		}
 	}
 
 	/**
-	 * @aim Í¨¹ıÈı¸ö¾ØĞÎ£¬ÇĞ¸î³ÉÁ´Á½¸öÈı½ÇĞĞĞÎ×´»òÕß¾ØĞÎĞÎ×´£¬¼ÇÂ¼ÇÒ±£´æĞÎ×´ĞÅÏ¢
-	 * 			¾ßÌåÒªÉú³ÉĞ©Ê²Ã´ĞÎ×´Òª¸ù¾İespsharpsthree³õÊ¼»¯µÄÊ±ºòÉè¶¨µÄÖµÀ´Éú³É
-	 * 			³õÊ¼»¯µÄÊ±ºòÒÔ±£Ö¤ÁËĞÎ×´µÄ¸öÊı£¬ÒÔ¼°Ëæ¼´ĞÔ
-	 * 			ÇĞ¸îÈı½ÇĞÎ·ÖÇĞ¸îÏßÊÇ"/"»òÕß"\"(×¢£º1±í"/" 2±í"\")
-	 * 			ÇĞ¸îÏßÊÇ"/"ÔòÇĞ¸îÏß×ó±ßµÄÎªµÚÒ»¸öÈı½ÇĞÎ£¬ÓÒ±ßÎªµÚ¶ş¸öÈı½ÇĞÎ
-	 * 			ÇĞ¸îÏßÊÇ"\"ÔòÇĞ¸îÏß×ó±ßµÄÎªµÚÒ»¸öÈı½ÇĞÎ£¬ÓÒ±ßÎªµÚ¶ş¸öÈı½ÇĞÎ 
-	 * @param rtF1 µÚÈı¸öÔ´¾ØĞÎ
-	 * @param rtF2 µÚÈı¸öÔ´¾ØĞÎ
-	 * @param rtF3 µÚÈı¸öÔ´¾ØĞÎ
-	 * @return ÎŞ
+	 * @aim é€šè¿‡ä¸‰ä¸ªçŸ©å½¢ï¼Œåˆ‡å‰²æˆé“¾ä¸¤ä¸ªä¸‰è§’è¡Œå½¢çŠ¶æˆ–è€…çŸ©å½¢å½¢çŠ¶ï¼Œè®°å½•ä¸”ä¿å­˜å½¢çŠ¶ä¿¡æ¯
+	 * 			å…·ä½“è¦ç”Ÿæˆäº›ä»€ä¹ˆå½¢çŠ¶è¦æ ¹æ®espsharpsthreeåˆå§‹åŒ–çš„æ—¶å€™è®¾å®šçš„å€¼æ¥ç”Ÿæˆ
+	 * 			åˆå§‹åŒ–çš„æ—¶å€™ä»¥ä¿è¯äº†å½¢çŠ¶çš„ä¸ªæ•°ï¼Œä»¥åŠéšå³æ€§
+	 * 			åˆ‡å‰²ä¸‰è§’å½¢åˆ†åˆ‡å‰²çº¿æ˜¯"/"æˆ–è€…"\"(æ³¨ï¼š1è¡¨"/" 2è¡¨"\")
+	 * 			åˆ‡å‰²çº¿æ˜¯"/"åˆ™åˆ‡å‰²çº¿å·¦è¾¹çš„ä¸ºç¬¬ä¸€ä¸ªä¸‰è§’å½¢ï¼Œå³è¾¹ä¸ºç¬¬äºŒä¸ªä¸‰è§’å½¢
+	 * 			åˆ‡å‰²çº¿æ˜¯"\"åˆ™åˆ‡å‰²çº¿å·¦è¾¹çš„ä¸ºç¬¬ä¸€ä¸ªä¸‰è§’å½¢ï¼Œå³è¾¹ä¸ºç¬¬äºŒä¸ªä¸‰è§’å½¢ 
+	 * @param rtF1 ç¬¬ä¸‰ä¸ªæºçŸ©å½¢
+	 * @param rtF2 ç¬¬ä¸‰ä¸ªæºçŸ©å½¢
+	 * @param rtF3 ç¬¬ä¸‰ä¸ªæºçŸ©å½¢
+	 * @return æ— 
 	 */
 	public void getSharpTypeRandomTriangleOrRectangle(RectF rtF1, RectF rtF2, RectF rtF3) {
 		
-		// Ëæ¼´×óÇĞ¸î»¹ÊÇÓÒÇĞ¸î
+		// éšå³å·¦åˆ‡å‰²è¿˜æ˜¯å³åˆ‡å‰²
 		int leftRight = 0;
 		for (int index = 0; index < 3; index++) {
 			leftRight = (getRandom() % 2) + 1;
@@ -1512,30 +1537,30 @@ public class GsptRunDataFrame {
 	}
 
 	/**
-	 * @aim Í¨¹ıÍæ¼ÒÄêÁä»ù±¾»®·ÖÓÎÏ·ÄÑ¶È£¬»ñÈ¡²»Í¬ÄÑ¶ÈÏÂµÄÆ´Í¼ĞÎ×´
-	 * 			levelSml 6¸öĞÎ×´×óÓÒ£¬È«ÊÇ³¤·½ĞÎ(¿ÉÄÜÓĞÕı·½ĞÎ)£¬ĞÎ×´Î»ÖÃ´óĞ¡Ëæ»ú
-	 * 			levelMid 9¸öĞÎ×´×óÓÒ£¬·Ö³¤·½ĞÎ(¿ÉÄÜÓĞÕı·½ĞÎ)¡¢Èı½ÇĞÎ£¬¶¼±ØĞëÓĞ£¬¸öÊıÎ»ÖÃ´óĞ¡Ëæ»ú
-	 * 			levelBig 12¸öĞÎ×´×óÓÒ£¬·ÖÆ½ĞĞËÄ±ßĞÎ»òÕßÌİĞÎ¡¢Èı½ÇĞÎ¡¢³¤·½ĞÎ(Õı·½ĞÎ)£¬
-	 * 			Èı½ÇĞÎºÍÆ½ĞĞËÄ±ßĞÎ»òÕßÌİĞÎ±ØĞëÓĞ£¬¸öÊıÎ»ÖÃ´óĞ¡Ëæ»ú
+	 * @aim é€šè¿‡ç©å®¶å¹´é¾„åŸºæœ¬åˆ’åˆ†æ¸¸æˆéš¾åº¦ï¼Œè·å–ä¸åŒéš¾åº¦ä¸‹çš„æ‹¼å›¾å½¢çŠ¶
+	 * 			levelSml 6ä¸ªå½¢çŠ¶å·¦å³ï¼Œå…¨æ˜¯é•¿æ–¹å½¢(å¯èƒ½æœ‰æ­£æ–¹å½¢)ï¼Œå½¢çŠ¶ä½ç½®å¤§å°éšæœº
+	 * 			levelMid 9ä¸ªå½¢çŠ¶å·¦å³ï¼Œåˆ†é•¿æ–¹å½¢(å¯èƒ½æœ‰æ­£æ–¹å½¢)ã€ä¸‰è§’å½¢ï¼Œéƒ½å¿…é¡»æœ‰ï¼Œä¸ªæ•°ä½ç½®å¤§å°éšæœº
+	 * 			levelBig 12ä¸ªå½¢çŠ¶å·¦å³ï¼Œåˆ†å¹³è¡Œå››è¾¹å½¢æˆ–è€…æ¢¯å½¢ã€ä¸‰è§’å½¢ã€é•¿æ–¹å½¢(æ­£æ–¹å½¢)ï¼Œ
+	 * 			ä¸‰è§’å½¢å’Œå¹³è¡Œå››è¾¹å½¢æˆ–è€…æ¢¯å½¢å¿…é¡»æœ‰ï¼Œä¸ªæ•°ä½ç½®å¤§å°éšæœº
 	 * 
-	 * @param rtF1 µÚÒ»¸öÔ´¾ØĞÎ
-	 * @param rtF2 µÚ¶ş¸öÔ´¾ØĞÎ
-	 * @param rtF3 µÚÈı¸öÔ´¾ØĞÎ
-	 * @return ÎŞ
+	 * @param rtF1 ç¬¬ä¸€ä¸ªæºçŸ©å½¢
+	 * @param rtF2 ç¬¬äºŒä¸ªæºçŸ©å½¢
+	 * @param rtF3 ç¬¬ä¸‰ä¸ªæºçŸ©å½¢
+	 * @return æ— 
 	 */
 	public void getSharpsByLevel(RectF rtF1, RectF rtF2, RectF rtF3, int needespsharp) {
 
 		if (userAgeLevel == levelSml) {
-			// ×î¼òµ¥µÄÄ£Ê½
+			// æœ€ç®€å•çš„æ¨¡å¼
 			getSharpTypeRectangle(rtF1, rtF2, rtF3);
 
 		} else if (userAgeLevel == levelMid) {
-			// ºÏ²¢Óë·ñ,0²»,1×î×ó±ß2×îÓÒ±ß3È«²¿
+			// åˆå¹¶ä¸å¦,0ä¸,1æœ€å·¦è¾¹2æœ€å³è¾¹3å…¨éƒ¨
 			int needadd = 0;
 			if (espsharpstwo[needespsharp] != 0) {
 				needadd = (getRandom() % 3) + 1;
 			}
-			// ÇĞ¸îÓë·ñ,1×óÇĞ¸î,2ÓÒÇĞ¸î£¬ºÏ²¢ºó±Ø¶¨ÇĞ
+			// åˆ‡å‰²ä¸å¦,1å·¦åˆ‡å‰²,2å³åˆ‡å‰²ï¼Œåˆå¹¶åå¿…å®šåˆ‡
 			int needcut = getRandom() % 3;
 			if (needadd == 0) {
 				getSharpTypeRectangle(rtF1, rtF2, rtF3);
@@ -1582,8 +1607,8 @@ public class GsptRunDataFrame {
 				}
 			}
 		} else if (userAgeLevel == levelBig) {
-			// ÌØÊâÆ½ĞĞËÄ±ßĞÎ ÌØÊâÌİĞÎ
-			// ÇĞ¸îÓë·ñ,1×óÇĞ¸î,2ÓÒÇĞ¸î£¬ÌØÊâµÄÊ±ºòÊÇÉÏÇĞ¸î£¬ÏÂÇĞ¸î
+			// ç‰¹æ®Šå¹³è¡Œå››è¾¹å½¢ ç‰¹æ®Šæ¢¯å½¢
+			// åˆ‡å‰²ä¸å¦,1å·¦åˆ‡å‰²,2å³åˆ‡å‰²ï¼Œç‰¹æ®Šçš„æ—¶å€™æ˜¯ä¸Šåˆ‡å‰²ï¼Œä¸‹åˆ‡å‰²
 			if ((needespsharp == 0 && espsharpstwo[0] == 1)
 					|| (needespsharp == 1 && espsharpstwo[1] == 1)
 					|| (needespsharp == 2 && espsharpstwo[2] == 1)) {
@@ -1595,7 +1620,7 @@ public class GsptRunDataFrame {
 					} else {
 						rtF1.bottom = rtF1.top + rtF3.height();
 					}
-					// Éú³ÉÆ½ĞĞËÄ±ßĞÎ»òÕßÌİĞÎÒÔ¼°Èı½ÇĞÎ
+					// ç”Ÿæˆå¹³è¡Œå››è¾¹å½¢æˆ–è€…æ¢¯å½¢ä»¥åŠä¸‰è§’å½¢
 					getSharpTypeTrapeziaTriangle(rtF1, rtF2, rtF3);
 				} else if (rtF1.top == rtF3.top) {
 					rtF2.left = rtF1.left;
@@ -1605,27 +1630,27 @@ public class GsptRunDataFrame {
 					} else {
 						rtF1.right = rtF1.left + rtF3.width();
 					}
-					// Éú³ÉÆ½ĞĞËÄ±ßĞÎ»òÕßÌİĞÎÒÔ¼°Èı½ÇĞÎ					
+					// ç”Ÿæˆå¹³è¡Œå››è¾¹å½¢æˆ–è€…æ¢¯å½¢ä»¥åŠä¸‰è§’å½¢					
 					getSharpTypeTrapeziaTriangle(rtF1, rtF2, rtF3);
 				}
 			} else {
 				
-				// Ëæ¼´Éú³ÉÈı½ÇĞÎĞÎ×´»òÕß¾ØĞÎĞÎ×´
+				// éšå³ç”Ÿæˆä¸‰è§’å½¢å½¢çŠ¶æˆ–è€…çŸ©å½¢å½¢çŠ¶
 				getSharpTypeRandomTriangleOrRectangle(rtF1, rtF2, rtF3);
 			}
 		}
 	}
 
 	/**
-	 * @aim ³õÊ¼»¯Â·¾¶£¬¼°Æä¼ÇÂ¼µÄÂ·¾¶ĞÅÏ¢
-	 * 			ÇĞ¸î³öÀ´µÄÍ¼ĞÎĞÎ×´ĞÅÏ¢¼ÇÂ¼ÓÚareaSharpsµ±ÖĞ
-	 * 			Ë¼Â·£º¹Ì¶¨Á½ĞĞ»òÕßÁ½ÁĞ£¬È»ºóÔÙÇĞ¸î£¬·Ö³É²»µÈµÄ¾Å¹¬¸ñ£¬È»ºó¸ù¾İÄÑ¶È
-	 * 			ºÏ²¢»òÕßÇĞ¸îºÏ²¢µÄ¾Å¹¬¸ñ£¬ÇĞ¸îÍêºóÆ´½Ó³ÉÆ½ĞĞËÄ±ßĞÎ»òÕßÌİĞÎ
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @aim åˆå§‹åŒ–è·¯å¾„ï¼ŒåŠå…¶è®°å½•çš„è·¯å¾„ä¿¡æ¯
+	 * 			åˆ‡å‰²å‡ºæ¥çš„å›¾å½¢å½¢çŠ¶ä¿¡æ¯è®°å½•äºareaSharpså½“ä¸­
+	 * 			æ€è·¯ï¼šå›ºå®šä¸¤è¡Œæˆ–è€…ä¸¤åˆ—ï¼Œç„¶åå†åˆ‡å‰²ï¼Œåˆ†æˆä¸ç­‰çš„ä¹å®«æ ¼ï¼Œç„¶åæ ¹æ®éš¾åº¦
+	 * 			åˆå¹¶æˆ–è€…åˆ‡å‰²åˆå¹¶çš„ä¹å®«æ ¼ï¼Œåˆ‡å‰²å®Œåæ‹¼æ¥æˆå¹³è¡Œå››è¾¹å½¢æˆ–è€…æ¢¯å½¢
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	public void initRandomSharpsPath() {
-		// ÓÎÏ·Äê¼¶µÈ¼¶
+		// æ¸¸æˆå¹´çº§ç­‰çº§
 //		if (GsptMainActivity.getSystemUserAge() == 1){
 //			userAgeLevel = (getRandom() % 10 <= 2) ? levelMid : levelSml;
 //		} else {
@@ -1643,7 +1668,7 @@ public class GsptRunDataFrame {
 			userAgeLevel = levelSml;
 			break;
 		}
-		// Í¼ĞÎ¼¯ºÏ
+		// å›¾å½¢é›†åˆ
 		if (areaSharps != null) {
 			if (areaSharps.size() > 0) {
 				areaSharps.clear();
@@ -1652,7 +1677,7 @@ public class GsptRunDataFrame {
 			areaSharps = new ArrayList<GameSharps>();
 		}
 
-		// ³õÊ¼»¯ÄÄĞ©ÒªÇĞ¸î³ÉÌİĞÎ»òÆ½ĞĞËÄ±ßĞÎ
+		// åˆå§‹åŒ–å“ªäº›è¦åˆ‡å‰²æˆæ¢¯å½¢æˆ–å¹³è¡Œå››è¾¹å½¢
 		espsharpstwo[0] = (getRandom() % 2);
 		espsharpstwo[1] = (getRandom() % 2);
 		espsharpstwo[2] = (getRandom() % 2);
@@ -1662,7 +1687,7 @@ public class GsptRunDataFrame {
 			esptwonumber++;
 		}
 		
-		// ³õÊ¼»¯ÄÄĞ©¾ØĞÎÒªÇĞ¸î³ÉÈı½ÇĞĞ
+		// åˆå§‹åŒ–å“ªäº›çŸ©å½¢è¦åˆ‡å‰²æˆä¸‰è§’è¡Œ
 		espsharpsthreeindex = 0;
 		for (int index = 0; index < espsharpsthree.length; index++) {
 			if (esptwonumber > 1) {
@@ -1682,17 +1707,17 @@ public class GsptRunDataFrame {
 			}
 		}
 
-		// 0ºáÏò£¬1ÊúÏò
+		// 0æ¨ªå‘ï¼Œ1ç«–å‘
 		RectF pathRect = new RectF(0, 0, 0, 0);
 		RectF tmpRectF1 = new RectF(0, 0, 0, 0);
 		RectF tmpRectF2 = new RectF(0, 0, 0, 0);
 		RectF tmpRectF3 = new RectF(0, 0, 0, 0);
 		
-		// ºáÏò¹Ì¶¨»¹ÊÇÊúÏò¹Ì¶¨
+		// æ¨ªå‘å›ºå®šè¿˜æ˜¯ç«–å‘å›ºå®š
 		int dirVHfinal = getRandom() % 2;
 		
-		// ÓĞ¼¸¸ù¹Ì¶¨ÓÃÓÚÄêÁäĞ¡µÄÊ±ºò£¬Í¼Æ¬·Ö¸îÊıÎª6¿é¾ØĞÎÓÃ
-		// dirLost == 0»òÕß 1£¬·Ö³É9¹¬¸ñ
+		// æœ‰å‡ æ ¹å›ºå®šç”¨äºå¹´é¾„å°çš„æ—¶å€™ï¼Œå›¾ç‰‡åˆ†å‰²æ•°ä¸º6å—çŸ©å½¢ç”¨
+		// dirLost == 0æˆ–è€… 1ï¼Œåˆ†æˆ9å®«æ ¼
 		int dirHold = 2;
 		int dirTimes = 2;
 		if (userAgeLevel == levelSml) {
@@ -1702,25 +1727,30 @@ public class GsptRunDataFrame {
 				dirTimes -= 1;
 			}
 		}
-		
-		// ³õÊ¼»¯ÒªÇĞ¸îµÄ»ù×¼¿í¸ß£¬ÄÜËæ»ú¶à¿íºÍ¶à¸ß 
+		if (App.getInstance().mScale>1.0f){
+			float w = 776*App.getInstance().mScale;
+			float h = 566*App.getInstance().mScale;
+			gsptBmpWidth=(int)w;
+			gsptBmpHeight=(int)h;
+		}
+		// åˆå§‹åŒ–è¦åˆ‡å‰²çš„åŸºå‡†å®½é«˜ï¼Œèƒ½éšæœºå¤šå®½å’Œå¤šé«˜ 
 		int basew0 = (gsptBmpWidth * 9 / 10) / 3;
 		int basew1 = (gsptBmpWidth * 1 / 10) / 2;
 		int baseh0 = (gsptBmpHeight * 9 / 10) / 3;
 		int baseh1 = (gsptBmpHeight * 1 / 10) / 2;
-		// ÒÔÇ°ÊÇËæ¼´£¬¸ù±¾²»»á¶ÔÆë£¬ÏÖÔÚ»á¶ÔÆëÁË¡£¹Ì¶¨Ëæ»ú
+		// ä»¥å‰æ˜¯éšå³ï¼Œæ ¹æœ¬ä¸ä¼šå¯¹é½ï¼Œç°åœ¨ä¼šå¯¹é½äº†ã€‚å›ºå®šéšæœº
 		int [] baserand = {getRandom(), getRandom(), getRandom(), getRandom(), getRandom(), getRandom()};
 		
 		pathRect.set(0, 0, 0, 0);
 		if (dirVHfinal == 0) {
-			// ÊúÏò¹Ì¶¨
+			// ç«–å‘å›ºå®š
 			for (int addx = 0; addx <= dirHold; addx++) {
 				pathRect.left = pathRect.right;
 				if (addx == dirHold) {
 					pathRect.right = gsptBmpWidth;
 				} else {
 					pathRect.right = pathRect.left + basew0 + (getRandom() % basew1);
-					// Ö»·ÖÁ½ÁĞ£¬¼òµ¥Ä£Ê½ÓĞĞ§
+					// åªåˆ†ä¸¤åˆ—ï¼Œç®€å•æ¨¡å¼æœ‰æ•ˆ
 					if (dirHold < dirTimes) {
 						pathRect.right += ((basew0 + (getRandom() % basew1)) / 2);
 					}
@@ -1733,7 +1763,7 @@ public class GsptRunDataFrame {
 						pathRect.bottom = gsptBmpHeight;
 					} else {
 						pathRect.bottom = pathRect.top + baseh0 + (baserand[addy] % baseh1);
-						// Ö»·ÖÁ½ĞĞ£¬¼òµ¥Ä£Ê½ÓĞĞ§
+						// åªåˆ†ä¸¤è¡Œï¼Œç®€å•æ¨¡å¼æœ‰æ•ˆ
 						if (dirTimes < dirHold) {
 							pathRect.bottom += ((baseh0 + (baserand[addy] % baseh1)) / 2);
 						}
@@ -1747,19 +1777,19 @@ public class GsptRunDataFrame {
 					}
 				}
 				
-				// ¸ù¾İÄêÁäµÈ¼¶Çø·ÖÓÎÏ·ÄÑ¶È£¬¸ù¾İÄÑ¶È»ñÈ¡ÕæÊµÂ·¾¶ĞÅÏ¢£¬È«²¿´æÓÚareaSharpsµ±ÖĞ
+				// æ ¹æ®å¹´é¾„ç­‰çº§åŒºåˆ†æ¸¸æˆéš¾åº¦ï¼Œæ ¹æ®éš¾åº¦è·å–çœŸå®è·¯å¾„ä¿¡æ¯ï¼Œå…¨éƒ¨å­˜äºareaSharpså½“ä¸­
 				getSharpsByLevel(tmpRectF1, tmpRectF2, tmpRectF3, addx);
 				
 			}
 		} else {
-			// ºáÏò¹Ì¶¨
+			// æ¨ªå‘å›ºå®š
 			for (int addy = 0; addy <= dirHold; addy++) {
 				pathRect.top = pathRect.bottom;
 				if (addy == dirHold) {
 					pathRect.bottom = gsptBmpHeight;
 				} else {
 					pathRect.bottom = pathRect.top + baseh0 + (getRandom() % baseh1);
-					// Ö»·ÖÁ½ĞĞ£¬¼òµ¥Ä£Ê½ÓĞĞ§
+					// åªåˆ†ä¸¤è¡Œï¼Œç®€å•æ¨¡å¼æœ‰æ•ˆ
 					if (dirHold < dirTimes) {
 						pathRect.bottom += ((baseh0 + (getRandom() % baseh1)) / 2);
 					}
@@ -1775,7 +1805,7 @@ public class GsptRunDataFrame {
 						pathRect.right = gsptBmpWidth;
 					} else {
 						pathRect.right = pathRect.left + basew0 + (baserand[addx] % basew1);
-						// Ö»·ÖÁ½ÁĞ£¬¼òµ¥Ä£Ê½ÓĞĞ§
+						// åªåˆ†ä¸¤åˆ—ï¼Œç®€å•æ¨¡å¼æœ‰æ•ˆ
 						if (dirTimes < dirHold) {
 							pathRect.right += ((basew0 + (baserand[addx] % basew1)) / 2);
 						}
@@ -1789,7 +1819,7 @@ public class GsptRunDataFrame {
 					}
 				}
 				
-				// ¸ù¾İÄêÁäµÈ¼¶Çø·ÖÓÎÏ·ÄÑ¶È£¬¸ù¾İÄÑ¶È»ñÈ¡ÕæÊµÂ·¾¶ĞÅÏ¢£¬È«²¿´æÓÚareaSharpsµ±ÖĞ
+				// æ ¹æ®å¹´é¾„ç­‰çº§åŒºåˆ†æ¸¸æˆéš¾åº¦ï¼Œæ ¹æ®éš¾åº¦è·å–çœŸå®è·¯å¾„ä¿¡æ¯ï¼Œå…¨éƒ¨å­˜äºareaSharpså½“ä¸­
 				getSharpsByLevel(tmpRectF1, tmpRectF2, tmpRectF3, addy);
 				
 			}
@@ -1797,7 +1827,7 @@ public class GsptRunDataFrame {
 	}	
 	
 	/**
-	 * ¼ÆËãÇúÏß.
+	 * è®¡ç®—æ›²çº¿.
 	 * 
 	 * @param x
 	 * @return
@@ -1847,7 +1877,7 @@ public class GsptRunDataFrame {
 	}	
 	
 	/**
-	 * @aim »ñÈ¡´ø°¼Ïİ»òÕßÍ»³öµÄ¾ØĞÎµÄÒ»Ìõ±ßµÄÂ·¾¶
+	 * @aim è·å–å¸¦å‡¹é™·æˆ–è€…çªå‡ºçš„çŸ©å½¢çš„ä¸€æ¡è¾¹çš„è·¯å¾„
 	 * @param points
 	 * @param x1
 	 * @param y1
@@ -1953,9 +1983,9 @@ public class GsptRunDataFrame {
 	}
 	
 	/**
-	 * @aim »ñÈ¡XºÍYÑÓÉìµÄ¿íºÍ¸ß
-	 * @param bExpandX X·½ÏòÉÏµÄÑÓÉì
-	 * @return int ÑÓÉìµÄÖµ
+	 * @aim è·å–Xå’ŒYå»¶ä¼¸çš„å®½å’Œé«˜
+	 * @param bExpandX Xæ–¹å‘ä¸Šçš„å»¶ä¼¸
+	 * @return int å»¶ä¼¸çš„å€¼
 	 */
 	public int getHardExpandXY(boolean bExpandX) {
 		if (bExpandX) {
@@ -1966,7 +1996,7 @@ public class GsptRunDataFrame {
 	}
 	
 	/**
-	 * @aim »ñÈ¡ÒªÀ©ÕÅµÄ¿íºÍ¸ß
+	 * @aim è·å–è¦æ‰©å¼ çš„å®½å’Œé«˜
 	 * @param rtF
 	 * @return
 	 */
@@ -2007,13 +2037,13 @@ public class GsptRunDataFrame {
 	}
 	
 	/**
-	 * @aim »ñÈ¡µ±Ç°µÄÂ·¾¶
+	 * @aim è·å–å½“å‰çš„è·¯å¾„
 	 * @param rtF
-	 * @param bSmallMode Ğ¡Í¼Ä£Ê½
+	 * @param bSmallMode å°å›¾æ¨¡å¼
 	 * @return
 	 */
 	public Path getCurveDrawPath(RectF rtF, boolean bSmallMode) {
-		// RectF´«Èë½øÀ´µÄ¸Ä±äÁË»áÓ°ÏìÍâ²¿µÄ£¬º¹
+		// RectFä¼ å…¥è¿›æ¥çš„æ”¹å˜äº†ä¼šå½±å“å¤–éƒ¨çš„ï¼Œæ±—
 		Path curvePath = new Path();
 		List<PointF> sumListPts = new LinkedList<PointF>();
 		List<Point> points = null;
@@ -2021,7 +2051,7 @@ public class GsptRunDataFrame {
 		List<Integer> points_y = new LinkedList<Integer>();
 		List<PointF> points_xy = new LinkedList<PointF>();
 		RectF expandRectF = getHardExpandWidthHeight(rtF);
-		// Â·¾¶³õÊ¼»¯
+		// è·¯å¾„åˆå§‹åŒ–
 		for (int iSide = 0 ; iSide < 4 ; iSide++) {
 			switch (iSide) {
 			case 0:
@@ -2038,7 +2068,7 @@ public class GsptRunDataFrame {
 				break;
 			}
 			if (bSmallMode) {
-				// ×öÒ»¸öÆ½ÒÆ´¦Àí£¬ÒòÎªÊÇÇúÏß£¬¿ÉÄÜ»á»æÖÆ³öÈ¥£¬ËùÒÔÆ½ÒÆÒ»ÏÂ
+				// åšä¸€ä¸ªå¹³ç§»å¤„ç†ï¼Œå› ä¸ºæ˜¯æ›²çº¿ï¼Œå¯èƒ½ä¼šç»˜åˆ¶å‡ºå»ï¼Œæ‰€ä»¥å¹³ç§»ä¸€ä¸‹
 				for (int i = 0 ; i < points.size() ; i++) {
 					points.get(i).set(points.get(i).x - (int)rtF.left + (int)expandRectF.left + getHardExpandXY(true) / 2, 
 							points.get(i).y - (int)rtF.top + (int)expandRectF.top + getHardExpandXY(false) / 2);
@@ -2065,7 +2095,7 @@ public class GsptRunDataFrame {
 				points_xy.add(new PointF(points.get(0)));
 				points_xy.add(new PointF(points.get(1)));
 			}
-			// ÏÈ°ÑËùÓĞµÄµã¼ÇÂ¼ÏÂÀ´£¬È»ºó×îºóÌí¼ÓÂ·¾¶
+			// å…ˆæŠŠæ‰€æœ‰çš„ç‚¹è®°å½•ä¸‹æ¥ï¼Œç„¶åæœ€åæ·»åŠ è·¯å¾„
 			switch (iSide) {
 			case 0:
 			case 1:
@@ -2082,7 +2112,7 @@ public class GsptRunDataFrame {
 				break;
 			}			
 		}
-		// ÕæÕı¿ªÊ¼Ìí¼Ópath
+		// çœŸæ­£å¼€å§‹æ·»åŠ path
 		for (int index = 0; index < sumListPts.size() ; index++) {
 			if (index == 0) {
 				curvePath.moveTo((int)sumListPts.get(index).x, (int)sumListPts.get(index).y);
@@ -2090,7 +2120,7 @@ public class GsptRunDataFrame {
 				curvePath.lineTo((int)sumListPts.get(index).x, (int)sumListPts.get(index).y);
 			}
 			if (index == sumListPts.size() - 1) {
-				// ¹¹³ÉÒ»¸ö·â±ÕÇúÏß
+				// æ„æˆä¸€ä¸ªå°é—­æ›²çº¿
 				curvePath.close();
 			}
 		}
@@ -2099,15 +2129,15 @@ public class GsptRunDataFrame {
 	}
 	
 	/**
-	 * @aim ÕæÕıÍ¨¹ı¸ø¶¨¾ØĞÎ¿é£¬Éú³ÉÒ»¸ö¾ØĞÎĞÎ×´£¬¼ÇÂ¼¸ÃĞÎ×´µÄÏà¹ØĞÅÏ¢
-	 * 			Éú³ÉµÄÍ¼ĞÎĞÅÏ¢¼ÇÂ¼ÓÚArrayList±äÁ¿areaSharpsÖĞ
-	 * 		ĞÂµÄĞ¡¾ØĞÎÇøÓò°üÀ¨Ô­À´µÄ´óĞ¡+ÉÏÏÂ»òÕß×óÓÒÍ»³öµÄ²¿·Ö+ÇúÏß¸¡¶¯µÄ¿í¸ß
-	 * 		(4¸ö·½ÏòÉÏµÄ¸¡¶¯²¿·Ö²»³¬¹ıÍ»³öµãµÄ¾àÀëµÄÒ»°ë)
-	 * @param rtF Ô´¾ØĞÎÓÃÀ´Éú³É¾ØĞÎĞÎ×´
-	 * @return ÎŞ
+	 * @aim çœŸæ­£é€šè¿‡ç»™å®šçŸ©å½¢å—ï¼Œç”Ÿæˆä¸€ä¸ªçŸ©å½¢å½¢çŠ¶ï¼Œè®°å½•è¯¥å½¢çŠ¶çš„ç›¸å…³ä¿¡æ¯
+	 * 			ç”Ÿæˆçš„å›¾å½¢ä¿¡æ¯è®°å½•äºArrayListå˜é‡areaSharpsä¸­
+	 * 		æ–°çš„å°çŸ©å½¢åŒºåŸŸåŒ…æ‹¬åŸæ¥çš„å¤§å°+ä¸Šä¸‹æˆ–è€…å·¦å³çªå‡ºçš„éƒ¨åˆ†+æ›²çº¿æµ®åŠ¨çš„å®½é«˜
+	 * 		(4ä¸ªæ–¹å‘ä¸Šçš„æµ®åŠ¨éƒ¨åˆ†ä¸è¶…è¿‡çªå‡ºç‚¹çš„è·ç¦»çš„ä¸€åŠ)
+	 * @param rtF æºçŸ©å½¢ç”¨æ¥ç”ŸæˆçŸ©å½¢å½¢çŠ¶
+	 * @return æ— 
 	 */
 	public void getHardRealRectangleSharp_Son(RectF rtF) {
-		// ²úÉúÍ»³ö»òÕß°¼ÏİµÄ¾ØĞÎÍ¼ĞÎ
+		// äº§ç”Ÿçªå‡ºæˆ–è€…å‡¹é™·çš„çŸ©å½¢å›¾å½¢
 		GameSharps ngameSharps = new GameSharps();
 		RectF expandRectF = getHardExpandWidthHeight(rtF);
 		ngameSharps.srcSharpPath.addPath(getCurveDrawPath(rtF, false));
@@ -2120,40 +2150,40 @@ public class GsptRunDataFrame {
 		ngameSharps.smlSharpPath.addPath(getCurveDrawPath(rtF, true));
 		ngameSharps.srcPoint.set((int) (rtF.left + rtF.width() / 2),
 				(int) (rtF.top + rtF.height() / 2));
-		// ÕâÀïÒª×¢ÒâÈ¡µ½ÕæÕıµÄÖĞĞÄµã£¬ÓëÔ­Í¼ÖØºÏµÄÖĞĞÄµã
-		// Ô­À´µÄÖĞĞÄµãÎª£¬Ô­À´µÄ¾ØĞÎ¿í(¸ß)µÄÒ»°ë+À©Õ¹µÄ¿í(¸ß)µÄÒ»°ë+×ó(ÉÏ)±ßÍ»³öµÄ²¿·Ö
+		// è¿™é‡Œè¦æ³¨æ„å–åˆ°çœŸæ­£çš„ä¸­å¿ƒç‚¹ï¼Œä¸åŸå›¾é‡åˆçš„ä¸­å¿ƒç‚¹
+		// åŸæ¥çš„ä¸­å¿ƒç‚¹ä¸ºï¼ŒåŸæ¥çš„çŸ©å½¢å®½(é«˜)çš„ä¸€åŠ+æ‰©å±•çš„å®½(é«˜)çš„ä¸€åŠ+å·¦(ä¸Š)è¾¹çªå‡ºçš„éƒ¨åˆ†
 		ngameSharps.smlPoint.set((int) ((rtF.width() + getHardExpandXY(true)) / 2 + expandRectF.left),
 				(int) ((rtF.height() + getHardExpandXY(false)) / 2 + expandRectF.top));
-		// Ëæ¼´´æÈëareaSharpsÖĞ£¬²»ÒªË³Ğò´æÈ¡£¬·ñÔòµ½Ê±ºò»¹ĞèÒª´òÂÒ
-		// Æ´Í¼µÄÍ¼ĞÎÁĞ±í²»ÄÜÓĞ¹æÂÉµÄË³Ğò°Ú·Å
+		// éšå³å­˜å…¥areaSharpsä¸­ï¼Œä¸è¦é¡ºåºå­˜å–ï¼Œå¦åˆ™åˆ°æ—¶å€™è¿˜éœ€è¦æ‰“ä¹±
+		// æ‹¼å›¾çš„å›¾å½¢åˆ—è¡¨ä¸èƒ½æœ‰è§„å¾‹çš„é¡ºåºæ‘†æ”¾
 		areaSharps.add(getRandom() % (areaSharps.size() + 1), ngameSharps);
 	}	
 	
 	/**
-	 * @aim µÍÄÑ¶È£¬·Ç¿Õ¾ØĞÎÈ«²¿Éú³É¾ØĞÎĞÎ×´
-	 * @param rtF1 µÚÒ»¸öÔ´¾ØĞÎ
-	 * @param rtF2 µÚ¶ş¸öÔ´¾ØĞÎ
-	 * @param rtF3 µÚÈı¸öÔ´¾ØĞÎ
-	 * @return ÎŞ
+	 * @aim ä½éš¾åº¦ï¼Œéç©ºçŸ©å½¢å…¨éƒ¨ç”ŸæˆçŸ©å½¢å½¢çŠ¶
+	 * @param rtF1 ç¬¬ä¸€ä¸ªæºçŸ©å½¢
+	 * @param rtF2 ç¬¬äºŒä¸ªæºçŸ©å½¢
+	 * @param rtF3 ç¬¬ä¸‰ä¸ªæºçŸ©å½¢
+	 * @return æ— 
 	 */
 	public void getHardSharpTypeRectangle(RectF rtF1, RectF rtF2, RectF rtF3, RectF rtF4) {
 		
-		// Éú³ÉµÚÒ»¸ö¾ØĞÎĞÎ×´
+		// ç”Ÿæˆç¬¬ä¸€ä¸ªçŸ©å½¢å½¢çŠ¶
 		if (rtF1 != null && !rtF1.isEmpty()) {
 			getHardRealRectangleSharp_Son(rtF1);
 		}
 		
-		// Éú³ÉµÚ¶ş¸ö¾ØĞÎĞÎ×´
+		// ç”Ÿæˆç¬¬äºŒä¸ªåŒ¦æ¶¡å·«ï¿½
 		if (rtF2 != null && !rtF2.isEmpty()) {
 			getHardRealRectangleSharp_Son(rtF2);
 		}
 		
-		// Éú³ÉµÚÈı¸ö¾ØĞÎĞÎ×´
+		// ç”Ÿæˆç¬¬ä¸‰ä¸ªçŸ©å½¢å½¢çŠ¶
 		if (rtF3 != null && !rtF3.isEmpty()) {
 			getHardRealRectangleSharp_Son(rtF3);
 		}
 		
-		// Éú³ÉµÚËÄ¸ö¾ØĞÎĞÎ×´
+		// ç”Ÿæˆç¬¬å››ä¸ªçŸ©å½¢å½¢çŠ¶
 		if (rtF4 != null && !rtF4.isEmpty()) {
 			getHardRealRectangleSharp_Son(rtF4);
 		}
@@ -2161,17 +2191,17 @@ public class GsptRunDataFrame {
 	}	
 	
 	/**
-	 * @aim Í¨¹ıÍæ¼ÒÄêÁä»ù±¾»®·ÖÓÎÏ·ÄÑ¶È£¬»ñÈ¡²»Í¬ÄÑ¶ÈÏÂµÄÆ´Í¼ĞÎ×´
-	 * 			levelSml 6¸öĞÎ×´×óÓÒ£¬È«ÊÇ³¤·½ĞÎ(¿ÉÄÜÓĞÕı·½ĞÎ)£¬ĞÎ×´Î»ÖÃ´óĞ¡Ëæ»ú
-	 * 			levelMid 9¸öĞÎ×´×óÓÒ£¬·Ö³¤·½ĞÎ(¿ÉÄÜÓĞÕı·½ĞÎ)¡¢Èı½ÇĞÎ£¬¶¼±ØĞëÓĞ£¬¸öÊıÎ»ÖÃ´óĞ¡Ëæ»ú
-	 * 			levelBig 12¸öĞÎ×´×óÓÒ£¬·ÖÆ½ĞĞËÄ±ßĞÎ»òÕßÌİĞÎ¡¢Èı½ÇĞÎ¡¢³¤·½ĞÎ(Õı·½ĞÎ)£¬
-	 * 			Èı½ÇĞÎºÍÆ½ĞĞËÄ±ßĞÎ»òÕßÌİĞÎ±ØĞëÓĞ£¬¸öÊıÎ»ÖÃ´óĞ¡Ëæ»ú
+	 * @aim é€šè¿‡ç©å®¶å¹´é¾„åŸºæœ¬åˆ’åˆ†æ¸¸æˆéš¾åº¦ï¼Œè·å–ä¸åŒéš¾åº¦ä¸‹çš„æ‹¼å›¾å½¢çŠ¶
+	 * 			levelSml 6ä¸ªå½¢çŠ¶å·¦å³ï¼Œå…¨æ˜¯é•¿æ–¹å½¢(å¯èƒ½æœ‰æ­£æ–¹å½¢)ï¼Œå½¢çŠ¶ä½ç½®å¤§å°éšæœº
+	 * 			levelMid 9ä¸ªå½¢çŠ¶å·¦å³ï¼Œåˆ†é•¿æ–¹å½¢(å¯èƒ½æœ‰æ­£æ–¹å½¢)ã€ä¸‰è§’å½¢ï¼Œéƒ½å¿…é¡»æœ‰ï¼Œä¸ªæ•°ä½ç½®å¤§å°éšæœº
+	 * 			levelBig 12ä¸ªå½¢çŠ¶å·¦å³ï¼Œåˆ†å¹³è¡Œå››è¾¹å½¢æˆ–è€…æ¢¯å½¢ã€ä¸‰è§’å½¢ã€é•¿æ–¹å½¢(æ­£æ–¹å½¢)ï¼Œ
+	 * 			ä¸‰è§’å½¢å’Œå¹³è¡Œå››è¾¹å½¢æˆ–è€…æ¢¯å½¢å¿…é¡»æœ‰ï¼Œä¸ªæ•°ä½ç½®å¤§å°éšæœº
 	 * 
-	 * @param rtF1 µÚÒ»¸öÔ´¾ØĞÎ
-	 * @param rtF2 µÚ¶ş¸öÔ´¾ØĞÎ
-	 * @param rtF3 µÚÈı¸öÔ´¾ØĞÎ
-	 * @param rtF4 µÚËÄ¸öÔ´¾ØĞÎ
-	 * @return ÎŞ
+	 * @param rtF1 ç¬¬ä¸€ä¸ªæºçŸ©å½¢
+	 * @param rtF2 ç¬¬äºŒä¸ªæºçŸ©å½¢
+	 * @param rtF3 ç¬¬ä¸‰ä¸ªæºçŸ©å½¢
+	 * @param rtF4 ç¬¬å››ä¸ªæºçŸ©å½¢
+	 * @return æ— 
 	 */
 	public void getHardSharpsByLevel(RectF rtF1, RectF rtF2, RectF rtF3, RectF rtF4) {
 
@@ -2179,15 +2209,15 @@ public class GsptRunDataFrame {
 	}	
 	
 	/**
-	 * @aim ³õÊ¼»¯Â·¾¶£¬¼°Æä¼ÇÂ¼µÄÂ·¾¶ĞÅÏ¢
-	 * 			ÇĞ¸î³öÀ´µÄÍ¼ĞÎĞÎ×´ĞÅÏ¢¼ÇÂ¼ÓÚareaSharpsµ±ÖĞ
-	 * 			Ë¼Â·£º¹Ì¶¨Á½ĞĞ»òÕßÁ½ÁĞ£¬È»ºóÔÙÇĞ¸î£¬·Ö³É²»µÈµÄ¾Å¹¬¸ñ£¬È»ºó¸ù¾İÄÑ¶È
-	 * 			ºÏ²¢»òÕßÇĞ¸îºÏ²¢µÄ¾Å¹¬¸ñ£¬ÇĞ¸îÍêºóÆ´½Ó³ÉÆ½ĞĞËÄ±ßĞÎ»òÕßÌİĞÎ
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @aim åˆå§‹åŒ–è·¯å¾„ï¼ŒåŠå…¶è®°å½•çš„è·¯å¾„ä¿¡æ¯
+	 * 			åˆ‡å‰²å‡ºæ¥çš„å›¾å½¢å½¢çŠ¶ä¿¡æ¯è®°å½•äºareaSharpså½“ä¸­
+	 * 			æ€è·¯ï¼šå›ºå®šä¸¤è¡Œæˆ–è€…ä¸¤åˆ—ï¼Œç„¶åå†åˆ‡å‰²ï¼Œåˆ†æˆä¸ç­‰çš„ä¹å®«æ ¼ï¼Œç„¶åæ ¹æ®éš¾åº¦
+	 * 			åˆå¹¶æˆ–è€…åˆ‡å‰²åˆå¹¶çš„ä¹å®«æ ¼ï¼Œåˆ‡å‰²å®Œåæ‹¼æ¥æˆå¹³è¡Œå››è¾¹å½¢æˆ–è€…æ¢¯å½¢
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	public void initHardRandomSharpsPath() {
-		// ÓÎÏ·ÄêÁäµÈ¼¶
+		// æ¸¸æˆå¹´é¾„ç­‰çº§
 //		if (GsptMainActivity.getSystemUserAge() == 1){
 //			userAgeLevel = (getRandom() % 10 <= 2) ? levelMid : levelSml;
 //		} else {
@@ -2205,7 +2235,7 @@ public class GsptRunDataFrame {
 			userAgeLevel = levelSml;
 			break;
 		}		
-		// Í¼ĞÎ¼¯ºÏ
+		// å›¾å½¢é›†åˆ
 		if (areaSharps != null) {
 			if (areaSharps.size() > 0) {
 				areaSharps.clear();
@@ -2214,7 +2244,7 @@ public class GsptRunDataFrame {
 			areaSharps = new ArrayList<GameSharps>();
 		}
 
-		// ³õÊ¼»¯ÄÄĞ©ÒªÇĞ¸î³ÉÌİĞÎ»òÆ½ĞĞËÄ±ßĞÎ
+		// åˆå§‹åŒ–å“ªäº›è¦åˆ‡å‰²æˆæ¢¯å½¢æˆ–å¹³è¡Œå››è¾¹å½¢
 		espsharpstwo[0] = (getRandom() % 2);
 		espsharpstwo[1] = (getRandom() % 2);
 		espsharpstwo[2] = (getRandom() % 2);
@@ -2224,7 +2254,7 @@ public class GsptRunDataFrame {
 			esptwonumber++;
 		}
 		
-		// ³õÊ¼»¯ÄÄĞ©¾ØĞÎÒªÇĞ¸î³ÉÈı½ÇĞĞ
+		// åˆå§‹åŒ–å“ªäº›çŸ©å½¢è¦åˆ‡å‰²æˆä¸‰è§’è¡Œ
 		espsharpsthreeindex = 0;
 		for (int index = 0; index < espsharpsthree.length; index++) {
 			if (esptwonumber > 1) {
@@ -2244,18 +2274,18 @@ public class GsptRunDataFrame {
 			}
 		}
 		
-		// 0ºáÏò£¬1ÊúÏò
+		// 0æ¨ªå‘ï¼Œ1ç«–å‘
 		RectF pathRect = new RectF(0, 0, 0, 0);
 		RectF tmpRectF1 = new RectF(0, 0, 0, 0);
 		RectF tmpRectF2 = new RectF(0, 0, 0, 0);
 		RectF tmpRectF3 = new RectF(0, 0, 0, 0);
 		RectF tmpRectF4 = new RectF(0, 0, 0, 0);
 		
-		// ºáÏò¹Ì¶¨»¹ÊÇÊúÏò¹Ì¶¨
+		// æ¨ªå‘å›ºå®šè¿˜æ˜¯ç«–å‘å›ºå®š
 		int dirVHfinal = getRandom() % 2;
 		
-		// ÓĞ¼¸¸ù¹Ì¶¨ÓÃÓÚÄêÁäĞ¡µÄÊ±ºò£¬Í¼Æ¬·Ö¸îÊıÎª6¿é¾ØĞÎÓÃ
-		// dirLost == 0»òÕß 1£¬·Ö³É12,16¹¬¸ñ
+		// æœ‰å‡ æ ¹å›ºå®šç”¨äºå¹´é¾„å°çš„æ—¶å€™ï¼Œå›¾ç‰‡åˆ†å‰²æ•°ä¸º6å—çŸ©å½¢ç”¨
+		// dirLost == 0æˆ–è€… 1ï¼Œåˆ†æˆ12,16å®«æ ¼
 		int dirHoldX = 3;
 		int dirHoldY = 3;
 		if (userAgeLevel == levelSml) {
@@ -2272,7 +2302,7 @@ public class GsptRunDataFrame {
 				break;
 			}			
 		}
-		// ³õÊ¼»¯Í»³ö»òÕß°¼Ïİ²¿Î»
+		// åˆå§‹åŒ–çªå‡ºæˆ–è€…å‡¹é™·éƒ¨ä½
 		prepareBaseH = new PointF[dirHoldX];
 		for (int num = 0 ; num < dirHoldX ; num++) {
 			prepareBaseH[num] = new PointF(0, 0);
@@ -2284,16 +2314,22 @@ public class GsptRunDataFrame {
 		preparePtH = new Point[]{new Point(0, 30), new Point(30, 35), new Point(30, 75), new Point(0, 80) };
 		preparePtV = new Point[]{new Point(30, 0), new Point(35, 30), new Point(75, 30), new Point(80, 0) };
 
-		// ³õÊ¼»¯ÒªÇĞ¸îµÄ»ù×¼¿í¸ß£¬ÄÜËæ»ú¶à¿íºÍ¶à¸ß 
+		if (App.getInstance().mScale>1.0f){
+			float w = 776*App.getInstance().mScale;
+			float h = 566*App.getInstance().mScale;
+			gsptBmpWidth=(int)w;
+			gsptBmpHeight=(int)h;
+		}
+		// åˆå§‹åŒ–è¦åˆ‡å‰²çš„åŸºå‡†å®½é«˜ï¼Œèƒ½éšæœºå¤šå®½å’Œå¤šé«˜ 
 		int basew0 = (gsptBmpWidth * 94 / 100) / (dirHoldX + 1);
 		int basew1 = (gsptBmpWidth * 6 / 100) / (dirHoldX + 1);
 		int baseh0 = (gsptBmpHeight * 94 / 100) / (dirHoldY + 1);
 		int baseh1 = (gsptBmpHeight * 6 / 100) / (dirHoldY + 1);
-		// ÒÔÇ°ÊÇËæ¼´£¬¸ù±¾²»»á¶ÔÆë£¬ÏÖÔÚ»á¶ÔÆëÁË¡£¹Ì¶¨Ëæ»ú
+		// ä»¥å‰æ˜¯éšå³ï¼Œæ ¹æœ¬ä¸ä¼šå¯¹é½ï¼Œç°åœ¨ä¼šå¯¹é½äº†ã€‚å›ºå®šéšæœº
 		int [] baserand = {getRandom(), getRandom(), getRandom(), getRandom(), getRandom(), getRandom()};
 		pathRect.set(0, 0, 0, 0);
 		if (dirVHfinal == 0) {
-			// ÊúÏò¹Ì¶¨
+			// ç«–å‘å›ºå®š
 			for (int addx = 0; addx <= dirHoldX; addx++) {
 				pathRect.left = pathRect.right;
 				if (addx == dirHoldX) {
@@ -2301,7 +2337,7 @@ public class GsptRunDataFrame {
 				} else {
 					pathRect.right = pathRect.left + basew0 + (getRandom() % basew1);
 					if (addx < prepareBaseH.length) {
-						// ¼ÇÂ¼¹Ì¶¨ÏßÌõÖµ¼°·½Ïò
+						// è®°å½•å›ºå®šçº¿æ¡å€¼åŠæ–¹å‘
 						prepareBaseH[addx].set((int)pathRect.right, getRandom()%2);
 					}
 				}
@@ -2318,7 +2354,7 @@ public class GsptRunDataFrame {
 					} else {
 						pathRect.bottom = pathRect.top + baseh0 + (baserand[addy] % baseh1);
 						if (addy < prepareBaseV.length && addx == 0) {
-							// ¼ÇÂ¼¹Ì¶¨ÏßÌõÖµ¼°·½Ïò
+							// è®°å½•å›ºå®šçº¿æ¡å€¼åŠæ–¹å‘
 							prepareBaseV[addy].set(getRandom()%2, (int)pathRect.bottom);
 						}					
 					}
@@ -2332,12 +2368,12 @@ public class GsptRunDataFrame {
 						tmpRectF4.set(pathRect);
 					}
 				}
-				// ¸ù¾İÄêÁäµÈ¼¶Çø·ÖÓÎÏ·ÄÑ¶È£¬¸ù¾İÄÑ¶È»ñÈ¡ÕæÊµÂ·¾¶ĞÅÏ¢£¬È«²¿´æÓÚareaSharpsµ±ÖĞ
+				// æ ¹æ®å¹´é¾„ç­‰çº§åŒºåˆ†æ¸¸æˆéš¾åº¦ï¼Œæ ¹æ®éš¾åº¦è·å–çœŸå®è·¯å¾„ä¿¡æ¯ï¼Œå…¨éƒ¨å­˜äºareaSharpså½“ä¸­
 				getHardSharpsByLevel(tmpRectF1, tmpRectF2, tmpRectF3, tmpRectF4);
 				
 			}
 		} else {		
-			// ºáÏò¹Ì¶¨
+			// æ¨ªå‘å›ºå®š
 			for (int addy = 0; addy <= dirHoldY; addy++) {
 				pathRect.top = pathRect.bottom;
 				if (addy == dirHoldY) {
@@ -2345,7 +2381,7 @@ public class GsptRunDataFrame {
 				} else {
 					pathRect.bottom = pathRect.top + baseh0 + (getRandom() % baseh1);
 					if (addy < prepareBaseV.length) {
-						// ¼ÇÂ¼¹Ì¶¨ÏßÌõÖµ¼°·½Ïò
+						// è®°å½•å›ºå®šçº¿æ¡å€¼åŠæ–¹å‘
 						prepareBaseV[addy].set(getRandom()%2, (int)pathRect.bottom);
 					}				
 				}
@@ -2362,7 +2398,7 @@ public class GsptRunDataFrame {
 					} else {
 						pathRect.right = pathRect.left + basew0 + (baserand[addx] % basew1);
 						if (addx < prepareBaseH.length && addy == 0) {
-							// ¼ÇÂ¼¹Ì¶¨ÏßÌõÖµ¼°·½Ïò
+							// è®°å½•å›ºå®šçº¿æ¡å€¼åŠæ–¹å‘
 							prepareBaseH[addx].set((int)pathRect.right, getRandom()%2);
 						}					
 					}
@@ -2376,7 +2412,7 @@ public class GsptRunDataFrame {
 						tmpRectF4.set(pathRect);
 					}
 				}
-				// ¸ù¾İÄêÁäµÈ¼¶Çø·ÖÓÎÏ·ÄÑ¶È£¬¸ù¾İÄÑ¶È»ñÈ¡ÕæÊµÂ·¾¶ĞÅÏ¢£¬È«²¿´æÓÚareaSharpsµ±ÖĞ
+				// æ ¹æ®å¹´é¾„ç­‰çº§åŒºåˆ†æ¸¸æˆéš¾åº¦ï¼Œæ ¹æ®éš¾åº¦è·å–çœŸå®è·¯å¾„ä¿¡æ¯ï¼Œå…¨éƒ¨å­˜äºareaSharpså½“ä¸­
 				getHardSharpsByLevel(tmpRectF1, tmpRectF2, tmpRectF3, tmpRectF4);
 				
 			}
@@ -2384,14 +2420,14 @@ public class GsptRunDataFrame {
 	}	
 	
 	/**
-	 * @aim Òş²Ø¿Ø¼ş²¢ÇÒÊÍ·Å×ÊÔ´
-	 * @param v ÒªÏú»ÙµÄView
-	 * @return ÎŞ
+	 * @aim éšè—æ§ä»¶å¹¶ä¸”é‡Šæ”¾èµ„æº
+	 * @param v è¦é”€æ¯çš„View
+	 * @return æ— 
 	 */
 	public static void setViewGoneDestroy(View v) {
 		try {
 			if (v != null) {
-				// ÊÍ·Å±³¾°×ÊÔ´
+				// é‡Šæ”¾èƒŒæ™¯èµ„æº
 				Drawable vDb = v.getBackground();
 				if (vDb != null) {
 					vDb.setCallback(null);
@@ -2407,36 +2443,36 @@ public class GsptRunDataFrame {
 					// }
 				}
 				
-				// Èç¹ûÉèÖÃ¹ı±³¾°Í¼Æ¬£¬ÊÍ·ÅÍ¼Æ¬×ÊÔ´£¬Çå³ıÉèÖÃ²»ÖØ¸´ÊÍ·Å×ÊÔ´
+				// å¦‚æœè®¾ç½®è¿‡èƒŒæ™¯å›¾ç‰‡ï¼Œé‡Šæ”¾å›¾ç‰‡èµ„æºï¼Œæ¸…é™¤è®¾ç½®ä¸é‡å¤é‡Šæ”¾èµ„æº
 				Bitmap bgBitmap = (Bitmap) v.getTag(R.id.tag_second_bgbitmap);			
 				v.setTag(R.id.tag_second_bgbitmap, null);
 				
-				// Èç¹ûÉèÖÃ¹ıÇ°¾°Í¼Æ¬£¬ÊÍ·ÅÍ¼Æ¬×ÊÔ´£¬Çå³ıÉèÖÃ²»ÖØ¸´ÊÍ·Å×ÊÔ´
+				// å¦‚æœè®¾ç½®è¿‡å‰æ™¯å›¾ç‰‡ï¼Œé‡Šæ”¾å›¾ç‰‡èµ„æºï¼Œæ¸…é™¤è®¾ç½®ä¸é‡å¤é‡Šæ”¾èµ„æº
 				Bitmap imgBitmap = (Bitmap) v.getTag(R.id.tag_third_smallbitmap);
 				v.setTag(R.id.tag_third_smallbitmap, null);			
 				
-				// Èç¹ûÉèÖÃ¹ı»Ò¶ÈÍ¼Æ¬£¬ÊÍ·ÅÍ¼Æ¬×ÊÔ´£¬Çå³ıÉèÖÃ²»ÖØ¸´ÊÍ·Å×ÊÔ´
+				// å¦‚æœè®¾ç½®è¿‡ç°åº¦å›¾ç‰‡ï¼Œé‡Šæ”¾å›¾ç‰‡èµ„æºï¼Œæ¸…é™¤è®¾ç½®ä¸é‡å¤é‡Šæ”¾èµ„æº
 				Bitmap grayBitmap = (Bitmap) v.getTag(R.id.tag_four_graybitmap);
 				v.setTag(R.id.tag_four_graybitmap, null);				
 				
-				// Òş²ØView£¬ÊÍ·Å¸ÃViewµÄ×ÊÔ´
+				// éšè—Viewï¼Œé‡Šæ”¾è¯¥Viewçš„èµ„æº
 				v.setVisibility(View.GONE);
 				
-				// ÊÍ·Å×ÊÔ´
+				// é‡Šæ”¾èµ„æº
 				if (bgBitmap != null) {
 					if (!bgBitmap.isRecycled()) {
 						bgBitmap.recycle();
 						System.gc();
 					}
 				}
-				// ÊÍ·Å×ÊÔ´
+				// é‡Šæ”¾èµ„æº
 				if (imgBitmap != null) {
 					if (!imgBitmap.isRecycled()) {
 						imgBitmap.recycle();
 						System.gc();
 					}
 				}
-				// ÊÍ·Å×ÊÔ´
+				// é‡Šæ”¾èµ„æº
 				if (grayBitmap != null) {
 					if (!grayBitmap.isRecycled()) {
 						grayBitmap.recycle();
@@ -2451,6 +2487,6 @@ public class GsptRunDataFrame {
 	}
 
 	/**
-	 * GsptRunDataFrameÀà½áÊø end 
+	 * GsptRunDataFrameç±»ç»“æŸ end 
 	 */
 }

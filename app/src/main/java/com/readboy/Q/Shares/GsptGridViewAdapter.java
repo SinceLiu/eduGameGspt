@@ -1,10 +1,10 @@
 /**
- * @aim OperateAdapterÀà£¬ÊµÏÖ¼Ç¼ÓÔØÓÃ»§µÄÔçÍíÌıÌõÄ¿
- * 			ÓÃ»§ÉèÖÃÔçÍíÌıÄÚÈİµÄÊ±ºò£¬ËÑË÷ÏàÓ¦µÄÔçÍíÌıÄÚÈİ£¬°üÀ¨µã¶Á¡¢ÒôÀÖºĞ¡¢Ìı¹ÊÊÂ¡¢°Ë½äÑ§ÌÆÊ«
- * 			ËÑË÷³öÀ´µÄÌõÄ¿µÄAdapter´¦Àí
+ * @aim OperateAdapterç±»ï¼Œå®ç°è®°åŠ è½½ç”¨æˆ·çš„æ—©æ™šå¬æ¡ç›®
+ * 			ç”¨æˆ·è®¾ç½®æ—©æ™šå¬å†…å®¹çš„æ—¶å€™ï¼Œæœç´¢ç›¸åº”çš„æ—©æ™šå¬å†…å®¹ï¼ŒåŒ…æ‹¬ç‚¹è¯»ã€éŸ³ä¹ç›’ã€å¬æ•…äº‹ã€å…«æˆ’å­¦å”è¯—
+ * 			æœç´¢å‡ºæ¥çš„æ¡ç›®çš„Adapterå¤„ç†
  * 
- * ÊµÏÖ£º
- * Adapter»Øµ÷£¬»ñÈ¡µ±Ç°µÄÀàĞÍ£¬È»ºó¼ÓÔØ²»Í¬µÄ²¼¾Ö
+ * å®ç°ï¼š
+ * Adapterå›è°ƒï¼Œè·å–å½“å‰çš„ç±»å‹ï¼Œç„¶ååŠ è½½ä¸åŒçš„å¸ƒå±€
  * 
  * 
  * @time 2014.04.10;
@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.readboy.Q.Gspt.R;
+import com.readboy.Q.app.App;
 
 import android.content.Context;
 import android.graphics.drawable.StateListDrawable;
@@ -30,32 +31,32 @@ import android.widget.Button;
 public class GsptGridViewAdapter extends BaseAdapter{
 	
 	/**
-	 * ¼ÓÔØÃ¿¸öÌõÄ¿µÄlayoutÓÃ
+	 * åŠ è½½æ¯ä¸ªæ¡ç›®çš„layoutç”¨
 	 */
 	private LayoutInflater listenInflater = null;
 	
 	/**
-	 * ÏµÍ³µÄcontext
+	 * ç³»ç»Ÿçš„context
 	 */
 	private Context listenContext = null;
 	
 	/**
-	 * Êı¾İlist map
+	 * æ•°æ®list map
 	 */
 	private List<Map<String, Object>> listenListItems = null;
 
 	/**
-	 * µã»÷¼àÌıµÄ»Øµ÷
+	 * ç‚¹å‡»ç›‘å¬çš„å›è°ƒ
 	 */
 	private OnClickListener onClickListener = null;
 	
 	/**
-	 * ÁĞ±íĞÅÏ¢
+	 * åˆ—è¡¨ä¿¡æ¯
 	 */
 	private StoryGridViewInfo listInfo = null;
 	
 	/**
-	 * @aim ĞŞ¸ÄListµÄStyle
+	 * @aim ä¿®æ”¹Listçš„Style
 	 * @param style
 	 */
 	public void setListenAdapterInfo(StoryGridViewInfo setInfo) {
@@ -64,16 +65,16 @@ public class GsptGridViewAdapter extends BaseAdapter{
 	
 	public interface StoryGridViewInfo {
 		/**
-		 * @aim ÅĞ¶Ïµ±Ç°°´Å¥µÄ×´Ì¬£¬Ëø£¬»òÕß¿ª×ÅµÄ
-		 * @index µ±Ç°µÄĞòºÅ
-		 * @return true ÒÑËø false ÒÑ¾­´ò¿ª
+		 * @aim åˆ¤æ–­å½“å‰æŒ‰é’®çš„çŠ¶æ€ï¼Œé”ï¼Œæˆ–è€…å¼€ç€çš„
+		 * @index å½“å‰çš„åºå·
+		 * @return true å·²é” false å·²ç»æ‰“å¼€
 		 */
 		public boolean bBtnOfGridItemPassState(int index);
 		
 		/**
-		 * @aim »ñÈ¡°´Å¥µÄ×´Ì¬Í¼Æ¬StateListDrawable
-		 * @param index °´Å¥ĞòºÅ
-		 * @return ×´Ì¬Í¼Æ¬StateListDrawable
+		 * @aim è·å–æŒ‰é’®çš„çŠ¶æ€å›¾ç‰‡StateListDrawable
+		 * @param index æŒ‰é’®åºå·
+		 * @return çŠ¶æ€å›¾ç‰‡StateListDrawable
 		 */
 		public StateListDrawable getShowStateListDrawable(int index);
 		
@@ -106,7 +107,7 @@ public class GsptGridViewAdapter extends BaseAdapter{
 	public View getView(int position, View convertView, ViewGroup parent) {
 		
 		ViewHolder viewHolder = null;
-		// Ã¿Ò»¸ö¹ÊÊÂ°´Å¥
+		// æ¯ä¸€ä¸ªæ•…äº‹æŒ‰é’®
 		if(convertView == null){
 			viewHolder = new ViewHolder();
 			convertView = listenInflater.inflate(R.layout.gspt_gridview_item, null);
@@ -122,12 +123,19 @@ public class GsptGridViewAdapter extends BaseAdapter{
 		int gridItemDb = (Integer) listenListItems.get(position).get("gridItemDb");
 //		viewHolder.btnStoryIcon.setBackgroundResource(gridItemDb);
 		viewHolder.btnStoryIcon.setBackgroundDrawable((listInfo != null) ? listInfo.getShowStateListDrawable(gridItemDb) : null);
-
+		// æ”¾å¤§ä¸¤å€
+		if (App.getInstance().mScale>1.0f) {
+			ViewGroup.LayoutParams lp;
+			lp = viewHolder.btnStoryIcon.getLayoutParams();
+			lp.width = App.getInstance().dip2px(listenContext, 328);
+			lp.height = App.getInstance().dip2px(listenContext, 204);
+			viewHolder.btnStoryIcon.setLayoutParams(lp);
+		}
 		return convertView;
 	}
 	
 	/**
-	 * @aim GridViewÃ¿¸öÌõÄ¿ÏÔÊ¾µÄÍ¼Æ¬ÒÔ¼°ÎÄ¼şÃûµÄ¿Ø¼şÊµÀı£»Ö»ĞèÒª»ñÈ¡Ò»´Î
+	 * @aim GridViewæ¯ä¸ªæ¡ç›®æ˜¾ç¤ºçš„å›¾ç‰‡ä»¥åŠæ–‡ä»¶åçš„æ§ä»¶å®ä¾‹ï¼›åªéœ€è¦è·å–ä¸€æ¬¡
 	 * @author Administrator
 	 *
 	 */

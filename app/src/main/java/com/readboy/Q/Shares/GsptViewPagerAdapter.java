@@ -8,12 +8,12 @@ import android.view.View;
 public class GsptViewPagerAdapter extends PagerAdapter {
 	
 	/**
-	 * ÁĞ±íĞÅÏ¢
+	 * åˆ—è¡¨ä¿¡æ¯
 	 */
 	private DataViewPagerInfo dataInfo = null;	
 	
 	/**
-	 * ViewÁĞ±í
+	 * Viewåˆ—è¡¨
 	 */
 	private View[] pagerArray = null;
 	
@@ -61,15 +61,15 @@ public class GsptViewPagerAdapter extends PagerAdapter {
 	}
 
 	/**
-	 * @aim ÓÃ»§»ñÈ¡Ò»Ğ©ÓÃ»§ÉèÖÃ
+	 * @aim ç”¨æˆ·è·å–ä¸€äº›ç”¨æˆ·è®¾ç½®
 	 * @author Administrator
 	 *
 	 */
 	public interface DataViewPagerInfo {
 
 		/**
-		 * @aim »ñÈ¡µ±Ç°½ÚµãµÄViewÊµÀı
-		 * @return View ÀàĞÍÖµ
+		 * @aim è·å–å½“å‰èŠ‚ç‚¹çš„Viewå®ä¾‹
+		 * @return View ç±»å‹å€¼
 		 */
 		public View onCreateView(int position);
 	}

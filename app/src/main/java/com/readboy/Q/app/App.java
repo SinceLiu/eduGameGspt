@@ -23,14 +23,14 @@ import com.readboy.Q.db.SystemDataBase;
 
 public class App extends Application {
 	
-	/** ÊÇ·ñµ÷ÊÔÄ£Ê½ */
+	/** æ˜¯å¦è°ƒè¯•æ¨¡å¼ */
 	public static final boolean DEBUG = false;
 	
-	/** APPÊµÀı */
+	/** APPå®ä¾‹ */
 	private static App INSTANCE;
 	
 	/**
-	 * @aim »ñÈ¡ÊµÀı
+	 * @aim è·å–å®ä¾‹
 	 * @return
 	 */
 	public static synchronized App getInstance() {
@@ -44,23 +44,23 @@ public class App extends Application {
 		INSTANCE = this;
 	}
 
-	/** ¼ÇÂ¼ĞÅÏ¢ÓÃµÄ */
+	/** è®°å½•ä¿¡æ¯ç”¨çš„ */
 	public static final int MSG_UID = 1;
 	public static final int MSG_PID = 2;
 	public static final int MSG_CID = 4;
 	
-	/** ¿Î¼şÏÂÔØÏûÏ¢IDºÅ */
+	/** è¯¾ä»¶ä¸‹è½½æ¶ˆæ¯IDå· */
 	public static final int MSG_UPDATE = 0x09fff;
-	/**  ¸üĞÂÉÏ´ÎÑ§Ï°ÄÚÈİµÄÏûÏ¢IDºÅ */
+	/**  æ›´æ–°ä¸Šæ¬¡å­¦ä¹ å†…å®¹çš„æ¶ˆæ¯IDå· */
 	//public static final int MSG_MIDDLE_BOOK = 0x09ff9;	
-	/**  Ğ£ÑéÍøÂç */
+	/**  æ ¡éªŒç½‘ç»œ */
 	public static final int MSG_CHECK_NETWORK = 0x09ff8;	
-	/** ÏÂÔØ½áÊøÀ² */
+	/** ä¸‹è½½ç»“æŸå•¦ */
 	public static final int MSG_DOWNLOAD_END = 0x09ff7;
-	/** ÑÓÊ±ËÑË÷ */
+	/** å»¶æ—¶æœç´¢ */
 	public static final int MSG_DELAY_SEARCH = 0x09ff6;
 	
-//	/** ¼ÇÂ¼ĞÅÏ¢ÓÃµÄ */
+//	/** è®°å½•ä¿¡æ¯ç”¨çš„ */
 //	public static final int MSG_TRACER_1 = 20001;
 //	public static final int MSG_TRACER_2 = 20002;
 //	public static final int MSG_TRACER_3 = 20003;
@@ -78,18 +78,19 @@ public class App extends Application {
 //	public static final int WM_SAVE_FACE_TO_LOCAL = (WM_BASE_ID + 10);
 //	public static final int WM_REFRESH_PLAN_FACE = (WM_BASE_ID + 11);
 	
-	/** ¼ÇÂ¼DateBaseµÄÂ·¾¶ */
+	/** è®°å½•DateBaseçš„è·¯å¾„ */
 	public String mDatabaseDir = null;
-	/** ÄÚ²¿´ÅÅÌ */
+	/** å†…éƒ¨ç£ç›˜ */
 	public String mInnerDevice = null;
-	/** Íâ±ß´ÅÅÌ */
+	/** å¤–è¾¹ç£ç›˜ */
 	public String mExterDevice = null;
+	public float mScale = 1.0f;
 
-//	/** ·şÎñÆ÷ÇëÇóÊµÀı */
+//	/** æœåŠ¡å™¨è¯·æ±‚å®ä¾‹ */
 //	private RequestQueue mRequestQueue;
 //	
 //	/**
-//	 * @aim »ñÈ¡ÇëÇó¾ä±úÎ¨Ò»ÊµÀı
+//	 * @aim è·å–è¯·æ±‚å¥æŸ„å”¯ä¸€å®ä¾‹
 //	 * @return
 //	 */
 //	public RequestQueue getRequestQueue() {
@@ -101,7 +102,7 @@ public class App extends Application {
 //	}
 //
 //	/**
-//	 * @aim Ìí¼ÓÇëÇó
+//	 * @aim æ·»åŠ è¯·æ±‚
 //	 * @param req
 //	 * @param tag
 //	 */
@@ -128,11 +129,15 @@ public class App extends Application {
 //			mRequestQueue.cancelAll(tag);
 //		}
 //	}
+	public static int dip2px(Context context, float dipValue) {
+		float scale = context.getResources().getDisplayMetrics().density;
+		return (int) (dipValue * scale + 0.5f);
+	}
 	
 	/**
-	 * ÅĞ¶ÏÍøÂçÊÇ·ñÁ¬½Ó
+	 * åˆ¤æ–­ç½‘ç»œæ˜¯å¦è¿æ¥
 	 * @param context 
-	 * @return 0Î´Á¬½Ó£¬ 1ÒÆ¶¯ÍøÂç£¬ 2wifi
+	 * @return 0æœªè¿æ¥ï¼Œ 1ç§»åŠ¨ç½‘ç»œï¼Œ 2wifi
 	 */
 	public int getNetworkConnectionType(){ 
 		final ConnectivityManager connMgr = (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);  
@@ -228,14 +233,14 @@ public class App extends Application {
 		}
 	}
 	
-	/** ¼ÇÂ¼ÉÏÒ»´Î°´Å¥µã»÷µÄÊ±¼ä */
+	/** è®°å½•ä¸Šä¸€æ¬¡æŒ‰é’®ç‚¹å‡»çš„æ—¶é—´ */
 	private long lastClickTime = 0;
 	
 	/**
-	 * @aim ÅĞ¶ÏÊÇ·ñÊÇ¿ìËÙµã»÷
-	 * @param ÎŞ
-	 * @return true ·Ç¿ìËÙµã»÷
-	 * 			false ¿ìËÙµã»÷
+	 * @aim åˆ¤æ–­æ˜¯å¦æ˜¯å¿«é€Ÿç‚¹å‡»
+	 * @param æ— 
+	 * @return true éå¿«é€Ÿç‚¹å‡»
+	 * 			false å¿«é€Ÿç‚¹å‡»
 	 */
 	public boolean isFastDoubleClick() {
 		long time = System.currentTimeMillis();
@@ -248,7 +253,7 @@ public class App extends Application {
 	}
 	
 	/**
-	 * ½«¶ÌÊ±¼ä¸ñÊ½×Ö·û´®×ª»»ÎªÊ±¼ä yyyy-MM-dd 
+	 * å°†çŸ­æ—¶é—´æ ¼å¼å­—ç¬¦ä¸²è½¬æ¢ä¸ºæ—¶é—´ yyyy-MM-dd 
 	 * 
 	 * @param strDate
 	 * @return
@@ -266,8 +271,8 @@ public class App extends Application {
 	}
 	
 	/**
-	 * »ñÈ¡°æ±¾ºÅ
-	 * @return µ±Ç°Ó¦ÓÃµÄ°æ±¾ºÅ
+	 * è·å–ç‰ˆæœ¬å·
+	 * @return å½“å‰åº”ç”¨çš„ç‰ˆæœ¬å·
 	 */
 	public String getVersionOnly() {
 	    try {
@@ -287,17 +292,17 @@ public class App extends Application {
 	}
 	
 	/**
-	 * »ñµÃ»úÆ÷ĞÍºÅ
+	 * è·å¾—æœºå™¨å‹å·
 	 */
 	public String getMachineModule() {
 		String module = "";
 		try {
 			Class<android.os.Build> build_class = android.os.Build.class;
-			// È¡µÃÅÆ×Ó
+			// å–å¾—ç‰Œå­
 			// java.lang.reflect.Field manu_field = build_class
 			// .getField("MANUFACTURER");
 			// manufacturer = (String) manu_field.get(new android.os.Build());
-			// È¡µÃĞÍÌ–
+			// å–å¾—å‹è™Ÿ
 			java.lang.reflect.Field field2 = build_class.getField("MODEL");
 			module = (String) field2.get(new android.os.Build());
 
@@ -310,23 +315,23 @@ public class App extends Application {
 	}
 
 //	/**
-//	 * @aim »ñÈ¡ÉÏÒ»´Î±£´æµÄÑ§Ï°¹ıµÄÊé±¾ÃûµÈ
+//	 * @aim è·å–ä¸Šä¸€æ¬¡ä¿å­˜çš„å­¦ä¹ è¿‡çš„ä¹¦æœ¬åç­‰
 //	 * @param key
-//	 *            ¼üÃû³Æ
+//	 *            é”®åç§°
 //	 * @param defaultValue
-//	 *            Ä¬ÈÏÖµ
-//	 * @return ÉÏÒ»´Î¼ÇÂ¼µÄÊé±¾È«Â·¾¶
+//	 *            é»˜è®¤å€¼
+//	 * @return ä¸Šä¸€æ¬¡è®°å½•çš„ä¹¦æœ¬å…¨è·¯å¾„
 //	 */
 //	public String getTutorPlanRecorder(Context context, String key, String defaultValue) {
 //		String strLastBook = "";
 //		SharedPreferences spfFtmTutor = null;
 //		try {
-//			// »ñÈ¡SharedPreferences¶ÔÏó
+//			// è·å–SharedPreferenceså¯¹è±¡
 //			if (spfFtmTutor == null) {
 //				spfFtmTutor = context.getSharedPreferences(cfgTutorPlan, Context.MODE_PRIVATE);
 //			}
 //			if (spfFtmTutor != null) {
-//				// ¶ÁÈ¡Êı¾İ
+//				// è¯»å–æ•°æ®
 //				strLastBook = spfFtmTutor.getString(key, defaultValue);
 //			}
 //		} catch (Exception e) {
@@ -337,22 +342,22 @@ public class App extends Application {
 //	}
 //	
 //	/**
-//	 * @aim ±£´æÉÏÒ»´ÎÑ§Ï°µÄÊé±¾È«Â·¾¶£¬Òª½øÈëÑ§Ï°¹ıµÄ£¬Ã»ÓĞÑ§Ï°¹ıµÄÖ»ÊÇ½øÈëÁËÑ¡ÔñÄ¿Â¼µÄ²»Ëã¡£
+//	 * @aim ä¿å­˜ä¸Šä¸€æ¬¡å­¦ä¹ çš„ä¹¦æœ¬å…¨è·¯å¾„ï¼Œè¦è¿›å…¥å­¦ä¹ è¿‡çš„ï¼Œæ²¡æœ‰å­¦ä¹ è¿‡çš„åªæ˜¯è¿›å…¥äº†é€‰æ‹©ç›®å½•çš„ä¸ç®—ã€‚
 //	 * @param key
-//	 *            ¼üÃû³Æ
+//	 *            é”®åç§°
 //	 * @param strKeyValue
-//	 *            ¼üÖµ
+//	 *            é”®å€¼
 //	 * @return
 //	 */
 //	public boolean setTutorPlanRecorder(Context context, String key, String strKeyValue) {
 //		SharedPreferences spfFtmTutor = null;
 //		try {
-//			// »ñÈ¡SharedPreferences¶ÔÏó
+//			// è·å–SharedPreferenceså¯¹è±¡
 //			if (spfFtmTutor == null) {
 //				spfFtmTutor = context.getSharedPreferences(cfgTutorPlan, Context.MODE_PRIVATE);
 //			}
 //			if (spfFtmTutor != null) {
-//				// ´æÈëÊı¾İ
+//				// å­˜å…¥æ•°æ®
 //				Editor editor = spfFtmTutor.edit();
 //				// editor.clear();
 //				// editor.commit();
@@ -367,7 +372,7 @@ public class App extends Application {
 //	}
 	
 	/**
-	 * @aim Ê±¼ä´Á×ª»»³ÉÊ±¼ä
+	 * @aim æ—¶é—´æˆ³è½¬æ¢æˆæ—¶é—´
 	 * @param time
 	 * @return
 	 */
@@ -381,9 +386,9 @@ public class App extends Application {
 	}
 	
 	/**
-	 * @aim »ñÈ¡×ÓÄ¿Â¼ÏÂÔØµÄIDºÅ£¬Î¨Ò»¡£
-	 * @param id1 ¼Æ»®pid
-	 * @param id2 ÕÂ½Úcid
+	 * @aim è·å–å­ç›®å½•ä¸‹è½½çš„IDå·ï¼Œå”¯ä¸€ã€‚
+	 * @param id1 è®¡åˆ’pid
+	 * @param id2 ç« èŠ‚cid
 	 * @return
 	 */
 	public String getVideoDownloadID(int id1, int id2) {
@@ -391,7 +396,7 @@ public class App extends Application {
 	}
 	
 	/**
-	 * @aim ÏµÍ³Ê±¼äµÄintÖµ
+	 * @aim ç³»ç»Ÿæ—¶é—´çš„intå€¼
 	 * @return
 	 */
 	public String dateStrTimeDetail() {
@@ -400,12 +405,12 @@ public class App extends Application {
 	}
 	
 	/**
-	 * @aim »ñÈ¡ÉÏÒ»´Î±£´æµÄÑ§Ï°¹ıµÄÊé±¾ÃûµÈ
+	 * @aim è·å–ä¸Šä¸€æ¬¡ä¿å­˜çš„å­¦ä¹ è¿‡çš„ä¹¦æœ¬åç­‰
 	 * @param key
-	 *            ¼üÃû³Æ
+	 *            é”®åç§°
 	 * @param defaultValue
-	 *            Ä¬ÈÏÖµ
-	 * @return ÉÏÒ»´Î¼ÇÂ¼µÄÊé±¾È«Â·¾¶
+	 *            é»˜è®¤å€¼
+	 * @return ä¸Šä¸€æ¬¡è®°å½•çš„ä¹¦æœ¬å…¨è·¯å¾„
 	 */
 	public String getLastStudyBookInfo(int uid, int pid, int cid, String key, String defaultValue) {
 		String strLastBook = defaultValue;
@@ -426,11 +431,11 @@ public class App extends Application {
 	}
 	
 	/**
-	 * @aim ±£´æÉÏÒ»´ÎÑ§Ï°µÄÊé±¾È«Â·¾¶£¬Òª½øÈëÑ§Ï°¹ıµÄ£¬Ã»ÓĞÑ§Ï°¹ıµÄÖ»ÊÇ½øÈëÁËÑ¡ÔñÄ¿Â¼µÄ²»Ëã¡£
+	 * @aim ä¿å­˜ä¸Šä¸€æ¬¡å­¦ä¹ çš„ä¹¦æœ¬å…¨è·¯å¾„ï¼Œè¦è¿›å…¥å­¦ä¹ è¿‡çš„ï¼Œæ²¡æœ‰å­¦ä¹ è¿‡çš„åªæ˜¯è¿›å…¥äº†é€‰æ‹©ç›®å½•çš„ä¸ç®—ã€‚
 	 * @param key
-	 *            ¼üÃû³Æ
+	 *            é”®åç§°
 	 * @param strKeyValue
-	 *            ¼üÖµ
+	 *            é”®å€¼
 	 * @return
 	 */
 	public boolean setLastStudyBookInfo(int uid, int pid, int cid, String key, String strKeyValue, String face, String title) {

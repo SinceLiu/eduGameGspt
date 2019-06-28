@@ -50,7 +50,7 @@ public class HostInfo {
 	}
 	
 	/**
-	 * ÀÏÉÌ³Ç£ºG11¡¢G12¡¢G50¡¢P50
+	 * è€å•†åŸï¼šG11ã€G12ã€G50ã€P50
 	 * @return
 	 */
 	public static String getHostOld() {
@@ -58,19 +58,19 @@ public class HostInfo {
 	}
 	
 	/**
-	 * ÍêÕûµØÖ·Æ´½Ó
-	 * @param host ¶ÔÓ¦»úĞÍµÄhost
-	 * @param packageName Òª¸üĞÂµÄ°üÃû
-	 * @return Æ´½ÓºóµÄÍêÕûµØÖ·£¬ÓĞ´òÓ¡tag:GetHttp
+	 * å®Œæ•´åœ°å€æ‹¼æ¥
+	 * @param host å¯¹åº”æœºå‹çš„host
+	 * @param packageName è¦æ›´æ–°çš„åŒ…å
+	 * @return æ‹¼æ¥åçš„å®Œæ•´åœ°å€ï¼Œæœ‰æ‰“å°tag:GetHttp
 	 */
 	public static String getHttp(String host, String packageName) {
-		String http = host; // + "?mode=AutoUpdateAPK&package=" + packageName; // ÍêÕûµØÖ·(·şÎñÆ÷Æ´×°ÁË)
+		String http = host; // + "?mode=AutoUpdateAPK&package=" + packageName; // å®Œæ•´åœ°å€(æœåŠ¡å™¨æ‹¼è£…äº†)
 		Log.i("GetHttp", "http = " + http);
 		return http;
 	}
 	
 	/**
-	 * ÍêÕûµØÖ·Æ´½Ó£¬´Ë·½·¨ÄÜ¹ı»ñÈ¡»úÆ÷ĞÍºÅÀ´Æ´½Ó£¬Èç¹ûÍ¬Ò»ĞÍºÅÓĞ²»Í¬¹Ì¼ş£¬ÇëÉ÷ÓÃ£¬Èç£ºG50ÓĞÀÏ°æ±¾£¨NDK£©ºÍĞÂ°æ±¾£¨´¿Android£©
+	 * å®Œæ•´åœ°å€æ‹¼æ¥ï¼Œæ­¤æ–¹æ³•èƒ½è¿‡è·å–æœºå™¨å‹å·æ¥æ‹¼æ¥ï¼Œå¦‚æœåŒä¸€å‹å·æœ‰ä¸åŒå›ºä»¶ï¼Œè¯·æ…ç”¨ï¼Œå¦‚ï¼šG50æœ‰è€ç‰ˆæœ¬ï¼ˆNDKï¼‰å’Œæ–°ç‰ˆæœ¬ï¼ˆçº¯Androidï¼‰
 	 * @param context
 	 * @return
 	 */
@@ -78,19 +78,19 @@ public class HostInfo {
 		// host
 		String host = "";
 		
-		// »ñÈ¡°üÃû
+		// è·å–åŒ…å
 		String packageName = context.getPackageName();
 		
-		// »ñÈ¡Éè±¸ĞÅÏ¢
+		// è·å–è®¾å¤‡ä¿¡æ¯
 		String deviceInfo = Build.MODEL;
-		// »ñÈ¡³ö´í
+		// è·å–å‡ºé”™
 		if (deviceInfo.length() < 1) {
 			return "";
 		}
-		// ×ª»¯³ÉĞ¡Ğ´
+		// è½¬åŒ–æˆå°å†™
 		deviceInfo = deviceInfo.toLowerCase();
 		
-		// ÅĞ¶Ï»úĞÍ
+		// åˆ¤æ–­æœºå‹
 		if (deviceInfo.contains("q2baby")) {
 			host = getHostQ2Baby(); 
 		} else if (deviceInfo.contains("q2")) {

@@ -27,7 +27,7 @@ public class SystemDataBase {
 	
 	
 //	/**
-//	 * ÅĞ¶ÏÊı¾İ¿âÎÄ¼şÊÇ·ñ´æÔÚ
+//	 * åˆ¤æ–­æ•°æ®åº“æ–‡ä»¶æ˜¯å¦å­˜åœ¨
 //	 * @return
 //	 */
 //	public static boolean isDbFileExist(){
@@ -47,7 +47,7 @@ public class SystemDataBase {
 //	}
 	
 	/**
-	 * ´´½¨´ò¿ªÎÄ¼ş¼Ğ¼°ÎÄ¼ş¡£
+	 * åˆ›å»ºæ‰“å¼€æ–‡ä»¶å¤¹åŠæ–‡ä»¶ã€‚
 	 */
 	public boolean init() {
 		if (TextUtils.isEmpty(App.getInstance().mDatabaseDir)) {
@@ -57,7 +57,7 @@ public class SystemDataBase {
 			} else {
 				path += File.separator + DB_FILE_FOLDER;
 			}
-			/* ´´½¨Ä¿Â¼ */
+			/* åˆ›å»ºç›®å½• */
 			File file = new File(path);
 			if (!file.exists()) {
 				if (!file.mkdirs()) {
@@ -73,7 +73,7 @@ public class SystemDataBase {
 	}
 
 	/**
-	 * ´´½¨»òÕß´ò¿ªÊı¾İ¿â±í¡£
+	 * åˆ›å»ºæˆ–è€…æ‰“å¼€æ•°æ®åº“è¡¨ã€‚
 	 */
 	private boolean openAndCheck() {
 		try {
@@ -114,10 +114,10 @@ public class SystemDataBase {
 	}
 	
 	//====================================================================================
-	// ÏûÏ¢ÖĞĞÄstart
+	// æ¶ˆæ¯ä¸­å¿ƒstart
 	//====================================================================================
 	/**
-	 * ²åÈëmsginfo
+	 * æ’å…¥msginfo
 	 * @param msgcs
 	 * @return
 	 */
@@ -133,7 +133,7 @@ public class SystemDataBase {
 	}
 	
 	/**
-	 * ²éÑ¯µÚÒ»Ìõmsginfo
+	 * æŸ¥è¯¢ç¬¬ä¸€æ¡msginfo
 	 * @return
 	 */
 	public static MessageCenter queryMsgCS(int uid){
@@ -149,7 +149,7 @@ public class SystemDataBase {
 	}
 	
 	/**
-	 * ¸üĞÂMsgCSĞÅÏ¢
+	 * æ›´æ–°MsgCSä¿¡æ¯
 	 * @param msgcs
 	 * @return
 	 */
@@ -165,12 +165,12 @@ public class SystemDataBase {
 	}
 	
 	/**
-	 * É¾³ıÒ»ÌõMsgCS
+	 * åˆ é™¤ä¸€æ¡MsgCS
 	 * @param msgc_vid
 	 * @return
 	 */
 	public static boolean deleteMsgCS(String msgc_vid, int uid){
-		//É¾³ı¼Æ»®±íÖĞµÄÒ»¸öÌõÄ¿Í¬Ê±É¾³ı¿Î³ÌĞÅÏ¢±íÈô¸ÉÏà¹ØÌõÄ¿
+		//åˆ é™¤è®¡åˆ’è¡¨ä¸­çš„ä¸€ä¸ªæ¡ç›®åŒæ—¶åˆ é™¤è¯¾ç¨‹ä¿¡æ¯è¡¨è‹¥å¹²ç›¸å…³æ¡ç›®
 		SystemDataBase service = new SystemDataBase();
 		if(!service.init()){
 			service.close();
@@ -182,12 +182,12 @@ public class SystemDataBase {
 	}
 	
 	/**
-	 * É¾³ı¶àÌõMsgCS
+	 * åˆ é™¤å¤šæ¡MsgCS
 	 * @param msgc_vid
 	 * @return
 	 */
 	public static boolean deleteArrayMsgCS(String []msgc_vid, int uid){
-		//É¾³ı¼Æ»®±íÖĞµÄÒ»¸öÌõÄ¿Í¬Ê±É¾³ı¿Î³ÌĞÅÏ¢±íÈô¸ÉÏà¹ØÌõÄ¿
+		//åˆ é™¤è®¡åˆ’è¡¨ä¸­çš„ä¸€ä¸ªæ¡ç›®åŒæ—¶åˆ é™¤è¯¾ç¨‹ä¿¡æ¯è¡¨è‹¥å¹²ç›¸å…³æ¡ç›®
 		SystemDataBase service = new SystemDataBase();
 		if(!service.init()){
 			service.close();
@@ -199,7 +199,7 @@ public class SystemDataBase {
 	}
 	
 	/**
-	 * ¸ù¾İmsgc_vid²éÑ¯msginfo
+	 * æ ¹æ®msgc_vidæŸ¥è¯¢msginfo
 	 * @param msgc_vid
 	 * @return
 	 */
@@ -216,7 +216,7 @@ public class SystemDataBase {
 	}
 	
 	/**
-	 * ¸ù¾İmsgc_vid²éÑ¯msginfo
+	 * æ ¹æ®msgc_vidæŸ¥è¯¢msginfo
 	 * @param uid
 	 * @return
 	 */
@@ -233,7 +233,7 @@ public class SystemDataBase {
 	}
 	
 	/**
-	 * ²éÑ¯µÚÒ»Ìõmsginfo
+	 * æŸ¥è¯¢ç¬¬ä¸€æ¡msginfo
 	 * @return
 	 */
 	private MessageCenter queryFirstMsgCS(int uid){
@@ -274,7 +274,7 @@ public class SystemDataBase {
 			msgcs.cid = mPlanCursor.getInt(mPlanCursor.getColumnIndex("cid"));
 			msgcs.pid = mPlanCursor.getInt(mPlanCursor.getColumnIndex("pid"));
 			msgcs.msgc_full = mPlanCursor.getInt(mPlanCursor.getColumnIndex("msgc_full"));
-//			// ·´±ê×¼»¯
+//			// åæ ‡å‡†åŒ–
 //			msgcs.sqliteStandard(false);
 		}catch (IllegalStateException e){
 			Log.e(TAG, e.toString());
@@ -300,7 +300,7 @@ public class SystemDataBase {
 	}
 	
 	/**
-	 * ¸ù¾İmsgc_vid²éÑ¯msginfo
+	 * æ ¹æ®msgc_vidæŸ¥è¯¢msginfo
 	 * @param msgc_vid
 	 * @return
 	 */
@@ -337,7 +337,7 @@ public class SystemDataBase {
 			msgcs.cid = mPlanCursor.getInt(mPlanCursor.getColumnIndex("cid"));
 			msgcs.pid = mPlanCursor.getInt(mPlanCursor.getColumnIndex("pid"));
 			msgcs.msgc_full = mPlanCursor.getInt(mPlanCursor.getColumnIndex("msgc_full"));
-//			// ·´±ê×¼»¯
+//			// åæ ‡å‡†åŒ–
 //			msgcs.sqliteStandard(false);
 		}catch (IllegalStateException e){
 			Log.e(TAG, e.toString());
@@ -363,7 +363,7 @@ public class SystemDataBase {
 	}
 	
 	/**
-	 * ¸ù¾İmsgc_vid²éÑ¯msginfo
+	 * æ ¹æ®msgc_vidæŸ¥è¯¢msginfo
 	 * @param uid
 	 * @return
 	 */
@@ -405,7 +405,7 @@ public class SystemDataBase {
 				msgcs[inum].pid = mPlanCursor.getInt(mPlanCursor.getColumnIndex("pid"));
 				msgcs[inum].msgc_full = mPlanCursor.getInt(mPlanCursor.getColumnIndex("msgc_full"));
 
-//				// ·´±ê×¼»¯
+//				// åæ ‡å‡†åŒ–
 //				msgcs.sqliteStandard(false);
 				if(inum < msgcs.length - 1 && mPlanCursor.moveToNext() == false){
 					msgcs = null;
@@ -436,18 +436,18 @@ public class SystemDataBase {
 	}
 	
 	/**
-	 * ²åÈëmsginfo
+	 * æ’å…¥msginfo
 	 * @param msgcs
 	 * @return
 	 */
 	private boolean insertMsgCSInfo(MessageCenter msgcs){
-//		// ±ê×¼»¯
+//		// æ ‡å‡†åŒ–
 //		msgcs.sqliteStandard(true);
 		boolean isSuccess = true;
-		//¿ªÆôÊÂÎñ
+		//å¼€å¯äº‹åŠ¡
 		mDB.beginTransaction();
 		try {
-			// ÅúÁ¿ÊÂÎñ
+			// æ‰¹é‡äº‹åŠ¡
 			String sql = "INSERT INTO messagecenter (msgc_vid, uid, msgc_title, " +
 					"msgc_face, msgc_content, msgc_time, pid, cid, msgc_full) VALUES ('" 
 					+msgcs.msgc_vid+"',"
@@ -464,7 +464,7 @@ public class SystemDataBase {
 				mDB.execSQL(sql);
 			}  catch (SQLException e) {
 				isSuccess = false;
-				// É¾³ıÌõÄ¿
+				// åˆ é™¤æ¡ç›®
 				String sqlx = "delete from messagecenter where msgc_vid = '"+ msgcs.msgc_vid  + "' and uid = " + msgcs.uid;
 				try {
 					mDB.execSQL(sqlx);
@@ -474,13 +474,13 @@ public class SystemDataBase {
 				Log.e(TAG, e.toString());
 			}
 			if (isSuccess){
-				// ÉèÖÃÊÂÎñ±êÖ¾Îª³É¹¦£¬µ±½áÊøÊÂÎñÊ±¾Í»áÌá½»ÊÂÎñ
+				// è®¾ç½®äº‹åŠ¡æ ‡å¿—ä¸ºæˆåŠŸï¼Œå½“ç»“æŸäº‹åŠ¡æ—¶å°±ä¼šæäº¤äº‹åŠ¡
 				mDB.setTransactionSuccessful();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally{
-			//½áÊøÊÂÎñ
+			//ç»“æŸäº‹åŠ¡
 			mDB.endTransaction();
 		}
 		
@@ -488,16 +488,16 @@ public class SystemDataBase {
 	}
 	
 	/**
-	 * É¾³ıMsgCS
+	 * åˆ é™¤MsgCS
 	 * @param msgc_vid
 	 * @return
 	 */
 	private boolean deleteMsgCSById(String msgc_vid, int uid){
 		boolean bSuccess = true;
-		//¿ªÆôÊÂÎñ
+		//å¼€å¯äº‹åŠ¡
 		mDB.beginTransaction();
 		try {
-			// ÅúÁ¿ÊÂÎñ
+			// æ‰¹é‡äº‹åŠ¡
 			String sql = "delete from messagecenter where msgc_vid = '"+ msgc_vid  + "' and uid = " + uid;
 			try {
 				mDB.execSQL(sql);
@@ -506,29 +506,29 @@ public class SystemDataBase {
 				bSuccess = false;
 			}
 			if (bSuccess){
-				// ÉèÖÃÊÂÎñ±êÖ¾Îª³É¹¦£¬µ±½áÊøÊÂÎñÊ±¾Í»áÌá½»ÊÂÎñ
+				// è®¾ç½®äº‹åŠ¡æ ‡å¿—ä¸ºæˆåŠŸï¼Œå½“ç»“æŸäº‹åŠ¡æ—¶å°±ä¼šæäº¤äº‹åŠ¡
 				mDB.setTransactionSuccessful();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally{
-			//½áÊøÊÂÎñ
+			//ç»“æŸäº‹åŠ¡
 			mDB.endTransaction();
 		}
 		return bSuccess;
 	}
 	
 	/**
-	 * É¾³ıMsgCS
+	 * åˆ é™¤MsgCS
 	 * @param msgc_vid
 	 * @return
 	 */
 	private boolean deleteMsgCSByArrayIds(String []msgc_vid, int uid){
 		boolean bSuccess = true;
-		//¿ªÆôÊÂÎñ
+		//å¼€å¯äº‹åŠ¡
 		mDB.beginTransaction();
 		try {
-			// ÅúÁ¿ÊÂÎñ
+			// æ‰¹é‡äº‹åŠ¡
 			for (int inum = 0; inum < msgc_vid.length && bSuccess; inum++) {
 				String sql = "delete from messagecenter where msgc_vid = '"+ msgc_vid[inum]  + "' and uid = " + uid;
 				try {
@@ -539,31 +539,31 @@ public class SystemDataBase {
 				}
 			}
 			if (bSuccess){
-				// ÉèÖÃÊÂÎñ±êÖ¾Îª³É¹¦£¬µ±½áÊøÊÂÎñÊ±¾Í»áÌá½»ÊÂÎñ
+				// è®¾ç½®äº‹åŠ¡æ ‡å¿—ä¸ºæˆåŠŸï¼Œå½“ç»“æŸäº‹åŠ¡æ—¶å°±ä¼šæäº¤äº‹åŠ¡
 				mDB.setTransactionSuccessful();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally{
-			//½áÊøÊÂÎñ
+			//ç»“æŸäº‹åŠ¡
 			mDB.endTransaction();
 		}
 		return bSuccess;
 	}
 	
 	/**
-	 * ¸üĞÂMsgCSĞÅÏ¢
+	 * æ›´æ–°MsgCSä¿¡æ¯
 	 * @param msgcs
 	 * @return
 	 */
 	private boolean updateMsgCSInfo(MessageCenter msgcs){
-//		// ±ê×¼»¯
+//		// æ ‡å‡†åŒ–
 //		msgcs.sqliteStandard(true);
 		boolean bSuccess = true;
-		//¿ªÆôÊÂÎñ
+		//å¼€å¯äº‹åŠ¡
 		mDB.beginTransaction();
 		try {
-			// ÅúÁ¿ÊÂÎñ
+			// æ‰¹é‡äº‹åŠ¡
 			String sql = "update messagecenter set msgc_title = '" + msgcs.msgc_title
 					+"', msgc_face = '" + msgcs.msgc_face	
 					+"', msgc_content = '" + msgcs.msgc_content	
@@ -579,24 +579,24 @@ public class SystemDataBase {
 				bSuccess = false;
 			}
 			if (bSuccess){
-				// ÉèÖÃÊÂÎñ±êÖ¾Îª³É¹¦£¬µ±½áÊøÊÂÎñÊ±¾Í»áÌá½»ÊÂÎñ
+				// è®¾ç½®äº‹åŠ¡æ ‡å¿—ä¸ºæˆåŠŸï¼Œå½“ç»“æŸäº‹åŠ¡æ—¶å°±ä¼šæäº¤äº‹åŠ¡
 				mDB.setTransactionSuccessful();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally{
-			//½áÊøÊÂÎñ
+			//ç»“æŸäº‹åŠ¡
 			mDB.endTransaction();
 		}
 			
 		return bSuccess;
 	}
 	//====================================================================================
-	// ÏûÏ¢ÖĞĞÄend
+	// æ¶ˆæ¯ä¸­å¿ƒend
 	//====================================================================================
 	
 	/**
-	 * ¹Ø±ÕÊı¾İ¿â
+	 * å…³é—­æ•°æ®åº“
 	 */
 	private void close() {
 		if (mDB != null) {
@@ -606,7 +606,7 @@ public class SystemDataBase {
 	}
 	
 	/**
-	 * ¸ù¾İÊı¾İ¿âÃû³ÆÉ¾³ıÊı¾İ¿âÎÄ¼ş
+	 * æ ¹æ®æ•°æ®åº“åç§°åˆ é™¤æ•°æ®åº“æ–‡ä»¶
 	 * @param tableName
 	 */
 	private void dropTable(String tableName){

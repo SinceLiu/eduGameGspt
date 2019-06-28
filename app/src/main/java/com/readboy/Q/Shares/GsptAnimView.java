@@ -5,6 +5,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import com.readboy.Q.Gspt.R;
+import com.readboy.Q.app.App;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -12,6 +13,7 @@ import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.PixelFormat;
 import android.graphics.PorterDuff.Mode;
 import android.graphics.drawable.BitmapDrawable;
@@ -23,8 +25,8 @@ import android.view.SurfaceView;
 import android.view.View;
 
 /**
- * ¹Ø¿¨ÌáÊ¾¿òÀà£¬ÓÃÀ´»æÖÆ¹Ø¿¨×´Ì¬£¬µ÷ÓÃÕßÓ¦ÔÚÊµÀı»¯¸ÃÀàºó½ô½Ó×Åµ÷ÓÃ{@link #setmCurLevel(int)}ºÍ
- * {@link #setmTotalLevel(int)}À´ÉèÖÃ¹Ø¿¨£¬ÒÔ¹©³õÊ¼»¯
+ * å…³å¡æç¤ºæ¡†ç±»ï¼Œç”¨æ¥ç»˜åˆ¶å…³å¡çŠ¶æ€ï¼Œè°ƒç”¨è€…åº”åœ¨å®ä¾‹åŒ–è¯¥ç±»åç´§æ¥ç€è°ƒç”¨{@link #setmCurLevel(int)}å’Œ
+ * {@link #setmTotalLevel(int)}æ¥è®¾ç½®å…³å¡ï¼Œä»¥ä¾›åˆå§‹åŒ–
  * 
  * @author css
  * @version 1.0
@@ -36,37 +38,37 @@ public class GsptAnimView extends ReadboySurfaceView implements SurfaceHolder.Ca
 	private Timer timer = new Timer();
 	private MyTimerTask task = null;
 	
-	/** Ë¢Í¼¼ä¸ô */
+	/** åˆ·å›¾é—´éš” */
 	private int timeout = 150;
-	/** µ¥×éµ±Ç°Ë¢µ½ÄÄÒ»ÕÅÍ¼Æ¬ */
+	/** å•ç»„å½“å‰åˆ·åˆ°å“ªä¸€å¼ å›¾ç‰‡ */
 	private int mTimeCount = 0;
-	/** µ¥×é×ÜÍ¼Æ¬Êı *///ÏÖÒÑ¸ÄÎªµÚÒ»ÕÅÍ¼Æ¬µÄID
+	/** å•ç»„æ€»å›¾ç‰‡æ•° *///ç°å·²æ”¹ä¸ºç¬¬ä¸€å¼ å›¾ç‰‡çš„ID
 	private int mTotalPic = 0;
-	/** Í¼Æ¬Ä¿Â¼ *///ÏÖÒÑ¸ÄÎªµÚÒ»ÕÅÍ¼Æ¬µÄID
+	/** å›¾ç‰‡ç›®å½• *///ç°å·²æ”¹ä¸ºç¬¬ä¸€å¼ å›¾ç‰‡çš„ID
 	private int mPicDir = 0;
-	/** µ±Ç°ÊÇµÚ¼¸×é¶¯»­£¬¼´µÚ¼¸²½£¬×¢£º´Ó1¿ªÊ¼ */
+	/** å½“å‰æ˜¯ç¬¬å‡ ç»„åŠ¨ç”»ï¼Œå³ç¬¬å‡ æ­¥ï¼Œæ³¨ï¼šä»1å¼€å§‹ */
 	// private int mCurStep;
-	/** iconË÷Òı£¬ÓÃÓÚÈ·¶¨Í¼Æ¬Ä¿Â¼ */
+	/** iconç´¢å¼•ï¼Œç”¨äºç¡®å®šå›¾ç‰‡ç›®å½• */
 	// private int mIconIndex;
-	/** ÊÇ·ñÒÑ¾­¿ªÊ¼Ë¢¶¯»­ÁË */
+	/** æ˜¯å¦å·²ç»å¼€å§‹åˆ·åŠ¨ç”»äº† */
 	// private boolean isRunning;
 	/**
-	 * µ±Ç°µÄÍ¼Æ¬×ÜÊı
+	 * å½“å‰çš„å›¾ç‰‡æ€»æ•°
 	 */
 	private int mCBTotalPic = 0;
 	/**
-	 * µ±Ç°µÄÍ¼Æ¬Â·¾¶£¬ÏÖÒÑ¸ÄÎªµÚÒ»ÕÅÍ¼Æ¬µÄID
+	 * å½“å‰çš„å›¾ç‰‡è·¯å¾„ï¼Œç°å·²æ”¹ä¸ºç¬¬ä¸€å¼ å›¾ç‰‡çš„ID
 	 */
 	private int mCBPicDir = 0;
 	/**
-	 * »Øµ÷º¯Êı
+	 * å›è°ƒå‡½æ•°
 	 */
 	private OwnerActivtiyState ownerStateCallback = null;
 	/**
-	 * ÉÏÏÂÎÄContext¶ÔÏó
+	 * ä¸Šä¸‹æ–‡Contextå¯¹è±¡
 	 */
 	private Context mContext;
-	/** ÎªÁË¼Ó¿ì¶¯»­ËÙ¶È£¬Ê¹ÓÃÏß³Ì½âÍ¼£¬°Ñ½â³öÀ´µÄÍ¼È«²¿»º´æµ½ÄÚ´æÖĞ */
+	/** ä¸ºäº†åŠ å¿«åŠ¨ç”»é€Ÿåº¦ï¼Œä½¿ç”¨çº¿ç¨‹è§£å›¾ï¼ŒæŠŠè§£å‡ºæ¥çš„å›¾å…¨éƒ¨ç¼“å­˜åˆ°å†…å­˜ä¸­ */
 	// private ArrayList<SoftReference<Bitmap>> imageCache = new
 	// ArrayList<SoftReference<Bitmap>>();
 	// private ArrayList<Bitmap> imageCache = new ArrayList<Bitmap>();
@@ -77,12 +79,12 @@ public class GsptAnimView extends ReadboySurfaceView implements SurfaceHolder.Ca
 	}
 
 	/**
-	 * ½«´Ëview·ÅÖÃÓÚxml²¼¾ÖÖĞÊ±±ØĞëÌá¹©´Ë¹¹Ôìº¯Êı
+	 * å°†æ­¤viewæ”¾ç½®äºxmlå¸ƒå±€ä¸­æ—¶å¿…é¡»æä¾›æ­¤æ„é€ å‡½æ•°
 	 * 
 	 * @param context
-	 *            ÉÏÏÂÎÄ
+	 *            ä¸Šä¸‹æ–‡
 	 * @param attrs
-	 *            ×Ô¶¨ÒåÊôĞÔ
+	 *            è‡ªå®šä¹‰å±æ€§
 	 */
 	public GsptAnimView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -90,43 +92,43 @@ public class GsptAnimView extends ReadboySurfaceView implements SurfaceHolder.Ca
 	}
 
 	/**
-	 * ³õÊ¼»¯surfaceView£¬Ö÷ÒªÊÇÊ¹ÆäÍ¸Ã÷
+	 * åˆå§‹åŒ–surfaceViewï¼Œä¸»è¦æ˜¯ä½¿å…¶é€æ˜
 	 */
 	private void init(Context context, AttributeSet attrs) {
 		// Log.i(TAG, "init");
 
 		
-		// »ñµÃresFolderÊôĞÔµÄ×ÊÔ´ID£¬Í¼Æ¬×ÊÔ´Â·¾¶
+		// è·å¾—resFolderå±æ€§çš„èµ„æºIDï¼Œå›¾ç‰‡èµ„æºè·¯å¾„
 		mPicDir = attrs.getAttributeResourceValue(null, "resStartId", 0);
 		if (mPicDir == 0) {
 			mPicDir = R.drawable.gspt_anim_bee_000;
-			throw new RuntimeException("±ØĞëÉèÖÃresFolderÊôĞÔ£¬±êÃ÷Í¼Æ¬ËùÔÚÂ·¾¶£¡");
+			throw new RuntimeException("å¿…é¡»è®¾ç½®resFolderå±æ€§ï¼Œæ ‡æ˜å›¾ç‰‡æ‰€åœ¨è·¯å¾„ï¼");
 		}
-		// »ñµÃresPicNumberÊôĞÔµÄ×ÊÔ´ID£¬Í¼Æ¬×ÊÔ´¸öÊı
+		// è·å¾—resPicNumberå±æ€§çš„èµ„æºIDï¼Œå›¾ç‰‡èµ„æºä¸ªæ•°
 		mTotalPic = attrs.getAttributeIntValue(null, "resPicNumber", 0);
 		if (mTotalPic == 0) {
 			mTotalPic = 29;
-			throw new RuntimeException("±ØĞëÉèÖÃresPicNumberÊôĞÔ£¬±êÃ÷Í¼Æ¬×ÜÊı£¡");
+			throw new RuntimeException("å¿…é¡»è®¾ç½®resPicNumberå±æ€§ï¼Œæ ‡æ˜å›¾ç‰‡æ€»æ•°ï¼");
 		}
-		// »ñµÃresFolderÊôĞÔµÄ×ÊÔ´ID£¬Í¼Æ¬×ÊÔ´Â·¾¶
+		// è·å¾—resFolderå±æ€§çš„èµ„æºIDï¼Œå›¾ç‰‡èµ„æºè·¯å¾„
 		mCBPicDir = attrs.getAttributeResourceValue(null, "resCBStartId", 0);
 		if (mCBPicDir == 0) {
 			mCBPicDir = R.drawable.gspt_anim_bee_000;
-			throw new RuntimeException("±ØĞëÉèÖÃresCBFolderÊôĞÔ£¬±êÃ÷Í¼Æ¬ËùÔÚÂ·¾¶£¡");
+			throw new RuntimeException("å¿…é¡»è®¾ç½®resCBFolderå±æ€§ï¼Œæ ‡æ˜å›¾ç‰‡æ‰€åœ¨è·¯å¾„ï¼");
 		}		
-		// »ñµÃresPicNumberÊôĞÔµÄ×ÊÔ´ID£¬Í¼Æ¬×ÊÔ´¸öÊı
+		// è·å¾—resPicNumberå±æ€§çš„èµ„æºIDï¼Œå›¾ç‰‡èµ„æºä¸ªæ•°
 		mCBTotalPic = attrs.getAttributeIntValue(null, "resCBPicNumber", 0);
 		if (mCBTotalPic == 0) {
 			mCBTotalPic = 29;
-			throw new RuntimeException("±ØĞëÉèÖÃresCBPicNumberÊôĞÔ£¬±êÃ÷Í¼Æ¬×ÜÊı£¡");
+			throw new RuntimeException("å¿…é¡»è®¾ç½®resCBPicNumberå±æ€§ï¼Œæ ‡æ˜å›¾ç‰‡æ€»æ•°ï¼");
 		}
 
-		// ¼ÇÂ¼ÉÏÏÂÎÄContext¶ÔÏó
+		// è®°å½•ä¸Šä¸‹æ–‡Contextå¯¹è±¡
 		mContext = context;
 		mSHolder = this.getSurface();
-		// Ë¢ĞÂÔÚ×î¶¥²ã
+		// åˆ·æ–°åœ¨æœ€é¡¶å±‚
 		setZOrderOnTop(true);
-		// Ê¹±³¾°Í¸Ã÷
+		// ä½¿èƒŒæ™¯é€æ˜
 		mSHolder.setFormat(PixelFormat.TRANSLUCENT);
 		mSHolder.addCallback(this);
 		
@@ -134,20 +136,20 @@ public class GsptAnimView extends ReadboySurfaceView implements SurfaceHolder.Ca
 
 	@Override
 	public void surfaceCreated(SurfaceHolder holder) {
-		// ¿ªÊ¼²¥·Å¶¯»­
+		// å¼€å§‹æ’­æ”¾åŠ¨ç”»
 		beginAnim(true);
 		/*
-		 * //Ëø¶¨Õû¸öSurfaceView Canvas canvas = mSHolder.lockCanvas(); //»æÖÆ±³¾°
+		 * //é”å®šæ•´ä¸ªSurfaceView Canvas canvas = mSHolder.lockCanvas(); //ç»˜åˆ¶èƒŒæ™¯
 		 * Bitmap bk =
 		 * DataManager.decodeBitmapFromAsset(Constant.LAUNCH_BK_TOTAL_PIC_DIR
 		 * +"finish_state_bar.png"); canvas.drawBitmap(bk, 0, 0, null);
-		 * //»æÖÆÍê³É£¬ÊÍ·Å»­²¼£¬Ìá½»¸ü¸Ä mSHolder.unlockCanvasAndPost(canvas);
+		 * //ç»˜åˆ¶å®Œæˆï¼Œé‡Šæ”¾ç”»å¸ƒï¼Œæäº¤æ›´æ”¹ mSHolder.unlockCanvasAndPost(canvas);
 		 */
-		// ÖØĞÂËøÒ»´Î£¬±ÜÃâ±»ÏÂ´ÎÕÚµ²
+		// é‡æ–°é”ä¸€æ¬¡ï¼Œé¿å…è¢«ä¸‹æ¬¡é®æŒ¡
 		// mSHolder.lockCanvas(new Rect(0, 0, 0, 0));
 		// mSHolder.unlockCanvasAndPost(canvas);
 
-		// Ë¢¹Ø¿¨
+		// åˆ·å…³å¡
 		// drawQstLevel(mCurLevel, mTotalLevel);
 	}
 
@@ -174,25 +176,25 @@ public class GsptAnimView extends ReadboySurfaceView implements SurfaceHolder.Ca
 	}
 
 //	/**
-//	 * ¹©Íâ²¿µ÷ÓÃ£¬¸ù¾İµ±Ç°×´Ì¬ÉèÖÃµ±Ç°×´Ì¬µÄÍ¼Æ¬×ÜÊı
+//	 * ä¾›å¤–éƒ¨è°ƒç”¨ï¼Œæ ¹æ®å½“å‰çŠ¶æ€è®¾ç½®å½“å‰çŠ¶æ€çš„å›¾ç‰‡æ€»æ•°
 //	 * 
 //	 * @param fairyState
-//	 *            µ±Ç°×´Ì¬
+//	 *            å½“å‰çŠ¶æ€
 //	 */
 //	public void setTotalPic() {
 //		this.mTotalPic = getOneStepTotalPic();
 //	}
 
 //	/**
-//	 * »ñµÃµ±Ç°×´Ì¬ÖĞÓĞ¶àÉÙ¶¯»­Í¼Æ¬
+//	 * è·å¾—å½“å‰çŠ¶æ€ä¸­æœ‰å¤šå°‘åŠ¨ç”»å›¾ç‰‡
 //	 * 
-//	 * @return µ±Ç°×´Ì¬µÄ¶¯»­Í¼Æ¬×ÜÊı
+//	 * @return å½“å‰çŠ¶æ€çš„åŠ¨ç”»å›¾ç‰‡æ€»æ•°
 //	 */
 //	private int getOneStepTotalPicxa() {
 //		int picNum = Constant.QQVIEW_TOTAL_PIC;
 //		/*
-//		 * int picNum = 0; //²»½¨ÒéÓÃ´Ë·½·¨È¥ËÑË÷Í¼Æ¬×ÜÊı£¬Ì«ºÄÊ±ÁË try {
-//		 * //×¢£ºAssertManagerµÄlist(path)º¯ÊıÖĞµÄpath²»ÄÜÒÔ'/'½áÎ² String[] files =
+//		 * int picNum = 0; //ä¸å»ºè®®ç”¨æ­¤æ–¹æ³•å»æœç´¢å›¾ç‰‡æ€»æ•°ï¼Œå¤ªè€—æ—¶äº† try {
+//		 * //æ³¨ï¼šAssertManagerçš„list(path)å‡½æ•°ä¸­çš„pathä¸èƒ½ä»¥'/'ç»“å°¾ String[] files =
 //		 * DataManager.getAssetManager().list(mPicDir); if(files != null) picNum
 //		 * = files.length; } catch (IOException e) {
 //		 * catch block e.printStackTrace(); }
@@ -202,9 +204,9 @@ public class GsptAnimView extends ReadboySurfaceView implements SurfaceHolder.Ca
 //	}
 
 	/**
-	 * ÅĞ¶ÏËùÊôactivityÊÇ·ñÒÑ¾­ÔİÍ£ÁË
+	 * åˆ¤æ–­æ‰€å±activityæ˜¯å¦å·²ç»æš‚åœäº†
 	 * 
-	 * @return ÔİÍ£·µ»Øtrue£¬·ñÔòfalse
+	 * @return æš‚åœè¿”å›trueï¼Œå¦åˆ™false
 	 */
 	private boolean bMyOwnerActPause() {
 		boolean ret = false;
@@ -218,7 +220,7 @@ public class GsptAnimView extends ReadboySurfaceView implements SurfaceHolder.Ca
 	}
 
 	/**
-	 * Ìá¹©¸øÍâ²¿µ÷ÓÃÒÔ¿ªÊ¼¶¯»­
+	 * æä¾›ç»™å¤–éƒ¨è°ƒç”¨ä»¥å¼€å§‹åŠ¨ç”»
 	 */
 	public boolean beginAnim(boolean bAnimNormal) {
 		synchronized (GsptViewPagerAdapter.class) {
@@ -250,7 +252,7 @@ public class GsptAnimView extends ReadboySurfaceView implements SurfaceHolder.Ca
 	}
 	
 	/**
-	 * Ìá¹©¸øÍâ²¿µ÷ÓÃÒÔÍ£Ö¹¶¯»­
+	 * æä¾›ç»™å¤–éƒ¨è°ƒç”¨ä»¥åœæ­¢åŠ¨ç”»
 	 */
 	public void stopAnim() {
 		if (task != null) {
@@ -260,9 +262,9 @@ public class GsptAnimView extends ReadboySurfaceView implements SurfaceHolder.Ca
 	}
 	
 	/**
-	 * @aim ¸ù¾İ×ÊÔ´id¼ÓÔØÍ¼Æ¬µ½ÎÄ¼şÁ÷
-	 * @param resID ×ÊÔ´IDºÅ
-	 * @return ·µ»Øbitmap¶ÔÏó
+	 * @aim æ ¹æ®èµ„æºidåŠ è½½å›¾ç‰‡åˆ°æ–‡ä»¶æµ
+	 * @param resID èµ„æºIDå·
+	 * @return è¿”å›bitmapå¯¹è±¡
 	 */
 	public Bitmap loadResById(int resID) {
 		BitmapFactory.Options opt = new BitmapFactory.Options();
@@ -275,10 +277,10 @@ public class GsptAnimView extends ReadboySurfaceView implements SurfaceHolder.Ca
 	}	
 	
 	/**
-	 * ¸ù¾İÍ¼Æ¬Â·¾¶Ë¢Ò»ÕÅÍ¼µ½»­²¼ÉÏ
+	 * æ ¹æ®å›¾ç‰‡è·¯å¾„åˆ·ä¸€å¼ å›¾åˆ°ç”»å¸ƒä¸Š
 	 * 
 	 * @param picPath
-	 *            assertÖĞµÄÍ¼Æ¬Â·¾¶
+	 *            assertä¸­çš„å›¾ç‰‡è·¯å¾„
 	 */
 	private void drawOnePic(int resId) {
 		if (bMyOwnerActPause())
@@ -290,11 +292,20 @@ public class GsptAnimView extends ReadboySurfaceView implements SurfaceHolder.Ca
 			if (canvas == null) {
 				Log.e(TAG, "mTimeCount=" + mTimeCount + ",mSHolder=" + mSHolder + ",drawOnePic canvas=null");
 			} else {
-				// Çå³ı»­²¼ÄÚÈİ
+				// æ¸…é™¤ç”»å¸ƒå†…å®¹
 				canvas.drawColor(Color.TRANSPARENT, Mode.CLEAR);
 				Bitmap bitmap = loadResById(resId);;
 				if (bitmap != null) {
-					canvas.drawBitmap(bitmap, 0, 0, null);
+					if(App.getInstance().mScale>1){
+						int w = bitmap.getWidth();
+						int h = bitmap.getHeight();
+						float scaleX = App.getInstance().mScale;
+						Matrix matrix = new Matrix();
+						matrix.postScale(scaleX, scaleX, 0, 0);
+						canvas.drawBitmap(bitmap, matrix, null);
+					}else{
+						canvas.drawBitmap(bitmap, 0, 0, null);
+					}
 					if (!bitmap.isRecycled()) {
 						bitmap.recycle();
 					}
@@ -314,7 +325,7 @@ public class GsptAnimView extends ReadboySurfaceView implements SurfaceHolder.Ca
 	}	
 
 	/**
-	 * @aim ÉèÖÃ»Øµ÷º¯Êı
+	 * @aim è®¾ç½®å›è°ƒå‡½æ•°
 	 * @param callback
 	 */
 	public void setOnOwnerActivtiyStateCallback(OwnerActivtiyState callback) {
@@ -322,22 +333,22 @@ public class GsptAnimView extends ReadboySurfaceView implements SurfaceHolder.Ca
 	}
 
 	/**
-	 * @aim »ñÈ¡µ±Ç°µÄ¸¸ActivityÊÇ·ñÊÇPause×´Ì¬
+	 * @aim è·å–å½“å‰çš„çˆ¶Activityæ˜¯å¦æ˜¯PauseçŠ¶æ€
 	 * @author Administrator
 	 * 
 	 */
 	public interface OwnerActivtiyState {
 
 		/**
-		 * ÅĞ¶ÏÊÇ·ñÎÄ¼ş±»Ñ¡ÖĞ
+		 * åˆ¤æ–­æ˜¯å¦æ–‡ä»¶è¢«é€‰ä¸­
 		 * 
-		 * @return true Ñ¡ÖĞ false Î´Ñ¡ÖĞ
+		 * @return true é€‰ä¸­ false æœªé€‰ä¸­
 		 */
 		public boolean bOwnerActPause();
 	}
 
 	/**
-	 * Í³Ò»µÄtimerµ÷¶ÈÈÎÎñÄÚ²¿Àà
+	 * ç»Ÿä¸€çš„timerè°ƒåº¦ä»»åŠ¡å†…éƒ¨ç±»
 	 * 
 	 * @author css
 	 * 
@@ -345,12 +356,12 @@ public class GsptAnimView extends ReadboySurfaceView implements SurfaceHolder.Ca
 	class MyTimerTask extends TimerTask {
 
 		/**
-		 * ÈÎÎñID
+		 * ä»»åŠ¡ID
 		 */
 		private boolean bNormal = true;
 		
 		/**
-		 * @aim »ñÈ¡µ±Ç°µÄÀàĞÍ
+		 * @aim è·å–å½“å‰çš„ç±»å‹
 		 * @return
 		 */
 		public boolean getTaskStyle() {

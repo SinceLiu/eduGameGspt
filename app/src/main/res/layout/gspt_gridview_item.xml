@@ -14,5 +14,4 @@
         android:focusableInTouchMode="false"
         android:longClickable="false"
         android:visibility="visible" />
-
 </RelativeLayout>

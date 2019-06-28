@@ -1,14 +1,14 @@
 /**
- * @aim GsptPlaySurfaceViewÀà 
- * ÊµÏÖÓÎÏ·¶¯»­²¿·Ö¸üĞÂË¢Í¼ÓÃ£¬²»ÓÃÈ«ÆÁ¸üĞÂ£¬¶à¸ö¶¯»­¿ÉÒÔÒ»ÆğË¢ĞÂ
- * GsptPlaySurfaceViewµÄÊµÏÖ£º
- * 1¡¢Ê¹ÓÃÏß³ÌÑ­»·Ë¢ĞÂ¶¯»­
- * 2¡¢while(iRun)Í¨¹ıiRun¿ØÖÆÑ­»·½áÊøÓë·ñ
- * 3¡¢ÔÚ³õÊ¼»¯µÄÊ±ºòÒªÉèÖÃcallbackº¯Êı£¬Õâ¸öÊÇÕæÕıË¢ĞÂ¶¯»­µÄº¯Êı
- * Ã»ÓĞ¸Ãº¯Êı£¬¶¯»­²»»áË¢ĞÂ£¬¶à¸öGsptPlaySurfaceView´´½¨ºóÒ²¿ÉÒÔ
- * ÓÉÓÚcallbackÉèÖÃµÄ²»Ò»Ñù£¬Ë¢ĞÂµÄ¶¯»­²»Ò»Ñù
- * 4¡¢ºÜÖØÒªÒ»µã£¬ÔÚÍøÂçÉÏÕÒµ½µÄ¶¼Ã»ÓĞÌá¼°µÄÒ»µã
- * Ïß³ÌÖĞthreadHolder.unlockCanvasAndPost(cvs);µÄÊÍ·Å×îºÃÔÚsleepÖ®Ç°£¬·ñÔò±È½ÏÂı
+ * @aim GsptPlaySurfaceViewç±» 
+ * å®ç°æ¸¸æˆåŠ¨ç”»éƒ¨åˆ†æ›´æ–°åˆ·å›¾ç”¨ï¼Œä¸ç”¨å…¨å±æ›´æ–°ï¼Œå¤šä¸ªåŠ¨ç”»å¯ä»¥ä¸€èµ·åˆ·æ–°
+ * GsptPlaySurfaceViewçš„å®ç°ï¼š
+ * 1ã€ä½¿ç”¨çº¿ç¨‹å¾ªç¯åˆ·æ–°åŠ¨ç”»
+ * 2ã€while(iRun)é€šè¿‡iRunæ§åˆ¶å¾ªç¯ç»“æŸä¸å¦
+ * 3ã€åœ¨åˆå§‹åŒ–çš„æ—¶å€™è¦è®¾ç½®callbackå‡½æ•°ï¼Œè¿™ä¸ªæ˜¯çœŸæ­£åˆ·æ–°åŠ¨ç”»çš„å‡½æ•°
+ * æ²¡æœ‰è¯¥å‡½æ•°ï¼ŒåŠ¨ç”»ä¸ä¼šåˆ·æ–°ï¼Œå¤šä¸ªGsptPlaySurfaceViewåˆ›å»ºåä¹Ÿå¯ä»¥
+ * ç”±äºcallbackè®¾ç½®çš„ä¸ä¸€æ ·ï¼Œåˆ·æ–°çš„åŠ¨ç”»ä¸ä¸€æ ·
+ * 4ã€å¾ˆé‡è¦ä¸€ç‚¹ï¼Œåœ¨ç½‘ç»œä¸Šæ‰¾åˆ°çš„éƒ½æ²¡æœ‰æåŠçš„ä¸€ç‚¹
+ * çº¿ç¨‹ä¸­threadHolder.unlockCanvasAndPost(cvs);çš„é‡Šæ”¾æœ€å¥½åœ¨sleepä¹‹å‰ï¼Œå¦åˆ™æ¯”è¾ƒæ…¢
  * 
  * @time 2013.08.10;
  * @author divhee
@@ -32,16 +32,16 @@ public class GsptPlaySurfaceView extends ReadboySurfaceView implements
 		SurfaceHolder.Callback {
 
 	/**
-	 * SurfaceHolderÊÇÒ»¸ö½Ó¿Ú£¬Æä×÷ÓÃ¾ÍÏñÒ»¸ö¹ØÓÚSurfaceViewµÄ¼àÌıÆ÷
+	 * SurfaceHolderæ˜¯ä¸€ä¸ªæ¥å£ï¼Œå…¶ä½œç”¨å°±åƒä¸€ä¸ªå…³äºSurfaceViewçš„ç›‘å¬å™¨
 	 */
 	private SurfaceHolder myHolder = null;
 
 	/**
-	 * ×Ô¼º¶¨ÒåµÄSurfaceView¶¯»­Ë¢ĞÂÏß³Ì
-	 * SurfaceViewË¢ĞÂÓĞÁ½ÖÖ·½·¨ 
-	 * 1¡¢Í¨¹ıÏß³ÌÀ´Ë¢ĞÂ¡£
-	 * 2¡¢Í¨¹ı¶¨Ê±Æ÷À´Ë¢ĞÂ
-	 * ÎÒÃÇÕâÀïÑ¡ÓÃÁËÏß³ÌÀ´Ë¢ĞÂ¶¯»­
+	 * è‡ªå·±å®šä¹‰çš„SurfaceViewåŠ¨ç”»åˆ·æ–°çº¿ç¨‹
+	 * SurfaceViewåˆ·æ–°æœ‰ä¸¤ç§æ–¹æ³• 
+	 * 1ã€é€šè¿‡çº¿ç¨‹æ¥åˆ·æ–°ã€‚
+	 * 2ã€é€šè¿‡å®šæ—¶å™¨æ¥åˆ·æ–°
+	 * æˆ‘ä»¬è¿™é‡Œé€‰ç”¨äº†çº¿ç¨‹æ¥åˆ·æ–°åŠ¨ç”»
 	 */
 	private SurfaceViewPaintThread myThread = null;
 
@@ -51,10 +51,10 @@ public class GsptPlaySurfaceView extends ReadboySurfaceView implements
 		myHolder = this.getSurface();
 		myHolder.addCallback(this);
 
-		// ÉèÖÃ»­²¼ ±³¾°Í¸Ã÷
+		// è®¾ç½®ç”»å¸ƒ èƒŒæ™¯é€æ˜
 		this.setZOrderOnTop(true);
 
-		// TRANSLUCENT ÉèÖÃ±³¾°Í¸Ã÷
+		// TRANSLUCENT è®¾ç½®èƒŒæ™¯é€æ˜
 		this.getSurface().setFormat(PixelFormat.TRANSLUCENT);
 	}
 
@@ -64,10 +64,10 @@ public class GsptPlaySurfaceView extends ReadboySurfaceView implements
 		myHolder = this.getSurface();
 		myHolder.addCallback(this);
 
-		// ÉèÖÃ»­²¼ ±³¾°Í¸Ã÷
+		// è®¾ç½®ç”»å¸ƒ èƒŒæ™¯é€æ˜
 		this.setZOrderOnTop(true);
 
-		// TRANSLUCENT ÉèÖÃ±³¾°Í¸Ã÷
+		// TRANSLUCENT è®¾ç½®èƒŒæ™¯é€æ˜
 		this.getSurface().setFormat(PixelFormat.TRANSLUCENT);
 	}
 
@@ -77,10 +77,10 @@ public class GsptPlaySurfaceView extends ReadboySurfaceView implements
 		myHolder = this.getSurface();
 		myHolder.addCallback(this);
 
-		// ÉèÖÃ»­²¼ ±³¾°Í¸Ã÷
+		// è®¾ç½®ç”»å¸ƒ èƒŒæ™¯é€æ˜
 		this.setZOrderOnTop(true);
 
-		// TRANSLUCENT ÉèÖÃ±³¾°Í¸Ã÷
+		// TRANSLUCENT è®¾ç½®èƒŒæ™¯é€æ˜
 		this.getSurface().setFormat(PixelFormat.TRANSLUCENT);
 	}
 
@@ -93,7 +93,7 @@ public class GsptPlaySurfaceView extends ReadboySurfaceView implements
 	@Override
 	public void surfaceCreated(SurfaceHolder arg0) {
 		// TODO Auto-generated method stub
-		// ´´½¨Ò»¸ö»æÍ¼Ïß³Ì
+		// åˆ›å»ºä¸€ä¸ªç»˜å›¾çº¿ç¨‹
 		try {
 			if (GsptRunDataFrame.bMainCurrentOnResumed && myThread == null) {
 			Log.w("divhee_edugame", "surfaceCreated====in===");
@@ -117,9 +117,9 @@ public class GsptPlaySurfaceView extends ReadboySurfaceView implements
 	}
 	
 	/**
-	 * @aim ²»ÂíÉÏË¢ĞÂ
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @aim ä¸é©¬ä¸Šåˆ·æ–°
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	public void surfaceNotPaintCurrent(int value){
 		try {
@@ -132,9 +132,9 @@ public class GsptPlaySurfaceView extends ReadboySurfaceView implements
 	}	
 	
 	/**
-	 * @aim ÍË³öº¯Êı½Ó¿Ú
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @aim é€€å‡ºå‡½æ•°æ¥å£
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	public void surfaceRealExit(){
 		try {
@@ -149,16 +149,16 @@ public class GsptPlaySurfaceView extends ReadboySurfaceView implements
 	}
 	
 	/**
-	 * @aim SurfaceViewË¢ĞÂ½çÃæÔÚÏß³Ìµ±ÖĞµÄ»Øµ÷º¯Êı ÓÃ»§Ê¹ÓÃSurfaceViewĞèÒªÉèÖÃÕâ¸ö
-	 *          ·ñÔò²»»áË¢ĞÂ½çÃæ£¬ÔÚÏß³ÌÖĞ»áµ÷ÓÃÕâ¸ö»Øµ÷
+	 * @aim SurfaceViewåˆ·æ–°ç•Œé¢åœ¨çº¿ç¨‹å½“ä¸­çš„å›è°ƒå‡½æ•° ç”¨æˆ·ä½¿ç”¨SurfaceViewéœ€è¦è®¾ç½®è¿™ä¸ª
+	 *          å¦åˆ™ä¸ä¼šåˆ·æ–°ç•Œé¢ï¼Œåœ¨çº¿ç¨‹ä¸­ä¼šè°ƒç”¨è¿™ä¸ªå›è°ƒ
 	 * @param cvs
-	 *            CanvasÓÃÓÚÓÃ»§»æÖÆÍ¼Æ¬µ½Õâ¸öÉÏ±ß
-	 * @return ÎŞ
+	 *            Canvasç”¨äºç”¨æˆ·ç»˜åˆ¶å›¾ç‰‡åˆ°è¿™ä¸ªä¸Šè¾¹
+	 * @return æ— 
 	 */
 	private SurfaceViewCallBack rePaintCallBack = null;
 
 	/**
-	 * ¶¨ÒåSurfaceViewË¢ĞÂ½çÃæµÄinterface½Ó¿Ú
+	 * å®šä¹‰SurfaceViewåˆ·æ–°ç•Œé¢çš„interfaceæ¥å£
 	 * 
 	 * @author divhee
 	 * 
@@ -168,20 +168,20 @@ public class GsptPlaySurfaceView extends ReadboySurfaceView implements
 	}
 
 	/**
-	 * @aim ÉèÖÃThreadµÄ»Øµ÷º¯Êı
+	 * @aim è®¾ç½®Threadçš„å›è°ƒå‡½æ•°
 	 * @param callBack
-	 *            SurfaceViewCallBackÀàĞÍµÄ»Øµ÷º¯Êı
-	 * @return ÎŞ
+	 *            SurfaceViewCallBackç±»å‹çš„å›è°ƒå‡½æ•°
+	 * @return æ— 
 	 */
 	public void setCallBack(SurfaceViewCallBack callBack) {
 		rePaintCallBack = callBack;
 	}
 
 	/**
-	 * @aim Ê¹ÓÃ»Øµ÷º¯Êı£¬Ë¢ĞÂ½çÃæ
+	 * @aim ä½¿ç”¨å›è°ƒå‡½æ•°ï¼Œåˆ·æ–°ç•Œé¢
 	 * @param cvs
-	 *            CanvasÓÃÓÚÓÃ»§»æÖÆÍ¼Æ¬µ½Õâ¸öÉÏ±ß
-	 * @return ÎŞ
+	 *            Canvasç”¨äºç”¨æˆ·ç»˜åˆ¶å›¾ç‰‡åˆ°è¿™ä¸ªä¸Šè¾¹
+	 * @return æ— 
 	 */
 	public void rePaintSurfaceViewByCallBack(Canvas cvs) {
 		if (rePaintCallBack != null) {
@@ -190,45 +190,45 @@ public class GsptPlaySurfaceView extends ReadboySurfaceView implements
 	}
 
 	/**
-	 * @aim Ë¢ĞÂÏß³Ì£¬Ïß³ÌÄÚ²¿Àà 
-	 *          ÏÈÍ¬²½synchronized(holder)
-	 *          ÔÙËø¶¨»­²¼Canvas
-	 *          ÔÙË¢ĞÂ½çÃæ
-	 *          È»ºó¸üĞÂµ½ÆÁÄ»ÉÏÈ¥
-	 *          ×îºóÏß³ÌË¯ÃßÒ»¶ÎÊ±¼äÈ»ºóÔÙÖØĞÂÑ­»·
+	 * @aim åˆ·æ–°çº¿ç¨‹ï¼Œçº¿ç¨‹å†…éƒ¨ç±» 
+	 *          å…ˆåŒæ­¥synchronized(holder)
+	 *          å†é”å®šç”»å¸ƒCanvas
+	 *          å†åˆ·æ–°ç•Œé¢
+	 *          ç„¶åæ›´æ–°åˆ°å±å¹•ä¸Šå»
+	 *          æœ€åçº¿ç¨‹ç¡çœ ä¸€æ®µæ—¶é—´ç„¶åå†é‡æ–°å¾ªç¯
 	 * @author divhee
 	 */
 	class SurfaceViewPaintThread extends Thread {
 
 		/**
-		 * ¿ØÖÆPlayThreadÏß³ÌÊÇ·ñ¼ÌĞøÑ­»· true ¼ÌĞøÔËĞĞ false ÍË³öÑ­»·
+		 * æ§åˆ¶PlayThreadçº¿ç¨‹æ˜¯å¦ç»§ç»­å¾ªç¯ true ç»§ç»­è¿è¡Œ false é€€å‡ºå¾ªç¯
 		 */
 		public boolean isRun = false;
 
 		/**
-		 * ÑÓÊ±¼ÆÊı£¬ÒòÎª·¢ÏÖHOMEÒÔºóÔÙ´Î½øÈë±È½ÏÂı
-		 * Ò»¸öĞ¡Ğ¡µÄÑÓÊ±µÈ´ı£¬½øÈëÄ£¿éºó²»ÂíÉÏ¶¯»­
+		 * å»¶æ—¶è®¡æ•°ï¼Œå› ä¸ºå‘ç°HOMEä»¥åå†æ¬¡è¿›å…¥æ¯”è¾ƒæ…¢
+		 * ä¸€ä¸ªå°å°çš„å»¶æ—¶ç­‰å¾…ï¼Œè¿›å…¥æ¨¡å—åä¸é©¬ä¸ŠåŠ¨ç”»
 		 */
 		public int mThOnResumeCount = 0;
 		
 		/**
-		 * ¿ØÖÆPlayThreadË¢ĞÂµÄ¿ìÂı£¬ÑÓÊ±Ê±¼ä³¤¶È 
-		 * threadDelayTime Ô½´ó£¬Ë¢ĞÂÔ½Âı£¬µ«±ØĞë´óÓÚ 0
+		 * æ§åˆ¶PlayThreadåˆ·æ–°çš„å¿«æ…¢ï¼Œå»¶æ—¶æ—¶é—´é•¿åº¦ 
+		 * threadDelayTime è¶Šå¤§ï¼Œåˆ·æ–°è¶Šæ…¢ï¼Œä½†å¿…é¡»å¤§äº 0
 		 */
 		public int threadDelayTime = 100;
 
 		/**
-		 * ±¾SurfaceViewÒª¸üĞÂ½çÃæËùĞèÒªµÄÍ¬²½±äÁ¿
+		 * æœ¬SurfaceViewè¦æ›´æ–°ç•Œé¢æ‰€éœ€è¦çš„åŒæ­¥å˜é‡
 		 */
 		public SurfaceHolder threadHolder = null;
 
 		/**
-		 * @aim Ïß³Ì³õÊ¼»¯£¬³õÊ¼»¯Ïß³ÌµÄÒ»Ğ©±äÁ¿
+		 * @aim çº¿ç¨‹åˆå§‹åŒ–ï¼Œåˆå§‹åŒ–çº¿ç¨‹çš„ä¸€äº›å˜é‡
 		 * @param holder
-		 *            Í¬²½ĞÅÏ¢±äÁ¿
+		 *            åŒæ­¥ä¿¡æ¯å˜é‡
 		 * @param Delay
-		 *            Í¨¹ıÑÓÊ±Ê±³¤¿ØÖÆ¶¯»­Ë¢ĞÂµÄ¿ìÂı
-		 * @return ÎŞ
+		 *            é€šè¿‡å»¶æ—¶æ—¶é•¿æ§åˆ¶åŠ¨ç”»åˆ·æ–°çš„å¿«æ…¢
+		 * @return æ— 
 		 */
 		public SurfaceViewPaintThread(SurfaceHolder holder, int Delay) {
 			// Log.w("divhee_edugame", "PlayThread =111==" );
@@ -246,27 +246,27 @@ public class GsptPlaySurfaceView extends ReadboySurfaceView implements
 				Canvas cvs = null;
 				try {
 					synchronized (threadHolder) {
-						// ÑÓÊ±¼ÆÊı£¬ÒòÎª·¢ÏÖHOMEÒÔºóÔÙ´Î½øÈë±È½ÏÂı
+						// å»¶æ—¶è®¡æ•°ï¼Œå› ä¸ºå‘ç°HOMEä»¥åå†æ¬¡è¿›å…¥æ¯”è¾ƒæ…¢
 						if (isRun && GsptRunDataFrame.bMainCurrentOnResumed){
 							if (mThOnResumeCount > 6) {
-								// Ëø¶¨»­²¼£¬Ò»°ãÔÚËø¶¨ºó¾Í¿ÉÒÔÍ¨¹ıÆä·µ»ØµÄ»­²¼¶ÔÏóCanvas£¬
-								// ÔÚÆäÉÏÃæ»­Í¼µÈ²Ù×÷ÁË¡£
+								// é”å®šç”»å¸ƒï¼Œä¸€èˆ¬åœ¨é”å®šåå°±å¯ä»¥é€šè¿‡å…¶è¿”å›çš„ç”»å¸ƒå¯¹è±¡Canvasï¼Œ
+								// åœ¨å…¶ä¸Šé¢ç”»å›¾ç­‰æ“ä½œäº†ã€‚
 								cvs = threadHolder.lockCanvas();
 								
-								// ÕâÒ»¾äºÜÖØÒª£¬ÕæÕı±³¾°Í¸Ã÷
+								// è¿™ä¸€å¥å¾ˆé‡è¦ï¼ŒçœŸæ­£èƒŒæ™¯é€æ˜
 								cvs.drawColor(Color.TRANSPARENT, Mode.CLEAR);
 								
-								// Ë¢ĞÂ¶¯»­µÄ»Øµ÷
+								// åˆ·æ–°åŠ¨ç”»çš„å›è°ƒ
 								rePaintSurfaceViewByCallBack(cvs);
 								
-								// ½áÊøËø¶¨»­Ãæ£¬¹Ø¼üµãÔÚÕâÀï
+								// ç»“æŸé”å®šç”»é¢ï¼Œå…³é”®ç‚¹åœ¨è¿™é‡Œ
 								if (cvs != null) {
-									// ½áÊøËø¶¨»­Í¼£¬²¢Ìá½»¸Ä±ä
+									// ç»“æŸé”å®šç”»å›¾ï¼Œå¹¶æäº¤æ”¹å˜
 									threadHolder.unlockCanvasAndPost(cvs);
 									cvs = null;
 								}
 								
-								// Ë¯ÃßÊ±¼äÎªthreadDelayTimeÉèÖÃÊ±³¤
+								// ç¡çœ æ—¶é—´ä¸ºthreadDelayTimeè®¾ç½®æ—¶é•¿
 								Thread.sleep(threadDelayTime);
 							} else {
 								mThOnResumeCount++;
@@ -274,7 +274,7 @@ public class GsptPlaySurfaceView extends ReadboySurfaceView implements
 							}
 						} else {
 							mThOnResumeCount = 0;
-							// Ë¯ÃßÊ±¼äÎªthreadDelayTimeÉèÖÃÊ±³¤
+							// ç¡çœ æ—¶é—´ä¸ºthreadDelayTimeè®¾ç½®æ—¶é•¿
 							Thread.sleep(8);
 						}
 					}
@@ -283,7 +283,7 @@ public class GsptPlaySurfaceView extends ReadboySurfaceView implements
 					e.printStackTrace();
 				} finally {
 					if (cvs != null) {
-						// ½áÊøËø¶¨»­Í¼£¬²¢Ìá½»¸Ä±ä
+						// ç»“æŸé”å®šç”»å›¾ï¼Œå¹¶æäº¤æ”¹å˜
 						threadHolder.unlockCanvasAndPost(cvs);
 						cvs = null;
 					}
@@ -293,6 +293,6 @@ public class GsptPlaySurfaceView extends ReadboySurfaceView implements
 	}
 
 	/**
-	 * SurfaceViewPaintThreadÄÚ²¿Àà¶¨Òå½áÊø end
+	 * SurfaceViewPaintThreadå†…éƒ¨ç±»å®šä¹‰ç»“æŸ end
 	 */
 }

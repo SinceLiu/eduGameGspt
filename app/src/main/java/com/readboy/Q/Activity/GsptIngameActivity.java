@@ -1,31 +1,31 @@
 /**
- * @aim ÒæÖÇÆ´Í¼ActivityÖ®GsptIngameActivity
- * ÓÎÏ·¿ªÊ¼Æ´Í¼£¬µã»÷ÓÒ²àÍ¼ĞÎÁĞ±íÖĞµÄÍ¼Æ¬»òÕßÍÏ¶¯¿ÉÒÔÈ¡³öÍ¼Æ¬
- * ÍÏ¶¯Ñ¡È¡µÄÍ¼Æ¬µ½ÕıÈ·Î»ÖÃ·ÅÏÂ¿ÉÒÔÆ´ºÃÒ»ÕÅÍ¼Æ¬£¬ÌáÊ¾ÕıÈ·Òô
- * ÍÏ¶¯Ñ¡È¡µÄÍ¼Æ¬µ½´íÎóÎ»ÖÃ·ÅÏÂ²»ÄÜÆ´ºÃ¸Ã³öÍ¼Æ¬£¬ÌáÊ¾´íÎóÒô
- * Æ´Í¼Íê³ÉºóÌáÊ¾Æ´Í¼³É¹¦£¬ÏÔÊ¾Æ´ºÃµÄÍ¼Æ¬µÄ¶¯»­£¬×îºóÏÔÊ¾½±ÀøÎïÆ·
+ * @aim ç›Šæ™ºæ‹¼å›¾Activityä¹‹GsptIngameActivity
+ * æ¸¸æˆå¼€å§‹æ‹¼å›¾ï¼Œç‚¹å‡»å³ä¾§å›¾å½¢åˆ—è¡¨ä¸­çš„å›¾ç‰‡æˆ–è€…æ‹–åŠ¨å¯ä»¥å–å‡ºå›¾ç‰‡
+ * æ‹–åŠ¨é€‰å–çš„å›¾ç‰‡åˆ°æ­£ç¡®ä½ç½®æ”¾ä¸‹å¯ä»¥æ‹¼å¥½ä¸€å¼ å›¾ç‰‡ï¼Œæç¤ºæ­£ç¡®éŸ³
+ * æ‹–åŠ¨é€‰å–çš„å›¾ç‰‡åˆ°é”™è¯¯ä½ç½®æ”¾ä¸‹ä¸èƒ½æ‹¼å¥½è¯¥å‡ºå›¾ç‰‡ï¼Œæç¤ºé”™è¯¯éŸ³
+ * æ‹¼å›¾å®Œæˆåæç¤ºæ‹¼å›¾æˆåŠŸï¼Œæ˜¾ç¤ºæ‹¼å¥½çš„å›¾ç‰‡çš„åŠ¨ç”»ï¼Œæœ€åæ˜¾ç¤ºå¥–åŠ±ç‰©å“
  * 
- * ²»Í¬µÄÍ¼ĞÎµÄÊµÏÖ£º
- * 1¡¢ÏÈ°ÑÍ¼Æ¬µÈ·Ö³É3+1·Ö£¬±ÈÈç3:3:3:1  ×îºó1·İÎªËæ»ú¿í¶È£¬Ëæ»ú·ÖÅäµ½Ç°±ß3·İµ±ÖĞ
- * 2¡¢¸ù¾İÄÑ¶È¼¶±ğ·Ö¸î²»Í¬µÄÍ¼ĞÎ£¬¶¼ÊÇÒÔ9¹¬¸ñÎª»ù´¡£¬Ã¿¸ö¸ñ´óĞ¡²»¶¨
- * µ«ÊÇºáÏò»òÕß×İÏò±ØÓĞÒ»¸ö·½ÏòÊÇ¹Ì¶¨µÄ£¬¼´ºáÏòÎªÁ½¸ùÖ±Ïß»òÕß×İÏòÎªÁ½¸ùÖ±Ïß
- * ÇĞ¸îÈı½ÇĞÎ·ÖÇĞ¸îÏßÊÇ"/"»òÕß"\"(×¢£º1±í"/" 2±í"\")
- * a¡¢µÍÄÑ¶ÈµÄÊ±ºò£¬Ëæ»úºáÏò»òÕß×İÏòÖ»·Ö³ÉÁ½·İ£¬´óĞ¡Ëæ»ú¡£±ä³É6¸ö¸ñ
- * b¡¢ÖĞµÈÄÑ¶ÈµÄÊ±ºò£¬ÔÚ9¹¬¸ñÀïºÏ²¢¾ØĞÎ»òÕßÇĞ¸îÈı½ÇĞÎ£¬Ëæ»ú×óÇĞ¸î»òÕßÓÒÇĞ¸î
- * c¡¢¸ßµÈÄÑ¶ÈµÄÊ±ºò£¬3¸ö¸ñºÏ²¢È»ºóÇĞ¸î³öÌİĞÎ»òÕßÆ½ĞĞËÄ±ßĞÎ£¬ÒÔ¼°Èı½ÇĞÎ
- * ÆäËûÇøÓò¿ÉÒÔÊÇ³¤·½ĞÎ»òÕßÇĞ¸î³ÉÁ½¸öÈı½ÇĞÎ
- * 3¡¢¸ù¾İÇĞ¸îºÃµÄÍ¼ĞÎµÄÂ·¾¶£¬²ÉÓÃsetXfermode·½·¨»æÖÆ³ö²»Í¬µÄĞÎ×´À´
+ * ä¸åŒçš„å›¾å½¢çš„å®ç°ï¼š
+ * 1ã€å…ˆæŠŠå›¾ç‰‡ç­‰åˆ†æˆ3+1åˆ†ï¼Œæ¯”å¦‚3:3:3:1  æœ€å1ä»½ä¸ºéšæœºå®½åº¦ï¼Œéšæœºåˆ†é…åˆ°å‰è¾¹3ä»½å½“ä¸­
+ * 2ã€æ ¹æ®éš¾åº¦çº§åˆ«åˆ†å‰²ä¸åŒçš„å›¾å½¢ï¼Œéƒ½æ˜¯ä»¥9å®«æ ¼ä¸ºåŸºç¡€ï¼Œæ¯ä¸ªæ ¼å¤§å°ä¸å®š
+ * ä½†æ˜¯æ¨ªå‘æˆ–è€…çºµå‘å¿…æœ‰ä¸€ä¸ªæ–¹å‘æ˜¯å›ºå®šçš„ï¼Œå³æ¨ªå‘ä¸ºä¸¤æ ¹ç›´çº¿æˆ–è€…çºµå‘ä¸ºä¸¤æ ¹ç›´çº¿
+ * åˆ‡å‰²ä¸‰è§’å½¢åˆ†åˆ‡å‰²çº¿æ˜¯"/"æˆ–è€…"\"(æ³¨ï¼š1è¡¨"/" 2è¡¨"\")
+ * aã€ä½éš¾åº¦çš„æ—¶å€™ï¼Œéšæœºæ¨ªå‘æˆ–è€…çºµå‘åªåˆ†æˆä¸¤ä»½ï¼Œå¤§å°éšæœºã€‚å˜æˆ6ä¸ªæ ¼
+ * bã€ä¸­ç­‰éš¾åº¦çš„æ—¶å€™ï¼Œåœ¨9å®«æ ¼é‡Œåˆå¹¶çŸ©å½¢æˆ–è€…åˆ‡å‰²ä¸‰è§’å½¢ï¼Œéšæœºå·¦åˆ‡å‰²æˆ–è€…å³åˆ‡å‰²
+ * cã€é«˜ç­‰éš¾åº¦çš„æ—¶å€™ï¼Œ3ä¸ªæ ¼åˆå¹¶ç„¶ååˆ‡å‰²å‡ºæ¢¯å½¢æˆ–è€…å¹³è¡Œå››è¾¹å½¢ï¼Œä»¥åŠä¸‰è§’å½¢
+ * å…¶ä»–åŒºåŸŸå¯ä»¥æ˜¯é•¿æ–¹å½¢æˆ–è€…åˆ‡å‰²æˆä¸¤ä¸ªä¸‰è§’å½¢
+ * 3ã€æ ¹æ®åˆ‡å‰²å¥½çš„å›¾å½¢çš„è·¯å¾„ï¼Œé‡‡ç”¨setXfermodeæ–¹æ³•ç»˜åˆ¶å‡ºä¸åŒçš„å½¢çŠ¶æ¥
  * 
- * Í¼Æ¬´ÓScrollViewÑ¡È¡µÄÊµÏÖ£º
- * 1¡¢µã»÷ScrollViewµ±ÖĞµÄÈÎÒâÍ¼Æ¬£¬»áÔÚRootLayoutÌí¼ÓÒ»¸öImageView
- * Èç¹û×î¿ªÊ¼Õâ¸öImageView´æÔÚ£¬ÔòÇå³ıÁËÔÙĞÂ½¨Ò»¸ö£¬¸ÃImageView¿¿½üScrollView
- * È»ºóÓÃ»§¿ÉÒÔÍÏ¶¯¸ÃImageView£¬µã»÷ÁíÍâÒ»¸ö£¬ÇĞ»»³ÉÁíÍâÒ»¸öÍ¼Æ¬£¬Í¬Ê±²»»áÓĞÁ½¸ö¼°Æä
- * ÒÔÉÏµÄÑ¡ÖĞImageView´æÔÚ
- * 2¡¢ÍÏ¶¯ScrollViewµ±ÖĞµÄÈÎÒâÍ¼Æ¬£¬¿ªÊ¼²»¶¯×÷£¬Ë®Æ½ÍÏ¶¯(´¹Ö±ÍÏ¶¯²»Ëã)Ò»¶Î¾àÀëºó
- * ±ÈÈçË®Æ½ÍÏ¶¯20ÏñËØºó£¬»áÔÚRootLayoutÌí¼ÓÒ»¸öImageViewÈç¹û×î¿ªÊ¼Õâ¸öImageView´æÔÚ
- * ÔòÇå³ıÁËÔÙĞÂ½¨Ò»¸ö£¬¸ÃImageView¿¿½üScrollView£¬È»ºóÓÃ»§¿ÉÒÔÍÏ¶¯¸ÃImageView
- * Èç¹ûÍÏ¶¯ÁíÍâÒ»¸öÔòÇå³ıÇ°Ò»¸ö£¬Í¬Ê±²»»áÓĞÁ½¸ö¼°ÆäÒÔÉÏµÄÑ¡ÖĞImageView´æÔÚ£¬ÍÏ¶¯¹ı20¸öÏñËØºó
- * ÓÃ»§¿ÉÒÔ¼ÌĞø ÍÏ¶¯¸ÃÍ¼Æ¬£¬Ò²¿ÉÒÔÌ§Æğ£¬ÖØĞÂ¿ªÊ¼ÍÏ¶¯¸ÃÍ¼Æ¬£¬Ö±ÖÁÌî³äµ½ÕıÈ·µÄÎ»ÖÃ
+ * å›¾ç‰‡ä»ScrollViewé€‰å–çš„å®ç°ï¼š
+ * 1ã€ç‚¹å‡»ScrollViewå½“ä¸­çš„ä»»æ„å›¾ç‰‡ï¼Œä¼šåœ¨RootLayoutæ·»åŠ ä¸€ä¸ªImageView
+ * å¦‚æœæœ€å¼€å§‹è¿™ä¸ªImageViewå­˜åœ¨ï¼Œåˆ™æ¸…é™¤äº†å†æ–°å»ºä¸€ä¸ªï¼Œè¯¥ImageViewé è¿‘ScrollView
+ * ç„¶åç”¨æˆ·å¯ä»¥æ‹–åŠ¨è¯¥ImageViewï¼Œç‚¹å‡»å¦å¤–ä¸€ä¸ªï¼Œåˆ‡æ¢æˆå¦å¤–ä¸€ä¸ªå›¾ç‰‡ï¼ŒåŒæ—¶ä¸ä¼šæœ‰ä¸¤ä¸ªåŠå…¶
+ * ä»¥ä¸Šçš„é€‰ä¸­ImageViewå­˜åœ¨
+ * 2ã€æ‹–åŠ¨ScrollViewå½“ä¸­çš„ä»»æ„å›¾ç‰‡ï¼Œå¼€å§‹ä¸åŠ¨ä½œï¼Œæ°´å¹³æ‹–åŠ¨(å‚ç›´æ‹–åŠ¨ä¸ç®—)ä¸€æ®µè·ç¦»å
+ * æ¯”å¦‚æ°´å¹³æ‹–åŠ¨20åƒç´ åï¼Œä¼šåœ¨RootLayoutæ·»åŠ ä¸€ä¸ªImageViewå¦‚æœæœ€å¼€å§‹è¿™ä¸ªImageViewå­˜åœ¨
+ * åˆ™æ¸…é™¤äº†å†æ–°å»ºä¸€ä¸ªï¼Œè¯¥ImageViewé è¿‘ScrollViewï¼Œç„¶åç”¨æˆ·å¯ä»¥æ‹–åŠ¨è¯¥ImageView
+ * å¦‚æœæ‹–åŠ¨å¦å¤–ä¸€ä¸ªåˆ™æ¸…é™¤å‰ä¸€ä¸ªï¼ŒåŒæ—¶ä¸ä¼šæœ‰ä¸¤ä¸ªåŠå…¶ä»¥ä¸Šçš„é€‰ä¸­ImageViewå­˜åœ¨ï¼Œæ‹–åŠ¨è¿‡20ä¸ªåƒç´ å
+ * ç”¨æˆ·å¯ä»¥ç»§ç»­ æ‹–åŠ¨è¯¥å›¾ç‰‡ï¼Œä¹Ÿå¯ä»¥æŠ¬èµ·ï¼Œé‡æ–°å¼€å§‹æ‹–åŠ¨è¯¥å›¾ç‰‡ï¼Œç›´è‡³å¡«å……åˆ°æ­£ç¡®çš„ä½ç½®
  * 
  * @time 2013.08.01;
  * @author divhee
@@ -44,6 +44,7 @@ import com.readboy.Q.Shares.GsptRunDataFrame.GameSharps;
 import com.readboy.Q.Shares.GsptRunDataFrame.ImgBtnAuto;
 import com.readboy.Q.Shares.GsptRunDataFrame.Interlude;
 import com.readboy.Q.Gspt.R;
+import com.readboy.Q.app.App;
 import com.readboy.reward.Reward;
 
 import android.app.ReadboyActivity;
@@ -72,6 +73,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.view.View.OnTouchListener;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.view.animation.Animation.AnimationListener;
@@ -85,179 +87,179 @@ import android.widget.ScrollView;
 public class GsptIngameActivity extends ReadboyActivity {
 
 	/**
-	 * LinearLayoutÊµÀı
+	 * LinearLayoutå®ä¾‹
 	 */
 	private LinearLayout lvLayoutSharps = null;
 
 	/**
-	 * RelativeLayoutÊµÀı
+	 * RelativeLayoutå®ä¾‹
 	 */
 	private RelativeLayout rLayoutIngame = null;
 
 	/**
-	 * ScrollView ÊµÀı
+	 * ScrollView å®ä¾‹
 	 */
 	private ScrollView scrollViewContainer = null;
 
 	/**
-	 * ÓÒ²àÇøÓòµÄRelativeLayoutÊµÀı
+	 * å³ä¾§åŒºåŸŸçš„RelativeLayoutå®ä¾‹
 	 */
 	private RelativeLayout relativeLayoutConsole = null;
 	
 	/**
-	 * ÓÎÏ·Ê¤ÀûºóÒªÏÔÊ¾µÄ¶¯»­Ãû
+	 * æ¸¸æˆèƒœåˆ©åè¦æ˜¾ç¤ºçš„åŠ¨ç”»å
 	 */
 	private String GsptInterludeName = null;
 
 	/**
-	 * Í¼Æ¬±³¾°¿Ø¼şÊµÀı
+	 * å›¾ç‰‡èƒŒæ™¯æ§ä»¶å®ä¾‹
 	 */
 	private ImageView imgViewbg = null;
 	
 	/**
-	 * Í¼Æ¬±³¾°¿Ø¼şÊµÀı
+	 * å›¾ç‰‡èƒŒæ™¯æ§ä»¶å®ä¾‹
 	 */
 	private ImageView imgViewCheer = null;
 	
 	/**
-	 * Í¼Æ¬±³¾°¿Ø¼şÊµÀı
+	 * å›¾ç‰‡èƒŒæ™¯æ§ä»¶å®ä¾‹
 	 */
 	private ImageView imgViewXinXin = null;		
 
 	/**
-	 * ÕæÊµÆ´Í¼µÄ±³¾°Í¼Æ¬
+	 * çœŸå®æ‹¼å›¾çš„èƒŒæ™¯å›¾ç‰‡
 	 */
 	private Bitmap gsptBitmap = null;
 
 	/**
-	 * Æ´Í¼±³¾°ÓÃµÄ»ÒÉ«±³¾°Í¼Æ¬
+	 * æ‹¼å›¾èƒŒæ™¯ç”¨çš„ç°è‰²èƒŒæ™¯å›¾ç‰‡
 	 */
 	private Bitmap grayBgBitmap = null;
 
 	/**
-	 * imgViewChooseÑ¡ÔñÍ¼Æ¬ºóÏÔÊ¾µÄ¿Ø¼ş
+	 * imgViewChooseé€‰æ‹©å›¾ç‰‡åæ˜¾ç¤ºçš„æ§ä»¶
 	 */
 	private ImageView imgViewChoose = null;
 	private Point imgViewChooseWH = new Point(0, 0);
 	/**
-	 * ImageViewÔÚScrollViewÖĞ±»Ñ¡ÖĞµÄ½¹µãImageView
+	 * ImageViewåœ¨ScrollViewä¸­è¢«é€‰ä¸­çš„ç„¦ç‚¹ImageView
 	 */
 	private ImageView imageViewFocus = null;
 	
 	/**
-	 * ¶¯»­ÃÛ·ä
+	 * åŠ¨ç”»èœœèœ‚
 	 */
 	private GsptAnimView animIngameBee = null;
 	
 	/**
-	 * ¶¯»­Ğ¡Äñ
+	 * åŠ¨ç”»å°é¸Ÿ
 	 */
 	private GsptAnimView animIngameBird = null;
 	
 	/**
-	 * ¶¯»­ÀÏÊó
+	 * åŠ¨ç”»è€é¼ 
 	 */
 	private GsptAnimView animIngameMice = null;	
 	
 	/**
-	 * Ê¤ÀûµÄÊ±ºòµÄ¶¯»­ÓÃ
+	 * èƒœåˆ©çš„æ—¶å€™çš„åŠ¨ç”»ç”¨
 	 */
 	private TranslateAnimation winTranslateAnimation = null;
 	
 	/**
-	 * Ò»´Î×î¶àÉÏ·­»òÕßÏÂ·­¶àÉÙÏñËØ
+	 * ä¸€æ¬¡æœ€å¤šä¸Šç¿»æˆ–è€…ä¸‹ç¿»å¤šå°‘åƒç´ 
 	 */
 	private final int gstpScrollViewUpDownMax = 60;
 	
 	/**
-	 * ÊÇ·ñ¹Ø±ÕÍË³öActivity
+	 * æ˜¯å¦å…³é—­é€€å‡ºActivity
 	 */
 	private boolean bFinishIngameActivity = false;	
 	
 	/**
-	 * ÉùÒô²¥·ÅÊµÀı
+	 * å£°éŸ³æ’­æ”¾å®ä¾‹
 	 */
 	private GsptPlayMediaManager gsptMediaManager = null;
 	
 	/**
-	 * ÔÚÆ´Í¼¹ı³ÌÖĞĞèÒªÓÃµ½µÄÒ»Ğ©±äÁ¿¼°Êı¾İ½á¹¹
+	 * åœ¨æ‹¼å›¾è¿‡ç¨‹ä¸­éœ€è¦ç”¨åˆ°çš„ä¸€äº›å˜é‡åŠæ•°æ®ç»“æ„
 	 */
 	private GsptRunDataFrame gsptIngameRunData = null;
 	
 	/**
-	 * ³õÊ¼»¯µÄËùÓĞĞÎ×´¼¯ºÏ
+	 * åˆå§‹åŒ–çš„æ‰€æœ‰å½¢çŠ¶é›†åˆ
 	 */
 	private ArrayList<GameSharps> gsptIngameAreaSharps = null;
 
 	/**
-	 * Ñ¡ÖĞµÄÍ¼Æ¬µÄ´¥ÃşÊÂ¼şµÄÒ»Ğ©±äÁ¿£¬¼ÇÂ¼µã»÷ÊÂ¼ş¼°Î»ÖÃ
-	 * ÊÇÑ¡ÖĞµÄÍ¼Æ¬imgViewChoose ´¥ÃşµÄÎ»ÖÃÒÔ¼°ÊÇ·ñ´¥Ãşµ½ÁË
+	 * é€‰ä¸­çš„å›¾ç‰‡çš„è§¦æ‘¸äº‹ä»¶çš„ä¸€äº›å˜é‡ï¼Œè®°å½•ç‚¹å‡»äº‹ä»¶åŠä½ç½®
+	 * æ˜¯é€‰ä¸­çš„å›¾ç‰‡imgViewChoose è§¦æ‘¸çš„ä½ç½®ä»¥åŠæ˜¯å¦è§¦æ‘¸åˆ°äº†
 	 */
 	private int imgviewchoose_startx = 0;
 	private int imgviewchoose_starty = 0;
 	private boolean imgviewchoose_move = false;
 	
 	/**
-	 * ScrollViewÖĞµÄ´¥ÃşÊÂ¼şµÄÒ»Ğ©±äÁ¿£¬¼ÇÂ¼µã»÷ÊÂ¼ş¼°Î»ÖÃ
-	 * ScrollViewµ±Ç°±»µã»÷±»ÍÏ¶¯µÄÍ¼Æ¬µÄÎ»ÖÃÒÔ¼°´¥Ãşµ½ÁË
+	 * ScrollViewä¸­çš„è§¦æ‘¸äº‹ä»¶çš„ä¸€äº›å˜é‡ï¼Œè®°å½•ç‚¹å‡»äº‹ä»¶åŠä½ç½®
+	 * ScrollViewå½“å‰è¢«ç‚¹å‡»è¢«æ‹–åŠ¨çš„å›¾ç‰‡çš„ä½ç½®ä»¥åŠè§¦æ‘¸åˆ°äº†
 	 */
 	private int imgviewdrag_x = 0;
 	private int imgviewdrag_y = 0;
 	private boolean imgviewdrag_prepare = false;
 	
 	/**
-	 * ÓÃÓÚScrollViewË®Æ½ÍÏ¶¯Ò»ÕÅÍ¼Æ¬Ò»¶¨¾àÀëºóĞÂ½¨Ò»ÕÅImageView¼´imgViewChoose
-	 * ÈÃĞÂ½¨µÄimgViewChoose¿ÉÒÔ¼ÌĞøÍÏ¶¯µÄ±êÖ¾£¬Ì§Æğºó¸Ã±êÖ¾Çå³ı
-	 * ¿ÉÒÔ¼ÌĞøÍÏ¶¯ÔÚdispatchTouchEvent(MotionEvent)ÖĞÍÏ¹ı»Øµ÷¼àÌı
+	 * ç”¨äºScrollViewæ°´å¹³æ‹–åŠ¨ä¸€å¼ å›¾ç‰‡ä¸€å®šè·ç¦»åæ–°å»ºä¸€å¼ ImageViewå³imgViewChoose
+	 * è®©æ–°å»ºçš„imgViewChooseå¯ä»¥ç»§ç»­æ‹–åŠ¨çš„æ ‡å¿—ï¼ŒæŠ¬èµ·åè¯¥æ ‡å¿—æ¸…é™¤
+	 * å¯ä»¥ç»§ç»­æ‹–åŠ¨åœ¨dispatchTouchEvent(MotionEvent)ä¸­æ‹–è¿‡å›è°ƒç›‘å¬
 	 */
 	private boolean imgviewchoose_dragstyle = false;
 	
 	/**
-	 * imgViewChoose_Flashy µ¯³öµÄÑ¡ÖĞÍ¼Æ¬imgViewChooseÉÁË¸ÏÔÊ¾¼ÆÊ±
+	 * imgViewChoose_Flashy å¼¹å‡ºçš„é€‰ä¸­å›¾ç‰‡imgViewChooseé—ªçƒæ˜¾ç¤ºè®¡æ—¶
 	 */
 	private int imgViewChoose_Flashy = 0;
 	
 	/**
-	 * imgViewChoose_FDelay Îª¿ØÖÆÉÁË¸¿ìÂıÓÃ£¬Õâ¸öÖµ±ØĞë´óÓÚ0
+	 * imgViewChoose_FDelay ä¸ºæ§åˆ¶é—ªçƒå¿«æ…¢ç”¨ï¼Œè¿™ä¸ªå€¼å¿…é¡»å¤§äº0
 	 */
 	private final int imgViewChoose_FDelay = 10;
 	
 	/**
-	 * Ê¤ÀûºóµÈÉùÒô²¥·ÅÍêºóÔÙ¶¯»­
-	 * ÏÈ²¥·Å³É¹¦ÉùÒô£¬²¥·Å½áÊøºó²¥·Å¹ÊÊÂ±³¾°ÏÔÊ¾¶¯»­£¬
-	 * ²¥·ÅÍê³ÉºóÏÔÊ¾½±Àø½çÃæºÍ²¥·Å½±ÀøÉùÒô
+	 * èƒœåˆ©åç­‰å£°éŸ³æ’­æ”¾å®Œåå†åŠ¨ç”»
+	 * å…ˆæ’­æ”¾æˆåŠŸå£°éŸ³ï¼Œæ’­æ”¾ç»“æŸåæ’­æ”¾æ•…äº‹èƒŒæ™¯æ˜¾ç¤ºåŠ¨ç”»ï¼Œ
+	 * æ’­æ”¾å®Œæˆåæ˜¾ç¤ºå¥–åŠ±ç•Œé¢å’Œæ’­æ”¾å¥–åŠ±å£°éŸ³
 	 */
 	private int winPlayGsSndId = R.raw.gspt_drag_rightbg010;
 	
 	/**
-	 * ÏûÏ¢Ïß³ÌÊµÀı
+	 * æ¶ˆæ¯çº¿ç¨‹å®ä¾‹
 	 */
 	private IngameMsgHandler ingameMsgHandler = null;
 	
 	/**
-	 * ¸üĞÂÏûÏ¢
+	 * æ›´æ–°æ¶ˆæ¯
 	 */
 	private static final int WM_UPDATE = 0x300;
 	
 	/**
-	 * ĞÇĞÇÏûÏ¢
+	 * æ˜Ÿæ˜Ÿæ¶ˆæ¯
 	 */
 	private static final int WM_XINXIN = 0x301;	
 	
 	/**
-	 * ĞÇĞÇÏûÏ¢
+	 * æ˜Ÿæ˜Ÿæ¶ˆæ¯
 	 */
 	private static final int WM_DAYNIGHT = 0x302;		
 
 	/**
-	 * ³¬Ê±²¥·ÅÌáÊ¾Òô
+	 * è¶…æ—¶æ’­æ”¾æç¤ºéŸ³
 	 */
 	private int ingameExtcallTimeOut = 0;
 	
 	/**
-	 * @aim onCreate ³õÊ¼»¯
+	 * @aim onCreate åˆå§‹åŒ–
 	 * @param savedInstanceState
-	 * @return ÎŞ
+	 * @return æ— 
 	 */
 	@Override
 	protected boolean onInit() {
@@ -266,15 +268,15 @@ public class GsptIngameActivity extends ReadboyActivity {
 
 		setContentView(R.layout.activity_gspt_ingame);
 
-		// Òş²ØÏµÍ³Ìõ
+		// éšè—ç³»ç»Ÿæ¡
 		getWindow().setFlags(0x80000000, 0x80000000);
 		Log.w("edugame", "===inagmae=onInit==");
 		
-		// ´´½¨ÏûÏ¢ÊµÀı
+		// åˆ›å»ºæ¶ˆæ¯å®ä¾‹
 		Looper looper = Looper.myLooper();
 		ingameMsgHandler = new IngameMsgHandler(looper);		
 		
-		// »ñÈ¡Õû¸öÓÎÏ·µÄÊı¾İÊµÀı
+		// è·å–æ•´ä¸ªæ¸¸æˆçš„æ•°æ®å®ä¾‹
 		gsptIngameRunData = GsptRunDataFrame.getInstance(getApplicationContext());
 		GsptRunDataFrame.bIngameCurrentOnResumed = false;
 		ImgBtnAuto tmpImgBtnAuto = gsptIngameRunData.getImgBtnAuto();
@@ -284,29 +286,29 @@ public class GsptIngameActivity extends ReadboyActivity {
 		}
 		gsptIngameRunData.bGsPlayEndShowNext = GsptRunDataFrame.WM_PLAYING_GAME1;
 		
-		// »ñÈ¡ÉùÒô²¥·ÅÊµÀı
+		// è·å–å£°éŸ³æ’­æ”¾å®ä¾‹
 		gsptMediaManager = GsptPlayMediaManager.getInstance(getApplicationContext());
-		// Í£Ö¹ÌáÊ¾Òô²¥·Å
+		// åœæ­¢æç¤ºéŸ³æ’­æ”¾
 		if (gsptMediaManager != null) {
-			// ÖØĞÂ¿ªÊ¼±³¾°ÒôÀÖ
+			// é‡æ–°å¼€å§‹èƒŒæ™¯éŸ³ä¹
 			gsptMediaManager.playBgMedia(R.raw.gspt_game_bg, true);			
-			// Í£Ö¹ÓÎÏ·ÉùÒô²¥·Å
+			// åœæ­¢æ¸¸æˆå£°éŸ³æ’­æ”¾
 			gsptMediaManager.IngameStopMediaPlayer();
-			// Í£Ö¹Ê¤ÀûÉùÒô²¥·Å
+			// åœæ­¢èƒœåˆ©å£°éŸ³æ’­æ”¾
 			gsptMediaManager.winStopMediaPlayer();
 		}		
 		
-		// ³õÊ¼»¯Ã¿¸öÆ´Í¼¿é£¬Í¼ĞÎ¶¼ÊÇ´ÓÕâÀï·Ö¸îºÃµÄ
+		// åˆå§‹åŒ–æ¯ä¸ªæ‹¼å›¾å—ï¼Œå›¾å½¢éƒ½æ˜¯ä»è¿™é‡Œåˆ†å‰²å¥½çš„
 		if (gsptIngameRunData.bGsptGameStyle) {
 			gsptIngameRunData.initHardRandomSharpsPath();
 		} else {
 			gsptIngameRunData.initRandomSharpsPath();
 		}
 
-		// »ñÈ¡Õû¸öÓÎÏ·µÄĞÎ×´ÁĞ±í
+		// è·å–æ•´ä¸ªæ¸¸æˆçš„å½¢çŠ¶åˆ—è¡¨
 		gsptIngameAreaSharps = gsptIngameRunData.getGameSharps();
 		
-		// ¶¯»­ÊµÀı
+		// åŠ¨ç”»å®ä¾‹
 		animIngameBee = (GsptAnimView) findViewById(R.id.animIngameBee);
 		animIngameBee.setVisibility(View.VISIBLE);
 		animIngameBee.setOnOwnerActivtiyStateCallback(animIngameOwnerActivtiyState);
@@ -318,51 +320,58 @@ public class GsptIngameActivity extends ReadboyActivity {
 		animIngameMice.setOnOwnerActivtiyStateCallback(animIngameOwnerActivtiyState);
 		animIngameMice.setOnClickListener(animIngaOnClickListener);
 		
-		// »ñÈ¡¿É²Ù×÷µÄFrameLayout
+		// è·å–å¯æ“ä½œçš„FrameLayout
 		rLayoutIngame = (RelativeLayout) findViewById(R.id.relativeLayoutIngame);
 		rLayoutIngame.setBackgroundDrawable(new BitmapDrawable(gsptIngameRunData.loadResById(R.drawable.gspt_ingame_bg_000)));
 		scrollViewContainer = (ScrollView) findViewById(R.id.scrollViewContainer);
 		scrollViewContainer.setBackgroundDrawable(new BitmapDrawable(gsptIngameRunData.loadResById(R.drawable.gspt_scrollview_bg_000)));
+		if (App.getInstance().mScale>1.0f) {
+			ViewGroup.LayoutParams lp;
+			lp = scrollViewContainer.getLayoutParams();
+			lp.width = App.getInstance().dip2px(this, 188);
+			lp.height = App.getInstance().dip2px(this, 430);
+			scrollViewContainer.setLayoutParams(lp);
+		}
 		relativeLayoutConsole = (RelativeLayout) findViewById(R.id.RelativeLayoutConsole);
 		imgViewChoose = (ImageView) findViewById(R.id.imgViewSharpsChoose);
-		// »¶ºô¶¯»­
+		// æ¬¢å‘¼åŠ¨ç”»
 		imgViewCheer = (ImageView) findViewById(R.id.imgViewCheer);
-		// ĞÇĞÇ¶¯»­
+		// æ˜Ÿæ˜ŸåŠ¨ç”»
 		imgViewXinXin = (ImageView) findViewById(R.id.imgViewXinXin);
 		
-		// »ñÈ¡ÒªÆ´Í¼µÄ±³¾°Í¼Æ¬µÄIDºÅ
+		// è·å–è¦æ‹¼å›¾çš„èƒŒæ™¯å›¾ç‰‡çš„IDå·
 		int imgViewbgIndex = R.drawable.gspt_error_state_0;
 		imgViewbg = (ImageView) findViewById(R.id.imgViewbg);
 		if (tmpImgBtnAuto != null && tmpImgBtnAuto.currentindex != -1 && tmpImgBtnAuto.imgdstptid != null) {
-			// ÕæÊµÒªÆ´Í¼µÄ±³¾°Í¼Æ¬µÄIDºÅ
+			// çœŸå®è¦æ‹¼å›¾çš„èƒŒæ™¯å›¾ç‰‡çš„IDå·
 			imgViewbgIndex = tmpImgBtnAuto.imgdstptid[tmpImgBtnAuto.currentindex];
 		}
 
-		// ½âÂëÍ¼Æ¬°ÑÍ¼Æ¬±³¾°ÉèÖÃµ½imgViewbgµ±ÖĞ²¢ÇÒÉèÖÃ¸ÃimgViewbgµÄTagÎª¸Ã±³¾°Í¼Æ¬·½±ãÊÍ·Å×ÊÔ´
-		gsptBitmap = gsptIngameRunData.loadResById(imgViewbgIndex);
+		// è§£ç å›¾ç‰‡æŠŠå›¾ç‰‡èƒŒæ™¯è®¾ç½®åˆ°imgViewbgå½“ä¸­å¹¶ä¸”è®¾ç½®è¯¥imgViewbgçš„Tagä¸ºè¯¥èƒŒæ™¯å›¾ç‰‡æ–¹ä¾¿é‡Šæ”¾èµ„æº
+		gsptBitmap = gsptIngameRunData.loadResById(imgViewbgIndex, App.getInstance().mScale);
 		
-		// ÏÈ×ª»»³ÉºÚ°×Í¼Æ¬
+		// å…ˆè½¬æ¢æˆé»‘ç™½å›¾ç‰‡
 		grayBgBitmap = toGrayscale(gsptBitmap);
 		Canvas cvs1 = new Canvas(grayBgBitmap);
 		Paint paint1 = getInitPaintType(1);
-		// ÔÚ¸ÃºÚ°×Í¼Æ¬ÉÏ»æÖÆÍ¼ĞÎÏßÌõ£¬·½±ãÍÏ·Å
+		// åœ¨è¯¥é»‘ç™½å›¾ç‰‡ä¸Šç»˜åˆ¶å›¾å½¢çº¿æ¡ï¼Œæ–¹ä¾¿æ‹–æ”¾
 		for (GameSharps nSharps : gsptIngameAreaSharps) {
 			cvs1.drawPath(nSharps.srcSharpPath, paint1);
 		}
 		imgViewbg.setImageBitmap(grayBgBitmap);
 		imgViewbg.setTag(R.id.tag_third_smallbitmap, grayBgBitmap);			
 		
-		// °Ñ³õÊ¼»¯ºÃµÄ¸÷¸öĞ¡Í¼ĞÎ¼ÓÔØµ½ScrollViewµÄLinearLayoutµ±ÖĞ
+		// æŠŠåˆå§‹åŒ–å¥½çš„å„ä¸ªå°å›¾å½¢åŠ è½½åˆ°ScrollViewçš„LinearLayoutå½“ä¸­
 		lvLayoutSharps = (LinearLayout) findViewById(R.id.LinearLayoutSharps);
 		
-		// µÚÒ»´Î½øÈë×öÒ»Ğ©ºÄÊ±µÄ²Ù×÷
+		// ç¬¬ä¸€æ¬¡è¿›å…¥åšä¸€äº›è€—æ—¶çš„æ“ä½œ
 		gsptIngameRunData.enumEnterIngame = EgameStep.STEP_1;
 		
-		// Ã¿Á½ÃëÖ´ĞĞÒ»´Îrunnable
+		// æ¯ä¸¤ç§’æ‰§è¡Œä¸€æ¬¡runnable
 		ingameMsgHandler.sendEmptyMessageDelayed(WM_UPDATE, 30);
 		
 //		try {
-//			// Ìí¼Ó×Ô¶¯¸üĞÂ¼àÌı
+//			// æ·»åŠ è‡ªåŠ¨æ›´æ–°ç›‘å¬
 //			UpdateChecker.addActivity(this);
 //		} catch (Exception e) {
 //			e.printStackTrace();
@@ -375,7 +384,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 	public void finish() {
 		super.finish();
 		try {
-			// Òş²Ø¶¯»­
+			// éšè—åŠ¨ç”»
 			if (animIngameBee != null) {
 				animIngameBee.stopAnim();
 				animIngameBee.setVisibility(View.INVISIBLE);
@@ -391,7 +400,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 				animIngameMice.setVisibility(View.INVISIBLE);
 				animIngameMice = null;
 			}
-//			// È¡Ïû×Ô¶¯¸üĞÂ¼àÌı
+//			// å–æ¶ˆè‡ªåŠ¨æ›´æ–°ç›‘å¬
 //			UpdateChecker.removeActivity(this);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -399,23 +408,23 @@ public class GsptIngameActivity extends ReadboyActivity {
 	}
 	
 	/**
-	 * @aim ÍË³öActivity£¬·´³õÊ¼»¯
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @aim é€€å‡ºActivityï¼Œååˆå§‹åŒ–
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	@Override
 	public void onExit() {
 		super.onExit();
 		Log.w("divhee_edugame", "onExit gapt ingame");
 		
-		// Í£Ö¹ÌáÊ¾Òô²¥·Å
+		// åœæ­¢æç¤ºéŸ³æ’­æ”¾
 		if (gsptMediaManager != null) {
-			// Í£Ö¹ÓÎÏ·ÉùÒô²¥·Å
+			// åœæ­¢æ¸¸æˆå£°éŸ³æ’­æ”¾
 			gsptMediaManager.IngameStopMediaPlayer();
-			// Í£Ö¹Ê¤ÀûÉùÒô²¥·Å
+			// åœæ­¢èƒœåˆ©å£°éŸ³æ’­æ”¾
 			gsptMediaManager.winStopMediaPlayer();
 		}
-		// ¹Ø±Õ¶¨Ê±Æ÷
+		// å…³é—­å®šæ—¶å™¨
 		if (ingameMsgHandler != null) {
 			ingameExtcallTimeOut = 0;
 			ingameMsgHandler.removeMessages(WM_UPDATE, null);
@@ -424,7 +433,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 			ingameMsgHandler = null;
 			
 		}
-		// ÊÍ·ÅÍ¼Æ¬×ÊÔ´
+		// é‡Šæ”¾å›¾ç‰‡èµ„æº
 		if (scrollViewContainer != null) {
 			BitmapDrawable bd = (BitmapDrawable) scrollViewContainer.getBackground();
 			if (bd != null) {
@@ -439,7 +448,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 			}
 			scrollViewContainer = null;
 		}
-		// ÊÍ·ÅÍ¼Æ¬×ÊÔ´
+		// é‡Šæ”¾å›¾ç‰‡èµ„æº
 		if (rLayoutIngame != null) {
 			BitmapDrawable bd = (BitmapDrawable) rLayoutIngame.getBackground();
 			if (bd != null) {
@@ -454,7 +463,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 			}
 			rLayoutIngame = null;
 		}
-		// ÊÍ·ÅÍ¼Æ¬×ÊÔ´
+		// é‡Šæ”¾å›¾ç‰‡èµ„æº
 		if (imgViewCheer != null) {
 			BitmapDrawable bd = (BitmapDrawable) imgViewCheer.getBackground();
 			if (bd != null) {
@@ -469,7 +478,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 			}
 			imgViewCheer = null;
 		}		
-		// ÊÍ·ÅÍ¼Æ¬×ÊÔ´
+		// é‡Šæ”¾å›¾ç‰‡èµ„æº
 		if (imgViewXinXin != null) {
 			BitmapDrawable bd = (BitmapDrawable) imgViewXinXin.getBackground();
 			if (bd != null) {
@@ -484,26 +493,26 @@ public class GsptIngameActivity extends ReadboyActivity {
 			}
 			imgViewXinXin = null;
 		}
-		// ÊÍ·ÅÍ¼Æ¬×ÊÔ´
+		// é‡Šæ”¾å›¾ç‰‡èµ„æº
 		if (grayBgBitmap != null) {
 			if (!grayBgBitmap.isRecycled()) {
 				grayBgBitmap.recycle();
 			}
 			grayBgBitmap = null;
 		}		
-		// ÊÍ·ÅÆ´Í¼±³¾°
+		// é‡Šæ”¾æ‹¼å›¾èƒŒæ™¯
 		if (gsptBitmap != null) {
 			if (!gsptBitmap.isRecycled()) {
 				gsptBitmap.recycle();
 			}
 			gsptBitmap = null;
 		}
-		// ÊÍ·ÅÒÆ¶¯ÄÚ´æ
+		// é‡Šæ”¾ç§»åŠ¨å†…å­˜
 		if (imgViewChoose != null) {
 			GsptRunDataFrame.setViewGoneDestroy(imgViewChoose);
 			imgViewChoose = null;
 		}
-		// ÊÍ·ÅÏà¹Ø×ÊÔ´
+		// é‡Šæ”¾ç›¸å…³èµ„æº
 		if (gsptIngameAreaSharps != null && gsptIngameAreaSharps.size() > 0) {
 			for (int index = 0; index < gsptIngameAreaSharps.size(); index++) {
 				ImageView imgView = (ImageView) findViewById(R.id.imgViewSharps_00 + index);
@@ -512,7 +521,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 				}
 			}
 		}
-		// ÕæÕı½áÊø±êÖ¾
+		// çœŸæ­£ç»“æŸæ ‡å¿—
 		gsptIngameRunData.enumEnterIngame = EgameStep.STEP_0;
 		//super.onDestroy();
 	}
@@ -523,20 +532,20 @@ public class GsptIngameActivity extends ReadboyActivity {
 		Log.w("divhee_edugame", "====onSuspend gapt ingame===");
 		GsptRunDataFrame.bIngameCurrentOnResumed = false;
 		if (!bFinishIngameActivity){
-			// Í£Ö¹ÓÎÏ·²¥·ÅÉùÒô£¬Èç¹û¾ä±ú²»Îª¿ÕµÄ»°
+			// åœæ­¢æ¸¸æˆæ’­æ”¾å£°éŸ³ï¼Œå¦‚æœå¥æŸ„ä¸ä¸ºç©ºçš„è¯
 			if (gsptMediaManager != null) {
-				// ¹Ø±ÕÓÎÏ·ÖĞµÄÉùÒô
+				// å…³é—­æ¸¸æˆä¸­çš„å£°éŸ³
 				gsptMediaManager.IngameStopMediaPlayer();
-				// ¹Ø±ÕÊ¤ÀûºóµÄÉùÒô
+				// å…³é—­èƒœåˆ©åçš„å£°éŸ³
 				gsptMediaManager.winPauseMediaPlayer();
-				// ¹Ø±Õ±³¾°Òô
+				// å…³é—­èƒŒæ™¯éŸ³
 				gsptMediaManager.pauseBgMedia();
 			}
-			// Í£Ö¹¶¨Ê±Æ÷
+			// åœæ­¢å®šæ—¶å™¨
 			if (ingameMsgHandler != null){
 				ingameMsgHandler.removeMessages(WM_UPDATE, null);
 			}
-			// ·Ö±æÊÇÄÄÒ»²½¹ıÀ´µÄ
+			// åˆ†è¾¨æ˜¯å“ªä¸€æ­¥è¿‡æ¥çš„
 			if (gsptIngameRunData.enumEnterIngame == EgameStep.STEP_1){
 				gsptIngameRunData.enumEnterIngame = EgameStep.STEP_3;
 			} else if (gsptIngameRunData.enumEnterIngame == EgameStep.STEP_2){
@@ -556,24 +565,24 @@ public class GsptIngameActivity extends ReadboyActivity {
 			imgviewchoose_move = false;			
 			if (gsptIngameRunData != null && (gsptIngameRunData.enumEnterIngame == EgameStep.STEP_3
 					|| gsptIngameRunData.enumEnterIngame == EgameStep.STEP_4)){
-				// ÓÎÏ·²½Öè
+				// æ¸¸æˆæ­¥éª¤
 				if (gsptIngameRunData.enumEnterIngame == EgameStep.STEP_3){
 					gsptIngameRunData.enumEnterIngame = EgameStep.STEP_1;
 				} else if (gsptIngameRunData.enumEnterIngame == EgameStep.STEP_4){
 					gsptIngameRunData.enumEnterIngame = EgameStep.STEP_2;
 				}
-				// ÖØĞÂ¿ªÊ¼¶¨Ê±Æ÷
+				// é‡æ–°å¼€å§‹å®šæ—¶å™¨
 				ingameMsgHandler.sendEmptyMessageDelayed(WM_UPDATE, 100);
-				// ÖØĞÂ¿ªÊ¼²¥·ÅÍ£Ö¹µÄÉùÒô
+				// é‡æ–°å¼€å§‹æ’­æ”¾åœæ­¢çš„å£°éŸ³
 				gsptMediaManager.winRestartMediaPlayer();
-				// ÖØĞÂ¿ªÊ¼±³¾°ÒôÀÖ
+				// é‡æ–°å¼€å§‹èƒŒæ™¯éŸ³ä¹
 				gsptMediaManager.playBgMedia(R.raw.gspt_game_bg, true);
 			}
 		}
 	}	
 	
 	/**
-	 * °´¼üÏìÓ¦
+	 * æŒ‰é”®å“åº”
 	 */
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -590,7 +599,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 	}
 	
 	/**
-	 * ·µ»Ø¼ü´¦Àí
+	 * è¿”å›é”®å¤„ç†
 	 */
 	@Override
 	public void onBackPressed() {
@@ -599,7 +608,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 	}
 	
 	/**
-	 * @aim ÅĞ¶ÏÊÇ·ñÔÚÔËĞĞµÄ»Øµ÷£¬ÊÇ·ñ´¦ÓÚPause×´Ì¬
+	 * @aim åˆ¤æ–­æ˜¯å¦åœ¨è¿è¡Œçš„å›è°ƒï¼Œæ˜¯å¦å¤„äºPauseçŠ¶æ€
 	 */
 	private GsptAnimView.OwnerActivtiyState animIngameOwnerActivtiyState = new GsptAnimView.OwnerActivtiyState() {
 
@@ -610,7 +619,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 	};	
 	
 	/**
-	 * µã»÷ÏìÓ¦
+	 * ç‚¹å‡»å“åº”
 	 */
 	private OnClickListener animIngaOnClickListener = new OnClickListener() {
 		
@@ -633,10 +642,10 @@ public class GsptIngameActivity extends ReadboyActivity {
 	};
 	
 	/**
-	 * @aim °´Å¥µã»÷¼àÌıÊÂ¼ş
+	 * @aim æŒ‰é’®ç‚¹å‡»ç›‘å¬äº‹ä»¶
 	 * @param v 
-	 * 			°´ÏÂµÄ°´Å¥View
-	 * @return ÎŞ
+	 * 			æŒ‰ä¸‹çš„æŒ‰é’®View
+	 * @return æ— 
 	 */
 	public void imgBtnOnClickListener(View v) {
 		
@@ -658,36 +667,36 @@ public class GsptIngameActivity extends ReadboyActivity {
 			}
 			break;
 		case R.id.imgBtnUp:
-			// ÏòÉÏ·­°´Å¥
+			// å‘ä¸Šç¿»æŒ‰é’®
 			if (gsptIngameRunData.bGsPlayEndShowNext != GsptRunDataFrame.WM_PLAYING_GAME1
 					&& gsptIngameRunData.enumEnterIngame != EgameStep.STEP_0
 					&& GsptRunDataFrame.bIngameCurrentOnResumed){
-				// ¸æËß¸¸´°¿ÚÒÔºóµÄ¿ÉÒÔÀ¹½Ø´¥ÃşÏûÏ¢
+				// å‘Šè¯‰çˆ¶çª—å£ä»¥åçš„å¯ä»¥æ‹¦æˆªè§¦æ‘¸æ¶ˆæ¯
 				imgviewdrag_prepare = false;
 				imgviewchoose_dragstyle = false;
 				imgviewchoose_move = false;
-				// Òş²ØÉÏÒ»¸öimgViewSharpsChoose
+				// éšè—ä¸Šä¸€ä¸ªimgViewSharpsChoose
 				imgViewChoose.setVisibility(View.INVISIBLE);
-				// »Ö¸´¸ÃImageViewÍ¼Æ¬ÑÕÉ«
+				// æ¢å¤è¯¥ImageViewå›¾ç‰‡é¢œè‰²
 				updateForcusImageViewOfScrollView(false);		
-				// ÉÏ·­
+				// ä¸Šç¿»
 				scrollViewContainer.scrollBy(0, -gstpScrollViewUpDownMax);
 			}
 			break;
 		case R.id.imgBtnDown:
-			// ÏòÏÂ·­°´Å¥
+			// å‘ä¸‹ç¿»æŒ‰é’®
 			if (gsptIngameRunData.bGsPlayEndShowNext != GsptRunDataFrame.WM_PLAYING_GAME1
 					&& gsptIngameRunData.enumEnterIngame != EgameStep.STEP_0
 					&& GsptRunDataFrame.bIngameCurrentOnResumed){
-				// ¸æËß¸¸´°¿ÚÒÔºóµÄ¿ÉÒÔÀ¹½Ø´¥ÃşÏûÏ¢
+				// å‘Šè¯‰çˆ¶çª—å£ä»¥åçš„å¯ä»¥æ‹¦æˆªè§¦æ‘¸æ¶ˆæ¯
 				imgviewdrag_prepare = false;
 				imgviewchoose_dragstyle = false;
 				imgviewchoose_move = false;
-				// Òş²ØÉÏÒ»¸öimgViewSharpsChoose
+				// éšè—ä¸Šä¸€ä¸ªimgViewSharpsChoose
 				imgViewChoose.setVisibility(View.INVISIBLE);
-				// »Ö¸´¸ÃImageViewÍ¼Æ¬ÑÕÉ«
+				// æ¢å¤è¯¥ImageViewå›¾ç‰‡é¢œè‰²
 				updateForcusImageViewOfScrollView(false);		
-				// ÏÂ·­
+				// ä¸‹ç¿»
 				scrollViewContainer.scrollBy(0, gstpScrollViewUpDownMax);
 			}
 			break;
@@ -698,17 +707,17 @@ public class GsptIngameActivity extends ReadboyActivity {
 	}	
 	
 	/**
-	 * @aim Activity´¥ÃşÏûÏ¢×îÔçµÄ·Ö·¢´¦Àí
+	 * @aim Activityè§¦æ‘¸æ¶ˆæ¯æœ€æ—©çš„åˆ†å‘å¤„ç†
 	 * @param ev
-	 * 			´¥ÃşÏûÏ¢
+	 * 			è§¦æ‘¸æ¶ˆæ¯
 	 * @return boolean
-	 * 			´¦ÀíÓë·ñ
+	 * 			å¤„ç†ä¸å¦
 	 */
 	@Override
 	public boolean dispatchTouchEvent(MotionEvent ev) {
 		
 		if (imgViewChoose != null && imgviewchoose_dragstyle){
-			// Èç¹ûÊÇÍÏ¶¯ImageView³öScrollViewÔò¼ÌĞøÏàÓ¦Õâ¸öÍÏ³öµÄImageView
+			// å¦‚æœæ˜¯æ‹–åŠ¨ImageViewå‡ºScrollViewåˆ™ç»§ç»­ç›¸åº”è¿™ä¸ªæ‹–å‡ºçš„ImageView
 			ingameExtcallTimeOut = 1;
 			imgViewChoose.dispatchTouchEvent(ev);
 		}
@@ -716,20 +725,20 @@ public class GsptIngameActivity extends ReadboyActivity {
 	}	
 	
 	/**
-	 * @aim ¸ù¾İĞòºÅ£¬Éú³ÉĞÂµÄPaintÅäÖÃ
+	 * @aim æ ¹æ®åºå·ï¼Œç”Ÿæˆæ–°çš„Painté…ç½®
 	 * @param typeindex
-	 * 			ÒªÉú³ÉµÄÉèÖÃµÄĞòºÅ£¬¸ù¾İĞòºÅÉú³É²»Í¬µÄÉèÖÃ
-	 * 			typeindex == 1»æÖÆÁ¢Ìå¸ĞµÄ»Ò¶ÈÍ¼ÉÏµÄÏßÌõÓÃ
-	 * 			typeindex == 2ÓÃÓÚÑ¡ÖĞµÄimgViewChooseÉÁË¸ÏÔÊ¾
+	 * 			è¦ç”Ÿæˆçš„è®¾ç½®çš„åºå·ï¼Œæ ¹æ®åºå·ç”Ÿæˆä¸åŒçš„è®¾ç½®
+	 * 			typeindex == 1ç»˜åˆ¶ç«‹ä½“æ„Ÿçš„ç°åº¦å›¾ä¸Šçš„çº¿æ¡ç”¨
+	 * 			typeindex == 2ç”¨äºé€‰ä¸­çš„imgViewChooseé—ªçƒæ˜¾ç¤º
 	 * @return Paint
-	 * 			ĞÂµÄPaintÉèÖÃ
+	 * 			æ–°çš„Paintè®¾ç½®
 	 */
 	public Paint getInitPaintType(int typeindex){
 		
 		Paint paint = new Paint();
 		if (typeindex == 1){
 			if (gsptIngameRunData.bGsptGameStyle) {
-				// ÉèÖÃPaintµÄÄ£Ê½ÊôĞÔÀàĞÍ1			
+				// è®¾ç½®Paintçš„æ¨¡å¼å±æ€§ç±»å‹1			
 				paint.setAntiAlias(true);
 //				int[] colorbg = new int[] { 0xFF000000, 0xFF444444, 0xFF888888, 0xFFCCCCCC, 0xFFFFFFFF, 
 //						0xFFFF0000, 0xFF00FF00, 0xFF0000FF,0xFFFFFF00, 0xFF00FFFF, 0xFFFF00FF };
@@ -739,23 +748,23 @@ public class GsptIngameActivity extends ReadboyActivity {
 				paint.setColor(0xFFFFFFFF);
 				paint.setAlpha(128);
 				paint.setDither(true);
-				paint.setStyle(Paint.Style.FILL);// ÉèÖÃÎªÌî³ä
+				paint.setStyle(Paint.Style.FILL);// è®¾ç½®ä¸ºå¡«å……
 				paint.setStrokeWidth(1);
-				// ÉèÖÃ¹âÔ´µÄ·½Ïò
+				// è®¾ç½®å…‰æºçš„æ–¹å‘
 				float[] direction = new float[] { 1, 1, 1 };
-				// ÉèÖÃ»·¾³¹âÁÁ¶È
+				// è®¾ç½®ç¯å¢ƒå…‰äº®åº¦
 				float light = 0.1f;
-				// Ñ¡ÔñÒªÓ¦ÓÃµÄ·´ÉäµÈ¼¶
+				// é€‰æ‹©è¦åº”ç”¨çš„åå°„ç­‰çº§
 				float specular = 6;
-				// ÏòmaskÓ¦ÓÃÒ»¶¨¼¶±ğµÄÄ£ºı
+				// å‘maskåº”ç”¨ä¸€å®šçº§åˆ«çš„æ¨¡ç³Š
 				float blur = 3.5f;
 				EmbossMaskFilter emboss = new EmbossMaskFilter(direction, light, specular, blur);
-				// Ó¦ÓÃmask
+				// åº”ç”¨mask
 				paint.setMaskFilter(emboss);
-				// Ó¦ÓÃÌØĞ§
+				// åº”ç”¨ç‰¹æ•ˆ
 				paint.setPathEffect(new CornerPathEffect(8));
 			} else {
-				// ÉèÖÃPaintµÄÄ£Ê½ÊôĞÔÀàĞÍ1			
+				// è®¾ç½®Paintçš„æ¨¡å¼å±æ€§ç±»å‹1			
 				paint.setAntiAlias(true);
 //				int[] colorbg = new int[] { 0xFF000000, 0xFF444444, 0xFF888888, 0xFFCCCCCC, 0xFFFFFFFF, 
 //						0xFFFF0000, 0xFF00FF00, 0xFF0000FF,0xFFFFFF00, 0xFF00FFFF, 0xFFFF00FF };
@@ -765,24 +774,24 @@ public class GsptIngameActivity extends ReadboyActivity {
 				paint.setColor(0xFFFFFFFF);
 				paint.setAlpha(128);
 				paint.setDither(true);
-				paint.setStyle(Paint.Style.FILL);// ÉèÖÃÎªÌî³ä
+				paint.setStyle(Paint.Style.FILL);// è®¾ç½®ä¸ºå¡«å……
 				paint.setStrokeWidth(1);
-				// ÉèÖÃ¹âÔ´µÄ·½Ïò
+				// è®¾ç½®å…‰æºçš„æ–¹å‘
 				float[] direction = new float[] { 1, 1, 1 };
-				// ÉèÖÃ»·¾³¹âÁÁ¶È
+				// è®¾ç½®ç¯å¢ƒå…‰äº®åº¦
 				float light = 0.1f;
-				// Ñ¡ÔñÒªÓ¦ÓÃµÄ·´ÉäµÈ¼¶
+				// é€‰æ‹©è¦åº”ç”¨çš„åå°„ç­‰çº§
 				float specular = 6;
-				// ÏòmaskÓ¦ÓÃÒ»¶¨¼¶±ğµÄÄ£ºı
+				// å‘maskåº”ç”¨ä¸€å®šçº§åˆ«çš„æ¨¡ç³Š
 				float blur = 3.5f;
 				EmbossMaskFilter emboss = new EmbossMaskFilter(direction, light, specular, blur);
-				// Ó¦ÓÃmask
+				// åº”ç”¨mask
 				paint.setMaskFilter(emboss);
-				// Ó¦ÓÃÌØĞ§
+				// åº”ç”¨ç‰¹æ•ˆ
 				paint.setPathEffect(new CornerPathEffect(8));				
 			}
 		} else if (typeindex == 2){
-			// ÉèÖÃPaintµÄÄ£Ê½ÊôĞÔÀàĞÍ2
+			// è®¾ç½®Paintçš„æ¨¡å¼å±æ€§ç±»å‹2
 			paint.setAntiAlias(true);
 			int iDelayTime = Math.max(imgViewChoose_FDelay, 10);
 			if ((imgViewChoose_Flashy % iDelayTime) == 0){
@@ -791,9 +800,9 @@ public class GsptIngameActivity extends ReadboyActivity {
 				paint.setColor(0xFFFFFF00);
 			}
 			paint.setDither(true);
-			paint.setStyle(Paint.Style.STROKE);// ÉèÖÃÎª¿ÕĞÄ
+			paint.setStyle(Paint.Style.STROKE);// è®¾ç½®ä¸ºç©ºå¿ƒ
 			paint.setStrokeWidth(4);
-			// Ó¦ÓÃÌØĞ§
+			// åº”ç”¨ç‰¹æ•ˆ
 			paint.setPathEffect(new CornerPathEffect(5));			
 		}
 		
@@ -801,34 +810,34 @@ public class GsptIngameActivity extends ReadboyActivity {
 	}
 
 	/**
-	 * @aim ĞÂ½¨Ò»¸öImageViewÔÚ¿¿½üScrollViewÎ»ÖÃ
-	 * 			Êµ¼Ê¼ÓÔØ½øÈë×î¸ù½ÚµãµÄlayoutµ±ÖĞ£¬ÍÏ¶¯µÄÒ²¾ÍÊÇÕâ¸öImageView
+	 * @aim æ–°å»ºä¸€ä¸ªImageViewåœ¨é è¿‘ScrollViewä½ç½®
+	 * 			å®é™…åŠ è½½è¿›å…¥æœ€æ ¹èŠ‚ç‚¹çš„layoutå½“ä¸­ï¼Œæ‹–åŠ¨çš„ä¹Ÿå°±æ˜¯è¿™ä¸ªImageView
 	 * @param v
-	 * 			±»µã»÷µÄv»òÕß½Ğ±»ÍÏÀ­µÄview
+	 * 			è¢«ç‚¹å‡»çš„væˆ–è€…å«è¢«æ‹–æ‹‰çš„view
 	 * @param offsetX
-	 * 			ÒÆ¶¯µÄX¾àÀë
+	 * 			ç§»åŠ¨çš„Xè·ç¦»
 	 * @param offsetY
-	 * 			ÒÆ¶¯µÄY¾àÀë
-	 * @return ÎŞ
+	 * 			ç§»åŠ¨çš„Yè·ç¦»
+	 * @return æ— 
 	 */
 	public void initImgBtnFromScrollView(View v, int offsetX, int offsetY) {
-		// Òş²ØÉÏÒ»¸öimgViewSharpsChoose
+		// éšè—ä¸Šä¸€ä¸ªimgViewSharpsChoose
 		imgViewChoose.setVisibility(View.INVISIBLE);
-		// »Ö¸´»ÒÉ«ImageViewÍ¼Æ¬ÑÕÉ«
+		// æ¢å¤ç°è‰²ImageViewå›¾ç‰‡é¢œè‰²
 		updateForcusImageViewOfScrollView(false);
 		
-		// ĞÂ½¨ÏÂÒ»¸öimgViewSharpsChoose
+		// æ–°å»ºä¸‹ä¸€ä¸ªimgViewSharpsChoose
 		int [] locationPos = new int [] {0, 0};
-		// »ñÈ¡µ±Ç°´¥Ãşµ½µÄVÔÚÆÁÄ»ÖĞµÄ×ø±êÎ»ÖÃ
+		// è·å–å½“å‰è§¦æ‘¸åˆ°çš„Våœ¨å±å¹•ä¸­çš„åæ ‡ä½ç½®
 		v.getLocationOnScreen(locationPos);
 		GameSharps nSharps = (GameSharps) v.getTag(R.id.tag_first_dataframe);
-		// »ñÈ¡ÕæÊµÍ¼Æ¬
+		// è·å–çœŸå®å›¾ç‰‡
 		Bitmap bmpSmall = (Bitmap)v.getTag(R.id.tag_second_bgbitmap);
-		// ÉèÖÃTag·½±ãºóĞøÍÏ¶¯ÒÔ¼°ÊÍ·Å×ÊÔ´
+		// è®¾ç½®Tagæ–¹ä¾¿åç»­æ‹–åŠ¨ä»¥åŠé‡Šæ”¾èµ„æº
 		imgViewChoose.setTag(R.id.tag_third_smallbitmap, bmpSmall);
 		imgViewChoose.setTag(R.id.tag_first_dataframe, nSharps);
 		imgViewChoose.setId(R.id.imgViewSharpsChoose);
-		// ÉèÖÃ¸ÃImageViewµÄLayoutParams
+		// è®¾ç½®è¯¥ImageViewçš„LayoutParams
 		RelativeLayout.LayoutParams lpwwParams = new RelativeLayout.LayoutParams(bmpSmall.getWidth(), bmpSmall.getHeight());
 		lpwwParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
 		lpwwParams.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE);
@@ -844,7 +853,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 		if (dragRight < 0){
 			dragRight = 0;
 		}
-		// ·ÀÖ¹Í¼Æ¬¹ı¸ß£¬ÖØĞÂ¶¨ÒåÎ»ÖÃ
+		// é˜²æ­¢å›¾ç‰‡è¿‡é«˜ï¼Œé‡æ–°å®šä¹‰ä½ç½®
 		int dragTop = (locationPos[1] + offsetY);
 		dragTop -= (bmpSmall.getHeight() - v.getHeight()) / 2;
 		if(dragTop + bmpSmall.getHeight() < 0 || dragTop < 0 || bmpSmall.getHeight() > GsptMainActivity.getScreenHeight()){
@@ -855,14 +864,14 @@ public class GsptIngameActivity extends ReadboyActivity {
 		lpwwParams.rightMargin = dragRight;
 		lpwwParams.topMargin = dragTop;
 		imgViewChoose.setLayoutParams(lpwwParams);
-		// ¸üĞÂÒ»¸öImageViewÓÃÓÚÒÆ¶¯
+		// æ›´æ–°ä¸€ä¸ªImageViewç”¨äºç§»åŠ¨
 		imgViewChoose.setImageBitmap(bmpSmall);		
 		imgViewChooseWH.set(bmpSmall.getWidth(), bmpSmall.getHeight());
 		imgViewChoose.setVisibility(View.VISIBLE);
 		imgViewChoose.requestLayout();
 		
 		
-		// ²»ĞèÒªÉÁË¸£¬¾Í²»Ìí¼ÓÁË°É
+		// ä¸éœ€è¦é—ªçƒï¼Œå°±ä¸æ·»åŠ äº†å§
 //			imgViewChoose.setBackgroundResource(R.drawable.imageviewchoosebg_selector);
 		imgViewChoose.setClickable(false);
 		imgViewChoose.setOnTouchListener(ImgBtnOfSelected_onTouch);
@@ -870,8 +879,8 @@ public class GsptIngameActivity extends ReadboyActivity {
 	}
 
 	/**
-	 * @aim ¸üĞÂScrollViewÖĞµÄÑ¡ÖĞµÄImageView±³¾°Í¼Æ¬×´Ì¬
-	 * @param isGray ÊÇ·ñÒª±ä»Ò true ±ä»Ò  false ²»±ä»Ò
+	 * @aim æ›´æ–°ScrollViewä¸­çš„é€‰ä¸­çš„ImageViewèƒŒæ™¯å›¾ç‰‡çŠ¶æ€
+	 * @param isGray æ˜¯å¦è¦å˜ç° true å˜ç°  false ä¸å˜ç°
 	 */
 	public void updateForcusImageViewOfScrollView(boolean bToGray) {
 		if (imageViewFocus != null){
@@ -880,15 +889,15 @@ public class GsptIngameActivity extends ReadboyActivity {
 				imageViewFocus.setImageBitmap(currBmp);
 			}
 			if (!bToGray){
-				// »Ö¸´ÑÕÉ«ºóÇå³ı¸Ã½¹µã
+				// æ¢å¤é¢œè‰²åæ¸…é™¤è¯¥ç„¦ç‚¹
 				imageViewFocus = null;
 			}
 		}
 	}
 	
 	/**
-	 * @aim Ñ¡ÖĞµÄÍ¼Æ¬µÄ¼àÌıÊÂ¼ş 
-	 * 			ÊµÏÖScrollViewÖĞÑ¡ÖĞÍ¼Æ¬ÍÏ¶¯³öScrollViewµÄĞ§¹û
+	 * @aim é€‰ä¸­çš„å›¾ç‰‡çš„ç›‘å¬äº‹ä»¶ 
+	 * 			å®ç°ScrollViewä¸­é€‰ä¸­å›¾ç‰‡æ‹–åŠ¨å‡ºScrollViewçš„æ•ˆæœ
 	 *          
 	 *          
 	 * @author divhee
@@ -912,14 +921,14 @@ public class GsptIngameActivity extends ReadboyActivity {
 				}
 				imgviewdrag_x = mPosX;
 				imgviewdrag_y = mPosY;
-				// ¸æËß¸¸´°¿ÚÒÔºóµÄ¿ÉÒÔÀ¹½Ø´¥ÃşÏûÏ¢
+				// å‘Šè¯‰çˆ¶çª—å£ä»¥åçš„å¯ä»¥æ‹¦æˆªè§¦æ‘¸æ¶ˆæ¯
 				scrollViewContainer.requestDisallowInterceptTouchEvent(false);
 				imgviewdrag_prepare = true;
 				imgviewchoose_dragstyle = false;
 				imgviewchoose_move = false;
-				// Òş²ØÉÏÒ»¸öimgViewSharpsChoose
+				// éšè—ä¸Šä¸€ä¸ªimgViewSharpsChoose
 				imgViewChoose.setVisibility(View.INVISIBLE);
-				// »Ö¸´¸ÃImageViewÍ¼Æ¬ÑÕÉ«
+				// æ¢å¤è¯¥ImageViewå›¾ç‰‡é¢œè‰²
 				updateForcusImageViewOfScrollView(false);
 				v.getParent().requestDisallowInterceptTouchEvent(true);
 				v.getParent().getParent().requestDisallowInterceptTouchEvent(true);
@@ -928,31 +937,31 @@ public class GsptIngameActivity extends ReadboyActivity {
 				if (imgviewdrag_prepare) {
 					if (Math.abs(imgviewdrag_x - mPosX) > 1 && !GsptRunDataFrame.bNotFastDoubleClick()) {
 						synchronized (GsptPlayMediaManager.class) {
-							// »Ö¸´»ÒÉ«ImageViewÍ¼Æ¬ÑÕÉ«
+							// æ¢å¤ç°è‰²ImageViewå›¾ç‰‡é¢œè‰²
 							updateForcusImageViewOfScrollView(false);
-							// ¸æËß¸¸´°¿Ú²»ÒªÀ¹½Ø´¥ÃşÏûÏ¢
+							// å‘Šè¯‰çˆ¶çª—å£ä¸è¦æ‹¦æˆªè§¦æ‘¸æ¶ˆæ¯
 							scrollViewContainer.requestDisallowInterceptTouchEvent(true);
 							imgviewdrag_prepare = false;
 							imgviewchoose_dragstyle = true;
-							// ÓÃ»§ÍÏ¶¯ÁËÒ»¶Î¾àÀë£¬ÏÖÔÚÌí¼ÓĞÂµÄImageViewÓÃÓÚÒÆ¶¯
+							// ç”¨æˆ·æ‹–åŠ¨äº†ä¸€æ®µè·ç¦»ï¼Œç°åœ¨æ·»åŠ æ–°çš„ImageViewç”¨äºç§»åŠ¨
 							initImgBtnFromScrollView(v, mPosX - imgviewdrag_x, mPosY - imgviewdrag_y);
 							imgviewchoose_move = true;
 							imgviewdrag_prepare = false;
 							imgviewchoose_startx = mPosX;
 							imgviewchoose_starty = mPosY;
-							// ¼ÇÂ¼¸Ã½¹µãview
+							// è®°å½•è¯¥ç„¦ç‚¹view
 							imageViewFocus = (ImageView)v;
-							// ÉèÖÃ¸ÃImageViewÍ¼Æ¬Îª»ÒÉ«Í¼Æ¬
+							// è®¾ç½®è¯¥ImageViewå›¾ç‰‡ä¸ºç°è‰²å›¾ç‰‡
 							updateForcusImageViewOfScrollView(true);
 						}
 					}
 				}
 				break;
-			// µ±×ö´¥ÃşÌ§ÆğÊÂ¼ş´¦Àí
+			// å½“åšè§¦æ‘¸æŠ¬èµ·äº‹ä»¶å¤„ç†
 			case MotionEvent.ACTION_CANCEL:
-			// ´¥ÃşÌ§ÆğÊÂ¼ş
+			// è§¦æ‘¸æŠ¬èµ·äº‹ä»¶
 			case MotionEvent.ACTION_UP:
-				// ¸æËß¸¸´°¿ÚÒÔºóµÄ¿ÉÒÔÀ¹½Ø´¥ÃşÏûÏ¢
+				// å‘Šè¯‰çˆ¶çª—å£ä»¥åçš„å¯ä»¥æ‹¦æˆªè§¦æ‘¸æ¶ˆæ¯
 				scrollViewContainer.requestDisallowInterceptTouchEvent(false);
 				imgviewdrag_prepare = false;
 				break;
@@ -965,9 +974,9 @@ public class GsptIngameActivity extends ReadboyActivity {
 	};
 
 	/**
-	 * @aim ScrollView ÖĞÍ¼Æ¬µÄµã»÷ÊÂ¼ş£¬ĞÂ½¨Ò»¸öÑ¡ÖĞÍ¼Æ¬
-	 * 			¸ø¸ÃÍ¼Æ¬¶¨Òå´¥Ãş¼àÌı½çÃæÄÚµÄImageViewµÄµã»÷¼àÌı 
-	 * 			µã»÷Í¼Æ¬£¬ÏÔÊ¾ÔÚScrollView×ó²à£¬¾ÓÖĞÎ»ÖÃ£¬¿ÉÒÔÈ»ºóÍÏ¶¯¸ÃÍ¼Æ¬È¥Æ´Í¼
+	 * @aim ScrollView ä¸­å›¾ç‰‡çš„ç‚¹å‡»äº‹ä»¶ï¼Œæ–°å»ºä¸€ä¸ªé€‰ä¸­å›¾ç‰‡
+	 * 			ç»™è¯¥å›¾ç‰‡å®šä¹‰è§¦æ‘¸ç›‘å¬ç•Œé¢å†…çš„ImageViewçš„ç‚¹å‡»ç›‘å¬ 
+	 * 			ç‚¹å‡»å›¾ç‰‡ï¼Œæ˜¾ç¤ºåœ¨ScrollViewå·¦ä¾§ï¼Œå±…ä¸­ä½ç½®ï¼Œå¯ä»¥ç„¶åæ‹–åŠ¨è¯¥å›¾ç‰‡å»æ‹¼å›¾
 	 *          
 	 *          
 	 * @author divhee
@@ -978,20 +987,20 @@ public class GsptIngameActivity extends ReadboyActivity {
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub		
-			// Ïú»ÙÉÏÒ»¸öimgViewSharpsChoose
+			// é”€æ¯ä¸Šä¸€ä¸ªimgViewSharpsChoose
 			if (imgviewchoose_move || !GsptRunDataFrame.bNotFastDoubleClick()){
 				return;
 			}
 			synchronized (GsptPlayMediaManager.class) {
-				// Òş²ØÉÏÒ»¸öÒÆ¶¯µÄimageview
+				// éšè—ä¸Šä¸€ä¸ªç§»åŠ¨çš„imageview
 				imgViewChoose.setVisibility(View.INVISIBLE);
-				// »Ö¸´»ÒÉ«ImageViewÍ¼Æ¬ÑÕÉ«
+				// æ¢å¤ç°è‰²ImageViewå›¾ç‰‡é¢œè‰²
 				updateForcusImageViewOfScrollView(false);
-				// ĞÂ½¨ÏÂÒ»¸öimgViewSharpsChoose
+				// æ–°å»ºä¸‹ä¸€ä¸ªimgViewSharpsChoose
 				GameSharps nSharps = (GameSharps) v.getTag(R.id.tag_first_dataframe);
-				// »ñÈ¡ÕæÊµÍ¼Æ¬
+				// è·å–çœŸå®å›¾ç‰‡
 				Bitmap bmpSmall = (Bitmap)v.getTag(R.id.tag_second_bgbitmap);
-				// ¸üĞÂImageView
+				// æ›´æ–°ImageView
 				RelativeLayout.LayoutParams lpwwParams = new RelativeLayout.LayoutParams(bmpSmall.getWidth(), bmpSmall.getHeight());
 				lpwwParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
 				lpwwParams.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE);				
@@ -1006,30 +1015,30 @@ public class GsptIngameActivity extends ReadboyActivity {
 				if (lpwwParams.topMargin > GsptMainActivity.getScreenHeight() - bmpSmall.getHeight()){
 					lpwwParams.topMargin = GsptMainActivity.getScreenHeight() - bmpSmall.getHeight();
 				}
-				// ÉèÖÃ¿ÉÒÔÉÁË¸ÓÃµÄ±³¾°
+				// è®¾ç½®å¯ä»¥é—ªçƒç”¨çš„èƒŒæ™¯
 				imgViewChoose.setClickable(false);
 				imgViewChoose.setOnTouchListener(ImgBtnOfSelected_onTouch);
 				imgViewChoose.setLayoutParams(lpwwParams);
 				imgViewChoose.setBackgroundResource(R.drawable.imageviewchoosebg_selector);
-				// ¸üĞÂ±³¾°Í¼Æ¬
+				// æ›´æ–°èƒŒæ™¯å›¾ç‰‡
 				imgViewChoose.setImageBitmap(bmpSmall);
 				imgViewChooseWH.set(bmpSmall.getWidth(), bmpSmall.getHeight());
 				imgViewChoose.setVisibility(View.VISIBLE);
 				imgViewChoose.requestLayout();
 				
 
-				// ¼ÇÂ¼¸Ã½¹µãview
+				// è®°å½•è¯¥ç„¦ç‚¹view
 				imageViewFocus = (ImageView)v;
-				// ÉèÖÃ¸ÃImageViewÍ¼Æ¬Îª»ÒÉ«Í¼Æ¬
+				// è®¾ç½®è¯¥ImageViewå›¾ç‰‡ä¸ºç°è‰²å›¾ç‰‡
 				updateForcusImageViewOfScrollView(true);
 			}
 		}
 	};	
 	
 	/**
-	 * @aim ScrollView ÖĞÍ¼Æ¬µÄ³¤°´ÊÂ¼ş£¬ĞÂ½¨Ò»¸öÑ¡ÖĞÍ¼Æ¬
-	 * 			¸ø¸ÃÍ¼Æ¬¶¨Òå´¥Ãş¼àÌı½çÃæÄÚµÄImageViewµÄµã»÷¼àÌı 
-	 * 			µã»÷Í¼Æ¬£¬ÏÔÊ¾ÔÚScrollView×ó²à£¬¾ÓÖĞÎ»ÖÃ£¬¿ÉÒÔÈ»ºóÍÏ¶¯¸ÃÍ¼Æ¬È¥Æ´Í¼
+	 * @aim ScrollView ä¸­å›¾ç‰‡çš„é•¿æŒ‰äº‹ä»¶ï¼Œæ–°å»ºä¸€ä¸ªé€‰ä¸­å›¾ç‰‡
+	 * 			ç»™è¯¥å›¾ç‰‡å®šä¹‰è§¦æ‘¸ç›‘å¬ç•Œé¢å†…çš„ImageViewçš„ç‚¹å‡»ç›‘å¬ 
+	 * 			ç‚¹å‡»å›¾ç‰‡ï¼Œæ˜¾ç¤ºåœ¨ScrollViewå·¦ä¾§ï¼Œå±…ä¸­ä½ç½®ï¼Œå¯ä»¥ç„¶åæ‹–åŠ¨è¯¥å›¾ç‰‡å»æ‹¼å›¾
 	 *          
 	 *          
 	 * @author divhee
@@ -1045,21 +1054,21 @@ public class GsptIngameActivity extends ReadboyActivity {
 			}		
 			synchronized (GsptPlayMediaManager.class) {
 				if (imgViewChoose == null){	
-					// »Ö¸´»ÒÉ«ImageViewÍ¼Æ¬ÑÕÉ«
+					// æ¢å¤ç°è‰²ImageViewå›¾ç‰‡é¢œè‰²
 					updateForcusImageViewOfScrollView(false);				
-					// ¸æËß¸¸´°¿Ú²»ÒªÀ¹½Ø´¥ÃşÏûÏ¢
+					// å‘Šè¯‰çˆ¶çª—å£ä¸è¦æ‹¦æˆªè§¦æ‘¸æ¶ˆæ¯
 					scrollViewContainer.requestDisallowInterceptTouchEvent(true);
 					imgviewdrag_prepare = false;
 					imgviewchoose_dragstyle = true;
-					// ĞÂ½¨Ò»¸öImageViewÓÃÓÚÍÏ¶¯£¬Ìí¼ÓÔÚ×îÍâ²ã£¬¸úËæÊÖÖ¸ÒÆ¶¯
+					// æ–°å»ºä¸€ä¸ªImageViewç”¨äºæ‹–åŠ¨ï¼Œæ·»åŠ åœ¨æœ€å¤–å±‚ï¼Œè·Ÿéšæ‰‹æŒ‡ç§»åŠ¨
 					initImgBtnFromScrollView(v, 0, 0);
-					// Ê¹ÄÜÒÆ¶¯¼°ÆğÊ¼Î»ÖÃ
+					// ä½¿èƒ½ç§»åŠ¨åŠèµ·å§‹ä½ç½®
 					imgviewchoose_move = true;
 					imgviewchoose_startx = imgviewdrag_x;
 					imgviewchoose_starty = imgviewdrag_y;
-					// ¼ÇÂ¼¸Ã½¹µãview
+					// è®°å½•è¯¥ç„¦ç‚¹view
 					imageViewFocus = (ImageView)v;
-					// ÉèÖÃ¸ÃImageViewÍ¼Æ¬Îª»ÒÉ«Í¼Æ¬
+					// è®¾ç½®è¯¥ImageViewå›¾ç‰‡ä¸ºç°è‰²å›¾ç‰‡
 					updateForcusImageViewOfScrollView(true);				
 				}
 			}
@@ -1068,8 +1077,8 @@ public class GsptIngameActivity extends ReadboyActivity {
 	};
 	
 	/**
-	 * @aim Ñ¡ÖĞµÄÍ¼Æ¬µÄ¼àÌıÊÂ¼ş 
-	 * 			ÊµÏÖÑ¡ÖĞÍ¼Æ¬µÄÍÏ¶¯£¬Í£¿¿£¬Íê³ÉÆ´Í¼¹ı³Ì
+	 * @aim é€‰ä¸­çš„å›¾ç‰‡çš„ç›‘å¬äº‹ä»¶ 
+	 * 			å®ç°é€‰ä¸­å›¾ç‰‡çš„æ‹–åŠ¨ï¼Œåœé ï¼Œå®Œæˆæ‹¼å›¾è¿‡ç¨‹
 	 *          
 	 *          
 	 * @author divhee
@@ -1091,7 +1100,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 			switch (action & MotionEvent.ACTION_MASK) {
 			case MotionEvent.ACTION_DOWN:
 				if (imgviewchoose_move) {
-					// ÒÑ¾­ÔÚÒÆ¶¯ÁË£¬ÔÙµã»÷²»ÏìÓ¦
+					// å·²ç»åœ¨ç§»åŠ¨äº†ï¼Œå†ç‚¹å‡»ä¸å“åº”
 					break;
 				}
 				imgviewchoose_move = true;
@@ -1151,7 +1160,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 								selfSmall.recycle();
 								selfSmall = null;
 								imgViewChoose.setVisibility(View.INVISIBLE);
-								// Çå³ı½¹µãviewÒòÎªÒÑ¾­ÒÆ³ıÁË²¼¾Ö
+								// æ¸…é™¤ç„¦ç‚¹viewå› ä¸ºå·²ç»ç§»é™¤äº†å¸ƒå±€
 								imageViewFocus = null;
 								lvLayoutSharps.removeView(tSharps.imgViewInScrollView);
 								GsptRunDataFrame.setViewGoneDestroy(tSharps.imgViewInScrollView);
@@ -1160,24 +1169,24 @@ public class GsptIngameActivity extends ReadboyActivity {
 									if (grdf != null) {
 										ImgBtnAuto tmpImgBtnAuto = grdf.getImgBtnAuto();
 										if (tmpImgBtnAuto != null && tmpImgBtnAuto.currentindex != -1 && tmpImgBtnAuto.imgdstptid != null) {
-											// »ñÈ¡Òª²¥·ÅµÄ¹ÊÊÂ±³¾°µÄÉùÒôIDºÅ
+											// è·å–è¦æ’­æ”¾çš„æ•…äº‹èƒŒæ™¯çš„å£°éŸ³IDå·
 											winPlayGsSndId = tmpImgBtnAuto.gssndid[tmpImgBtnAuto.currentindex];
-											// »ñÈ¡Òª²¥·ÅµÄ¶¯»­µÄIDºÅ
+											// è·å–è¦æ’­æ”¾çš„åŠ¨ç”»çš„IDå·
 											GsptInterludeName = tmpImgBtnAuto.InterludeInfoName[tmpImgBtnAuto.currentindex];
-											// ¼ÇÂ¼½±ÀøÖµ
+											// è®°å½•å¥–åŠ±å€¼
 											Reward.pointScore(getApplicationContext(), 2);
-											// ÉèÖÃÒÑ¾­Íæ¹ıµÄ±êÖ¾
+											// è®¾ç½®å·²ç»ç©è¿‡çš„æ ‡å¿—
 											if (tmpImgBtnAuto.nowinpass[tmpImgBtnAuto.currentindex]){
 												bFirstPass = true;
 											}
 											tmpImgBtnAuto.nowinpass[tmpImgBtnAuto.currentindex] = false;
-											// Òş²Ø°´Å¥¼°Í¼Æ¬ÁĞ±í
+											// éšè—æŒ‰é’®åŠå›¾ç‰‡åˆ—è¡¨
 											GsptRunDataFrame.setViewGoneDestroy(lvLayoutSharps);
 											lvLayoutSharps = null;
 											scrollViewContainer.setVisibility(View.INVISIBLE);
-											// ÏòÉÏ°´Å¥Ïú»Ù
+											// å‘ä¸ŠæŒ‰é’®é”€æ¯
 											GsptRunDataFrame.setViewGoneDestroy((ImageButton) findViewById(R.id.imgBtnUp));
-											// ÏòÏÂ°´Å¥Ïú»Ù
+											// å‘ä¸‹æŒ‰é’®é”€æ¯
 											GsptRunDataFrame.setViewGoneDestroy((ImageButton) findViewById(R.id.imgBtnDown));
 										}
 									}									
@@ -1188,11 +1197,11 @@ public class GsptIngameActivity extends ReadboyActivity {
 							imgviewchoose_startx = 0;
 							imgviewchoose_starty = 0;							
 							if (gsptMediaManager != null) {
-								// ¹Ø±ÕÓÎÏ·ÖĞµÄÉùÒô
+								// å…³é—­æ¸¸æˆä¸­çš„å£°éŸ³
 								gsptMediaManager.IngameStopMediaPlayer();								
 								if (lvLayoutSharps == null){
-									// È«²¿½â·âÓë·ñ²¥·Å²»Í¬µÄÌáÊ¾Òô
-									// ÉèÖÃ¹ÊÊÂÃ»ÓĞ²¥·Å½áÊø
+									// å…¨éƒ¨è§£å°ä¸å¦æ’­æ”¾ä¸åŒçš„æç¤ºéŸ³
+									// è®¾ç½®æ•…äº‹æ²¡æœ‰æ’­æ”¾ç»“æŸ
 									gsptIngameRunData.bGsPlayEndShowNext = GsptRunDataFrame.WM_PLAY_WIN_SND1;			
 									gsptMediaManager.winPlayMediaPlayer(bFirstPass ? R.raw.gspt_okjm_ts1 : R.raw.gspt_okjm_ts2);
 								} else {
@@ -1203,11 +1212,11 @@ public class GsptIngameActivity extends ReadboyActivity {
 					}
 				}
 				break;
-			// ¶àµãÌ§Æğ
+			// å¤šç‚¹æŠ¬èµ·
 			case MotionEvent.ACTION_POINTER_UP:
-			// µ±×ö´¥ÃşÌ§ÆğÊÂ¼ş´¦Àí
+			// å½“åšè§¦æ‘¸æŠ¬èµ·äº‹ä»¶å¤„ç†
 			case MotionEvent.ACTION_CANCEL:
-			// ´¥ÃşÌ§ÆğÊÂ¼ş
+			// è§¦æ‘¸æŠ¬èµ·äº‹ä»¶
 			case MotionEvent.ACTION_UP:
 				//Log.w("divhee_edugame", "position up ImgBtnOfSelected_onTouch 1=" + mPosX + ", " + mPosY);
 				if (imgviewchoose_move) {
@@ -1221,7 +1230,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 				imgviewchoose_startx = 0;
 				imgviewchoose_starty = 0;
 				if (v.getWidth() != 0 && v.getHeight() != 0) {
-					// ¸üĞÂÍÏ¶¯µÄÍ¼Æ¬µÄÏÔÊ¾Î»ÖÃ£¬ÒÆ¶¯µ½ÕâÀï
+					// æ›´æ–°æ‹–åŠ¨çš„å›¾ç‰‡çš„æ˜¾ç¤ºä½ç½®ï¼Œç§»åŠ¨åˆ°è¿™é‡Œ
 					RelativeLayout.LayoutParams lpwwParams = (RelativeLayout.LayoutParams) v.getLayoutParams();		
 					lpwwParams.width = imgViewChooseWH.x;
 					lpwwParams.height = imgViewChooseWH.y;
@@ -1240,28 +1249,28 @@ public class GsptIngameActivity extends ReadboyActivity {
 	};
 	
 	/**
-	 * @aim Í¼Æ¬µÄËõ·Å·½·¨£¬Í¨¹ıBitmapĞÂ½¨Ò»¸öËõ·ÅÍ¼Æ¬
-	 * 			ÒÔÓÃ»§ÊäÈëµÄnewWidthÓënewHeightÎªĞÂµÄ¿í¸ß
+	 * @aim å›¾ç‰‡çš„ç¼©æ”¾æ–¹æ³•ï¼Œé€šè¿‡Bitmapæ–°å»ºä¸€ä¸ªç¼©æ”¾å›¾ç‰‡
+	 * 			ä»¥ç”¨æˆ·è¾“å…¥çš„newWidthä¸newHeightä¸ºæ–°çš„å®½é«˜
 	 * @param bgimage
-	 *			Ô´Í¼Æ¬×ÊÔ´
+	 *			æºå›¾ç‰‡èµ„æº
 	 * @param newWidth
-	 *			Ëõ·Åºó¿í¶È
+	 *			ç¼©æ”¾åå®½åº¦
 	 * @param newHeight
-	 *			Ëõ·Åºó¸ß¶È
+	 *			ç¼©æ”¾åé«˜åº¦
 	 * @return Bitmap
-	 * 			ĞÂµÄËõ·ÅµÄÍ¼Æ¬µÄBitmap
+	 * 			æ–°çš„ç¼©æ”¾çš„å›¾ç‰‡çš„Bitmap
 	 */
 	public Bitmap zoomImage(Bitmap bgimage, int newWidth, int newHeight) {
 		
-		// »ñÈ¡Õâ¸öÍ¼Æ¬µÄ¿íºÍ¸ß
+		// è·å–è¿™ä¸ªå›¾ç‰‡çš„å®½å’Œé«˜
 		int width = bgimage.getWidth();
 		int height = bgimage.getHeight();
-		// ´´½¨²Ù×÷Í¼Æ¬ÓÃµÄmatrix¶ÔÏó
+		// åˆ›å»ºæ“ä½œå›¾ç‰‡ç”¨çš„matrixå¯¹è±¡
 		Matrix matrix = new Matrix();
-		// ¼ÆËãËõ·ÅÂÊ£¬ĞÂ³ß´ç³ıÔ­Ê¼³ß´ç
+		// è®¡ç®—ç¼©æ”¾ç‡ï¼Œæ–°å°ºå¯¸é™¤åŸå§‹å°ºå¯¸
 		float scaleWidth = ((float) newWidth) / width;
 		float scaleHeight = ((float) newHeight) / height;
-		// Ëõ·ÅÍ¼Æ¬¶¯×÷
+		// ç¼©æ”¾å›¾ç‰‡åŠ¨ä½œ
 		matrix.postScale(scaleWidth, scaleHeight);
 		Bitmap bitmap = Bitmap.createBitmap(bgimage, 0, 0, width, height, matrix, true);
 		
@@ -1269,26 +1278,26 @@ public class GsptIngameActivity extends ReadboyActivity {
 	}
 
 	/**
-	 * @aim Í¨¹ıÔ­Í¼µÄBitmap°ÑÍ¼Æ¬Ëõ·Åµ½¹Ì¶¨´óĞ¡£¬·µ»ØĞÂµÄBitmap
+	 * @aim é€šè¿‡åŸå›¾çš„BitmapæŠŠå›¾ç‰‡ç¼©æ”¾åˆ°å›ºå®šå¤§å°ï¼Œè¿”å›æ–°çš„Bitmap
 	 * @param bgimage
-	 *			Ô´Í¼Æ¬×ÊÔ´
+	 *			æºå›¾ç‰‡èµ„æº
 	 * @return Bitmap 
-	 * 			Í¼Æ¬Ëõ·Åµ½¹Ì¶¨´óĞ¡
+	 * 			å›¾ç‰‡ç¼©æ”¾åˆ°å›ºå®šå¤§å°
 	 */
 	public Bitmap espZoomImage(Bitmap bgimage) {
 		
-		// »ñÈ¡Õâ¸öÍ¼Æ¬µÄ¿íºÍ¸ß
+		// è·å–è¿™ä¸ªå›¾ç‰‡çš„å®½å’Œé«˜
 		int width = bgimage.getWidth();
 		int height = bgimage.getHeight();
-		// ´´½¨²Ù×÷Í¼Æ¬ÓÃµÄmatrix¶ÔÏó
+		// åˆ›å»ºæ“ä½œå›¾ç‰‡ç”¨çš„matrixå¯¹è±¡
 		Matrix matrix = new Matrix();
-		// ¼ÆËãËõ·ÅÂÊ£¬ĞÂ³ß´ç³ıÔ­Ê¼³ß´ç
+		// è®¡ç®—ç¼©æ”¾ç‡ï¼Œæ–°å°ºå¯¸é™¤åŸå§‹å°ºå¯¸
 		int newWidth = 118;//165
 		int newHeight = 80;//112
-		// Ëõ·Å±ÈÀı
+		// ç¼©æ”¾æ¯”ä¾‹
 		float scaleWidth = ((float) newWidth) / width;
 		float scaleHeight = ((float) newHeight) / height;
-		// Ëõ·ÅÍ¼Æ¬¶¯×÷
+		// ç¼©æ”¾å›¾ç‰‡åŠ¨ä½œ
 		matrix.postScale(scaleWidth, scaleHeight);
 		Bitmap bitmap = Bitmap.createBitmap(bgimage, 0, 0, width, height, matrix, true);
 
@@ -1296,14 +1305,14 @@ public class GsptIngameActivity extends ReadboyActivity {
 	}
 
 	/**
-	 * @aim Í¼Æ¬È¥É«,·µ»ØÓë¸ÃÍ¼Æ¬Ò»Ñù´óĞ¡µÄ»Ò¶ÈÍ¼Æ¬Ò²¾ÍÊÇºÚ°×Í¼Æ¬
+	 * @aim å›¾ç‰‡å»è‰²,è¿”å›ä¸è¯¥å›¾ç‰‡ä¸€æ ·å¤§å°çš„ç°åº¦å›¾ç‰‡ä¹Ÿå°±æ˜¯é»‘ç™½å›¾ç‰‡
 	 * @param bmpOriginal
-	 *			´«ÈëµÄÔ´Í¼Æ¬
+	 *			ä¼ å…¥çš„æºå›¾ç‰‡
 	 * @return Bitmap 
-	 * 			È¥É«ºóµÄÍ¼Æ¬
+	 * 			å»è‰²åçš„å›¾ç‰‡
 	 */
 	public Bitmap toGrayscale(Bitmap bmpOriginal) {
-		// ĞÂ½¨»ÒÉ«Í¼Æ¬µÄ¿í¸ß
+		// æ–°å»ºç°è‰²å›¾ç‰‡çš„å®½é«˜
 		Bitmap bmpGrayscale = Bitmap.createBitmap(bmpOriginal.getWidth(), 
 				bmpOriginal.getHeight(), Bitmap.Config.RGB_565);
 		if (gsptIngameRunData.bGsptGameStyle) {
@@ -1330,23 +1339,23 @@ public class GsptIngameActivity extends ReadboyActivity {
 	}
 
 	/**
-	 * @aim Í¨¹ıÔ­Í¼Éú³ÉĞÂµÄÈÎÒâĞÎ×´Í¼ĞÎµÄBitmap
-	 * 			ÏÈÔÚÄ¿±êÍ¼ĞÎµÄ¾ØĞÎÇøÓòÄÚ£¬Ê¹ÓÃÒ»¸öÑÕÉ«°´Â·¾¶»æÖÆÒ»¸öÇøÓò
-	 * 			setXfermodeÉèÖÃ»æÍ¼Ä£Ê½£¬ÈÃÍ¨¹ıdrawBitmap»æÖÆµÄbitmap
-	 * 			Ö»ÄÜÔÚ¸Õ²Å°´Â·¾¶»æÖÆµÄÇøÓòÉÏ»æÖÆ£¬ÄÇÃ´ÈÎÒâĞÎ×´µÄÍ¼ĞÎ¶¼ÄÜ»æÖÆ³öÀ´
+	 * @aim é€šè¿‡åŸå›¾ç”Ÿæˆæ–°çš„ä»»æ„å½¢çŠ¶å›¾å½¢çš„Bitmap
+	 * 			å…ˆåœ¨ç›®æ ‡å›¾å½¢çš„çŸ©å½¢åŒºåŸŸå†…ï¼Œä½¿ç”¨ä¸€ä¸ªé¢œè‰²æŒ‰è·¯å¾„ç»˜åˆ¶ä¸€ä¸ªåŒºåŸŸ
+	 * 			setXfermodeè®¾ç½®ç»˜å›¾æ¨¡å¼ï¼Œè®©é€šè¿‡drawBitmapç»˜åˆ¶çš„bitmap
+	 * 			åªèƒ½åœ¨åˆšæ‰æŒ‰è·¯å¾„ç»˜åˆ¶çš„åŒºåŸŸä¸Šç»˜åˆ¶ï¼Œé‚£ä¹ˆä»»æ„å½¢çŠ¶çš„å›¾å½¢éƒ½èƒ½ç»˜åˆ¶å‡ºæ¥
 	 * 
 	 * @param bitmap
-	 *          Ô´Bitmap¶ÔÏó
+	 *          æºBitmapå¯¹è±¡
 	 * @param srcRect
-	 *          ÔÚÔ­Í¼ÖĞµÄ¾ØĞÎÇøÓòÎ»ÖÃ
+	 *          åœ¨åŸå›¾ä¸­çš„çŸ©å½¢åŒºåŸŸä½ç½®
 	 * @param dstRect
-	 *          ÔÚÄ¿±êÍ¼ĞÎÖĞµÄ¾ØĞÎÇøÓòÎ»ÖÃ
+	 *          åœ¨ç›®æ ‡å›¾å½¢ä¸­çš„çŸ©å½¢åŒºåŸŸä½ç½®
 	 * @param dstPath
-	 *          Ä¿±êÍ¼Æ¬ÖĞµÄÂ·¾¶
+	 *          ç›®æ ‡å›¾ç‰‡ä¸­çš„è·¯å¾„
 	 * @param bFixup
-	 *          ÊÇ·ñ¹Ì¶¨´óĞ¡
+	 *          æ˜¯å¦å›ºå®šå¤§å°
 	 * @return Bitmap 
-	 * 			ÈÎÒâĞÎ×´µÄÍ¼ĞÎµÄBitmap
+	 * 			ä»»æ„å½¢çŠ¶çš„å›¾å½¢çš„Bitmap
 	 */
 	public Bitmap toRandomSharpsBitmap(Bitmap bitmap, Rect srcRect, Rect dstRect,
 			Path dstPath, boolean bFixup, boolean bNeedGray) {
@@ -1363,21 +1372,21 @@ public class GsptIngameActivity extends ReadboyActivity {
 				paint.setColor(0xff424242);
 //				paint.setAlpha(128);
 //				paint.setDither(true);
-				paint.setStyle(Paint.Style.FILL_AND_STROKE);// ÉèÖÃÎªÌî³ä
+				paint.setStyle(Paint.Style.FILL_AND_STROKE);// è®¾ç½®ä¸ºå¡«å……
 				paint.setStrokeWidth(1);
 				
-//				// ÉèÖÃ¹âÔ´µÄ·½Ïò
+//				// è®¾ç½®å…‰æºçš„æ–¹å‘
 //				float[] direction = new float[] { 0, 0, 1 };
-//				// ÉèÖÃ»·¾³¹âÁÁ¶È
+//				// è®¾ç½®ç¯å¢ƒå…‰äº®åº¦
 //				float light = 0.1f;
-//				// Ñ¡ÔñÒªÓ¦ÓÃµÄ·´ÉäµÈ¼¶
+//				// é€‰æ‹©è¦åº”ç”¨çš„åå°„ç­‰çº§
 //				float specular = 6;
-//				// ÏòmaskÓ¦ÓÃÒ»¶¨¼¶±ğµÄÄ£ºı
+//				// å‘maskåº”ç”¨ä¸€å®šçº§åˆ«çš„æ¨¡ç³Š
 //				float blur = 10.5f;
 //				EmbossMaskFilter emboss = new EmbossMaskFilter(direction, light, specular, blur);
-//				// Ó¦ÓÃmask
+//				// åº”ç”¨mask
 //				paint.setMaskFilter(emboss);
-//			// Ó¦ÓÃÌØĞ§
+//			// åº”ç”¨ç‰¹æ•ˆ
 //				paint.setPathEffect(new CornerPathEffect(6));
 				if (bNeedGray){
 					ColorMatrix cm = new ColorMatrix();
@@ -1386,7 +1395,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 					paint.setColorFilter(f);
 				}				
 				
-				// »æÖÆÂ·¾¶£¬ĞÂÍ¼Ö»ÄÜÔÚÕâ¸öÇøÓòÖĞ»æÖÆ
+				// ç»˜åˆ¶è·¯å¾„ï¼Œæ–°å›¾åªèƒ½åœ¨è¿™ä¸ªåŒºåŸŸä¸­ç»˜åˆ¶
 				canvas.drawPath(dstPath, paint);
 //				Path apath = new Path();
 //				apath.addRect(new RectF(dstRect), Path.Direction.CW);
@@ -1396,7 +1405,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 				paint.setAntiAlias(true);
 				canvas.drawARGB(0, 0, 0, 0);
 				paint.setColor(0xff424242);
-				paint.setStyle(Paint.Style.FILL_AND_STROKE);// ÉèÖÃÎªÌî³ä
+				paint.setStyle(Paint.Style.FILL_AND_STROKE);// è®¾ç½®ä¸ºå¡«å……
 				paint.setStrokeWidth(1);
 				
 				if (bNeedGray){
@@ -1405,13 +1414,13 @@ public class GsptIngameActivity extends ReadboyActivity {
 					ColorMatrixColorFilter f = new ColorMatrixColorFilter(cm);
 					paint.setColorFilter(f);
 				}
-				// »æÖÆÂ·¾¶£¬ĞÂÍ¼Ö»ÄÜÔÚÕâ¸öÇøÓòÖĞ»æÖÆ
+				// ç»˜åˆ¶è·¯å¾„ï¼Œæ–°å›¾åªèƒ½åœ¨è¿™ä¸ªåŒºåŸŸä¸­ç»˜åˆ¶
 				canvas.drawPath(dstPath, paint);
 			}
 			paint.setXfermode(new PorterDuffXfermode(Mode.SRC_IN));
 			canvas.drawBitmap(bitmap, srcRect, dstRect, paint);
 			
-			// ĞÂµÄÍ¼Æ¬ĞÎ×´ĞèÒªËõ·Åµ½¹Ì¶¨´óĞ¡
+			// æ–°çš„å›¾ç‰‡å½¢çŠ¶éœ€è¦ç¼©æ”¾åˆ°å›ºå®šå¤§å°
 			if (bFixup){
 				Bitmap outputex = espZoomImage(output);
 				output.recycle();
@@ -1424,7 +1433,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 	}
 	
 	/**
-	 * @aim ÏûÏ¢·¢ËÍÏß³ÌÊµÀı
+	 * @aim æ¶ˆæ¯å‘é€çº¿ç¨‹å®ä¾‹
 	 */
 	public class IngameMsgHandler extends Handler {
 
@@ -1442,39 +1451,64 @@ public class GsptIngameActivity extends ReadboyActivity {
 						
 						LinearLayout.LayoutParams lpwwParams = new LinearLayout.LayoutParams(
 								LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-						// ¾ÓÖĞÏÔÊ¾
+						// å±…ä¸­æ˜¾ç¤º
 						//lpwwParams.leftMargin = 35;
 						lpwwParams.topMargin = 15;
 						lpwwParams.bottomMargin = 15;		
 						if (gsptIngameAreaSharps != null) {
 							int index = 0;
-							// °Ñ¸÷¸öÇĞºÃµÄĞ¡Í¼ÏñÌí¼Óµ½ScrollViewËùÔÚµÄLinearLayout²¼¾Öµ±ÖĞ
+							// æŠŠå„ä¸ªåˆ‡å¥½çš„å°å›¾åƒæ·»åŠ åˆ°ScrollViewæ‰€åœ¨çš„LinearLayoutå¸ƒå±€å½“ä¸­
 							for (GameSharps nSharps : gsptIngameAreaSharps) {
 								ImageView imgView = new ImageView(GsptIngameActivity.this);
-								// ÇĞ³öĞ¡Í¼Ïñ£¬×îºóÒ»¸ö²ÎÊı¿ØÖÆÊÇ·ñÒªËõĞ¡µ½¹Ì¶¨´óĞ¡
+								// åˆ‡å‡ºå°å›¾åƒï¼Œæœ€åä¸€ä¸ªå‚æ•°æ§åˆ¶æ˜¯å¦è¦ç¼©å°åˆ°å›ºå®šå¤§å°
 								Bitmap bmpSmall = toRandomSharpsBitmap(gsptBitmap, nSharps.srcSharpRect, nSharps.smlSharpRect, nSharps.smlSharpPath, true, false);
-								// È¡µÃ¸ÃÍ¼Æ¬µÄ»Ò¶ÈÍ¼
+								// å–å¾—è¯¥å›¾ç‰‡çš„ç°åº¦å›¾
 								Bitmap graySmall = toRandomSharpsBitmap(gsptBitmap, nSharps.srcSharpRect, nSharps.smlSharpRect, nSharps.smlSharpPath, true, true);
-								// »ñÈ¡¸ÃÍ¼µÄÕæÊµÍ¼Æ¬
+								// è·å–è¯¥å›¾çš„çœŸå®å›¾ç‰‡
 								Bitmap bmpReal = toRandomSharpsBitmap(gsptBitmap, nSharps.srcSharpRect, nSharps.smlSharpRect, nSharps.smlSharpPath, false, false);
-								// ÉèÖÃ²ÊÉ«Í¼Îª±³¾°
+								// è®¾ç½®å½©è‰²å›¾ä¸ºèƒŒæ™¯
+
+								if (App.getInstance().mScale>1.0f) {
+									int w = bmpSmall.getWidth();
+									int h = bmpSmall.getHeight();
+									Matrix matrix = new Matrix();
+									float scale = App.getInstance().mScale;
+									matrix.postScale(scale, scale, 0, 0);
+									Bitmap bmp = Bitmap.createBitmap(bmpSmall, 0, 0, w, h, matrix, true);
+									if (bmpSmall != null && !bmpSmall.equals(bmp) && !bmpSmall.isRecycled()) {
+										bmpSmall.recycle();
+										bmpSmall = null;
+									}
+									bmpSmall = bmp;
+
+									w = graySmall.getWidth();
+									h = graySmall.getHeight();
+									matrix = new Matrix();
+									matrix.postScale(2, 2, 0, 0);
+									bmp = Bitmap.createBitmap(graySmall, 0, 0, w, h, matrix, true);
+									if (graySmall != null && !graySmall.equals(bmp) && !graySmall.isRecycled()) {
+										graySmall.recycle();
+										graySmall = null;
+									}
+									graySmall = bmp;
+								}
 								imgView.setImageBitmap(bmpSmall);
 								imgView.setTag(R.id.tag_third_smallbitmap, bmpSmall);
 								imgView.setTag(R.id.tag_first_dataframe, nSharps);
 								imgView.setTag(R.id.tag_four_graybitmap, graySmall);
 								imgView.setTag(R.id.tag_second_bgbitmap, bmpReal);
 								imgView.setId(R.id.imgViewSharps_00 + index++);
-								// ²»ĞèÒªÉÁË¸£¬¾Í²»Ìí¼ÓÁË°É
+								// ä¸éœ€è¦é—ªçƒï¼Œå°±ä¸æ·»åŠ äº†å§
 								imgView.setBackgroundResource(R.drawable.scrollviewbg_selector);
 								imgView.setClickable(true);
-								// ÉèÖÃ´¥Ãş£¬µã»÷£¬³¤°´¼àÌı
+								// è®¾ç½®è§¦æ‘¸ï¼Œç‚¹å‡»ï¼Œé•¿æŒ‰ç›‘å¬
 								imgView.setOnClickListener(ImgBtnOfScrollView_onClick);
 								imgView.setOnTouchListener(ImgBtnOfScrollView_onTouch);
 								imgView.setOnLongClickListener(ImgBtnOfScrollView_OnLongClick);
 								imgView.setLayoutParams(lpwwParams);
-								// ¼ÇÂ¼¶ÔÓ¦µÄViewÔÚScrollViewµ±ÖĞ
+								// è®°å½•å¯¹åº”çš„Viewåœ¨ScrollViewå½“ä¸­
 								nSharps.imgViewInScrollView = imgView;
-								// ÕæÕıÌí¼Ó½øÈ¥
+								// çœŸæ­£æ·»åŠ è¿›å»
 								lvLayoutSharps.addView(nSharps.imgViewInScrollView);
 							}
 						}
@@ -1484,7 +1518,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 					}
 					if (gsptIngameRunData.bGsPlayEndShowNext == GsptRunDataFrame.WM_PLAYING_GAME1){
 						gsptIngameRunData.bGsPlayEndShowNext = GsptRunDataFrame.WM_PLAYING_GAME2;
-						// ²¥·ÅÉùÒô
+						// æ’­æ”¾å£°éŸ³
 						if (GsptRunDataFrame.bEnterModeExtCall()) {
 							ImgBtnAuto tmpImgBtnAuto = gsptIngameRunData.getImgBtnAuto();
 							if (tmpImgBtnAuto.currentindex == 0) {
@@ -1492,7 +1526,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 							} else {
 								gsptMediaManager.IngamePlayMediaPlayer(R.raw.gspt_ex_night_ingame_0 + (GsptRunDataFrame.getRandom() % 2));
 							}
-							// Õâ¸ö±ØĞëÓĞ²»È»²»»áµ±ÓĞĞ§µÄ´¦Àí
+							// è¿™ä¸ªå¿…é¡»æœ‰ä¸ç„¶ä¸ä¼šå½“æœ‰æ•ˆçš„å¤„ç†
 							ingameExtcallTimeOut = 1;
 							ingameMsgHandler.sendEmptyMessageDelayed(WM_DAYNIGHT, 1000);
 						} else {
@@ -1500,21 +1534,21 @@ public class GsptIngameActivity extends ReadboyActivity {
 						}
 					}
 					
-					// ÓÎÏ·Æ´Í¼Íê³ÉË¢ĞÂÍ¼Æ¬¶¯»­²¢ÇÒ¸ø³ö½±Àø
+					// æ¸¸æˆæ‹¼å›¾å®Œæˆåˆ·æ–°å›¾ç‰‡åŠ¨ç”»å¹¶ä¸”ç»™å‡ºå¥–åŠ±
 					GsptRunDataFrame gsptRunDataIngame = GsptRunDataFrame.getInstance(getApplicationContext());
 					if (gsptRunDataIngame != null && (gsptIngameRunData.bGsPlayEndShowNext == GsptRunDataFrame.WM_PLAY_WIN_SND3  
 							|| gsptIngameRunData.bGsPlayEndShowNext == GsptRunDataFrame.WM_END_WIN_SND3)){
 						if (gsptIngameRunData.bGsPlayEndShowNext == GsptRunDataFrame.WM_END_WIN_SND3){
-							// ½±ÀøÉùÒô²¥·Å½áÊø£¬×Ô¶¯ÍË³ö
+							// å¥–åŠ±å£°éŸ³æ’­æ”¾ç»“æŸï¼Œè‡ªåŠ¨é€€å‡º
 							imgBtnOnClickListener(findViewById(R.id.imgBtnBack));
 						} else {
-							// ¶¨Ê±Æ÷Ã¿¸ô10msÑ­»·´¥·¢
+							// å®šæ—¶å™¨æ¯éš”10mså¾ªç¯è§¦å‘
 							ingameMsgHandler.sendEmptyMessageDelayed(WM_UPDATE, 100);
 						}
 						//Log.w("edugame", "============gsptIngameHandler======" + gsptIngameRunData.bGsPlayEndShowNext);
 					} else if (gsptRunDataIngame != null && GsptInterludeName != null) {
 						if (gsptIngameRunData.bGsPlayEndShowNext == GsptRunDataFrame.WM_END_WIN_SND1){
-							// µÚ¶ş²½²¥·Å¹ÊÊÂ±³¾°
+							// ç¬¬äºŒæ­¥æ’­æ”¾æ•…äº‹èƒŒæ™¯
 							gsptIngameRunData.bGsPlayEndShowNext = GsptRunDataFrame.WM_PLAY_WIN_SND2;
 							gsptMediaManager.winPlayMediaPlayer(winPlayGsSndId);
 						}
@@ -1523,30 +1557,39 @@ public class GsptIngameActivity extends ReadboyActivity {
 						if (tmpInterlude != null && 
 								(gsptIngameRunData.bGsPlayEndShowNext == GsptRunDataFrame.WM_PLAY_WIN_SND2 
 								|| gsptIngameRunData.bGsPlayEndShowNext == GsptRunDataFrame.WM_END_WIN_SND2)) {
-							// µÚ¶ş²½ÏÔÊ¾¶¯»­
+							// ç¬¬äºŒæ­¥æ˜¾ç¤ºåŠ¨ç”»
 							Bitmap selfSmall = gsptIngameRunData.loadResById(tmpInterlude.ImgStartId + tmpInterlude.ImgCurrentNumber);
 							if (selfSmall != null) {
 								Canvas cvs = new Canvas(grayBgBitmap);
 								cvs.save();
-								cvs.drawBitmap(selfSmall, 0, 0, null);
+								if (App.getInstance().mScale>1.0f) {
+									int w = selfSmall.getWidth();
+									int h = selfSmall.getHeight();
+									Matrix matrix = new Matrix();
+									float scale = App.getInstance().mScale;
+									matrix.postScale(scale, scale, 0, 0);
+									cvs.drawBitmap(selfSmall, matrix, null);
+								}else {
+									cvs.drawBitmap(selfSmall, 0, 0, null);
+								}
 								cvs.restore();
 								imgViewbg.invalidate();
 								selfSmall.recycle();
 								selfSmall = null;
 							}
 							//Log.w("edugame", "=====3=======gsptIngameHandler======" + gsptIngameRunData.bGsPlayEndShowNext);
-							// ¶¯»­Ñ­»·²¥·Å
+							// åŠ¨ç”»å¾ªç¯æ’­æ”¾
 							if (tmpInterlude.ImgCurrentNumber + 1 >= tmpInterlude.ImgSumNumber) {
 								tmpInterlude.ImgCurrentNumber = 0;
 							} else {
 								tmpInterlude.ImgCurrentNumber++;
 							}
-							// ÉùÒô²¥·Å½áÊøÁË
+							// å£°éŸ³æ’­æ”¾ç»“æŸäº†
 							if (gsptIngameRunData.bGsPlayEndShowNext == GsptRunDataFrame.WM_END_WIN_SND2){
 								tmpInterlude.ImgCurrentNumber = 0;
 								GsptInterludeName = null;
 								//Log.w("edugame", "=======4=====gsptIngameHandler======" + gsptIngameRunData.bGsPlayEndShowNext);
-								// Ëæ¼´Éú³É½±ÀøµÄÎïÆ·ĞòºÅ
+								// éšå³ç”Ÿæˆå¥–åŠ±çš„ç‰©å“åºå·
 								int indexOfWinnerCup = GsptRunDataFrame.getRandom() % 26;
 								if (gsptBitmap != null) {
 									if (!gsptBitmap.isRecycled()) {
@@ -1556,19 +1599,19 @@ public class GsptIngameActivity extends ReadboyActivity {
 								}
 								Point screenPoint = new Point();
 								getWindowManager().getDefaultDisplay().getRealSize(screenPoint);
-								// Éú³É±³¾°Í¼Æ¬£¬Àï±ß°üº¬ÁËÓÎÏ·½±Àø¼°Æä±³¾°£¬½±ÀøËæ»ú
+								// ç”ŸæˆèƒŒæ™¯å›¾ç‰‡ï¼Œé‡Œè¾¹åŒ…å«äº†æ¸¸æˆå¥–åŠ±åŠå…¶èƒŒæ™¯ï¼Œå¥–åŠ±éšæœº
 								gsptBitmap = Bitmap.createBitmap(screenPoint.x, screenPoint.y, Bitmap.Config.RGB_565);
 								if (gsptBitmap != null) {
 									Canvas cvs = new Canvas(gsptBitmap);
 									cvs.save();
-									// ¼ÓÔØ½±Àø±³¾°
-									Bitmap winnerCupBg = gsptIngameRunData.loadResById(R.drawable.gspt_winner_bg_000);
+									// åŠ è½½å¥–åŠ±èƒŒæ™¯
+									Bitmap winnerCupBg = gsptIngameRunData.loadResById(R.drawable.gspt_winner_bg_000,App.getInstance().mScale);
 									if (winnerCupBg != null) {
 										cvs.drawBitmap(winnerCupBg, 0, 0, null);
 										winnerCupBg.recycle();
 										winnerCupBg = null;
 									}
-									// ¼ÓÔØ½±ÀøÎïÆ·
+									// åŠ è½½å¥–åŠ±ç‰©å“
 									Bitmap winnerCupImg = gsptIngameRunData.loadResById(R.drawable.gspt_prizeimg_000 + indexOfWinnerCup);
 									if (winnerCupImg != null) {
 										int ihgtPersent = 0;
@@ -1577,13 +1620,22 @@ public class GsptIngameActivity extends ReadboyActivity {
 										} else {
 											ihgtPersent = 21;
 										}
-										cvs.drawBitmap(winnerCupImg, (gsptBitmap.getWidth() - winnerCupImg.getWidth()) / 2, gsptBitmap.getHeight() * ihgtPersent / 25 - winnerCupImg.getHeight(), null);
+										if (App.getInstance().mScale>1.0f) {
+//											ihgtPersent = 16;
+											Matrix matrix = new Matrix();
+											float scale = App.getInstance().mScale;
+											matrix.postScale(scale, scale, 0,0);
+											matrix.postTranslate((gsptBitmap.getWidth() - winnerCupImg.getWidth()*scale)/ 2,(gsptBitmap.getHeight() * ihgtPersent / 25 - winnerCupImg.getHeight()*scale));
+											cvs.drawBitmap(winnerCupImg, matrix, null);
+										}else {
+											cvs.drawBitmap(winnerCupImg, (gsptBitmap.getWidth() - winnerCupImg.getWidth()) / 2, gsptBitmap.getHeight() * ihgtPersent / 25 - winnerCupImg.getHeight(), null);
+										}
 										winnerCupImg.recycle();
 										winnerCupImg = null;
 									}
 									cvs.restore();
 								}
-								// ÖØĞÂÉèÖÃÕû¸ö±³¾°Í¼Æ¬£¬ÏÔÊ¾½±ÀøÎïÆ·
+								// é‡æ–°è®¾ç½®æ•´ä¸ªèƒŒæ™¯å›¾ç‰‡ï¼Œæ˜¾ç¤ºå¥–åŠ±ç‰©å“
 								BitmapDrawable bd = (BitmapDrawable) rLayoutIngame.getBackground();
 								rLayoutIngame.setBackgroundDrawable(new BitmapDrawable(getApplicationContext().getResources(), gsptBitmap));
 								if (bd != null) {
@@ -1596,40 +1648,40 @@ public class GsptIngameActivity extends ReadboyActivity {
 									bd = null;
 								}
 								rLayoutIngame.invalidate();
-								// Òş²ØÆ´Í¼µÄimgViewbg±³¾°
+								// éšè—æ‹¼å›¾çš„imgViewbgèƒŒæ™¯
 								GsptRunDataFrame.setViewGoneDestroy(imgViewbg);
 								imgViewbg = null;
-								// ¶¯»­µÄÊµÀı
+								// åŠ¨ç”»çš„å®ä¾‹
 								if (winTranslateAnimation == null){
 									imgViewCheer.setBackgroundDrawable(new BitmapDrawable(gsptIngameRunData.loadResById(R.drawable.gspt_passed_colour)));
 									imgViewCheer.setVisibility(View.VISIBLE);
 									winTranslateAnimation = getTranslateAnimation(GsptMainActivity.getScreenHeight() + imgViewCheer.getHeight());
 								}
 								imgViewCheer.startAnimation(winTranslateAnimation);
-								// ÏÔÊ¾ÔÚ¶¯µÄĞÇĞÇ
+								// æ˜¾ç¤ºåœ¨åŠ¨çš„æ˜Ÿæ˜Ÿ
 								if (imgViewXinXin.getVisibility() == View.INVISIBLE) {
 									imgViewXinXin.setTag(0);
 									imgViewXinXin.setBackgroundDrawable(new BitmapDrawable(gsptIngameRunData.loadResById(R.drawable.gept_xinxin_000)));
 									imgViewXinXin.setVisibility(View.VISIBLE);
 									ingameMsgHandler.sendEmptyMessageDelayed(WM_XINXIN, 60);
 								}
-								// µÚÈı²½²¥·Å½±Àø£¬ÏÔÊ¾½±Àø£¬²¥·Å»¶ºôÒôĞ§£¬±íÑïµÄÉùÒô
+								// ç¬¬ä¸‰æ­¥æ’­æ”¾å¥–åŠ±ï¼Œæ˜¾ç¤ºå¥–åŠ±ï¼Œæ’­æ”¾æ¬¢å‘¼éŸ³æ•ˆï¼Œè¡¨æ‰¬çš„å£°éŸ³
 								gsptIngameRunData.bGsPlayEndShowNext = GsptRunDataFrame.WM_PLAY_WIN_SND3;
 								gsptMediaManager.winPlayMediaPlayer(R.raw.gspt_cheer_bg000 + (GsptRunDataFrame.getRandom() % 3));							
 							}
 						}
 						//Log.w("edugame", "=======5=====gsptIngameHandler======" + gsptIngameRunData.bGsPlayEndShowNext);
-						// ¶¨Ê±Æ÷Ã¿¸ô10msÑ­»·´¥·¢
+						// å®šæ—¶å™¨æ¯éš”10mså¾ªç¯è§¦å‘
 						ingameMsgHandler.sendEmptyMessageDelayed(WM_UPDATE, 200);
 					} else if (gsptRunDataIngame != null && GsptInterludeName == null) {
 						if (imgViewChoose != null && imgViewChoose.getVisibility() == View.VISIBLE){
-							// ÉÁË¸ÏÔÊ¾¿ÉÒÔÍÏ¶¯µÄÍ¼Æ¬
+							// é—ªçƒæ˜¾ç¤ºå¯ä»¥æ‹–åŠ¨çš„å›¾ç‰‡
 							int iFlashyDelayTime = Math.max(imgViewChoose_FDelay, 10);
 							if ((imgViewChoose_Flashy % iFlashyDelayTime) == 0 || 
 									(imgViewChoose_Flashy % iFlashyDelayTime) == (iFlashyDelayTime / 2)){
 								Bitmap imgViewChooseBg = (Bitmap) imgViewChoose.getTag(R.id.tag_third_smallbitmap);
 								if (imgViewChooseBg != null){
-									// ÖØĞÂ»æÖÆÉÁË¸ÏßÌõ
+									// é‡æ–°ç»˜åˆ¶é—ªçƒçº¿æ¡
 									GameSharps nSharps = (GameSharps) imgViewChoose.getTag(R.id.tag_first_dataframe);
 									Paint paint = getInitPaintType(2);
 									Canvas cvs = new Canvas(imgViewChooseBg);
@@ -1644,11 +1696,11 @@ public class GsptIngameActivity extends ReadboyActivity {
 								imgViewChoose_Flashy = 0;
 							}					
 						}
-						// ¶¨Ê±Æ÷Ã¿¸ô10msÑ­»·´¥·¢
+						// å®šæ—¶å™¨æ¯éš”10mså¾ªç¯è§¦å‘
 						ingameMsgHandler.sendEmptyMessageDelayed(WM_UPDATE, 100);
 					} else {
 						Log.w("edugame", "============gsptIngameHandler==end=====");
-						// ¶¨Ê±Æ÷Ã¿¸ô10msÑ­»·´¥·¢
+						// å®šæ—¶å™¨æ¯éš”10mså¾ªç¯è§¦å‘
 						ingameMsgHandler.sendEmptyMessageDelayed(WM_UPDATE, 100);
 					}					
 					break;
@@ -1662,7 +1714,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 						}
 						imgViewXinXin.setTag(curLevel);
 						
-						// ÊÍ·ÅÍ¼Æ¬×ÊÔ´
+						// é‡Šæ”¾å›¾ç‰‡èµ„æº
 						BitmapDrawable bd = (BitmapDrawable) imgViewXinXin.getBackground();
 						imgViewXinXin.setBackgroundDrawable(new BitmapDrawable(gsptIngameRunData.loadResById(R.drawable.gept_xinxin_000 + curLevel)));					
 						if (bd != null) {
@@ -1677,7 +1729,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 					}
 					break;
 				case WM_DAYNIGHT:
-					// ÌáÊ¾Òô
+					// æç¤ºéŸ³
 					if (ingameExtcallTimeOut > 0) {
 						ingameExtcallTimeOut++;
 						ingameMsgHandler.sendEmptyMessageDelayed(WM_DAYNIGHT, 1000);
@@ -1700,7 +1752,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 	}
 	
 //	/**
-//	 * ÉèÖÃ¶¨Ê±Æ÷
+//	 * è®¾ç½®å®šæ—¶å™¨
 //	 */
 //	Handler gsptIngameHandler = new Handler();
 //	Runnable gsptIngameRunnable = new Runnable() {
@@ -1713,7 +1765,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 //	};	
 	
 	/**
-	 * »ñÈ¡ĞÂµÄ¶¯»­ÉèÖÃ
+	 * è·å–æ–°çš„åŠ¨ç”»è®¾ç½®
 	 * 
 	 * @param yPostion
 	 * @return
@@ -1722,11 +1774,11 @@ public class GsptIngameActivity extends ReadboyActivity {
 
 		TranslateAnimation translateAnimation = new TranslateAnimation(0, 0, 0,
 				yPostion);
-		// ÉèÖÃ¶¯»­³ÖĞøÊ±¼ä
+		// è®¾ç½®åŠ¨ç”»æŒç»­æ—¶é—´
 		translateAnimation.setDuration(3000);
-		// ÉèÖÃÖØ¸´´ÎÊı
+		// è®¾ç½®é‡å¤æ¬¡æ•°
 		translateAnimation.setRepeatCount(0);
-		// ÉèÖÃ·´·½ÏòÖ´ĞĞ
+		// è®¾ç½®åæ–¹å‘æ‰§è¡Œ
 		translateAnimation.setRepeatMode(Animation.RESTART);
 		translateAnimation.setAnimationListener(tanimImgBtnListener);
 
@@ -1734,7 +1786,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 	}
 	
 	/**
-	 * ¶¯»­¼àÌı
+	 * åŠ¨ç”»ç›‘å¬
 	 */
 	Animation.AnimationListener tanimImgBtnListener = new AnimationListener() {
 
@@ -1755,7 +1807,7 @@ public class GsptIngameActivity extends ReadboyActivity {
 	};	
 	
 	/**
-	 * GsptIngameActivityÀà½áÊø end
+	 * GsptIngameActivityç±»ç»“æŸ end
 	 */
 }
 

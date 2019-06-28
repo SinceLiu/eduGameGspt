@@ -1,91 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+        按钮及按钮对应的功能
+        imgbtnid按钮ID名
+        imgdstid按钮对应的图片名，就是要拼图的图片名
+        InterludeInfoName胜利动画名
+        nopassgate是否已经通过了
+    -->
+	<!--<imgbtnatuoinfo-->
+	<!--imgbtnsumnum="16"-->
+	<!--imgbtnid1="@+id/imgBtn111" imgdstid1="@drawable/gspt_chxy03_000" InterludeInfoName1="gspt_chxy03" gssndid1="@raw/gspt_gsjm_08"-->
+	<!--imgbtnid2="@+id/imgBtn112" imgdstid2="@drawable/gspt_zjnmf02_000" InterludeInfoName2="gspt_zjnmf02" gssndid2="@raw/gspt_gsjm_01"-->
+	<!--imgbtnid3="@+id/imgBtn113" imgdstid3="@drawable/gspt_zjnmf01_000" InterludeInfoName3="gspt_zjnmf01" gssndid3="@raw/gspt_gsjm_00"-->
+	<!--imgbtnid4="@+id/imgBtn121" imgdstid4="@drawable/gspt_zgpty01_000" InterludeInfoName4="gspt_zgpty01" gssndid4="@raw/gspt_gsjm_16"-->
+	<!--imgbtnid5="@+id/imgBtn122" imgdstid5="@drawable/gspt_tssblm02_000" InterludeInfoName5="gspt_tssblm02" gssndid5="@raw/gspt_gsjm_10"-->
+	<!--imgbtnid6="@+id/imgBtn123" imgdstid6="@drawable/gspt_tssblm01_000" InterludeInfoName6="gspt_tssblm01" gssndid6="@raw/gspt_gsjm_09"-->
+	<!--imgbtnid7="@+id/imgBtn211" imgdstid7="@drawable/gspt_wkym01_000" InterludeInfoName7="gspt_wkym01" gssndid7="@raw/gspt_gsjm_15"-->
+	<!--imgbtnid8="@+id/imgBtn212" imgdstid8="@drawable/gspt_sld01_000" InterludeInfoName8="gspt_sld01" gssndid8="@raw/gspt_gsjm_05"-->
+	<!--imgbtnid9="@+id/imgBtn213" imgdstid9="@drawable/gspt_szsss01_000" InterludeInfoName9="gspt_szsss01" gssndid9="@raw/gspt_gsjm_14"-->
+	<!--imgbtnid10="@+id/imgBtn221" imgdstid10="@drawable/gspt_mhwcs01_000" InterludeInfoName10="gspt_mhwcs01" gssndid10="@raw/gspt_gsjm_02"-->
+	<!--imgbtnid11="@+id/imgBtn222" imgdstid11="@drawable/gspt_hgs02_000" InterludeInfoName11="gspt_hgs02" gssndid11="@raw/gspt_gsjm_04"-->
+	<!--imgbtnid12="@+id/imgBtn223" imgdstid12="@drawable/gspt_hgs01_000" InterludeInfoName12="gspt_hgs01" gssndid12="@raw/gspt_gsjm_03"-->
+	<!--imgbtnid13="@+id/imgBtn311" imgdstid13="@drawable/gspt_chxy02_000" InterludeInfoName13="gspt_chxy02" gssndid13="@raw/gspt_gsjm_06"-->
+	<!--imgbtnid14="@+id/imgBtn312" imgdstid14="@drawable/gspt_chxy01_000" InterludeInfoName14="gspt_chxy01" gssndid14="@raw/gspt_gsjm_07"-->
+	<!--imgbtnid15="@+id/imgBtn313" imgdstid15="@drawable/gspt_bjbsf02_000" InterludeInfoName15="gspt_bjbsf02" gssndid15="@raw/gspt_gsjm_12"-->
+	<!--imgbtnid16="@+id/imgBtn321" imgdstid16="@drawable/gspt_bjbsf01_000" InterludeInfoName16="gspt_bjbsf01" gssndid16="@raw/gspt_gsjm_11"/>-->
+	<imgbtnatuoinfo
+		aa="16"
+		aa1="@+id/imgBtn111" aa2="@drawable/gspt_chxy03_000" aa3="gspt_chxy03" aa4="@raw/gspt_gsjm_08"
+		bb1="@+id/imgBtn112" bb2="@drawable/gspt_zjnmf02_000" bb3="gspt_zjnmf02" bb4="@raw/gspt_gsjm_01"
+		cc1="@+id/imgBtn113" cc2="@drawable/gspt_zjnmf01_000" cc3="gspt_zjnmf01" cc4="@raw/gspt_gsjm_00"
+		dd1="@+id/imgBtn121" dd2="@drawable/gspt_zgpty01_000" dd3="gspt_zgpty01" dd4="@raw/gspt_gsjm_16"
+		ee1="@+id/imgBtn122" ee2="@drawable/gspt_tssblm02_000" ee3="gspt_tssblm02" ee4="@raw/gspt_gsjm_10"
+		ff1="@+id/imgBtn123" ff2="@drawable/gspt_tssblm01_000" ff3="gspt_tssblm01" ff4="@raw/gspt_gsjm_09"
+		gg1="@+id/imgBtn211" gg2="@drawable/gspt_wkym01_000" gg3="gspt_wkym01" gg4="@raw/gspt_gsjm_15"
+		hh1="@+id/imgBtn212" hh2="@drawable/gspt_sld01_000" hh3="gspt_sld01" hh4="@raw/gspt_gsjm_05"
+		ii1="@+id/imgBtn213" ii2="@drawable/gspt_szsss01_000" ii3="gspt_szsss01" ii4="@raw/gspt_gsjm_14"
+		jj1="@+id/imgBtn221" jj2="@drawable/gspt_mhwcs01_000" jj3="gspt_mhwcs01" jj4="@raw/gspt_gsjm_02"
+		kk1="@+id/imgBtn222" kk2="@drawable/gspt_hgs02_000" kk3="gspt_hgs02" kk4="@raw/gspt_gsjm_04"
+		ll1="@+id/imgBtn223" ll2="@drawable/gspt_hgs01_000" ll3="gspt_hgs01" ll4="@raw/gspt_gsjm_03"
+		mm1="@+id/imgBtn311" mm2="@drawable/gspt_chxy02_000" mm3="gspt_chxy02" mm4="@raw/gspt_gsjm_06"
+		nn1="@+id/imgBtn312" nn2="@drawable/gspt_chxy01_000" nn3="gspt_chxy01" nn4="@raw/gspt_gsjm_07"
+		oo1="@+id/imgBtn313" oo2="@drawable/gspt_bjbsf02_000" oo3="gspt_bjbsf02" oo4="@raw/gspt_gsjm_12"
+		pp1="@+id/imgBtn321" pp2="@drawable/gspt_bjbsf01_000" pp3="gspt_bjbsf01" pp4="@raw/gspt_gsjm_11"/>
+	<!--<imgbtnatuoinfosum imgbtnsumnum="16" />-->
+	<!--<imgbtnatuoinfovalue idx="0" imgbtnid1="@+id/imgBtn111" imgdstid1="@drawable/gspt_chxy03_000" xInterludeInfoName1="gspt_chxy03" zgssndid1="@raw/gspt_gsjm_08"/>-->
+	<!--<imgbtnatuoinfovalue idx="1" imgbtnid2="@+id/imgBtn112" imgdstid2="@drawable/gspt_zjnmf02_000" xInterludeInfoName2="gspt_zjnmf02" zgssndid2="@raw/gspt_gsjm_01"/>-->
+	<!--<imgbtnatuoinfovalue idx="2" imgbtnid3="@+id/imgBtn113" imgdstid3="@drawable/gspt_zjnmf01_000" xInterludeInfoName3="gspt_zjnmf01" zgssndid3="@raw/gspt_gsjm_00"/>-->
+	<!--<imgbtnatuoinfovalue idx="3" imgbtnid4="@+id/imgBtn121" imgdstid4="@drawable/gspt_zgpty01_000" xInterludeInfoName4="gspt_zgpty01" zgssndid4="@raw/gspt_gsjm_16"/>-->
+	<!--<imgbtnatuoinfovalue idx="4" imgbtnid5="@+id/imgBtn122" imgdstid5="@drawable/gspt_tssblm02_000" xInterludeInfoName5="gspt_tssblm02" zgssndid5="@raw/gspt_gsjm_10"/>-->
+	<!--<imgbtnatuoinfovalue idx="5" imgbtnid6="@+id/imgBtn123" imgdstid6="@drawable/gspt_tssblm01_000" xInterludeInfoName6="gspt_tssblm01" zgssndid6="@raw/gspt_gsjm_09"/>-->
+	<!--<imgbtnatuoinfovalue idx="6" imgbtnid7="@+id/imgBtn211" imgdstid7="@drawable/gspt_wkym01_000" xInterludeInfoName7="gspt_wkym01" zgssndid7="@raw/gspt_gsjm_15"/>-->
+	<!--<imgbtnatuoinfovalue idx="7" imgbtnid8="@+id/imgBtn212" imgdstid8="@drawable/gspt_sld01_000" xInterludeInfoName8="gspt_sld01" zgssndid8="@raw/gspt_gsjm_05"/>-->
+	<!--<imgbtnatuoinfovalue idx="8" imgbtnid9="@+id/imgBtn213" imgdstid9="@drawable/gspt_szsss01_000" xInterludeInfoName9="gspt_szsss01" zgssndid9="@raw/gspt_gsjm_14"/>-->
+	<!--<imgbtnatuoinfovalue idx="9" imgbtnid10="@+id/imgBtn221" imgdstid10="@drawable/gspt_mhwcs01_000" xInterludeInfoName10="gspt_mhwcs01" zgssndid10="@raw/gspt_gsjm_02"/>-->
+	<!--<imgbtnatuoinfovalue idx="10" imgbtnid11="@+id/imgBtn222" imgdstid11="@drawable/gspt_hgs02_000" xInterludeInfoName11="gspt_hgs02" zgssndid11="@raw/gspt_gsjm_04"/>-->
+	<!--<imgbtnatuoinfovalue idx="11" imgbtnid12="@+id/imgBtn223" imgdstid12="@drawable/gspt_hgs01_000" xInterludeInfoName12="gspt_hgs01" zgssndid12="@raw/gspt_gsjm_03"/>-->
+	<!--<imgbtnatuoinfovalue idx="12" imgbtnid13="@+id/imgBtn311" imgdstid13="@drawable/gspt_chxy02_000" xInterludeInfoName13="gspt_chxy02" zgssndid13="@raw/gspt_gsjm_06"/>-->
+	<!--<imgbtnatuoinfovalue idx="13" imgbtnid14="@+id/imgBtn312" imgdstid14="@drawable/gspt_chxy01_000" xInterludeInfoName14="gspt_chxy01" zgssndid14="@raw/gspt_gsjm_07"/>-->
+	<!--<imgbtnatuoinfovalue idx="14" imgbtnid15="@+id/imgBtn313" imgdstid15="@drawable/gspt_bjbsf02_000" xInterludeInfoName15="gspt_bjbsf02" zgssndid15="@raw/gspt_gsjm_12"/>-->
+	<!--<imgbtnatuoinfovalue idx="15" imgbtnid16="@+id/imgBtn321" imgdstid16="@drawable/gspt_bjbsf01_000" xInterludeInfoName16="gspt_bjbsf01" zgssndid16="@raw/gspt_gsjm_11"/>-->
+	<!--<imgbtnatuoinfoext imgbtnsumnum="2" -->
+	<!--imgbtnid1="@+id/imgBtn111" imgdstid1="@drawable/gspt_day01_000" InterludeInfoName1="gspt_ex_day01" gssndid1="@raw/gspt_ex_pass_day_0" -->
+	<!--imgbtnid2="@+id/imgBtn112" imgdstid2="@drawable/gspt_night01_000" InterludeInfoName2="gspt_ex_night01" gssndid2="@raw/gspt_ex_pass_night_0" />    -->
+	<imgbtnatuoinfoext aa="2"
+		aa1="@+id/imgBtn111" aa2="@drawable/gspt_day01_000" aa3="gspt_ex_day01" aa4="@raw/gspt_ex_pass_day_0"
+		bb1="@+id/imgBtn112" bb2="@drawable/gspt_night01_000" bb3="gspt_ex_night01" bb4="@raw/gspt_ex_pass_night_0" />
+	<!--<imgbtnatuoinfoextsum imgbtnsumnum="2"/>-->
+	<!--<imgbtnatuoinfoextvalue index="0" imgbtnid1="@+id/imgBtn111" imgdstid1="@drawable/gspt_day01_000" InterludeInfoName1="gspt_ex_day01" gssndid1="@raw/gspt_ex_pass_day_0" />-->
 
-    <!-- 
-    	按钮及按钮对应的功能
-    	imgbtnid按钮ID名
-    	imgdstid按钮对应的图片名，就是要拼图的图片名
-    	InterludeInfoName胜利动画名
-    	nopassgate是否已经通过了
+	<!--<imgbtnatuoinfoextvalue index="1" imgbtnid2="@+id/imgBtn112" imgdstid2="@drawable/gspt_night01_000" InterludeInfoName2="gspt_ex_night01" gssndid2="@raw/gspt_ex_pass_night_0"/>-->
+	<!-- 图片基准大小，为多大屏设计的 -->
+	<gamebaseinfo screenw="1280" screenh="800" />
+
+	<!--
+        游戏里动画的名字以及相关属性
+        name动画的名字
+        isLooping是否循环播放显示
+        ImgSumNumber 要显示的图片总数
+        ImgStartId 图片开始的ID号，这个连续着来
+        SndSumNumber要播放的声音总数
+        SndPlayerID播放声音的ID号
     -->
-    <imgbtnatuoinfo imgbtnsumnum="16" 
-		imgbtnid1="@+id/imgBtn111" imgdstid1="@drawable/gspt_chxy03_000" InterludeInfoName1="gspt_chxy03" gssndid1="@raw/gspt_gsjm_08" 
-		imgbtnid2="@+id/imgBtn112" imgdstid2="@drawable/gspt_zjnmf02_000" InterludeInfoName2="gspt_zjnmf02" gssndid2="@raw/gspt_gsjm_01" 
-		imgbtnid3="@+id/imgBtn113" imgdstid3="@drawable/gspt_zjnmf01_000" InterludeInfoName3="gspt_zjnmf01" gssndid3="@raw/gspt_gsjm_00" 
-		imgbtnid4="@+id/imgBtn121" imgdstid4="@drawable/gspt_zgpty01_000" InterludeInfoName4="gspt_zgpty01" gssndid4="@raw/gspt_gsjm_16" 
-		imgbtnid5="@+id/imgBtn122" imgdstid5="@drawable/gspt_tssblm02_000" InterludeInfoName5="gspt_tssblm02" gssndid5="@raw/gspt_gsjm_10" 
-		imgbtnid6="@+id/imgBtn123" imgdstid6="@drawable/gspt_tssblm01_000" InterludeInfoName6="gspt_tssblm01" gssndid6="@raw/gspt_gsjm_09" 
-		imgbtnid7="@+id/imgBtn211" imgdstid7="@drawable/gspt_wkym01_000" InterludeInfoName7="gspt_wkym01" gssndid7="@raw/gspt_gsjm_15" 
-		imgbtnid8="@+id/imgBtn212" imgdstid8="@drawable/gspt_sld01_000" InterludeInfoName8="gspt_sld01" gssndid8="@raw/gspt_gsjm_05" 
-		imgbtnid9="@+id/imgBtn213" imgdstid9="@drawable/gspt_szsss01_000" InterludeInfoName9="gspt_szsss01" gssndid9="@raw/gspt_gsjm_14" 
-		imgbtnid10="@+id/imgBtn221" imgdstid10="@drawable/gspt_mhwcs01_000" InterludeInfoName10="gspt_mhwcs01" gssndid10="@raw/gspt_gsjm_02" 
-		imgbtnid11="@+id/imgBtn222" imgdstid11="@drawable/gspt_hgs02_000" InterludeInfoName11="gspt_hgs02" gssndid11="@raw/gspt_gsjm_04" 
-		imgbtnid12="@+id/imgBtn223" imgdstid12="@drawable/gspt_hgs01_000" InterludeInfoName12="gspt_hgs01" gssndid12="@raw/gspt_gsjm_03" 
-		imgbtnid13="@+id/imgBtn311" imgdstid13="@drawable/gspt_chxy02_000" InterludeInfoName13="gspt_chxy02" gssndid13="@raw/gspt_gsjm_06" 
-		imgbtnid14="@+id/imgBtn312" imgdstid14="@drawable/gspt_chxy01_000" InterludeInfoName14="gspt_chxy01" gssndid14="@raw/gspt_gsjm_07" 
-		imgbtnid15="@+id/imgBtn313" imgdstid15="@drawable/gspt_bjbsf02_000" InterludeInfoName15="gspt_bjbsf02" gssndid15="@raw/gspt_gsjm_12" 
-		imgbtnid16="@+id/imgBtn321" imgdstid16="@drawable/gspt_bjbsf01_000" InterludeInfoName16="gspt_bjbsf01" gssndid16="@raw/gspt_gsjm_11" />
-    
-    <imgbtnatuoinfoext imgbtnsumnum="2" 
-		imgbtnid1="@+id/imgBtn111" imgdstid1="@drawable/gspt_day01_000" InterludeInfoName1="gspt_ex_day01" gssndid1="@raw/gspt_ex_pass_day_0" 
-		imgbtnid2="@+id/imgBtn112" imgdstid2="@drawable/gspt_night01_000" InterludeInfoName2="gspt_ex_night01" gssndid2="@raw/gspt_ex_pass_night_0" />    
-    
-    <!-- 图片基准大小，为多大屏设计的 -->
-    <gamebaseinfo screenw="1280" screenh="800" />
-    
-    <!-- 
-		游戏里动画的名字以及相关属性
-		name动画的名字
-		isLooping是否循环播放显示
-		ImgSumNumber 要显示的图片总数
-		ImgStartId 图片开始的ID号，这个连续着来
-		SndSumNumber要播放的声音总数
-		SndPlayerID播放声音的ID号
-    -->
-    <!-- 第一次进入要显示的动画 -->
-    <InterludeInfo name="startin" imgszpt="100|66|750|438" isLooping="false" ImgSumNumber="32" ImgStartId="@drawable/gspt_startyzpt_000" SndSumNumber="0" />
-    <!-- 小仙女 -->
-    <InterludeInfo name="opt_xxn" imgszpt="0|360|250|350" isLooping="true" ImgSumNumber="5" ImgStartId="@drawable/gspt_xxn_000" SndSumNumber="0" />
-    <!-- 小仙女眨眼 -->
-    <InterludeInfo name="opt_xxnzy" imgszpt="0|360|250|350" isLooping="true" ImgSumNumber="25" ImgStartId="@drawable/gspt_xxnzy_000" SndSumNumber="0" />
-    <!-- 八戒拜师傅01 -->
-    <InterludeInfo name="gspt_bjbsf01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="10" ImgStartId="@drawable/gspt_bjbsf01_000" SndSumNumber="0" />
-    <!-- 八戒拜师傅02 -->
-    <InterludeInfo name="gspt_bjbsf02" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="8" ImgStartId="@drawable/gspt_bjbsf02_000" SndSumNumber="0" />
-    <!-- 出海学艺01 -->
-	<InterludeInfo name="gspt_chxy01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="7" ImgStartId="@drawable/gspt_chxy01_000" SndSumNumber="0" />
+	<!-- 第一次进入要显示的动画 -->
+	<!--<InterludeInfo name="startin" imgszpt="100|66|750|438" isLooping="false" ImgSumNumber="32" ImgStartId="@drawable/gspt_startyzpt_000" SndSumNumber="0" />-->
+	<InterludeInfo a="startin" b="100|66|750|438" c="false" d="32" e="@drawable/gspt_startyzpt_000" f="0" />
+	<!-- 小仙女 -->
+	<InterludeInfo a="opt_xxn" b="0|600|250|350" c="true" d="5" e="@drawable/gspt_xxn_000" f="0" />
+	<!-- 小仙女眨眼 -->
+	<InterludeInfo a="opt_xxnzy" b="0|600|250|350" c="true" d="25" e="@drawable/gspt_xxnzy_000" f="0" />
+	<!-- 八戒拜师傅01 -->
+	<InterludeInfo a="gspt_bjbsf01" b="50|44|669|488" c="false" d="10" e="@drawable/gspt_bjbsf01_000" f="0" />
+	<!-- 八戒拜师傅02 -->
+	<InterludeInfo a="gspt_bjbsf02" b="50|44|669|488" c="false" d="8" e="@drawable/gspt_bjbsf02_000" f="0" />
+	<!-- 出海学艺01 -->
+	<InterludeInfo a="gspt_chxy01" b="50|44|669|488" c="false" d="7" e="@drawable/gspt_chxy01_000" f="0" />
 	<!-- 出海学艺02 -->
-	<InterludeInfo name="gspt_chxy02" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="7" ImgStartId="@drawable/gspt_chxy02_000" SndSumNumber="0" />
+	<InterludeInfo a="gspt_chxy02" b="50|44|669|488" c="false" d="7" e="@drawable/gspt_chxy02_000" f="0" />
 	<!-- 出海学艺03 -->
-	<InterludeInfo name="gspt_chxy03" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="7" ImgStartId="@drawable/gspt_chxy03_000" SndSumNumber="0" />
+	<InterludeInfo a="gspt_chxy03" b="50|44|669|488" c="false" d="7" e="@drawable/gspt_chxy03_000" f="0" />
 	<!-- 花果山01 -->
-	<InterludeInfo name="gspt_hgs01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="6" ImgStartId="@drawable/gspt_hgs01_000" SndSumNumber="0" />
+	<InterludeInfo a="gspt_hgs01" b="50|44|669|488" c="false" d="6" e="@drawable/gspt_hgs01_000" f="0" />
 	<!-- 花果山02 -->
-	<InterludeInfo name="gspt_hgs02" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="10" ImgStartId="@drawable/gspt_hgs02_000" SndSumNumber="0" />
+	<InterludeInfo a="gspt_hgs02" b="50|44|669|488" c="false" d="10" e="@drawable/gspt_hgs02_000" f="0" />
 	<!-- 美猴王出世01 -->
-	<InterludeInfo name="gspt_mhwcs01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="1" ImgStartId="@drawable/gspt_mhwcs01_000" SndSumNumber="0" />
+	<InterludeInfo a="gspt_mhwcs01" b="50|44|669|488" c="false" d="1" e="@drawable/gspt_mhwcs01_000" f="0" />
 	<!-- 水帘洞01 -->
-	<InterludeInfo name="gspt_sld01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="7" ImgStartId="@drawable/gspt_sld01_000" SndSumNumber="0" />
+	<InterludeInfo a="gspt_sld01" b="50|44|669|488" c="false" d="7" e="@drawable/gspt_sld01_000" f="0" />
 	<!-- 三藏收沙僧01 -->
-	<InterludeInfo name="gspt_szsss01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="9" ImgStartId="@drawable/gspt_szsss01_000" SndSumNumber="0" />
+	<InterludeInfo a="gspt_szsss01" b="50|44|669|488" c="false" d="9" e="@drawable/gspt_szsss01_000" f="0" />
 	<!-- 三藏收白龙马01 -->
-	<InterludeInfo name="gspt_tssblm01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="1" ImgStartId="@drawable/gspt_tssblm01_000" SndSumNumber="0" />
+	<InterludeInfo a="gspt_tssblm01" b="50|44|669|488" c="false" d="1" e="@drawable/gspt_tssblm01_000" f="0" />
 	<!-- 三藏收白龙马02 -->
-	<InterludeInfo name="gspt_tssblm02" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="1" ImgStartId="@drawable/gspt_tssblm02_000" SndSumNumber="0" />
+	<InterludeInfo a="gspt_tssblm02" b="50|44|669|488" c="false" d="1" e="@drawable/gspt_tssblm02_000" f="0" />
 	<!-- 悟空养马01 -->
-	<InterludeInfo name="gspt_wkym01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="9" ImgStartId="@drawable/gspt_wkym01_000" SndSumNumber="0" />
+	<InterludeInfo a="gspt_wkym01" b="50|44|669|488" c="false" d="9" e="@drawable/gspt_wkym01_000" f="0" />
 	<!-- 掌管蟠桃园01 -->
-	<InterludeInfo name="gspt_zgpty01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="7" ImgStartId="@drawable/gspt_zgpty01_000" SndSumNumber="0" />
+	<InterludeInfo a="gspt_zgpty01" b="50|44|669|488" c="false" d="7" e="@drawable/gspt_zgpty01_000" f="0" />
 	<!-- 醉酒闹冥府01 -->
-	<InterludeInfo name="gspt_zjnmf01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="8" ImgStartId="@drawable/gspt_zjnmf01_000" SndSumNumber="0" />
+	<InterludeInfo a="gspt_zjnmf01" b="50|44|669|488" c="false" d="8" e="@drawable/gspt_zjnmf01_000" f="0" />
 	<!-- 醉酒闹冥府02 -->
-	<InterludeInfo name="gspt_zjnmf02" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="8" ImgStartId="@drawable/gspt_zjnmf02_000" SndSumNumber="0" />
-			
+	<InterludeInfo a="gspt_zjnmf02" b="50|44|669|488" c="false" d="8" e="@drawable/gspt_zjnmf02_000" f="0" />
+
 
 	<!-- ex白天01 -->
-	<InterludeInfo name="gspt_ex_day01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="17" ImgStartId="@drawable/gspt_day01_000" SndSumNumber="0" />
+	<InterludeInfo a="gspt_ex_day01" b="50|44|669|488" c="false" d="17" e="@drawable/gspt_day01_000" f="0" />
 	<!-- ex黑夜01 -->
-	<InterludeInfo name="gspt_ex_night01" imgszpt="50|44|669|488" isLooping="false" ImgSumNumber="14" ImgStartId="@drawable/gspt_night01_000" SndSumNumber="0" />
+	<InterludeInfo a="gspt_ex_night01" b="50|44|669|488" c="false" d="14" e="@drawable/gspt_night01_000" f="0" />
 
 
 

@@ -1,31 +1,31 @@
 /**
- * @aim ÒæÖÇÆ´Í¼ActivityÖ®GsptMainActivity
- * ÒòÎªÓÎÏ·Àï±ßÓĞºÜ¶à¹ÊÊÂ£¬ÎªÁË²»ºÍÆäËûÆ´Í¼ÖØÃû£¬ËùÒÔ¹¤³ÌÃüÃûÎª¹ÊÊÂÆ´Í¼
- * ÓÎÏ·´ÓÕâÀï¿ªÊ¼£¬Ö÷ActivityÖĞÊµÏÖ¶¯»­ÇĞ»»¡¢»­ÃæÇĞ»»¡¢µã»÷ImageButton½øÈëÏìÓ¦µÄÓÎÏ·
- * ¸üĞÂ°´Å¥×´Ì¬£¬²¥·Å±³¾°Òô
+ * @aim ç›Šæ™ºæ‹¼å›¾Activityä¹‹GsptMainActivity
+ * å› ä¸ºæ¸¸æˆé‡Œè¾¹æœ‰å¾ˆå¤šæ•…äº‹ï¼Œä¸ºäº†ä¸å’Œå…¶ä»–æ‹¼å›¾é‡åï¼Œæ‰€ä»¥å·¥ç¨‹å‘½åä¸ºæ•…äº‹æ‹¼å›¾
+ * æ¸¸æˆä»è¿™é‡Œå¼€å§‹ï¼Œä¸»Activityä¸­å®ç°åŠ¨ç”»åˆ‡æ¢ã€ç”»é¢åˆ‡æ¢ã€ç‚¹å‡»ImageButtonè¿›å…¥å“åº”çš„æ¸¸æˆ
+ * æ›´æ–°æŒ‰é’®çŠ¶æ€ï¼Œæ’­æ”¾èƒŒæ™¯éŸ³
  * 
- * @idea Ö÷ÒªË¼Â·£º
- * 1¡¢³õÊ¼»¯ĞÅÏ¢ÔÚXMLÎÄ¼ş¼ĞÏÂµÄsettings.xmlÎÄ¼şÖĞÅäÖÃ³öÀ´£¬Àï±ßÓĞ½ÇÉ«µÄ»ù±¾ĞÅÏ¢£¬Í¼Æ¬°´Å¥Ìø×ª£¬Ê¤ÀûµÈĞÅÏ¢
- * 2¡¢Activity ÓĞMainActivity¡¢IngameActivity
+ * @idea ä¸»è¦æ€è·¯ï¼š
+ * 1ã€åˆå§‹åŒ–ä¿¡æ¯åœ¨XMLæ–‡ä»¶å¤¹ä¸‹çš„settings.xmlæ–‡ä»¶ä¸­é…ç½®å‡ºæ¥ï¼Œé‡Œè¾¹æœ‰è§’è‰²çš„åŸºæœ¬ä¿¡æ¯ï¼Œå›¾ç‰‡æŒ‰é’®è·³è½¬ï¼Œèƒœåˆ©ç­‰ä¿¡æ¯
+ * 2ã€Activity æœ‰MainActivityã€IngameActivity
  * 
  * MainActivity 
- * a¡¢³õÊ¼»¯Ïà¹ØĞÅÏ¢¼°ÉèÖÃÏàÓ¦µÄ°´Å¥¼àÌı£¬ViewPager½çÃæÇĞ»»¼àÌıµÈ
- * b¡¢¿ª³¡²¥·ÅÓÎÏ·±³¾°ÒôÀÖ£¬Ñ­»·²¥·Å¡£
- * c¡¢ÊµÏÖSurfaceViewË¢ĞÂ¶¯»­±³¾°µÄ»Øµ÷
- * d¡¢ÓÎÏ·½áÊø£¬ÊÍ·ÅÏà¹Ø×ÊÔ´£¬Í£Ö¹ÉùÒô²¥·Å
- * e¡¢¸ÕÒ»½øÈëÓÎÏ·ÏÈÏÔÊ¾¿ª³¡¶¯»­£¬¶¯»­¹ı³ÌÖĞ´¥ÆÁ¿ÉÒÔÌø¹ı¶¯»­
- * f¡¢½øÈëÑ¡Ôñ±³¾°½çÃæºóÖ±½Ó³õÊ¼»¯Ò»¸öÇĞÍ¼Â·¾¶Ëã·¨£¬´ÓÓÎÏ·Íê³ÉºóÒ²ÔÙ´Î³õÊ¼»¯Ò»¸ö£¬·ÀÖ¹½øÈëÆ´Í¼µÄÊ±ºòÂı
- * g¡¢ÔÚÑ¡ÔñÒªÆ´Í¼µÄÍ¼Æ¬½çÃæ¿ÉÒÔÇĞ»»Ò³Ãæ£¬Ñ¡È¡ÏàÓ¦Í¼Æ¬£¬Î´Íê³ÉµÄÍ¼Æ¬¼ÓËø
- * h¡¢µã»÷ViewPagerÖĞµÄÍ¼Æ¬°´Å¥£¬½øÈëÒÔ¸ÃÑ¡ÔñµÄÍ¼Æ¬Îª±³¾°µÄÓÎÏ·Æ´Í¼£¬¼´½øÈëIngameActivity
- * i¡¢µã»÷¹Ø±Õ°´Å¥Ö±½ÓÍË³öÓÎÏ·
+ * aã€åˆå§‹åŒ–ç›¸å…³ä¿¡æ¯åŠè®¾ç½®ç›¸åº”çš„æŒ‰é’®ç›‘å¬ï¼ŒViewPagerç•Œé¢åˆ‡æ¢ç›‘å¬ç­‰
+ * bã€å¼€åœºæ’­æ”¾æ¸¸æˆèƒŒæ™¯éŸ³ä¹ï¼Œå¾ªç¯æ’­æ”¾ã€‚
+ * cã€å®ç°SurfaceViewåˆ·æ–°åŠ¨ç”»èƒŒæ™¯çš„å›è°ƒ
+ * dã€æ¸¸æˆç»“æŸï¼Œé‡Šæ”¾ç›¸å…³èµ„æºï¼Œåœæ­¢å£°éŸ³æ’­æ”¾
+ * eã€åˆšä¸€è¿›å…¥æ¸¸æˆå…ˆæ˜¾ç¤ºå¼€åœºåŠ¨ç”»ï¼ŒåŠ¨ç”»è¿‡ç¨‹ä¸­è§¦å±å¯ä»¥è·³è¿‡åŠ¨ç”»
+ * fã€è¿›å…¥é€‰æ‹©èƒŒæ™¯ç•Œé¢åç›´æ¥åˆå§‹åŒ–ä¸€ä¸ªåˆ‡å›¾è·¯å¾„ç®—æ³•ï¼Œä»æ¸¸æˆå®Œæˆåä¹Ÿå†æ¬¡åˆå§‹åŒ–ä¸€ä¸ªï¼Œé˜²æ­¢è¿›å…¥æ‹¼å›¾çš„æ—¶å€™æ…¢
+ * gã€åœ¨é€‰æ‹©è¦æ‹¼å›¾çš„å›¾ç‰‡ç•Œé¢å¯ä»¥åˆ‡æ¢é¡µé¢ï¼Œé€‰å–ç›¸åº”å›¾ç‰‡ï¼Œæœªå®Œæˆçš„å›¾ç‰‡åŠ é”
+ * hã€ç‚¹å‡»ViewPagerä¸­çš„å›¾ç‰‡æŒ‰é’®ï¼Œè¿›å…¥ä»¥è¯¥é€‰æ‹©çš„å›¾ç‰‡ä¸ºèƒŒæ™¯çš„æ¸¸æˆæ‹¼å›¾ï¼Œå³è¿›å…¥IngameActivity
+ * iã€ç‚¹å‡»å…³é—­æŒ‰é’®ç›´æ¥é€€å‡ºæ¸¸æˆ
  * 
  * IngameActivity
- * a¡¢½øÈëÓÎÏ·ÖĞ³õÊ¼»¯Â·¾¶£¬Èç¹ûÒÑ¾­³õÊ¼»¯Ôò²»ÓÃÔÙ³õÊ¼»¯£¬Í¼ĞÎµÄË³ĞòÔÚ¿ªÊ¼³õÊ¼»¯µÄÊ±ºò¾ÍÒÑ¾­ÂÒĞò±£´æÁË
- * b¡¢ÖØĞÂ»æÖÆÃ¿¸öÔ¤ÏÈËãºÃµÄÍ¼ĞÎÒÔImageViewµÄ·½Ê½¼ÓÈëScrollView²¢ÇÒ¶¼Ìí¼Ó¼àÌı
- * c¡¢Ñ¡ÖĞÍ¼Æ¬ºóÉú²úÒ»¸öĞÂµÄImageView£¬ÍÏ¶¯Í¼Æ¬µ½ÏàÓ¦Î»ÖÃÍê³ÉÆ´Í¼
- * d¡¢ÕıÈ·Î»ÖÃ²¥·ÅÆ´Í¼ÕıÈ·Òô²¢ÇÒÉ¾³ıScrollViewµÄÏà¹ØÍ¼Æ¬£¬´íÎóÎ»ÖÃ·ÅÖÃÔò²¥·Å´íÎóÒô
- * e¡¢ÓÎÏ·½áÊø£¬²¥·ÅÓÎÏ·¶¯»­£¬²¥·Å½±ÀøÉùÒô£¬ÏÔÊ¾½±ÀøÎïÆ·
- * f¡¢µã»÷¹Ø±Õ°´Å¥·µ»Øµ½Ñ¡ÔñÍ¼Æ¬½çÃæ£¬¼´»Øµ½MainActivityÖĞ
+ * aã€è¿›å…¥æ¸¸æˆä¸­åˆå§‹åŒ–è·¯å¾„ï¼Œå¦‚æœå·²ç»åˆå§‹åŒ–åˆ™ä¸ç”¨å†åˆå§‹åŒ–ï¼Œå›¾å½¢çš„é¡ºåºåœ¨å¼€å§‹åˆå§‹åŒ–çš„æ—¶å€™å°±å·²ç»ä¹±åºä¿å­˜äº†
+ * bã€é‡æ–°ç»˜åˆ¶æ¯ä¸ªé¢„å…ˆç®—å¥½çš„å›¾å½¢ä»¥ImageViewçš„æ–¹å¼åŠ å…¥ScrollViewå¹¶ä¸”éƒ½æ·»åŠ ç›‘å¬
+ * cã€é€‰ä¸­å›¾ç‰‡åç”Ÿäº§ä¸€ä¸ªæ–°çš„ImageViewï¼Œæ‹–åŠ¨å›¾ç‰‡åˆ°ç›¸åº”ä½ç½®å®Œæˆæ‹¼å›¾
+ * dã€æ­£ç¡®ä½ç½®æ’­æ”¾æ‹¼å›¾æ­£ç¡®éŸ³å¹¶ä¸”åˆ é™¤ScrollViewçš„ç›¸å…³å›¾ç‰‡ï¼Œé”™è¯¯ä½ç½®æ”¾ç½®åˆ™æ’­æ”¾é”™è¯¯éŸ³
+ * eã€æ¸¸æˆç»“æŸï¼Œæ’­æ”¾æ¸¸æˆåŠ¨ç”»ï¼Œæ’­æ”¾å¥–åŠ±å£°éŸ³ï¼Œæ˜¾ç¤ºå¥–åŠ±ç‰©å“
+ * fã€ç‚¹å‡»å…³é—­æŒ‰é’®è¿”å›åˆ°é€‰æ‹©å›¾ç‰‡ç•Œé¢ï¼Œå³å›åˆ°MainActivityä¸­
  * 
  * @time 2013.08.01;
  * @author divhee
@@ -51,6 +51,7 @@ import com.readboy.Q.Shares.GsptRunDataFrame.Interlude;
 import com.readboy.Q.Shares.GsptViewPagerAdapter;
 import com.readboy.Q.Shares.GsptViewPagerAdapter.DataViewPagerInfo;
 import com.readboy.Q.Gspt.R;
+import com.readboy.Q.app.App;
 
 import android.app.ReadboyActivity;
 import android.content.Context;
@@ -91,184 +92,185 @@ import android.widget.RelativeLayout;
 public class GsptMainActivity extends ReadboyActivity {
 
 	/**
-	 * ActivityÌø×ªµÄÒ»¸öÇø·Ö±êÇ©
+	 * Activityè·³è½¬çš„ä¸€ä¸ªåŒºåˆ†æ ‡ç­¾
 	 */
 	public static final int REQUSET = 1;
 
 	/**
-	 * LinearLayout ¿Ø¼ş£¬ÏÂ·½Ğ¡Ô²µãµÄ¸¸²¼¾Ö
+	 * LinearLayout æ§ä»¶ï¼Œä¸‹æ–¹å°åœ†ç‚¹çš„çˆ¶å¸ƒå±€
 	 */
 	private LinearLayout LhlayoutDots = null;
 	
 	/**
-	 * ÄÑ¶ÈÖµ²¼¾Ö£¬³õ¼¶¡¢ÖĞ¼¶¡¢¸ß¼¶
+	 * éš¾åº¦å€¼å¸ƒå±€ï¼Œåˆçº§ã€ä¸­çº§ã€é«˜çº§
 	 */
 	private LinearLayout linearLayoutLevel = null;
 
 	/**
-	 * ImageButton ¿Ø¼şÍË³ö°´Å¥¿Ø¼ş
+	 * ImageButton æ§ä»¶é€€å‡ºæŒ‰é’®æ§ä»¶
 	 */
 	private ImageButton imgBtnExit = null;
 
 	/**
-	 * ViewPager ¿Ø¼ş
+	 * ViewPager æ§ä»¶
 	 */
 	private ViewPager playViewPager = null;
 
 	/**
-	 * ViewPagerAdapterÊµÀı
+	 * ViewPagerAdapterå®ä¾‹
 	 */
 	private GsptViewPagerAdapter dataViewPagerAdapter = null;
 	
 	/**
-	 * ËÑË÷³öÀ´µÄÊé±¾ĞÅÏ¢ÊµÀı
+	 * æœç´¢å‡ºæ¥çš„ä¹¦æœ¬ä¿¡æ¯å®ä¾‹
 	 */
 	private GsptStoryInfo[] gsptStoryInfo = null;	
 	
 	/**
-	 * °´Å¥±³¾°µÄIDºÅ£¬×¢ÒâÕâÀïÒªÒ³ÃæÊıÁ¿ÒªÒ»ÖÂGsptRunDataFrame.PAGER_OPT_TOTAL±ØĞë¶ÔÓ¦
-	 * ÕâÀï×¢ÒâÁË£¬×´Ì¬×îºÃÒ»ÖÂ£¬¾ÍÊÇÊı×éµÚ¶şÎ¬µÄ³¤¶ÈÒªÒ»ÖÂ
+	 * æŒ‰é’®èƒŒæ™¯çš„IDå·ï¼Œæ³¨æ„è¿™é‡Œè¦é¡µé¢æ•°é‡è¦ä¸€è‡´GsptRunDataFrame.PAGER_OPT_TOTALå¿…é¡»å¯¹åº”
+	 * è¿™é‡Œæ³¨æ„äº†ï¼ŒçŠ¶æ€æœ€å¥½ä¸€è‡´ï¼Œå°±æ˜¯æ•°ç»„ç¬¬äºŒç»´çš„é•¿åº¦è¦ä¸€è‡´
 	 */
 	private int [][] gsptStoryItems = null;
 	
 	/**
-	 * ¿ªÊ¼µÄĞòºÅ£¬×¢ÒâÕâÀï×îºóÒ»¸ö¸úÉÏ±ß¸ö¸öÊıÓĞ¹Ø£¬±ğÍü¼ÇÁË¡£
+	 * å¼€å§‹çš„åºå·ï¼Œæ³¨æ„è¿™é‡Œæœ€åä¸€ä¸ªè·Ÿä¸Šè¾¹ä¸ªä¸ªæ•°æœ‰å…³ï¼Œåˆ«å¿˜è®°äº†ã€‚
 	 */
 	private int [] gsptStoryIndexStart = null;	
 	
 	/**
-	 * Í¼Æ¬ÁĞ±í£¬×¢ÒâÒªºÍgsptStoryItems¶ÔÓ¦
+	 * å›¾ç‰‡åˆ—è¡¨ï¼Œæ³¨æ„è¦å’ŒgsptStoryItemså¯¹åº”
 	 */
 	public Bitmap [][] optBtnBitmapsArray = null;
 	
 	/**
-	 * °´Å¥×´Ì¬ÁĞ±í£¬×¢ÒâÒªºÍgsptStoryItems¶ÔÓ¦
+	 * æŒ‰é’®çŠ¶æ€åˆ—è¡¨ï¼Œæ³¨æ„è¦å’ŒgsptStoryItemså¯¹åº”
 	 */
 	public StateListDrawable [] optStateDrawableArray = null;	
 
 	/**
-	 * GsptPlaySurfaceView ¿Ø¼ş
+	 * GsptPlaySurfaceView æ§ä»¶
 	 */
 	private static GsptPlaySurfaceView playSurfaceView = null;
 
 	/**
-	 * ÉùÒô²¥·Å¹ÜÀí
+	 * å£°éŸ³æ’­æ”¾ç®¡ç†
 	 */
 	private static GsptPlayMediaManager gsptMainMPManager = null;
 
 	/**
-	 * ÃÛ·ä¶¯»­
+	 * èœœèœ‚åŠ¨ç”»
 	 */
 	private GsptAnimView animMainBee = null;	
 	
 	/**
-	 * Ğ¡Äñ¶¯»­
+	 * å°é¸ŸåŠ¨ç”»
 	 */
 	private GsptAnimView animMainBird = null;		
 	
 	/**
-	 * ³õ¼¶°´Å¥
+	 * åˆçº§æŒ‰é’®
 	 */
 	private ImageButton imgBtnLevelEasy = null;
 	
 	/**
-	 * ÖĞ¼¶°´Å¥
+	 * ä¸­çº§æŒ‰é’®
 	 */
 	private ImageButton imgBtnLevelNormal = null;
 	
 	/**
-	 * ¸ß¼¶°´Å¥
+	 * é«˜çº§æŒ‰é’®
 	 */
 	private ImageButton imgBtnLevelHard = null;	
 	
 	/**
-	 * ÊÇ·ñ¹Ø±ÕÍË³öActivity
+	 * æ˜¯å¦å…³é—­é€€å‡ºActivity
 	 */
 	private boolean bFinishMainActivity = false;
 	
 	/**
-	 * ĞèÒªÓÃµ½µÄÒ»Ğ©±äÁ¿¼°Êı¾İ½á¹¹
+	 * éœ€è¦ç”¨åˆ°çš„ä¸€äº›å˜é‡åŠæ•°æ®ç»“æ„
 	 */
 	private GsptRunDataFrame gsptMainRunData = null;
 	
 	/**
-	 * µ×²¿ÏÔÊ¾µ±Ç°Ò³ÃæºÅµÄĞ¡Í¼Æ¬°´Å¥¼¯ºÏ
+	 * åº•éƒ¨æ˜¾ç¤ºå½“å‰é¡µé¢å·çš„å°å›¾ç‰‡æŒ‰é’®é›†åˆ
 	 */
 	private ImageButton[] dotsImgViews = null;
 	
 	/**
-	 * ¼ÇÂ¼µ±Ç°Ñ¡ÖĞµÄÒ³Âë£¬ÓÃÓÚÇĞ»»ÏÔÊ¾ÄÄÒ»Ò³
+	 * è®°å½•å½“å‰é€‰ä¸­çš„é¡µç ï¼Œç”¨äºåˆ‡æ¢æ˜¾ç¤ºå“ªä¸€é¡µ
 	 */
 	private int dotscurrentIndex = 0;		
 	
 	/**
-	 * µÚÒ»´Î½øÈëÑÓÊ±Ê±¼ä£¬¿ìËÙ½øÈë¿ìËÙµã»÷ÏÔÊ¾³ö´í£¬ÑÓÊ±Ò»ÏÂ
+	 * ç¬¬ä¸€æ¬¡è¿›å…¥å»¶æ—¶æ—¶é—´ï¼Œå¿«é€Ÿè¿›å…¥å¿«é€Ÿç‚¹å‡»æ˜¾ç¤ºå‡ºé”™ï¼Œå»¶æ—¶ä¸€ä¸‹
 	 */
 	private int firstInDelayTime = 0;
 	
 	/**
-	 * ±³¾°
+	 * èƒŒæ™¯
 	 */
 	private RelativeLayout relativeLayoutMain = null;
 	
 	/**
-	 * ¼ÓÔØÒ³ÃæÓÃµÄ±äÁ¿
+	 * åŠ è½½é¡µé¢ç”¨çš„å˜é‡
 	 */
 	private LayoutInflater dataInflater = null;
 	
 	/**
-	 * µ±Ç°ÓÎÏ·µÄÄêÁä
+	 * å½“å‰æ¸¸æˆçš„å¹´é¾„
 	 */
 	private int systemEnterMode = 0;		
 	
 	/**
-	 * ÆÁÄ»¿í¶È
+	 * å±å¹•å®½åº¦
 	 */
 	private static int GsptScreenWidth = 0;
 	
 	/**
-	 * ÆÁÄ»¸ß¶È
+	 * å±å¹•é«˜åº¦
 	 */	
 	private static int GsptScreenHeight = 0;
 
 	/**
-	 * µ±Ç°ÓÎÏ·µÄÄêÁä
+	 * å½“å‰æ¸¸æˆçš„å¹´é¾„
 	 */
 	private static int systemUserAge = 0;
 	
 	/**
-	 * µ±Ç°ÓÎÏ·µÄÀàĞÍ
+	 * å½“å‰æ¸¸æˆçš„ç±»å‹
 	 */
 	private static int systemUserStyle = 0;	
 	
 	/**
-	 * Ò»´ÎÖ»ÔÊĞíµã»÷Ò»ÕÅÍ¼Æ¬£¬²»¶à´Î½øÈëÆ´Í¼ingame½çÃæ
+	 * ä¸€æ¬¡åªå…è®¸ç‚¹å‡»ä¸€å¼ å›¾ç‰‡ï¼Œä¸å¤šæ¬¡è¿›å…¥æ‹¼å›¾ingameç•Œé¢
 	 */
 	private static boolean isAlreadtIngameActivity = false;
 
 	/**
-	 * OperateBroadCast¼àÌı£¬¼àÌıHOME¼ü¶Ì°´³¤°´¹ã²¥ÏûÏ¢
+	 * OperateBroadCastç›‘å¬ï¼Œç›‘å¬HOMEé”®çŸ­æŒ‰é•¿æŒ‰å¹¿æ’­æ¶ˆæ¯
 	 */
 	private GsptBroadCast homeBroadCast = new GsptBroadCast();		
 	
 	/**
-	 * Òì²½¸üĞÂÏûÏ¢
+	 * å¼‚æ­¥æ›´æ–°æ¶ˆæ¯
 	 */
 	private static final int WM_REPAINT = 0x0333;
 	
 	/**
-	 * Òì²½¼ÓÔØÏûÏ¢
+	 * å¼‚æ­¥åŠ è½½æ¶ˆæ¯
 	 */
 	private static final int WM_AUTOLOAD = 0x0336;	
 	
 	/**
-	 * ÏûÏ¢·¢ËÍÏß³ÌÊµÀı
+	 * æ¶ˆæ¯å‘é€çº¿ç¨‹å®ä¾‹
 	 */
-	private MainMsgHandler mainMsgHandler = null;	
+	private MainMsgHandler mainMsgHandler = null;
+
 	
 	/**
-	 * @aim »ñÈ¡isAlreadtIngameActivity×´Ì¬£¬ÊÇ·ñ½øÈëÁËÆ´Í¼
-	 * @param ÎŞ
+	 * @aim è·å–isAlreadtIngameActivityçŠ¶æ€ï¼Œæ˜¯å¦è¿›å…¥äº†æ‹¼å›¾
+	 * @param æ— 
 	 * @return ViewPager
 	 * 
 	 */
@@ -277,8 +279,8 @@ public class GsptMainActivity extends ReadboyActivity {
 	}
 
 	/**
-	 * @aim ÉèÖÃisAlreadtIngameActivity×´Ì¬
-	 * @param ÎŞ
+	 * @aim è®¾ç½®isAlreadtIngameActivityçŠ¶æ€
+	 * @param æ— 
 	 * @return ViewPager
 	 * 
 	 */
@@ -287,8 +289,8 @@ public class GsptMainActivity extends ReadboyActivity {
 	}
 
 	/**
-	 * @aim »ñÈ¡ViewPager
-	 * @param ÎŞ
+	 * @aim è·å–ViewPager
+	 * @param æ— 
 	 * @return ViewPager
 	 * 
 	 */
@@ -297,8 +299,8 @@ public class GsptMainActivity extends ReadboyActivity {
 	}
 
 	/**
-	 * @aim »ñÈ¡GsptPlaySurfaceView
-	 * @param ÎŞ
+	 * @aim è·å–GsptPlaySurfaceView
+	 * @param æ— 
 	 * @return GsptPlaySurfaceView
 	 * 
 	 */
@@ -307,12 +309,12 @@ public class GsptMainActivity extends ReadboyActivity {
 	}
 
 	/**
-	 * @aim ÉèÖÃÏµÍ³ÆÁÄ»´óĞ¡
+	 * @aim è®¾ç½®ç³»ç»Ÿå±å¹•å¤§å°
 	 * @param width
-	 *            ¿í¶È
+	 *            å®½åº¦
 	 * @param height
-	 *            ¸ß¶È
-	 * @return ÎŞ
+	 *            é«˜åº¦
+	 * @return æ— 
 	 */
 	public static void setScreenWidthHeight(int width, int height) {
 		GsptScreenWidth = width;
@@ -320,36 +322,36 @@ public class GsptMainActivity extends ReadboyActivity {
 	}
 
 	/**
-	 * @aim »ñÈ¡ÆÁÄ»¿í¶È
-	 * @param ÎŞ
-	 * @return intÆÁÄ»¿í¶È
+	 * @aim è·å–å±å¹•å®½åº¦
+	 * @param æ— 
+	 * @return intå±å¹•å®½åº¦
 	 */
 	public static int getScreenWidth() {
 		return GsptScreenWidth;
 	}
 
 	/**
-	 * @aim »ñÈ¡ÆÁÄ»¸ß¶È
-	 * @param ÎŞ
-	 * @return intÆÁÄ»¸ß¶È
+	 * @aim è·å–å±å¹•é«˜åº¦
+	 * @param æ— 
+	 * @return intå±å¹•é«˜åº¦
 	 */
 	public static int getScreenHeight() {
 		return GsptScreenHeight;
 	}
 	
 	/**
-	 * @aim »ñÈ¡ÓÎÏ·ÄêÁä
-	 * @param ÎŞ
-	 * @return intÓÎÏ·ÄêÁä
+	 * @aim è·å–æ¸¸æˆå¹´é¾„
+	 * @param æ— 
+	 * @return intæ¸¸æˆå¹´é¾„
 	 */
 	public static int getSystemUserAge() {
 		return systemUserAge;
 	}	
 	
 	/**
-	 * @aim ²¥·Å°´Å¥µã»÷µÄÉùÒô
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @aim æ’­æ”¾æŒ‰é’®ç‚¹å‡»çš„å£°éŸ³
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	public static void mainPlayBtnSoundPool() {
 		if (gsptMainMPManager != null){
@@ -358,9 +360,9 @@ public class GsptMainActivity extends ReadboyActivity {
 	}
 	
 	/**
-	 * @aim onCreate ³õÊ¼»¯
+	 * @aim onCreate åˆå§‹åŒ–
 	 * @param savedInstanceState
-	 * @return ÎŞ
+	 * @return æ— 
 	 */
 	@Override
 	protected boolean onInit() {
@@ -378,26 +380,28 @@ public class GsptMainActivity extends ReadboyActivity {
 		
 		//super.onCreate(getSavedInstanceState());
 		
-		// »ñÈ¡ÆÁÄ»´óĞ¡
+		// è·å–å±å¹•å¤§å°
 		Point screenPoint = new Point();
 		getWindowManager().getDefaultDisplay().getRealSize(screenPoint);
-		setScreenWidthHeight(screenPoint.x, screenPoint.y);		
-		
+		setScreenWidthHeight(screenPoint.x, screenPoint.y);
+
+		float mScale = screenPoint.x/1280f;
+		App.getInstance().mScale = mScale;//screenPoint.x/1280;
 		setContentView(R.layout.activity_gspt_main);
 		
-		// ´´½¨ÏûÏ¢ÊµÀı
+		// åˆ›å»ºæ¶ˆæ¯å®ä¾‹
 		Looper looper = Looper.myLooper();
 		mainMsgHandler = new MainMsgHandler(looper);		
 		
-		// µÚÒ»´Î½øÈëÑÓÊ±Ê±¼ä
+		// ç¬¬ä¸€æ¬¡è¿›å…¥å»¶æ—¶æ—¶é—´
 		firstInDelayTime = 0;
 		
-		// Òş²ØÏµÍ³Ìõ
+		// éšè—ç³»ç»Ÿæ¡
 		getWindow().setFlags(0x80000000, 0x80000000);
 		
-		// ÆÕÍ¨Ä£Ê½½øÈë
+		// æ™®é€šæ¨¡å¼è¿›å…¥
 		systemEnterMode = 0;
-		// ³õÊ¼»¯ÓÃ»§ÄêÁäÄêÁä
+		// åˆå§‹åŒ–ç”¨æˆ·å¹´é¾„å¹´é¾„
 		systemUserAge = 1;
 		systemUserStyle = 1;
 		Intent intent = getIntent();
@@ -407,35 +411,35 @@ public class GsptMainActivity extends ReadboyActivity {
 			systemEnterMode = bundle.getInt("Subject", 0);
 		}
 		
-		// ²âÊÔÓÃ
+		// æµ‹è¯•ç”¨
 		systemEnterMode = (systemEnterMode == 2) ? GsptRunDataFrame.ENTER_EXTCALL : GsptRunDataFrame.ENTER_NORMAL;
 		
-		// »ñÈ¡Êı¾İÊµÀı
+		// è·å–æ•°æ®å®ä¾‹
 		gsptMainRunData = GsptRunDataFrame.getInstance(getApplicationContext());
 
-		// ¶ÁÈ¡ÄÑ¶È¼ÇÂ¼
+		// è¯»å–éš¾åº¦è®°å½•
 		systemUserAge = gsptMainRunData.readSPUserAgeLevelConfig();
 		
-		// ³õÊ¼»¯Í¼Æ¬Ò³ÃæÒ³Êı
+		// åˆå§‹åŒ–å›¾ç‰‡é¡µé¢é¡µæ•°
 		GsptRunDataFrame.bMainCurrentOnResumed = false;
 		GsptRunDataFrame.setAppGameStyle(systemUserStyle >= 5);
 		GsptRunDataFrame.setAppEnterMode(systemEnterMode);
 		
-		// ³õÊ¼»¯Í¼Æ¬Ò³ÃæÊı×é
+		// åˆå§‹åŒ–å›¾ç‰‡é¡µé¢æ•°ç»„
 		gsptStoryInfo = new GsptStoryInfo[GsptRunDataFrame.getPagerTotal()];
 		if (systemEnterMode == GsptRunDataFrame.ENTER_EXTCALL) {
-			// ÆäËûÄ£¿éµ÷ÓÃ½øÈë
+			// å…¶ä»–æ¨¡å—è°ƒç”¨è¿›å…¥
 			gsptStoryItems = new int [][]{ 
 					{R.drawable.gspt_exopt00_1, R.drawable.gspt_exopt00_3, R.drawable.gspt_exopt00_4},
 					{R.drawable.gspt_exopt01_1, R.drawable.gspt_exopt01_3, R.drawable.gspt_exopt01_4} };
-			// ³õÊ¼»¯Ò³ÃæÏÔÊ¾¿ªÊ¼ĞòºÅÊı×é
+			// åˆå§‹åŒ–é¡µé¢æ˜¾ç¤ºå¼€å§‹åºå·æ•°ç»„
 			gsptStoryIndexStart = new int [] {0, gsptStoryItems.length };
-			// ³õÊ¼»¯°´Å¥Ñ¡ÔñÊı×é
+			// åˆå§‹åŒ–æŒ‰é’®é€‰æ‹©æ•°ç»„
 			optBtnBitmapsArray = new Bitmap [gsptStoryItems.length][gsptStoryItems[0].length];
-			// ³õÊ¼»¯°´Å¥×´Ì¬Êı×é
+			// åˆå§‹åŒ–æŒ‰é’®çŠ¶æ€æ•°ç»„
 			optStateDrawableArray = new StateListDrawable[gsptStoryItems.length];
 		} else {
-			// Ö÷½çÃæ½øÈë
+			// ä¸»ç•Œé¢è¿›å…¥
 			gsptStoryItems = new int [][]{
 					{R.drawable.gspt_opt00_1, R.drawable.gspt_opt00_3, R.drawable.gspt_opt00_4},
 					{R.drawable.gspt_opt01_1, R.drawable.gspt_opt01_3, R.drawable.gspt_opt01_4},
@@ -453,26 +457,26 @@ public class GsptMainActivity extends ReadboyActivity {
 					{R.drawable.gspt_opt13_1, R.drawable.gspt_opt13_3, R.drawable.gspt_opt13_4},
 					{R.drawable.gspt_opt14_1, R.drawable.gspt_opt14_3, R.drawable.gspt_opt14_4},
 					{R.drawable.gspt_opt15_1, R.drawable.gspt_opt15_3, R.drawable.gspt_opt15_4} };
-			// ³õÊ¼»¯Ò³ÃæÏÔÊ¾¿ªÊ¼ĞòºÅÊı×é
+			// åˆå§‹åŒ–é¡µé¢æ˜¾ç¤ºå¼€å§‹åºå·æ•°ç»„
 			gsptStoryIndexStart = new int [] {0, 6, 12, gsptStoryItems.length };
-			// ³õÊ¼»¯°´Å¥Ñ¡ÔñÊı×é
+			// åˆå§‹åŒ–æŒ‰é’®é€‰æ‹©æ•°ç»„
 			optBtnBitmapsArray = new Bitmap [gsptStoryItems.length][gsptStoryItems[0].length];
-			// ³õÊ¼»¯°´Å¥×´Ì¬Êı×é
+			// åˆå§‹åŒ–æŒ‰é’®çŠ¶æ€æ•°ç»„
 			optStateDrawableArray = new StateListDrawable[gsptStoryItems.length];
 		}
 		
-		// ³õÊ¼»¯¼ÓÔØÓÃ±äÁ¿
+		// åˆå§‹åŒ–åŠ è½½ç”¨å˜é‡
 		dataInflater = LayoutInflater.from(getApplicationContext());
 		
-		// ³õÊ¼»¯ÏÂ±ßÏÔÊ¾µÄĞ¡°´Å¥
+		// åˆå§‹åŒ–ä¸‹è¾¹æ˜¾ç¤ºçš„å°æŒ‰é’®
 		gsptInitMainPagerDots();
 		
-		// ¸ÕÒ»½øÈ¥ÓĞÒ»¸ö±³¾°Í¼Æ¬½çÃæ£¬ÓĞÎò¿Õ£¬°Ë½ä£¬É³É®£¬ÌÆÉ®µÄ½çÃæ
+		// åˆšä¸€è¿›å»æœ‰ä¸€ä¸ªèƒŒæ™¯å›¾ç‰‡ç•Œé¢ï¼Œæœ‰æ‚Ÿç©ºï¼Œå…«æˆ’ï¼Œæ²™åƒ§ï¼Œå”åƒ§çš„ç•Œé¢
 		relativeLayoutMain = (RelativeLayout) findViewById(R.id.relativeLayoutRootMain);
 		relativeLayoutMain.setOnClickListener(imgViewBgOnClickListener);
 		relativeLayoutMain.setBackgroundDrawable(new BitmapDrawable(gsptMainRunData.loadResById(R.drawable.gspt_startin_bg_000)));
 		
-		// ¶¯»­°´Å¥£¬Òş²Ø¶¯»­
+		// åŠ¨ç”»æŒ‰é’®ï¼Œéšè—åŠ¨ç”»
 		animMainBee = (GsptAnimView) findViewById(R.id.animMainBee);
 		animMainBee.setVisibility(View.INVISIBLE);
 		animMainBee.setOnOwnerActivtiyStateCallback(animMainOwnerActivtiyState);
@@ -480,7 +484,7 @@ public class GsptMainActivity extends ReadboyActivity {
 		animMainBird.setVisibility(View.INVISIBLE);
 		animMainBird.setOnOwnerActivtiyStateCallback(animMainOwnerActivtiyState);
 
-		// ÍË³ö°´Å¥
+		// é€€å‡ºæŒ‰é’®
 		imgBtnExit = (ImageButton) findViewById(R.id.imgBtnExit);
 		imgBtnExit.setOnClickListener(imgBtnOnClickListener);
 		imgBtnLevelEasy = (ImageButton) findViewById(R.id.imgBtnLevelEasy);
@@ -508,41 +512,41 @@ public class GsptMainActivity extends ReadboyActivity {
 			break;
 		}
 		
-		// SurfaceView¿Ø¼ş
+		// SurfaceViewæ§ä»¶
 		playSurfaceView = (GsptPlaySurfaceView) findViewById(R.id.gsptPlaySurfaceViewMain);
-		// SurfaceView »Øµ÷ÉèÖÃ£¬ÓÃÓÚÏÔÊ¾¶¯»­
+		// SurfaceView å›è°ƒè®¾ç½®ï¼Œç”¨äºæ˜¾ç¤ºåŠ¨ç”»
 		playSurfaceView.setCallBack(new GsptMainSurfaceViewCallBack());
 
-		// ViewPager¿Ø¼ş
+		// ViewPageræ§ä»¶
 		playViewPager = (ViewPager) findViewById(R.id.gsptViewPagerMain);
-//		// ´´½¨Adapter
+//		// åˆ›å»ºAdapter
 //		dataViewPagerAdapter = new GsptViewPagerAdapter(new PagerInfoCallBack());
-//		// ÉèÖÃViewPageµÄ»º´æ
+//		// è®¾ç½®ViewPageçš„ç¼“å­˜
 //		playViewPager.setAdapter(dataViewPagerAdapter);
-//		// °ó¶¨»Øµ÷
+//		// ç»‘å®šå›è°ƒ
 //		playViewPager.setOnPageChangeListener(playViewPagerOnPageChangeListener);
-//		// ÉèÖÃ»º´æÆÁÊı£¬ÔÚÕâÀïÊôÓÚÍµÀÁµÄ×ö·¨
+//		// è®¾ç½®ç¼“å­˜å±æ•°ï¼Œåœ¨è¿™é‡Œå±äºå·æ‡’çš„åšæ³•
 //		playViewPager.setOffscreenPageLimit(2);			
 		
-		// ÓÎÏ·ÉùÒô
+		// æ¸¸æˆå£°éŸ³
 		gsptMainMPManager = GsptPlayMediaManager.getInstance(getApplicationContext());
 		gsptMainMPManager.setOnOffBgState(true);
 		gsptMainMPManager.IngamePlayMediaPlayer(GsptRunDataFrame.bEnterModeExtCall() ? R.raw.gspt_ex_first_inopt_0 : R.raw.gspt_zjm_ts1);
 		gsptMainMPManager.playBgMedia(R.raw.gspt_game_bg, true);
-		// ³õÊ¼»¯ÓÎÏ·×´Ì¬
+		// åˆå§‹åŒ–æ¸¸æˆçŠ¶æ€
 		gsptMainRunData.GsptNeedJumpStep = GameStep.STEP_STARTIN;
 		gsptStepStateInit();
 
-		// µÚÒ»´Î½øÈë£¬°ÑÒ»Ğ©ºÄÊ±µÄ²Ù×÷Ìáµ½ºó±ß×ö
+		// ç¬¬ä¸€æ¬¡è¿›å…¥ï¼ŒæŠŠä¸€äº›è€—æ—¶çš„æ“ä½œæåˆ°åè¾¹åš
 		gsptMainRunData.enumEnterMain = EgameStep.STEP_1;
 		
-		// ¿ªÆô¶¨Ê±Æ÷
+		// å¼€å¯å®šæ—¶å™¨
 		mainMsgHandler.sendEmptyMessageDelayed(WM_REPAINT, 100);
 		
-		// ¶¨Ê±×Ô¶¯¼ÓÔØÍ¼Æ¬
+		// å®šæ—¶è‡ªåŠ¨åŠ è½½å›¾ç‰‡
 		mainMsgHandler.sendEmptyMessageDelayed(WM_AUTOLOAD, 30);
 		
-		// ×¢²á¹ã²¥¼àÌı
+		// æ³¨å†Œå¹¿æ’­ç›‘å¬
 		try {
 			IntentFilter homeFilter = new IntentFilter();
 			homeFilter.addAction(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
@@ -555,7 +559,7 @@ public class GsptMainActivity extends ReadboyActivity {
 		Log.w("edugame", "====GsptMainActivity==onInit===end=====");
 		
 //		try {
-//			// ×¢²á¹ã²¥£¬ÊµÀı»¯¼ì²â¸üĞÂÀà£¬¿ªÊ¼¼ì²â
+//			// æ³¨å†Œå¹¿æ’­ï¼Œå®ä¾‹åŒ–æ£€æµ‹æ›´æ–°ç±»ï¼Œå¼€å§‹æ£€æµ‹
 //			UpdateChecker.setPopInstallActivity(true);
 //			UpdateChecker.setCheckTimeDistance(24);
 //			UpdateChecker.setCheckUrl(HostInfo.getHttp(getApplicationContext()));		
@@ -572,7 +576,7 @@ public class GsptMainActivity extends ReadboyActivity {
 	public void finish() {
 		super.finish();
 //		try {
-//			// È¡Ïû×Ô¶¯¸üĞÂ
+//			// å–æ¶ˆè‡ªåŠ¨æ›´æ–°
 //			UpdateChecker.removeActivity(this);
 //		} catch (Exception e) {
 //			e.printStackTrace();
@@ -580,9 +584,9 @@ public class GsptMainActivity extends ReadboyActivity {
 	}
 	
 	/**
-	 * @aim ÍË³öActivity£¬·´³õÊ¼»¯
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @aim é€€å‡ºActivityï¼Œååˆå§‹åŒ–
+	 * @param æ— 
+	 * @return æ— 
 	 * 
 	 */
 	@Override
@@ -593,12 +597,12 @@ public class GsptMainActivity extends ReadboyActivity {
 			imgBtnExitOnClickEvent(true);
 		}
 		try {
-			// ×¢Ïú¹ã²¥¼àÌı
+			// æ³¨é”€å¹¿æ’­ç›‘å¬
 			if (homeBroadCast != null){
 				unregisterReceiver(homeBroadCast);
 				homeBroadCast = null;
 			}
-			// ÊÍ·Å°´Å¥×´Ì¬×ÊÔ´
+			// é‡Šæ”¾æŒ‰é’®çŠ¶æ€èµ„æº
 			if (optStateDrawableArray != null) {
 				for (int iOrder = 0; iOrder < optStateDrawableArray.length; iOrder++) {
 					optStateDrawableArray[iOrder].setCallback(null);
@@ -606,7 +610,7 @@ public class GsptMainActivity extends ReadboyActivity {
 				}
 				optStateDrawableArray = null;
 			}
-			// ÊÍ·ÅÍ¼Æ¬×ÊÔ´
+			// é‡Šæ”¾å›¾ç‰‡èµ„æº
 			if (optBtnBitmapsArray != null) {
 				for (int index = 0; index < optBtnBitmapsArray.length; index++) {
 					for (int ison = 0; ison < optBtnBitmapsArray[index].length; ison++) {
@@ -643,25 +647,25 @@ public class GsptMainActivity extends ReadboyActivity {
 //			if (!GsptMainActivity.getIsAlreadtIngameActivity()){
 //				if (playSurfaceView != null) {
 //					try {
-//						// SurfaceViewÒş²Ø
+//						// SurfaceViewéšè—
 //						playSurfaceView.setVisibility(View.INVISIBLE);
 //					} catch (Exception e) {
 //						e.printStackTrace();
 //					}
 //				}
 //			}
-			// Í£Ö¹¶¨Ê±Æ÷
+			// åœæ­¢å®šæ—¶å™¨
 			if (mainMsgHandler != null){
 				mainMsgHandler.removeMessages(WM_REPAINT, null);
 			}
 			
-			// Í£Ö¹ÓÎÏ·²¥·ÅÉùÒô£¬Èç¹û¾ä±ú²»Îª¿ÕµÄ»°
+			// åœæ­¢æ¸¸æˆæ’­æ”¾å£°éŸ³ï¼Œå¦‚æœå¥æŸ„ä¸ä¸ºç©ºçš„è¯
 			if (gsptMainMPManager != null) {
-				// ¹Ø±ÕÓÎÏ·ÖĞµÄÉùÒô
+				// å…³é—­æ¸¸æˆä¸­çš„å£°éŸ³
 				gsptMainMPManager.IngameStopMediaPlayer();
-				// ¹Ø±ÕÊ¤ÀûºóµÄÉùÒô
+				// å…³é—­èƒœåˆ©åçš„å£°éŸ³
 				gsptMainMPManager.winPauseMediaPlayer();
-				// ¹Ø±Õ±³¾°Òô
+				// å…³é—­èƒŒæ™¯éŸ³
 				gsptMainMPManager.pauseBgMedia();
 			}
 			if (gsptMainRunData != null) {
@@ -680,11 +684,11 @@ public class GsptMainActivity extends ReadboyActivity {
 		Log.w("edugame", "===onContinue gspt main app=====1==");
 		GsptRunDataFrame.bMainCurrentOnResumed = true;
 		if (!bFinishMainActivity){
-			// ÉèÖÃÖ÷½çÃæ¿ÉÒÔÔÙ´Îµã»÷ÁË
+			// è®¾ç½®ä¸»ç•Œé¢å¯ä»¥å†æ¬¡ç‚¹å‡»äº†
 			GsptMainActivity.setIsAlreadtIngameActivity(false);
 			if (playSurfaceView != null) {
 				try {
-					// SurfaceViewÒş²Ø
+					// SurfaceViewéšè—
 					playSurfaceView.surfaceCreated(null);					
 					playSurfaceView.setVisibility(View.VISIBLE);
 					playSurfaceView.surfaceNotPaintCurrent(0);
@@ -694,24 +698,24 @@ public class GsptMainActivity extends ReadboyActivity {
 			}			
 			if (gsptMainRunData != null && (gsptMainRunData.enumEnterMain == EgameStep.STEP_3
 					|| gsptMainRunData.enumEnterMain == EgameStep.STEP_4)){
-				// ÓÎÏ·²½Öè
+				// æ¸¸æˆæ­¥éª¤
 				if (gsptMainRunData.enumEnterMain == EgameStep.STEP_3){
 					gsptMainRunData.enumEnterMain = EgameStep.STEP_1;
 				} else if (gsptMainRunData.enumEnterMain == EgameStep.STEP_4){
 					gsptMainRunData.enumEnterMain = EgameStep.STEP_2;
 				}
-				// ¶¨Ê±Æ÷¿ªÆô
+				// å®šæ—¶å™¨å¼€å¯
 				mainMsgHandler.sendEmptyMessageDelayed(WM_REPAINT, 100);
-				// Í£Ö¹µÄÆäËûÉùÒô¿ÉÒÔ¿ªÊ¼²¥·ÅÁË
+				// åœæ­¢çš„å…¶ä»–å£°éŸ³å¯ä»¥å¼€å§‹æ’­æ”¾äº†
 				gsptMainMPManager.winRestartMediaPlayer();
-				// Èç¹ûÍ£Ö¹ÁË±³¾°Òô²¥·ÅÔò¿ªÊ¼±³¾°Òô²¥·Å
+				// å¦‚æœåœæ­¢äº†èƒŒæ™¯éŸ³æ’­æ”¾åˆ™å¼€å§‹èƒŒæ™¯éŸ³æ’­æ”¾
 				gsptMainMPManager.playBgMedia(R.raw.gspt_game_bg, true);
 			}
 		}
 	}
 	
 	/**
-	 * °´¼üÏìÓ¦
+	 * æŒ‰é”®å“åº”
 	 */
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -729,7 +733,7 @@ public class GsptMainActivity extends ReadboyActivity {
 	}
 	
 	/**
-	 * ·µ»Ø¼ü´¦Àí
+	 * è¿”å›é”®å¤„ç†
 	 */
 	@Override
 	public void onBackPressed() {
@@ -738,33 +742,33 @@ public class GsptMainActivity extends ReadboyActivity {
 	}
 	
 	/**
-	 * ÎªÁËµÃµ½´«»ØµÄÊı¾İ£¬±ØĞëÔÚÇ°ÃæµÄActivityÖĞ£¨Ö¸MainActivityÀà£©ÖØĞ´onActivityResult·½·¨
+	 * ä¸ºäº†å¾—åˆ°ä¼ å›çš„æ•°æ®ï¼Œå¿…é¡»åœ¨å‰é¢çš„Activityä¸­ï¼ˆæŒ‡MainActivityç±»ï¼‰é‡å†™onActivityResultæ–¹æ³•
 	 * 
-	 * requestCode ÇëÇóÂë£¬¼´µ÷ÓÃstartActivityForResult()´«µİ¹ıÈ¥µÄÖµ resultCode
-	 * ½á¹ûÂë£¬½á¹ûÂëÓÃÓÚ±êÊ¶·µ»ØÊı¾İÀ´×ÔÄÄ¸öĞÂActivity
+	 * requestCode è¯·æ±‚ç ï¼Œå³è°ƒç”¨startActivityForResult()ä¼ é€’è¿‡å»çš„å€¼ resultCode
+	 * ç»“æœç ï¼Œç»“æœç ç”¨äºæ ‡è¯†è¿”å›æ•°æ®æ¥è‡ªå“ªä¸ªæ–°Activity
 	 */
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		
 		Log.w("edugame", "=======onActivityResult======" + requestCode + "," + resultCode);
-		// ¹Ø±Õºó·µ»ØµÄÊı¾İ
+		// å…³é—­åè¿”å›çš„æ•°æ®
 		if (requestCode == REQUSET) {
-			// Ğ¡ÏÉÅ®×´Ì¬ÒÔ¼°ÓÎÏ·×´Ì¬ÇĞ»»
+			// å°ä»™å¥³çŠ¶æ€ä»¥åŠæ¸¸æˆçŠ¶æ€åˆ‡æ¢
 			if (gsptMainRunData != null){
 				ImgBtnAuto imgBtnAuto = gsptMainRunData.getImgBtnAuto();
 				if (imgBtnAuto != null && imgBtnAuto.currentindex >= 0){
 					gsptMainRunData.bGsPlayEndShowNext = GsptRunDataFrame.WM_OPTION_GAME;
 					gsptMainRunData.GsptNeedJumpStep = GameStep.STEP_ZY_INOPT;
-					// ÇĞ»»ÓÎÏ·×´Ì¬µ½Ê¤Àû×´Ì¬
+					// åˆ‡æ¢æ¸¸æˆçŠ¶æ€åˆ°èƒœåˆ©çŠ¶æ€
 					if (resultCode == RESULT_OK) {
 						gsptMainRunData.GsptNeedJumpStep = GameStep.STEP_WINNER;
 						gsptStepStateInit();
 					}
-					// ¸üĞÂViewPagerÖĞÉÏÒ»´ÎÑ¡ÖĞ°´Å¥ÊµÀı£¬ÉèÖÃViewPagerÖĞµÄImageButton×´Ì¬
+					// æ›´æ–°ViewPagerä¸­ä¸Šä¸€æ¬¡é€‰ä¸­æŒ‰é’®å®ä¾‹ï¼Œè®¾ç½®ViewPagerä¸­çš„ImageButtonçŠ¶æ€
 					if (dotscurrentIndex >=0 && dotscurrentIndex < GsptRunDataFrame.getPagerTotal()) {
 						gsptStoryInfo[dotscurrentIndex].mOptionItemAdapter.notifyDataSetChanged();
 					} else {
-						// ¸üĞÂÕû¸ö½çÃæ
+						// æ›´æ–°æ•´ä¸ªç•Œé¢
 						for (int iPager = 0; iPager < GsptRunDataFrame.getPagerTotal(); iPager++) {
 							gsptStoryInfo[iPager].mOptionItemAdapter.notifyDataSetChanged();
 						}						
@@ -778,7 +782,7 @@ public class GsptMainActivity extends ReadboyActivity {
 	}
 	
 	/**
-	 * @aim ÅĞ¶ÏÊÇ·ñÔÚÔËĞĞµÄ»Øµ÷£¬ÊÇ·ñ´¦ÓÚPause×´Ì¬
+	 * @aim åˆ¤æ–­æ˜¯å¦åœ¨è¿è¡Œçš„å›è°ƒï¼Œæ˜¯å¦å¤„äºPauseçŠ¶æ€
 	 */
 	private GsptAnimView.OwnerActivtiyState animMainOwnerActivtiyState = new GsptAnimView.OwnerActivtiyState() {
 
@@ -789,7 +793,7 @@ public class GsptMainActivity extends ReadboyActivity {
 	};	
 	
 	/**
-	 * @aim ÏÂ±ßĞ¡°´Å¥µã»÷ºóµÄÏìÓ¦£¬ÇĞ»»Ò³Ãæ
+	 * @aim ä¸‹è¾¹å°æŒ‰é’®ç‚¹å‡»åçš„å“åº”ï¼Œåˆ‡æ¢é¡µé¢
 	 */
 	private View.OnClickListener dotBtnClickListener = new OnClickListener() {
 		
@@ -805,10 +809,10 @@ public class GsptMainActivity extends ReadboyActivity {
 	};
 	
 	/**
-	 * @aim ½çÃæÄÚµÄImageButtonµÄµã»÷¼àÌı 
-	 * 			Í¨¹ıgetTag»ñÈ¡Ô¤ÏÈÔÚÅäÖÃÎÄ¼şÖĞÉè¶¨ºÃµÄĞòºÅ
-	 *          ¼ÇÂ¼¸Ã±»µã»÷ImageButtonµÄĞòºÅ
-	 *          È»ºóÌø×ªµ½Æ´Í¼ÓÎÏ·½çÃæ Ê¹ÓÃ¸Õ²Å¼ÇÂ¼µÄĞòºÅµÄ°´Å¥½øĞĞÆ´Í¼ÓÎÏ·
+	 * @aim ç•Œé¢å†…çš„ImageButtonçš„ç‚¹å‡»ç›‘å¬ 
+	 * 			é€šè¿‡getTagè·å–é¢„å…ˆåœ¨é…ç½®æ–‡ä»¶ä¸­è®¾å®šå¥½çš„åºå·
+	 *          è®°å½•è¯¥è¢«ç‚¹å‡»ImageButtonçš„åºå·
+	 *          ç„¶åè·³è½¬åˆ°æ‹¼å›¾æ¸¸æˆç•Œé¢ ä½¿ç”¨åˆšæ‰è®°å½•çš„åºå·çš„æŒ‰é’®è¿›è¡Œæ‹¼å›¾æ¸¸æˆ
 	 * @author divhee
 	 * 
 	 */
@@ -823,19 +827,19 @@ public class GsptMainActivity extends ReadboyActivity {
 						&& tmpRunDataFrame.enumEnterIngame == EgameStep.STEP_0
 						&& GsptRunDataFrame.bMainCurrentOnResumed) {
 					if (tag >= 0 && tag < tmpRunDataFrame.getImgBtnAutoSum()) {
-						// ²¥·Å°´Å¥µÄÉùÒô
+						// æ’­æ”¾æŒ‰é’®çš„å£°éŸ³
 						GsptMainActivity.mainPlayBtnSoundPool();
-						// ÉèÖÃ²»ÖØ¸´½øÈëÓÎÏ·
+						// è®¾ç½®ä¸é‡å¤è¿›å…¥æ¸¸æˆ
 						GsptMainActivity.setIsAlreadtIngameActivity(true);
-						// ÉèÖÃÑ¡ÖĞµÄÆ´Í¼ĞÅÏ¢£¬¾ÍÊÇÒªÆ´ÄÄÒ»ÕÅÍ¼Æ¬ÒÔ¼°ÏàÓ¦ĞÅÏ¢
+						// è®¾ç½®é€‰ä¸­çš„æ‹¼å›¾ä¿¡æ¯ï¼Œå°±æ˜¯è¦æ‹¼å“ªä¸€å¼ å›¾ç‰‡ä»¥åŠç›¸åº”ä¿¡æ¯
 						tmpRunDataFrame.setImgBtnAutoIndex(tag);
 						try {
-							// ÇĞ»»µ½Æ´Í¼ÓÎÏ·½çÃæ£¬¿ªÊ¼Æ´Í¼InGameActivity
+							// åˆ‡æ¢åˆ°æ‹¼å›¾æ¸¸æˆç•Œé¢ï¼Œå¼€å§‹æ‹¼å›¾InGameActivity
 							Intent intent = new Intent(getApplicationContext(), GsptIngameActivity.class);
 							launchForResult(intent, GsptMainActivity.REQUSET);
 						} catch (Exception e) {
 							e.printStackTrace();
-							// ÉèÖÃÖ÷½çÃæ¿ÉÒÔÔÙ´Îµã»÷ÁË
+							// è®¾ç½®ä¸»ç•Œé¢å¯ä»¥å†æ¬¡ç‚¹å‡»äº†
 							GsptMainActivity.setIsAlreadtIngameActivity(false);						
 						}
 					}
@@ -845,13 +849,13 @@ public class GsptMainActivity extends ReadboyActivity {
 	};	
 	
 	/**
-	 * @aim ¸Õ½øÈë½çÃæµÄÍ¼Æ¬±³¾°ImageViewµã»÷¼àÌı
+	 * @aim åˆšè¿›å…¥ç•Œé¢çš„å›¾ç‰‡èƒŒæ™¯ImageViewç‚¹å‡»ç›‘å¬
 	 */
 	private View.OnClickListener imgViewBgOnClickListener = new OnClickListener() {
 		
 		@Override
 		public void onClick(View v) {
-			// µã»÷Õâ¸ö±³¾°Í¼Æ¬Ö±½Ó½øÈëÓÎÏ·Ñ¡Ôñ½çÃæ·ñÔòµÈ¶¯»­½áÊøºó²Å×Ô¶¯½øÈë
+			// ç‚¹å‡»è¿™ä¸ªèƒŒæ™¯å›¾ç‰‡ç›´æ¥è¿›å…¥æ¸¸æˆé€‰æ‹©ç•Œé¢å¦åˆ™ç­‰åŠ¨ç”»ç»“æŸåæ‰è‡ªåŠ¨è¿›å…¥
 			if (GsptRunDataFrame.bMainCurrentOnResumed) {
 				if (firstInDelayTime >= 1 && gsptMainRunData.getCrrentGameStep() == GameStep.STEP_STARTIN) {
 					relativeLayoutMain.setOnClickListener(null);
@@ -860,10 +864,10 @@ public class GsptMainActivity extends ReadboyActivity {
 						tmpInterlude.isHide = true;
 						tmpInterlude.ImgCurrentNumber = 0;
 					}
-					// ½øÈëÓÎÏ·Ñ¡Ôñ½çÃæ
+					// è¿›å…¥æ¸¸æˆé€‰æ‹©ç•Œé¢
 					gsptMainRunData.GsptNeedJumpStep = GameStep.STEP_INOPT;
 					gsptStepStateInit();
-					//TODO:Ìí¼ÓÈ¥µô¼àÌı
+					//TODO:æ·»åŠ å»æ‰ç›‘å¬
 					// relativeLayoutMain
 				}
 			}
@@ -872,15 +876,15 @@ public class GsptMainActivity extends ReadboyActivity {
 	};
 	
 	/**
-	 * @aim ÍË³ö°´Å¥±»µã»÷ÏìÓ¦
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @aim é€€å‡ºæŒ‰é’®è¢«ç‚¹å‡»å“åº”
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	public boolean imgBtnExitOnClickEvent(boolean bEspExit) {
 		try {
 			if (GsptRunDataFrame.bMainCurrentOnResumed && !bEspExit
 					&& !GsptMainActivity.getIsAlreadtIngameActivity()){
-				// Èç¹ûÓÎÏ·Ê¤ÀûÁËÍË³öµ½Í¼Æ¬Ñ¡Ôñ½çÃæ
+				// å¦‚æœæ¸¸æˆèƒœåˆ©äº†é€€å‡ºåˆ°å›¾ç‰‡é€‰æ‹©ç•Œé¢
 				if (gsptMainRunData.GsptNeedJumpStep == GameStep.STEP_WINNER) {
 					gsptMainRunData.GsptNeedJumpStep = GameStep.STEP_ZY_INOPT;
 					gsptStepStateInit();
@@ -890,15 +894,15 @@ public class GsptMainActivity extends ReadboyActivity {
 			if ((!bFinishMainActivity && bEspExit)
 					|| (!bFinishMainActivity && GsptRunDataFrame.bMainCurrentOnResumed
 							&& !GsptMainActivity.getIsAlreadtIngameActivity())){
-				// ÍêÈ«ÍË³öÓÎÏ·
+				// å®Œå…¨é€€å‡ºæ¸¸æˆ
 				if (playSurfaceView != null) {
 					try {
-						// SurfaceViewÍË³ö
+						// SurfaceViewé€€å‡º
 						//playSurfaceView.surfaceDestroyed(null);
 						playSurfaceView.surfaceRealExit();
 						playSurfaceView.setVisibility(View.GONE);
 						playSurfaceView = null;
-						// Òş²Ø¶¯»­
+						// éšè—åŠ¨ç”»
 						if (animMainBee != null) {
 							animMainBee.stopAnim();
 							animMainBee.setVisibility(View.INVISIBLE);
@@ -913,7 +917,7 @@ public class GsptMainActivity extends ReadboyActivity {
 						e.printStackTrace();
 					}
 				}
-				// ¸üĞÂÓÎÏ·±³¾°
+				// æ›´æ–°æ¸¸æˆèƒŒæ™¯
 				if (relativeLayoutMain != null){
 					relativeLayoutMain.setOnClickListener(null);
 					relativeLayoutMain.setVisibility(View.GONE);
@@ -931,7 +935,7 @@ public class GsptMainActivity extends ReadboyActivity {
 					linearLayoutLevel.setVisibility(View.GONE);
 					linearLayoutLevel = null;
 				}
-//			// ×¢Ïú¹ã²¥¼àÌı
+//			// æ³¨é”€å¹¿æ’­ç›‘å¬
 //			try {
 //				if (homeBroadCast != null){
 //					unregisterReceiver(homeBroadCast);
@@ -941,23 +945,23 @@ public class GsptMainActivity extends ReadboyActivity {
 //				e.printStackTrace();
 //			}
 				if (mainMsgHandler != null) {
-					// ¹Ø±Õ¶¨Ê±Æ÷
+					// å…³é—­å®šæ—¶å™¨
 					mainMsgHandler.removeMessages(WM_REPAINT, null);
 					mainMsgHandler = null;
 				}
-				// Í£Ö¹ÓÎÏ·²¥·ÅÉùÒô£¬Èç¹û¾ä±ú²»Îª¿ÕµÄ»°
+				// åœæ­¢æ¸¸æˆæ’­æ”¾å£°éŸ³ï¼Œå¦‚æœå¥æŸ„ä¸ä¸ºç©ºçš„è¯
 				if (gsptMainMPManager != null) {
-					// ¹Ø±ÕÓÎÏ·ÖĞµÄÉùÒô
+					// å…³é—­æ¸¸æˆä¸­çš„å£°éŸ³
 					gsptMainMPManager.IngameStopMediaPlayer();
-					// ¹Ø±ÕÊ¤ÀûºóµÄÉùÒô
+					// å…³é—­èƒœåˆ©åçš„å£°éŸ³
 					gsptMainMPManager.winStopMediaPlayer();
-					// ¹Ø±Õ±³¾°Òô
+					// å…³é—­èƒŒæ™¯éŸ³
 					gsptMainMPManager.stopBgMedia();
-					// ¹Ø±ÕÒôĞ§
+					// å…³é—­éŸ³æ•ˆ
 					gsptMainMPManager.releaseBtnSoundPool();
 					gsptMainMPManager = null;
 				}				
-				// ±£´æÅäÖÃĞÅÏ¢£¬ÓÃ»§½â·âÁËÄÄĞ©Í¼Æ¬
+				// ä¿å­˜é…ç½®ä¿¡æ¯ï¼Œç”¨æˆ·è§£å°äº†å“ªäº›å›¾ç‰‡
 				if (gsptMainRunData != null){
 					gsptMainRunData.saveSPPlayerConfig(false);
 					gsptMainRunData.saveSPPlayerConfig(true);
@@ -967,7 +971,7 @@ public class GsptMainActivity extends ReadboyActivity {
 				
 				Log.w("edugame", "=====imgBtnExitOnClickEvent====end=====" + bEspExit);
 				if (!bEspExit){
-					// ²»ÊÇÇ¿ÖÆÍË³öµÄÊ±ºòµ÷ÓÃ£¬ÔÚonExitµÄÊ±ºò²»µ÷ÓÃÕâ¸ö
+					// ä¸æ˜¯å¼ºåˆ¶é€€å‡ºçš„æ—¶å€™è°ƒç”¨ï¼Œåœ¨onExitçš„æ—¶å€™ä¸è°ƒç”¨è¿™ä¸ª
 					finish();
 				}
 			}
@@ -979,7 +983,7 @@ public class GsptMainActivity extends ReadboyActivity {
 	}
 	
 	/**
-	 * ÍË³ö°´Å¥µÄµã»÷¼àÌı
+	 * é€€å‡ºæŒ‰é’®çš„ç‚¹å‡»ç›‘å¬
 	 */
 	private View.OnClickListener imgBtnOnClickListener = new OnClickListener() {
 		
@@ -999,7 +1003,7 @@ public class GsptMainActivity extends ReadboyActivity {
 							imgBtnLevelNormal.setEnabled(true);
 							imgBtnLevelHard.setEnabled(true);
 							gsptMainRunData.readSPConfigLevelChange();
-							// ¸üĞÂÕû¸ö½çÃæÉÏµÄ°´Å¥
+							// æ›´æ–°æ•´ä¸ªç•Œé¢ä¸Šçš„æŒ‰é’®
 							for (int iPager = 0; iPager < GsptRunDataFrame.getPagerTotal(); iPager++) {
 								gsptStoryInfo[iPager].mOptionItemAdapter.notifyDataSetChanged();
 							}
@@ -1013,7 +1017,7 @@ public class GsptMainActivity extends ReadboyActivity {
 							imgBtnLevelHard.setEnabled(true);
 							imgBtnLevelEasy.setEnabled(true);
 							gsptMainRunData.readSPConfigLevelChange();
-							// ¸üĞÂÕû¸ö½çÃæÉÏµÄ°´Å¥
+							// æ›´æ–°æ•´ä¸ªç•Œé¢ä¸Šçš„æŒ‰é’®
 							for (int iPager = 0; iPager < GsptRunDataFrame.getPagerTotal(); iPager++) {
 								gsptStoryInfo[iPager].mOptionItemAdapter.notifyDataSetChanged();
 							}
@@ -1027,7 +1031,7 @@ public class GsptMainActivity extends ReadboyActivity {
 							imgBtnLevelNormal.setEnabled(true);
 							imgBtnLevelEasy.setEnabled(true);
 							gsptMainRunData.readSPConfigLevelChange();
-							// ¸üĞÂÕû¸ö½çÃæÉÏµÄ°´Å¥
+							// æ›´æ–°æ•´ä¸ªç•Œé¢ä¸Šçš„æŒ‰é’®
 							for (int iPager = 0; iPager < GsptRunDataFrame.getPagerTotal(); iPager++) {
 								gsptStoryInfo[iPager].mOptionItemAdapter.notifyDataSetChanged();
 							}
@@ -1044,17 +1048,17 @@ public class GsptMainActivity extends ReadboyActivity {
 	};
 	
 	/**
-	 * @aim ViewPager ¿Ø¼şµÄ OnPageChangeListener¼àÌı
+	 * @aim ViewPager æ§ä»¶çš„ OnPageChangeListenerç›‘å¬
 	 */
 	private ViewPager.OnPageChangeListener playViewPagerOnPageChangeListener = new OnPageChangeListener() {
 		
 		/**
-		 * µ±ĞÂµÄÒ³Ãæ±»Ñ¡ÖĞÊ±µ÷ÓÃ
+		 * å½“æ–°çš„é¡µé¢è¢«é€‰ä¸­æ—¶è°ƒç”¨
 		 */
 		@Override
 		public void onPageSelected(int arg0) {
-			// ÉèÖÃµ×²¿Ğ¡µãÑ¡ÖĞ×´Ì¬
-			// ÉèÖÃµ×²¿Ğ¡Ô²µãÏÔÊ¾µ±Ç°µÄÒ³Âë
+			// è®¾ç½®åº•éƒ¨å°ç‚¹é€‰ä¸­çŠ¶æ€
+			// è®¾ç½®åº•éƒ¨å°åœ†ç‚¹æ˜¾ç¤ºå½“å‰çš„é¡µç 
 			setCurrentPageDot(arg0);
 		}
 
@@ -1068,10 +1072,10 @@ public class GsptMainActivity extends ReadboyActivity {
 	};
 	
 	/**
-	 * @aim ÉèÖÃÏÂ±ßÏÔÊ¾Ò³ÂëµÄĞ¡Ô²µã°´Å¥ÄÄÒ»¸öÎªÑ¡ÖĞ×´Ì¬£¬Ç°Ò»¸öÑ¡ÖĞ°´Å¥È¡ÏûÑ¡ÖĞ×´Ì¬
+	 * @aim è®¾ç½®ä¸‹è¾¹æ˜¾ç¤ºé¡µç çš„å°åœ†ç‚¹æŒ‰é’®å“ªä¸€ä¸ªä¸ºé€‰ä¸­çŠ¶æ€îƒ¢è€™æ¡“é²…â‰ˆé‚ªç£ãƒˆâˆ î¾â‰ˆå‡¶åˆºï¿½
 	 * @param position
-	 *            ÒªÏÔÊ¾ÎªÑ¡ÖĞ×´Ì¬µÄĞ¡Ô²µãÎ»ÖÃ
-	 * @return ÎŞ
+	 *            è¦æ˜¾ç¤ºä¸ºé€‰ä¸­çŠ¶æ€çš„å°åœ†ç‚¹ä½ç½®
+	 * @return æ— 
 	 */
 	public void setCurrentPageDot(int position) {
 
@@ -1080,65 +1084,65 @@ public class GsptMainActivity extends ReadboyActivity {
 		}
 
 		if (dotsImgViews[dotscurrentIndex] != null) {
-			// Ç°Ò»¸öÑ¡ÖĞµÄImageButtonµÄenableÎªtrue ÏÔÊ¾Îª²»Ñ¡ÖĞ×´Ì¬ÇÒ¿ÉÒÔµã»÷
+			// å‰ä¸€ä¸ªé€‰ä¸­çš„ImageButtonçš„enableä¸ºtrue æ˜¾ç¤ºä¸ºä¸é€‰ä¸­çŠ¶æ€ä¸”å¯ä»¥ç‚¹å‡»
 			dotsImgViews[dotscurrentIndex].setEnabled(true);
 			
-			// µ±Ç°Î»ÖÃµÄImageButtonµÄenableÎªfalse ÏÔÊ¾ÎªÑ¡ÖĞ×´Ì¬ÇÒ²»¿ÉÒÔµã»÷
+			// å½“å‰ä½ç½®çš„ImageButtonçš„enableä¸ºfalse æ˜¾ç¤ºä¸ºé€‰ä¸­çŠ¶æ€ä¸”ä¸å¯ä»¥ç‚¹å‡»
 			dotsImgViews[position].setEnabled(false);
 		}
 
-		// ¼ÇÂ¼µ±Ç°Ñ¡ÖĞµÄÒ³ÂëÊÇÄÄÒ»¸ö£¬ÊÇÄÄÒ»¸öĞ¡Ô²µã±»Ñ¡ÖĞ
+		// è®°å½•å½“å‰é€‰ä¸­çš„é¡µç æ˜¯å“ªä¸€ä¸ªï¼Œæ˜¯å“ªä¸€ä¸ªå°åœ†ç‚¹è¢«é€‰ä¸­
 		dotscurrentIndex = position;
 	}
 	
 	/**
-	 * @aim ³õÊ¼»¯ÏÂ±ßÏÔÊ¾Ò³ÂëµÄĞ¡°´Å¥
-	 * 			¶øÇÒ°´Å¥¿ÉÒÔµã»÷ ¶àÓàµÄÒ³ÂëÏÔÊ¾°´Å¥ÊÍ·Åµô
-	 * 			µ±Ç°ÏÔÊ¾µÚÒ»¸öÒ³Ãæ Ò³ÂëÒ²ÏÔÊ¾ÎªµÚÒ»¸ö
-	 * @param ÎŞ
+	 * @aim åˆå§‹åŒ–ä¸‹è¾¹æ˜¾ç¤ºé¡µç çš„å°æŒ‰é’®
+	 * 			è€Œä¸”æŒ‰é’®å¯ä»¥ç‚¹å‡» å¤šä½™çš„é¡µç æ˜¾ç¤ºæŒ‰é’®é‡Šæ”¾æ‰
+	 * 			å½“å‰æ˜¾ç¤ºç¬¬ä¸€ä¸ªé¡µé¢ é¡µç ä¹Ÿæ˜¾ç¤ºä¸ºç¬¬ä¸€ä¸ª
+	 * @param æ— 
 	 * 
-	 * @return ÎŞ
+	 * @return æ— 
 	 */
 	private void gsptInitMainPagerDots() {
 
-		// »ñÈ¡ÄÑ¶ÈÖµ²¼¾Ö
+		// è·å–éš¾åº¦å€¼å¸ƒå±€
 		linearLayoutLevel = (LinearLayout) findViewById(R.id.LinearLayoutLevel);
-		// »ñÈ¡ÏÂ±ßÏÔÊ¾Ò³ÂëµÄĞ¡°´Å¥£¬ÓĞÒ»ÅÅ£¬Ôİ¶¨ÁË9¸öÎ»ÖÃ£¬ĞèÒªÏÔÊ¾¼¸¸öÎ»ÖÃ²ÅÏÔÊ¾¼¸¸öÎ»ÖÃ
+		// è·å–ä¸‹è¾¹æ˜¾ç¤ºé¡µç çš„å°æŒ‰é’®ï¼Œæœ‰ä¸€æ’ï¼Œæš‚å®šäº†9ä¸ªä½ç½®ï¼Œéœ€è¦æ˜¾ç¤ºå‡ ä¸ªä½ç½®æ‰æ˜¾ç¤ºå‡ ä¸ªä½ç½®
 		LhlayoutDots = (LinearLayout) findViewById(R.id.LinearLayoutDots);
 		int childcount = LhlayoutDots.getChildCount();
-		// ³õÊ¼»¯ÓĞ¶àÉÙ¸öĞ¡µÄDot°´Å¥
+		// åˆå§‹åŒ–æœ‰å¤šå°‘ä¸ªå°çš„DotæŒ‰é’®
 		dotsImgViews = new ImageButton[childcount];
 		for (int index = 0; index < childcount; index++) {
-			// È¡µÃĞ¡°´Å¥ÊµÀıÌí¼Óµ½Êı×éÖĞÈ¥
+			// å–å¾—å°æŒ‰é’®å®ä¾‹æ·»åŠ åˆ°æ•°ç»„ä¸­å»
 			dotsImgViews[index] = (ImageButton) LhlayoutDots.getChildAt(index);
 			dotsImgViews[index].setTag(R.id.tag_grid_index, index);
 			if (index < GsptRunDataFrame.getPagerTotal()) {
-				// ÉèÖÃËùÓĞµÄ°´Å¥¶¼ÎªÎ´Ñ¡ÖĞ×´Ì¬
+				// è®¾ç½®æ‰€æœ‰çš„æŒ‰é’®éƒ½ä¸ºæœªé€‰ä¸­çŠ¶æ€
 				dotsImgViews[index].setEnabled(true);
 				
-				// ¼ÇÂ¼ĞèÒªÓÃµ½µÄĞ¡Ô²µã°´Å¥
+				// è®°å½•éœ€è¦ç”¨åˆ°çš„å°åœ†ç‚¹æŒ‰é’®
 				dotsImgViews[index] = dotsImgViews[index];
 				dotsImgViews[index].setOnClickListener(dotBtnClickListener);
 			} else {
-				// ÅäÖÃÎÄ¼şÖĞÖ»ÅäÖÃÁË3¸öÒ³ÃæÔòÖ»ÏÔÊ¾3¸öĞ¡Ô²µã
-				// ÆäËûµÄĞ¡Ô²µãÈ«²¿Òş²Ø£¬×î¶àÅäÖÃ9¸öÒ³Ãæ
+				// é…ç½®æ–‡ä»¶ä¸­åªé…ç½®äº†3ä¸ªé¡µé¢åˆ™åªæ˜¾ç¤º3ä¸ªå°åœ†ç‚¹
+				// å…¶ä»–çš„å°åœ†ç‚¹å…¨éƒ¨éšè—ï¼Œæœ€å¤šé…ç½®9ä¸ªé¡µé¢
 				dotsImgViews[index].setVisibility(View.GONE);
 			}
 		}		
 
-		// ÉèÖÃµÚÒ»ÆÁÏÔÊ¾
+		// è®¾ç½®ç¬¬ä¸€å±æ˜¾ç¤º
 		dotscurrentIndex = 0;
 
-		// ÉèÖÃ¸ÃViewµÄenableÎªfalse¼´ÏÔÊ¾ÎªÑ¡ÖĞ×´Ì¬
+		// è®¾ç½®è¯¥Viewçš„enableä¸ºfalseå³æ˜¾ç¤ºä¸ºé€‰ä¸­çŠ¶æ€
 		if (dotsImgViews[dotscurrentIndex] != null) {
 			dotsImgViews[dotscurrentIndex].setEnabled(false);
 		}
 	}	
 	
 	/**
-	 * @aim ĞŞ¸Ämain ActivityÖĞ°´Å¥µÄ×´Ì¬
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @aim ä¿®æ”¹main Activityä¸­æŒ‰é’®çš„çŠ¶æ€
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	public void gsptStepStateInit() {
 		
@@ -1154,17 +1158,17 @@ public class GsptMainActivity extends ReadboyActivity {
 			playSurfaceView.surfaceNotPaintCurrent(-100);
 			gsptMainRunData.GsptInterludeName = null;
 			if (gsptMainRunData.GsptNeedJumpStep == GameStep.STEP_STARTIN) {
-				// ¸Õ½øÈë½çÃæ£¬²¥·Å½øÈë¶¯»­
+				// åˆšè¿›å…¥ç•Œé¢ï¼Œæ’­æ”¾è¿›å…¥åŠ¨ç”»
 				gsptMainRunData.GsptInterludeName = new String[1];
 				gsptMainRunData.GsptInterludeName[0] = "startin";
 				gsptMainRunData.bGsPlayEndShowNext = GsptRunDataFrame.WM_OPTION_GAME;
 			} else if (gsptMainRunData.GsptNeedJumpStep == GameStep.STEP_INOPT) {
-				// ¸üĞÂÓÎÏ·±³¾°
+				// æ›´æ–°æ¸¸æˆèƒŒæ™¯
 				BitmapDrawable bd = (BitmapDrawable) relativeLayoutMain.getBackground();
 				relativeLayoutMain.setBackgroundDrawable(new BitmapDrawable(gsptMainRunData.loadResById(R.drawable.gspt_opt_bg_000)));
 				if (bd != null) {
-					// Èç¹û²»Òª±³¾°ºó±ğÍüÁË°Ñ±³¾°ÉèÎªnull£¬±ÜÃâonDrawË¢ĞÂ±³¾°Ê±ºò³öÏÖused a recycled
-					// bitmap´íÎó
+					// å¦‚æœä¸è¦èƒŒæ™¯ååˆ«å¿˜äº†æŠŠèƒŒæ™¯è®¾ä¸ºnullï¼Œé¿å…onDrawåˆ·æ–°èƒŒæ™¯æ—¶å€™å‡ºç°used a recycled
+					// bitmapé”™è¯¯
 					bd.setCallback(null);
 					if (bd.getBitmap() != null) {
 						if (!bd.getBitmap().isRecycled()) {
@@ -1174,17 +1178,17 @@ public class GsptMainActivity extends ReadboyActivity {
 					bd = null;
 					System.gc();
 				}
-				// Í¼Æ¬Ñ¡Ôñ½çÃæ£¬²¥·ÅĞ¡ÏÉÅ®¶¯»­
+				// å›¾ç‰‡é€‰æ‹©ç•Œé¢ï¼Œæ’­æ”¾å°ä»™å¥³åŠ¨ç”»
 				gsptMainRunData.GsptInterludeName = new String[1];
 				gsptMainRunData.GsptInterludeName[0] = "opt_xxn";
 				gsptMainRunData.bGsPlayEndShowNext = GsptRunDataFrame.WM_OPTION_GAME;
 			} else if (gsptMainRunData.GsptNeedJumpStep == GameStep.STEP_ZY_INOPT) {
-				// Í¼Æ¬Ñ¡Ôñ½çÃæ£¬²¥·ÅĞ¡ÏÉÅ®¶¯»­
+				// å›¾ç‰‡é€‰æ‹©ç•Œé¢ï¼Œæ’­æ”¾å°ä»™å¥³åŠ¨ç”»
 				gsptMainRunData.GsptInterludeName = new String[1];
 				gsptMainRunData.GsptInterludeName[0] = "opt_xxnzy";
 				gsptMainRunData.bGsPlayEndShowNext = GsptRunDataFrame.WM_OPTION_GAME;
 			} else if (gsptMainRunData.GsptNeedJumpStep == GameStep.STEP_WINNER) {
-				// ÓĞÏ·Ê¤Àû½×¶Î
+				// æœ‰æˆèƒœåˆ©é˜¶æ®µ
 				gsptMainRunData.GsptInterludeName = null;
 				if (gsptMainRunData != null) {
 					ImgBtnAuto tmpImgBtnAuto = gsptMainRunData.getImgBtnAuto();
@@ -1194,7 +1198,7 @@ public class GsptMainActivity extends ReadboyActivity {
 					}
 				}
 			}
-			// µ±Ç°½×¶ÎÉèÖÃ³ÉÏëÒª×ª»»µ½µÄ½×¶Î
+			// å½“å‰é˜¶æ®µè®¾ç½®æˆæƒ³è¦è½¬æ¢åˆ°çš„é˜¶æ®µ
 			gsptMainRunData.GsptCurrentStep = gsptMainRunData.GsptNeedJumpStep;
 			gsptMainRunData.GsptNeedJumpStep = GameStep.STEP_OTHER;
 			if (gsptMainRunData.GsptInterludeName != null) {
@@ -1207,7 +1211,7 @@ public class GsptMainActivity extends ReadboyActivity {
 				}
 			}
 		}
-		// ¸ù¾İ²»Í¬½×¶ÎÉèÖÃ½çÃæÉÏµÄ¿Ø¼şÏÔÊ¾×´Ì¬£¬ÏÔÊ¾ÄØ»¹ÊÇÒş²ØÄØ
+		// æ ¹æ®ä¸åŒé˜¶æ®µè®¾ç½®ç•Œé¢ä¸Šçš„æ§ä»¶æ˜¾ç¤ºçŠ¶æ€ï¼Œæ˜¾ç¤ºå‘¢è¿˜æ˜¯éšè—å‘¢
 		switch (gsptMainRunData.GsptCurrentStep) {
 		case STEP_STARTIN:
 			if (playSurfaceView != null) {
@@ -1234,11 +1238,11 @@ public class GsptMainActivity extends ReadboyActivity {
 			break;
 //			case STEP_ZY_INOPT: 
 		case STEP_INOPT:
-			// ²¥·Å²»Í¬µÄÌáÊ¾Òô
+			// æ’­æ”¾ä¸åŒçš„æç¤ºéŸ³
 			gsptMainMPManager.IngameStopMediaPlayer();
-//				// ÉèÖÃViewPageµÄ»º´æ
+//				// è®¾ç½®ViewPageçš„ç¼“å­˜
 //				playViewPager.setAdapter(GsptDataPagerAdapter.getInstance(dotsImgViews, GsptMainActivity.this));
-//				// °ó¶¨»Øµ÷
+//				// ç»‘å®šå›è°ƒ
 //				playViewPager.setOnPageChangeListener(playViewPagerOnPageChangeListener);
 			if (playSurfaceView != null) {
 				playSurfaceView.setVisibility(View.VISIBLE);
@@ -1265,13 +1269,13 @@ public class GsptMainActivity extends ReadboyActivity {
 			if (GsptRunDataFrame.bEnterModeExtCall()) {
 				playId = R.raw.gspt_ex_first_inopt_1;
 			} else {
-				// ¸ù¾İÍ¼Æ¬ÊÂÏÈÊÇ½â·â×´Ì¬»¹ÊÇ·âÓ¡×´Ì¬²¥·Å²»Í¬µÄÌáÊ¾Òô
+				// æ ¹æ®å›¾ç‰‡äº‹å…ˆæ˜¯è§£å°çŠ¶æ€è¿˜æ˜¯å°å°çŠ¶æ€æ’­æ”¾ä¸åŒçš„æç¤ºéŸ³
 				ImgBtnAuto imgBtnAuto = gsptMainRunData.getImgBtnAuto();
 				boolean ballPass = true;
 				
 				for (playId = 0; playId < imgBtnAuto.imgbtnsum; playId++) {
 					if (imgBtnAuto.nowinpass[playId]){
-						// »ñÈ¡·âÓ¡×´Ì¬
+						// è·å–å°å°çŠ¶æ€
 						ballPass = false;
 					}
 				}
@@ -1340,11 +1344,11 @@ public class GsptMainActivity extends ReadboyActivity {
 	}
 
 	/**
-	 * @aim ×Ô¶¯¼ÓÔØÍ¼Æ¬
-	 * @param iOrder Òª¼ÓÔØµÄĞòºÅ
+	 * @aim è‡ªåŠ¨åŠ è½½å›¾ç‰‡
+	 * @param iOrder è¦åŠ è½½çš„åºå·
 	 * @return boolean 
-	 * 			true ³É¹¦»¹ĞèÒª¶¨Ê±Æ÷¼ÌĞø 
-	 * 			false Ê§°ÜÒÑ¾­¼ÓÔØÍêÁË¶¨Ê±Æ÷²»ĞèÒª¼ÌĞøÁË
+	 * 			true æˆåŠŸè¿˜éœ€è¦å®šæ—¶å™¨ç»§ç»­ 
+	 * 			false å¤±è´¥å·²ç»åŠ è½½å®Œäº†å®šæ—¶å™¨ä¸éœ€è¦ç»§ç»­äº†
 	 */
 	public boolean loadOneStateListDrawable(int iOrder) {
 		try {
@@ -1364,7 +1368,7 @@ public class GsptMainActivity extends ReadboyActivity {
 						optStateDrawableArray[iOrder] = new StateListDrawable();
 						// View.PRESSED_ENABLED_STATE_SET 
 						optStateDrawableArray[iOrder].addState(new int[] { android.R.attr.state_pressed, android.R.attr.state_enabled }, new BitmapDrawable(optBtnBitmapsArray[iOrder][1]));
-						// View.ENABLED_STATE_SET -±íÊ¾false×´Ì¬
+						// View.ENABLED_STATE_SET -è¡¨ç¤ºfalseçŠ¶æ€
 						optStateDrawableArray[iOrder].addState(new int[] { android.R.attr.state_selected }, new BitmapDrawable(optBtnBitmapsArray[iOrder][2]));
 						// View.EMPTY_STATE_SET 
 						optStateDrawableArray[iOrder].addState(new int[] {}, new BitmapDrawable(optBtnBitmapsArray[iOrder][0]));
@@ -1379,9 +1383,9 @@ public class GsptMainActivity extends ReadboyActivity {
 	}
 	
 	/**
-	 * @aim »ñÈ¡°´Å¥Í¼Æ¬StateListDrawable
-	 * @param Òª»ñÈ¡µÄ°´Å¥µÄĞòºÅ
-	 * @return °´Å¥Í¼Æ¬µÄStateListDrawable
+	 * @aim è·å–æŒ‰é’®å›¾ç‰‡StateListDrawable
+	 * @param è¦è·å–çš„æŒ‰é’®çš„åºå·
+	 * @return æŒ‰é’®å›¾ç‰‡çš„StateListDrawable
 	 */
 	public StateListDrawable getFocusStateListDrawable(int index) {
 		try {
@@ -1399,8 +1403,8 @@ public class GsptMainActivity extends ReadboyActivity {
 	}
 	
 	/**
-	 * @aim ×ÓÀà»¯Ò»¸öÏûÏ¢´¦ÀíÀà£¬ÖØÔØHandler ´¦Àí¸÷ÖÖÏûÏ¢£¬ÒÔ¼°¸üĞÂ½çÃæÉÏµÄ¿Ø¼ş×´Ì¬
-	 * 		´´½¨Ò»¸öÏûÏ¢´¦Àí»úÖÆ£¬¶¨Ê±´¦Àí½ÇÉ«µÄÒ»Ğ©ÒÆ¶¯ĞĞÎª
+	 * @aim å­ç±»åŒ–ä¸€ä¸ªæ¶ˆæ¯å¤„ç†ç±»ï¼Œé‡è½½Handler å¤„ç†å„ç§æ¶ˆæ¯ï¼Œä»¥åŠæ›´æ–°ç•Œé¢ä¸Šçš„æ§ä»¶çŠ¶æ€
+	 * 		åˆ›å»ºä¸€ä¸ªæ¶ˆæ¯å¤„ç†æœºåˆ¶ï¼Œå®šæ—¶å¤„ç†è§’è‰²çš„ä¸€äº›ç§»åŠ¨è¡Œä¸º
 	 * 
 	 * @author divhee
 	 * 
@@ -1416,27 +1420,27 @@ public class GsptMainActivity extends ReadboyActivity {
 			try {
 				switch (msg.what) {
 				case WM_REPAINT:
-					// Í¨¹ıdelayedÀ´·¢ËÍÏûÏ¢µÄ¶¨Ê±Æ÷Òª´¦ÀíµÄÊÂ
+					// é€šè¿‡delayedæ¥å‘é€æ¶ˆæ¯çš„å®šæ—¶å™¨è¦å¤„ç†çš„äº‹
 					try {
-						// ÑÓÊ±Ê±¼ä¼Ó1
+						// å»¶æ—¶æ—¶é—´åŠ 1
 						firstInDelayTime = firstInDelayTime > 100 ? 100 : (firstInDelayTime + 1);
-						// ¼ÓÔØÑ¡Ôñ¹ÊÊÂÒ³Ãæ
+						// åŠ è½½é€‰æ‹©æ•…äº‹é¡µé¢
 						if (dataViewPagerAdapter == null && GsptRunDataFrame.bMainCurrentOnResumed) {
-							// ´´½¨Adapter
+							// åˆ›å»ºAdapter
 							dataViewPagerAdapter = new GsptViewPagerAdapter(new PagerInfoCallBack());
-							// ÉèÖÃViewPageµÄ»º´æ
+							// è®¾ç½®ViewPageçš„ç¼“å­˜
 							playViewPager.setAdapter(dataViewPagerAdapter);
-							// °ó¶¨»Øµ÷
+							// ç»‘å®šå›è°ƒ
 							playViewPager.setOnPageChangeListener(playViewPagerOnPageChangeListener);
-							// ÉèÖÃ»º´æÆÁÊı£¬ÔÚÕâÀïÊôÓÚÍµÀÁµÄ×ö·¨
+							// è®¾ç½®ç¼“å­˜å±æ•°ï¼Œåœ¨è¿™é‡Œå±äºå·æ‡’çš„åšæ³•
 							playViewPager.setOffscreenPageLimit(2);
 						}				
 						if (gsptMainRunData != null && gsptMainRunData.enumEnterMain == EgameStep.STEP_1){
 							gsptMainRunData.enumEnterMain = EgameStep.STEP_2;
 //							gsptMainMPManager.playBgMedia(R.raw.gspt_game_bg, true);
-//							// ÉèÖÃViewPageµÄ»º´æ
+//							// è®¾ç½®ViewPageçš„ç¼“å­˜
 //							playViewPager.setAdapter(GsptDataPagerAdapter.getInstance(dotsImgViews, GsptMainActivity.this));
-//							// °ó¶¨»Øµ÷
+//							// ç»‘å®šå›è°ƒ
 //							playViewPager.setOnPageChangeListener(playViewPagerOnPageChangeListener);
 						}
 						if (gsptMainRunData.GsptNeedJumpStep != GameStep.STEP_OTHER) {
@@ -1445,13 +1449,13 @@ public class GsptMainActivity extends ReadboyActivity {
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
-					// Ã¿0.3ÃëÖ´ĞĞÒ»´Îrunnable
+					// æ¯0.3ç§’æ‰§è¡Œä¸€æ¬¡runnable
 					mainMsgHandler.sendEmptyMessageDelayed(WM_REPAINT, 50);
 					break;
 				case WM_AUTOLOAD:
-					// ×Ô¶¯¼ÓÔØÓÃ
+					// è‡ªåŠ¨åŠ è½½ç”¨
 					mainMsgHandler.removeMessages(WM_AUTOLOAD, null);
-					// ¼ÓÔØÒ»ÕÅÅĞ¶ÏÊÇ·ñÒª¼ÌĞø¼ÓÔØ
+					// åŠ è½½ä¸€å¼ åˆ¤æ–­æ˜¯å¦è¦ç»§ç»­åŠ è½½
 					if (loadOneStateListDrawable(-1)) {
 						mainMsgHandler.sendEmptyMessageDelayed(WM_AUTOLOAD, 5);
 					}
@@ -1467,7 +1471,7 @@ public class GsptMainActivity extends ReadboyActivity {
 	}	
 
 	/**
-	 * @aim ËÑË÷³öÀ´µÄÊé±¾ĞÅÏ¢
+	 * @aim æœç´¢å‡ºæ¥çš„ä¹¦æœ¬ä¿¡æ¯
 	 * 
 	 * @author Administrator
 	 * 
@@ -1475,39 +1479,39 @@ public class GsptMainActivity extends ReadboyActivity {
 	public class GsptStoryInfo {
 
 		/**
-		 * ÔçÍíÌıËÑË÷³öÀ´µÄÄÚÈİµÄÃ¿Ò»ÏîĞÅÏ¢
+		 * æ—©æ™šå¬æœç´¢å‡ºæ¥çš„å†…å®¹çš„æ¯ä¸€é¡¹ä¿¡æ¯
 		 */
 		private ArrayList<HashMap<String, Object>> mOptionItemMap = null;
 
 		/**
-		 * Êı¾İAdapter
+		 * æ•°æ®Adapter
 		 */
 		private GsptGridViewAdapter mOptionItemAdapter = null;
 
 		/**
-		 * ËÑË÷³öÀ´µÄÎÄ¼şÁĞ±í
+		 * æœç´¢å‡ºæ¥çš„æ–‡ä»¶åˆ—è¡¨
 		 */
 		private GridView mOptionGridView = null;
 		
 		/**
-		 * ¶ÔÓ¦µÄ°´Å¥Í¼Æ¬ÁĞ±í
+		 * å¯¹åº”çš„æŒ‰é’®å›¾ç‰‡åˆ—è¡¨
 		 */
 		private int [] mOptionBtnDrawable = null;
 		
 		/**
-		 * ¿ªÊ¼µÄ°´Å¥ĞòºÅ
+		 * å¼€å§‹çš„æŒ‰é’®åºå·
 		 */
 		private int mOptionStartIndex = 0;
 		
 		/**
-		 * ÔÚµÚ¼¸¸öÒ³ÃæÉÏ
+		 * åœ¨ç¬¬å‡ ä¸ªé¡µé¢ä¸Š
 		 */
 		private int mOptionPagerIndex = 0;
 		
 	}	
 
 	/**
-	 * @aim ÁĞ±íĞèÒªÊµÏÖµÄ»Øµ÷
+	 * @aim åˆ—è¡¨éœ€è¦å®ç°çš„å›è°ƒ
 	 * @author Administrator
 	 * 
 	 */
@@ -1537,46 +1541,46 @@ public class GsptMainActivity extends ReadboyActivity {
 	}	
 	
 	/**
-	 * @aim ÒÑÑ§ÁĞ±íĞèÒªÊµÏÖµÄ»Øµ÷
+	 * @aim å·²å­¦åˆ—è¡¨éœ€è¦å®ç°çš„å›è°ƒ
 	 * @author Administrator
 	 */
 	public class PagerInfoCallBack implements DataViewPagerInfo {
 		/**
-		 * @aim ¼ÓÔØÃ¿¸öËÑË÷Ò³Ãæ
+		 * @aim åŠ è½½æ¯ä¸ªæœç´¢é¡µé¢
 		 * 
-		 * @param index Òª¼ÓÔØÄÄ¸öÒ³Ãæ
-		 * 			0 ¶ÔÓ¦Ó¢Óï
-		 * 			1¶ÔÓ¦ÓïÎÄ
-		 * 			2¶ÔÓ¦ÊıÑ§
-		 * 			3¶ÔÓ¦ÆäËû
+		 * @param index è¦åŠ è½½å“ªä¸ªé¡µé¢
+		 * 			0 å¯¹åº”è‹±è¯­
+		 * 			1å¯¹åº”è¯­æ–‡
+		 * 			2å¯¹åº”æ•°å­¦
+		 * 			3å¯¹åº”å…¶ä»–
 		 * @return
-		 * 			ÍêÈ«¼ÓÔØ³É¹¦ºóµÄÒ³Ãæ
+		 * 			å®Œå…¨åŠ è½½æˆåŠŸåçš„é¡µé¢
 		 */
 		@Override
 		public View onCreateView(int index) {
 			try {
 				if (index >= 0 && index < GsptRunDataFrame.getPagerTotal()) {
-					// ¼ÓÔØĞÂµÄÒ³Ãæ
+					// åŠ è½½æ–°çš„é¡µé¢
 					View loadView = (View) dataInflater.inflate(R.layout.gspt_viewpager_page, null);
-					// ¼ÇÂ¼µ±Ç°µÄindex
+					// è®°å½•å½“å‰çš„index
 					final int currentIndex = index;
-					// ÎÄ¼şĞÅÏ¢ÊµÀı
+					// æ–‡ä»¶ä¿¡æ¯å®ä¾‹
 					gsptStoryInfo[currentIndex] = new GsptStoryInfo();
-					// µ±Ç°Ò³ÃæĞòºÅ
+					// å½“å‰é¡µé¢åºå·
 					gsptStoryInfo[currentIndex].mOptionPagerIndex = currentIndex;
-					// ÆğÊ¼ĞòºÅ
+					// èµ·å§‹åºå·
 					gsptStoryInfo[currentIndex].mOptionStartIndex = gsptStoryIndexStart[currentIndex];
-					// ³õÊ¼»¯°´Å¥Í¼Æ¬¶ÔÓ¦µÄIDĞòºÅ
+					// åˆå§‹åŒ–æŒ‰é’®å›¾ç‰‡å¯¹åº”çš„IDåºå·
 					gsptStoryInfo[currentIndex].mOptionBtnDrawable = new int [gsptStoryIndexStart[currentIndex + 1] - gsptStoryIndexStart[currentIndex]];
 					for (int num=0 ; num < gsptStoryInfo[currentIndex].mOptionBtnDrawable.length ; num++) {
 						gsptStoryInfo[currentIndex].mOptionBtnDrawable[num] = gsptStoryIndexStart[currentIndex] + num;
 					}
-					// »ñÈ¡ÁĞ±íÊµÀı
+					// è·å–åˆ—è¡¨å®ä¾‹
 					gsptStoryInfo[currentIndex].mOptionGridView = (GridView) loadView.findViewById(R.id.gridViewOption);
 					
-					// ³õÊ¼»¯Map
+					// åˆå§‹åŒ–Map
 					gsptStoryInfo[currentIndex].mOptionItemMap = new ArrayList<HashMap<String, Object>>();
-					// ³õÊ¼»¯Ò³Ãæ¸÷¸öItemÏî
+					// åˆå§‹åŒ–é¡µé¢å„ä¸ªItemé¡¹
 					for (int num = 0; num < gsptStoryInfo[currentIndex].mOptionBtnDrawable.length; num++) {
 						HashMap<String, Object> map = new HashMap<String, Object>();
 						map.put("gridItemId", gsptStoryInfo[currentIndex].mOptionStartIndex + num);
@@ -1584,21 +1588,21 @@ public class GsptMainActivity extends ReadboyActivity {
 						gsptStoryInfo[currentIndex].mOptionItemMap.add(map);
 					}
 					
-					// Éú³ÉÊÊÅäÆ÷µÄItemºÍ¶¯Ì¬Êı×é¶ÔÓ¦µÄÔªËØ
+					// ç”Ÿæˆé€‚é…å™¨çš„Itemå’ŒåŠ¨æ€æ•°ç»„å¯¹åº”çš„å…ƒç´ 
 					gsptStoryInfo[currentIndex].mOptionItemAdapter = new GsptGridViewAdapter(
 							GsptMainActivity.this, gsptStoryInfo[currentIndex].mOptionItemMap, btnOfViewPagerOnClickListener);
 					gsptStoryInfo[currentIndex].mOptionItemAdapter.setListenAdapterInfo(new GsptStoryGridViewInfo());
 					
-					// Ìí¼ÓsetAdapter
+					// æ·»åŠ setAdapter
 					gsptStoryInfo[currentIndex].mOptionGridView.setAdapter(gsptStoryInfo[currentIndex].mOptionItemAdapter);
 					
-					// ¼àÌıµã»÷ItemÌõÄ¿
+					// ç›‘å¬ç‚¹å‡»Itemæ¡ç›®
 					gsptStoryInfo[currentIndex].mOptionGridView.setOnItemClickListener(new OnItemClickListener() {
 						
 						@Override
 						public void onItemClick(AdapterView<?> parent,
 								View view, int position, long id) {
-							// µ¥»÷ÌõÄ¿¸üĞÂÁĞ±íÑ¡Ôñ
+							// å•å‡»æ¡ç›®æ›´æ–°åˆ—è¡¨é€‰æ‹©
 						}
 					});
 					return loadView;
@@ -1611,10 +1615,10 @@ public class GsptMainActivity extends ReadboyActivity {
 	}	
 
 	/**
-	 * @aim SurfaceViewË¢ĞÂ¶¯»­µÄ»Øµ÷
+	 * @aim SurfaceViewåˆ·æ–°åŠ¨ç”»çš„å›è°ƒ
 	 * @param cvs
-	 *            »æÍ¼ Canvas
-	 * @return ÎŞ
+	 *            ç»˜å›¾ Canvas
+	 * @return æ— 
 	 */
 	public class GsptMainSurfaceViewCallBack implements SurfaceViewCallBack {
 		
@@ -1625,10 +1629,10 @@ public class GsptMainActivity extends ReadboyActivity {
 			synchronized (GsptRunDataFrame.class) {
 				Interlude tmpInterlude = null;
 				for (int index = 0; index < gsptMainRunData.GsptInterludeName.length; index++) {
-					// »ñÈ¡ÒªÏÔÊ¾µÄ¶¯»­ÊµÀıĞÅÏ¢
+					// è·å–è¦æ˜¾ç¤ºçš„åŠ¨ç”»å®ä¾‹ä¿¡æ¯
 					tmpInterlude = gsptMainRunData.getInterludeByName(gsptMainRunData.GsptInterludeName[index]);
 					if (tmpInterlude != null) {
-						// ¸ù¾İ½çÃæ±ÈÀıÖØĞÂ»ñÈ¡¶¯»­ÏÔÊ¾Î»ÖÃ
+						// æ ¹æ®ç•Œé¢æ¯”ä¾‹é‡æ–°è·å–åŠ¨ç”»æ˜¾ç¤ºä½ç½®
 						int showposx = tmpInterlude.imgSzPtRect.left * GsptScreenWidth / GsptRunDataFrame.getBaseWidth();
 						int showposy = tmpInterlude.imgSzPtRect.top * GsptScreenHeight / GsptRunDataFrame.getBaseHeight();
 						if (tmpInterlude.name.equals("startin")) {
@@ -1636,24 +1640,24 @@ public class GsptMainActivity extends ReadboyActivity {
 							showposy = (GsptScreenHeight - tmpInterlude.imgSzPtRect.bottom) / 20;
 						}
 						if (tmpInterlude.isHide == false) {
-							// ÏÔÊ¾Ò»Ö¡¶¯»­
+							// æ˜¾ç¤ºä¸€å¸§åŠ¨ç”»
 							SurfaceViewShowOneImage(cvs, showposx, showposy, tmpInterlude.ImgStartId + tmpInterlude.ImgCurrentNumber);
 						}
 						if (tmpInterlude.ImgCurrentNumber + 1 >= tmpInterlude.ImgSumNumber) {
 							if (gsptMainRunData.getCrrentGameStep() == GameStep.STEP_STARTIN) {
-								// Èç¹ûÊÇ¸Õ½øÈë½×¶ÎÔò¶¯»­²¥·Å½áÊøºó×ªµ½ÏÂÒ»¸ö½×¶Î
+								// å¦‚æœæ˜¯åˆšè¿›å…¥é˜¶æ®µåˆ™åŠ¨ç”»æ’­æ”¾ç»“æŸåè½¬åˆ°ä¸‹ä¸€ä¸ªé˜¶æ®µ
 								tmpInterlude.isHide = true;
 								tmpInterlude.ImgCurrentNumber = 0;
 								gsptMainRunData.GsptNeedJumpStep = GameStep.STEP_INOPT;
 							} else {
-								// ÆäËû½×¶Î¶¯»­½áÊøºóÈç¹û¶¯»­±¾Éí²»ÊÇÑ­»·²¥·ÅµÄ¾ÍÍ£Ö¹¶¯»­ÁË
+								// å…¶ä»–é˜¶æ®µåŠ¨ç”»ç»“æŸåå¦‚æœåŠ¨ç”»æœ¬èº«ä¸æ˜¯å¾ªç¯æ’­æ”¾çš„å°±åœæ­¢åŠ¨ç”»äº†
 								tmpInterlude.ImgCurrentNumber = 0;
 								if (!tmpInterlude.isLooping) {
 									tmpInterlude.isHide = true;
 								}
 							}
 						} else if (tmpInterlude.isHide == false) {
-							// ¶¯»­²¥·Åµ½ÏÂÒ»Ö¡
+							// åŠ¨ç”»æ’­æ”¾åˆ°ä¸‹ä¸€å¸§
 							tmpInterlude.ImgCurrentNumber++;
 						}
 					}
@@ -1663,8 +1667,8 @@ public class GsptMainActivity extends ReadboyActivity {
 	}
 
 	/**
-	 * @aim ¹ã²¥¼àÌı¹¦ÄÜ£¬¼àÌıSD¿¨°Î³ö¹ã²¥ÏûÏ¢£¬SD¿¨²åÈë¹ã²¥ÏûÏ¢
-	 * 				HOME¼ü³¤°´¹ã²¥ÏûÏ¢£¬HOME¼ü¶Ì°´¹ã²¥ÏûÏ¢
+	 * @aim å¹¿æ’­ç›‘å¬åŠŸèƒ½ï¼Œç›‘å¬SDå¡æ‹”å‡ºå¹¿æ’­æ¶ˆæ¯ï¼ŒSDå¡æ’å…¥å¹¿æ’­æ¶ˆæ¯
+	 * 				HOMEé”®é•¿æŒ‰å¹¿æ’­æ¶ˆæ¯ï¼ŒHOMEé”®çŸ­æŒ‰å¹¿æ’­æ¶ˆæ¯
 	 * 
 	 * @author divhee
 	 * 
@@ -1682,31 +1686,31 @@ public class GsptMainActivity extends ReadboyActivity {
 	    			String action = intent.getAction();
 	    			Log.w("edugame", "===OperateBroadCast===" + action);
 	    			if (action != null && action.equals(Intent.ACTION_CLOSE_SYSTEM_DIALOGS)){
-	    				// HOME¼ü°´ÏÂ¹ã²¥ÏûÏ¢
+	    				// HOMEé”®æŒ‰ä¸‹å¹¿æ’­æ¶ˆæ¯
 	    				String reason = intent.getStringExtra(SYSTEM_DIALOG_REASON_KEY);
 	    				if (reason != null) {
 	    					if (reason.equals(SYSTEM_DIALOG_REASON_HOME_KEY)) {
-	    						// ¶Ì°´home¼ü
+	    						// çŸ­æŒ‰homeé”®
 	    						if (!bFinishMainActivity){
 	    							GsptPlayMediaManager gsptHomeMPManager = GsptPlayMediaManager.getInstance(getApplicationContext());
-	    							// ¹Ø±ÕÓÎÏ·ÖĞµÄÉùÒô
+	    							// å…³é—­æ¸¸æˆä¸­çš„å£°éŸ³
 	    							gsptHomeMPManager.IngameStopMediaPlayer();
-	    							// ¹Ø±ÕÊ¤ÀûºóµÄÉùÒô
+	    							// å…³é—­èƒœåˆ©åçš„å£°éŸ³
 	    							gsptHomeMPManager.winPauseMediaPlayer();
-	    							// ¹Ø±Õ±³¾°Òô
+	    							// å…³é—­èƒŒæ™¯éŸ³
 	    							gsptHomeMPManager.pauseBgMedia();		    		    			
 	    						} else {
 	    							onExit();
 	    						}
 	    					} else if (reason.equals(SYSTEM_DIALOG_REASON_RECENT_APPS)) {
-	    						// ³¤°´home¼ü
+	    						// é•¿æŒ‰homeé”®
 	    						if (!bFinishMainActivity){
 	    							GsptPlayMediaManager gsptHomeMPManager = GsptPlayMediaManager.getInstance(getApplicationContext());
-	    							// ¹Ø±ÕÓÎÏ·ÖĞµÄÉùÒô
+	    							// å…³é—­æ¸¸æˆä¸­çš„å£°éŸ³
 	    							gsptHomeMPManager.IngameStopMediaPlayer();
-	    							// ¹Ø±ÕÊ¤ÀûºóµÄÉùÒô
+	    							// å…³é—­èƒœåˆ©åçš„å£°éŸ³
 	    							gsptHomeMPManager.winPauseMediaPlayer();
-	    							// ¹Ø±Õ±³¾°Òô
+	    							// å…³é—­èƒŒæ™¯éŸ³
 	    							gsptHomeMPManager.pauseBgMedia();	    			
 	    						} else {
 	    							onExit();
@@ -1722,19 +1726,19 @@ public class GsptMainActivity extends ReadboyActivity {
 	}
 	
 	/**
-	 * @aim ÏÔÊ¾Ò»ÕÅÍ¼Æ¬£¬Í¨¹ıCanvas»­³öÀ´
+	 * @aim æ˜¾ç¤ºä¸€å¼ å›¾ç‰‡ï¼Œé€šè¿‡Canvasç”»å‡ºæ¥
 	 * @param cvs
 	 * @param posx
-	 *            Í¼Æ¬ÆğÊ¼XÎ»ÖÃ
+	 *            å›¾ç‰‡èµ·å§‹Xä½ç½®
 	 * @param posy
-	 *            Í¼Æ¬ÆğÊ¼YÎ»ÖÃ
+	 *            å›¾ç‰‡èµ·å§‹Yä½ç½®
 	 * @param imgId
-	 *            Í¼Æ¬idºÅ
-	 * @return ÎŞ
+	 *            å›¾ç‰‡idå·
+	 * @return æ— 
 	 * 
 	 */
 	public void SurfaceViewShowOneImage(Canvas cvs, int posx, int posy, int imgId) {
-		// SurfaceViewÏÔÊ¾Ò»ÕÅÍ¼Æ¬
+		// SurfaceViewæ˜¾ç¤ºä¸€å¼ å›¾ç‰‡
 		Bitmap tBitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), imgId);
 		cvs.drawBitmap(tBitmap, posx, posy, null);
 		if (tBitmap != null) {
@@ -1746,6 +1750,6 @@ public class GsptMainActivity extends ReadboyActivity {
 	}
 
 	/**
-	 * GsptMainActivityÀà½áÊø end
+	 * GsptMainActivityç±»ç»“æŸ end
 	 */
 }

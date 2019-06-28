@@ -1,54 +1,54 @@
 /**
- * @aim GsptPlayMediaManagerÀà
- * ÊµÏÖ¶ÔÓÎÏ·ÉùÒôµÄ²¥·Å¹ÜÀí£¬°üÀ¨ÉùÒôºÍÒôĞ§
- * MediaPlayer²¥·Å±³¾°Òô´óÎÄ¼ş£¬soundPlayer²¥·ÅÒôĞ§Ğ¡ÎÄ¼ş
- * MediaPlayerÒ»¸öÊµÀıÖ»ÄÜ²¥·ÅÒ»¸öÉùÒô£¬±È½ÏÂı¡£
- * ÉùÒô²¥·Å¹ÜÀíµÄ²ßÂÔ£º
- * 1¡¢Ê¹ÓÃÒ»¸ö×¨ÃÅµÄMediaPlayerÊµÀı²¥·Å±³¾°Òô£¬
- * 2¡¢ÆäËûÉùÒôÊµÀıÔò²»¹Ì¶¨£¬Òª²¥·ÅÄÄÒ»¸öÔò¼Ç×¡ÄÄÒ»ÊµÀı£¬¹Ø±ÕÉùÒôÒ²ÊÇÈç´Ë
- * 3¡¢ÌáÊ¾ÍÏ·ÅÕıÈ·ºÍÍÏ·Å´íÎóµÄÉùÒô»¥³â£¬Á½¸öÍ¬Ò»Ê±¼äÖ»²¥·ÅÒ»¸ö
- * 4¡¢¶¼Ê¹ÓÃMediaPlayer²¥·Å£¬Ã»ÓĞ²ÉÓÃsoundPlayer²¥·Å
- * ÉùÒôIDÓëÄÚÈİ¶ÔÓ¦¹ØÏµ£º
- * R.raw.gspt_game_bg						ÓÎÏ·±³¾°Òô
- * R.raw.gspt_gsjm_00						Ô­À´ÊÇËïÎò¿ÕºÈ×íÁË¾ÆÌÉÔÚÊ¯Í·ÉÏË¯¾õÁË£¬²»Ğ¡ĞÄ±»Ğ¡¹íÕĞ×ßÁË»êÆÇ¡£
- * R.raw.gspt_gsjm_01						Ô­À´ÊÇËïÎò¿Õ¾ÆĞÑÁËºó£¬·¢ÏÖ×Ô¼ºÔÚÚ¤½ç£¬ÆøµÃÄÃÆğ½ğ¹¿°ôÒ»Æ¬ÂÒ´ò¡£
- * R.raw.gspt_gsjm_02						Ô­À´ÊÇĞ¡Ê¯ºïºÍ»¨¹ûÉ½µÄĞ¡ºï×ÓÃÇÔÚÍæÓÎÏ·¡£
- * R.raw.gspt_gsjm_03						Ô­À´ÊÇĞ¡ºÓ±»öùÓãÕ¼ÁìÁË£¡£¡ÓÚÊÇÎò¿ÕÏëÁËÒ»¸ö°ì·¨£¬ÓÃÊ¯Í·¸ÏÅÜöùÓã¡£
- * R.raw.gspt_gsjm_04						Ô­À´ÊÇĞ¡ºï×ÓÃÇÔÚÔÚĞ¡ºÓÀï×½Óã¡£
- * R.raw.gspt_gsjm_05						Ô­À´ÊÇÊ¯ºïºÍĞ¡ºï×ÓÃÇÔÚË®Á±¶´ÍâÃæÍæË£¡£
- * R.raw.gspt_gsjm_06						Ô­À´ÊÇÓĞÒ»Ö»ºï×ÓÀÏËÀÁË£¬Ê¯ºïºÍºï×ÓÃÇÉËĞÄµØ¿ŞÁË£¡
- * R.raw.gspt_gsjm_07						Ô­À´ÊÇºï×ÓÃÇÔÚÒ»ÆğÔìÄ¾·¤¡£
- * R.raw.gspt_gsjm_08						Ô­À´ÊÇºï×ÓÃÇÔÚ°ïÊ¯ºïÕªË®¹û¡£
- * R.raw.gspt_gsjm_09						Ô­À´ÊÇÌÆÉ®ºÍÎò¿ÕÔÚÈ¡Î÷¾­µÄÂ·ÉÏÓöµ½Ìõ°×Áú¡£
- * R.raw.gspt_gsjm_10						Ô­À´ÊÇÎò¿Õ×¼±¸´ò°×ÁúÊ±£¬ÆĞÈø³öÏÖÁË£¬¸æËßÎò¿Õ°×Áú»á¸¨ÖúÌÆÉ®È¡¾­¡£
- * R.raw.gspt_gsjm_11						Ô­À´ÊÇÎò¿Õ×·µ½°Ë½äÁË£¬×¼±¸ÊÕÊ°Ëû¡£
- * R.raw.gspt_gsjm_12						Ô­À´ÊÇ°Ë½ä°İÌÆÉ®ÎªÊ¦¡£
- * R.raw.gspt_gsjm_13						Ô­À´ÊÇÌÆÉ®Ê¦Í½ÈıÈË±»Á÷É³ºÓµ²×¡ÁËÈ¥Â·¡£
- * R.raw.gspt_gsjm_14						Ô­À´ÊÇÉ³É®°İÌÆÉ®ÎªÊ¦¡£
- * R.raw.gspt_gsjm_15						Ô­À´ÊÇËïÎò¿ÕÔÚÌìÍ¥×öåöÂíÎÂÑøÂí¡£
- * R.raw.gspt_gsjm_16						Ô­À´ÊÇËïÎò¿ÕºÍÆßÏÉÅ®ÔÚÒ»ÆğÕªÏÉÌÒ£¬Îªó´ÌÒ»á×÷×¼±¸¡£
- * R.raw.gspt_gsjm_17						Ô­À´ÊÇÊ¦Í½ËÄÈËÔÚÈ¡¾­Â·ÉÏ¶öÁË£¬ÈÃÎò¿ÕÈ¥³ï±¸³ÔµÄ¡£
- * R.raw.gspt_okjm_ts1						Ğ¡ÅóÓÑ£¬ºÃ°ôÅ¶£¡£¡³É¹¦½â·âÒ»ÕÅÍ¼Æ¬ÁË£¡£¡£¡
- * R.raw.gspt_okjm_ts2						Æ´Í¼³É¹¦£¡£¡
- * R.raw.gspt_xtjm_ts1						Ğ¡ÅóÓÑ£¬ÕâĞ©Í¼Æ¬¶¼±»Ñı¹Ö·âËø×¡ÁË£¬ÈÃÎÒÃÇÈ¥°ÑËüÃÇ½â·â°É£¡£¡£¡
- * R.raw.gspt_xtjm_ts2						ÔÙÍæÒ»´Î
- * R.raw.gspt_yxjm_by1						Ğ¡ÅóÓÑ£¬ÄãÕæ°ô£¡£¡ÏÖÔÚ½±ÀøÄãÒ»¸öÍæ¾ß£¡£¡¼ÌĞøÅ¬Á¦Å¶£¡£¡
- * R.raw.gspt_yxjm_by2						Ğ¡ÅóÓÑ£¬×öµÃ²»´í£¡£¡ÏÖÔÚ½±ÀøÄãÒ»¸öÍæ¾ß£¡£¡¼ÌĞøÅ¬Á¦Å¶£¡£¡
- * R.raw.gspt_yxjm_by3						Ğ¡ÅóÓÑ£¬×öµÃ²»´í£¡£¡ÏÖÔÚ½±ÀøÄãÒ»¸öÍæ¾ß£¡£¡ÔÙ½ÓÔÙÀø£¡£¡
- * R.raw.gspt_yxjm_fail1					²»ÊÇÕâÀïÅ¶£¡£¡ÔÙ×ĞÏ¸¹Û²ìÅ¶£¡£¡
- * R.raw.gspt_yxjm_right1					ºÃ°ô£¡£¡ÍêÈ«ÕıÈ·£¡
- * R.raw.gspt_yxjm_right2					×öµÃ²»´í£¡
- * R.raw.gspt_yxjm_right3					¶Ô¼«ÁË£¬¾ÍÊÇÕâÑù£¡
- * R.raw.gspt_yxjm_right4					×öµÃºÃ£¡
- * R.raw.gspt_yxjm_right5					ÔÙ½ÓÔÙÀ÷£¡
- * R.raw.gspt_yxjm_right6					ÄãÌ«°ôÁË£¡£¡
- * R.raw.gspt_yxjm_right7					°ô¼«ÁË£¡£¡
- * R.raw.gspt_yxjm_right8					¸ÉµÃºÃ£¡£¡
- * R.raw.gspt_yxjm_right9					¼ÌĞøÅ¬Á¦£¡£¡
- * R.raw.gspt_yxjm_tc						ÍË³ö
- * R.raw.gspt_yxjm_ts1						Ğ¡ÅóÓÑ£¬ÔÚÓÒ±ßµÄÑ¡ÔñÀ¸ÀïÃæ°ÑÆ´Í¼À­µ½ÕıÈ·µÄÎ»ÖÃÉÏ°É£¡£¡£¡
- * R.raw.gspt_yxjm_xyf						ÏÂÒ»·ù
- * R.raw.gspt_zjm_ts1						Ğ¡ÅóÓÑ£¬ÈÃÎÒÃÇÒ²Ò»ÆğÈ¥Î÷ÓÎ°É£¡£¡£¡
+ * @aim GsptPlayMediaManagerç±»
+ * å®ç°å¯¹æ¸¸æˆå£°éŸ³çš„æ’­æ”¾ç®¡ç†ï¼ŒåŒ…æ‹¬å£°éŸ³å’ŒéŸ³æ•ˆ
+ * MediaPlayeræ’­æ”¾èƒŒæ™¯éŸ³å¤§æ–‡ä»¶ï¼ŒsoundPlayeræ’­æ”¾éŸ³æ•ˆå°æ–‡ä»¶
+ * MediaPlayerä¸€ä¸ªå®ä¾‹åªèƒ½æ’­æ”¾ä¸€ä¸ªå£°éŸ³ï¼Œæ¯”è¾ƒæ…¢ã€‚
+ * å£°éŸ³æ’­æ”¾ç®¡ç†çš„ç­–ç•¥ï¼š
+ * 1ã€ä½¿ç”¨ä¸€ä¸ªä¸“é—¨çš„MediaPlayerå®ä¾‹æ’­æ”¾èƒŒæ™¯éŸ³ï¼Œ
+ * 2ã€å…¶ä»–å£°éŸ³å®ä¾‹åˆ™ä¸å›ºå®šï¼Œè¦æ’­æ”¾å“ªä¸€ä¸ªåˆ™è®°ä½å“ªä¸€å®ä¾‹ï¼Œå…³é—­å£°éŸ³ä¹Ÿæ˜¯å¦‚æ­¤
+ * 3ã€æç¤ºæ‹–æ”¾æ­£ç¡®å’Œæ‹–æ”¾é”™è¯¯çš„å£°éŸ³äº’æ–¥ï¼Œä¸¤ä¸ªåŒä¸€æ—¶é—´åªæ’­æ”¾ä¸€ä¸ª
+ * 4ã€éƒ½ä½¿ç”¨MediaPlayeræ’­æ”¾ï¼Œæ²¡æœ‰é‡‡ç”¨soundPlayeræ’­æ”¾
+ * å£°éŸ³IDä¸å†…å®¹å¯¹åº”å…³ç³»ï¼š
+ * R.raw.gspt_game_bg						æ¸¸æˆèƒŒæ™¯éŸ³
+ * R.raw.gspt_gsjm_00						åŸæ¥æ˜¯å­™æ‚Ÿç©ºå–é†‰äº†é…’èººåœ¨çŸ³å¤´ä¸Šç¡è§‰äº†ï¼Œä¸å°å¿ƒè¢«å°é¬¼æ‹›èµ°äº†é­‚é­„ã€‚
+ * R.raw.gspt_gsjm_01						åŸæ¥æ˜¯å­™æ‚Ÿç©ºé…’é†’äº†åï¼Œå‘ç°è‡ªå·±åœ¨å†¥ç•Œï¼Œæ°”å¾—æ‹¿èµ·é‡‘ç®æ£’ä¸€ç‰‡ä¹±æ‰“ã€‚
+ * R.raw.gspt_gsjm_02						åŸæ¥æ˜¯å°çŸ³çŒ´å’ŒèŠ±æœå±±çš„å°çŒ´å­ä»¬åœ¨ç©æ¸¸æˆã€‚
+ * R.raw.gspt_gsjm_03						åŸæ¥æ˜¯å°æ²³è¢«é³„é±¼å é¢†äº†ï¼ï¼äºæ˜¯æ‚Ÿç©ºæƒ³äº†ä¸€ä¸ªåŠæ³•ï¼Œç”¨çŸ³å¤´èµ¶è·‘é³„é±¼ã€‚
+ * R.raw.gspt_gsjm_04						åŸæ¥æ˜¯å°çŒ´å­ä»¬åœ¨åœ¨å°æ²³é‡Œæ‰é±¼ã€‚
+ * R.raw.gspt_gsjm_05						åŸæ¥æ˜¯çŸ³çŒ´å’Œå°çŒ´å­ä»¬åœ¨æ°´å¸˜æ´å¤–é¢ç©è€ã€‚
+ * R.raw.gspt_gsjm_06						åŸæ¥æ˜¯æœ‰ä¸€åªçŒ´å­è€æ­»äº†ï¼ŒçŸ³çŒ´å’ŒçŒ´å­ä»¬ä¼¤å¿ƒåœ°å“­äº†ï¼
+ * R.raw.gspt_gsjm_07						åŸæ¥æ˜¯çŒ´å­ä»¬åœ¨ä¸€èµ·é€ æœ¨ç­ã€‚
+ * R.raw.gspt_gsjm_08						åŸæ¥æ˜¯çŒ´å­ä»¬åœ¨å¸®çŸ³çŒ´æ‘˜æ°´æœã€‚
+ * R.raw.gspt_gsjm_09						åŸæ¥æ˜¯å”åƒ§å’Œæ‚Ÿç©ºåœ¨å–è¥¿ç»çš„è·¯ä¸Šé‡åˆ°æ¡ç™½é¾™ã€‚
+ * R.raw.gspt_gsjm_10						åŸæ¥æ˜¯æ‚Ÿç©ºå‡†å¤‡æ‰“ç™½é¾™æ—¶ï¼Œè©è¨å‡ºç°äº†ï¼Œå‘Šè¯‰æ‚Ÿç©ºç™½é¾™ä¼šè¾…åŠ©å”åƒ§å–ç»ã€‚
+ * R.raw.gspt_gsjm_11						åŸæ¥æ˜¯æ‚Ÿç©ºè¿½åˆ°å…«æˆ’äº†ï¼Œå‡†å¤‡æ”¶æ‹¾ä»–ã€‚
+ * R.raw.gspt_gsjm_12						åŸæ¥æ˜¯å…«æˆ’æ‹œå”åƒ§ä¸ºå¸ˆã€‚
+ * R.raw.gspt_gsjm_13						åŸæ¥æ˜¯å”åƒ§å¸ˆå¾’ä¸‰äººè¢«æµæ²™æ²³æŒ¡ä½äº†å»è·¯ã€‚
+ * R.raw.gspt_gsjm_14						åŸæ¥æ˜¯æ²™åƒ§æ‹œå”åƒ§ä¸ºå¸ˆã€‚
+ * R.raw.gspt_gsjm_15						åŸæ¥æ˜¯å­™æ‚Ÿç©ºåœ¨å¤©åº­åšå¼¼é©¬æ¸©å…»é©¬ã€‚
+ * R.raw.gspt_gsjm_16						åŸæ¥æ˜¯å­™æ‚Ÿç©ºå’Œä¸ƒä»™å¥³åœ¨ä¸€èµ·æ‘˜ä»™æ¡ƒï¼Œä¸ºèŸ æ¡ƒä¼šä½œå‡†å¤‡ã€‚
+ * R.raw.gspt_gsjm_17						åŸæ¥æ˜¯å¸ˆå¾’å››äººåœ¨å–ç»è·¯ä¸Šé¥¿äº†ï¼Œè®©æ‚Ÿç©ºå»ç­¹å¤‡åƒçš„ã€‚
+ * R.raw.gspt_okjm_ts1						å°æœ‹å‹ï¼Œå¥½æ£’å“¦ï¼ï¼æˆåŠŸè§£å°ä¸€å¼ å›¾ç‰‡äº†ï¼ï¼ï¼
+ * R.raw.gspt_okjm_ts2						æ‹¼å›¾æˆåŠŸï¼ï¼
+ * R.raw.gspt_xtjm_ts1						å°æœ‹å‹ï¼Œè¿™äº›å›¾ç‰‡éƒ½è¢«å¦–æ€ªå°é”ä½äº†ï¼Œè®©æˆ‘ä»¬å»æŠŠå®ƒä»¬è§£å°å§ï¼ï¼ï¼
+ * R.raw.gspt_xtjm_ts2						å†ç©ä¸€æ¬¡
+ * R.raw.gspt_yxjm_by1						å°æœ‹å‹ï¼Œä½ çœŸæ£’ï¼ï¼ç°åœ¨å¥–åŠ±ä½ ä¸€ä¸ªç©å…·ï¼ï¼ç»§ç»­åŠªåŠ›å“¦ï¼ï¼
+ * R.raw.gspt_yxjm_by2						å°æœ‹å‹ï¼Œåšå¾—ä¸é”™ï¼ï¼ç°åœ¨å¥–åŠ±ä½ ä¸€ä¸ªç©å…·ï¼ï¼ç»§ç»­åŠªåŠ›å“¦ï¼ï¼
+ * R.raw.gspt_yxjm_by3						å°æœ‹å‹ï¼Œåšå¾—ä¸é”™ï¼ï¼ç°åœ¨å¥–åŠ±ä½ ä¸€ä¸ªç©å…·ï¼ï¼å†æ¥å†åŠ±ï¼ï¼
+ * R.raw.gspt_yxjm_fail1					ä¸æ˜¯è¿™é‡Œå“¦ï¼ï¼å†ä»”ç»†è§‚å¯Ÿå“¦ï¼ï¼
+ * R.raw.gspt_yxjm_right1					å¥½æ£’ï¼ï¼å®Œå…¨æ­£ç¡®ï¼
+ * R.raw.gspt_yxjm_right2					åšå¾—ä¸é”™ï¼
+ * R.raw.gspt_yxjm_right3					å¯¹æäº†ï¼Œå°±æ˜¯è¿™æ ·ï¼
+ * R.raw.gspt_yxjm_right4					åšå¾—å¥½ï¼
+ * R.raw.gspt_yxjm_right5					å†æ¥å†å‰ï¼
+ * R.raw.gspt_yxjm_right6					ä½ å¤ªæ£’äº†ï¼ï¼
+ * R.raw.gspt_yxjm_right7					æ£’æäº†ï¼ï¼
+ * R.raw.gspt_yxjm_right8					å¹²å¾—å¥½ï¼ï¼
+ * R.raw.gspt_yxjm_right9					ç»§ç»­åŠªåŠ›ï¼ï¼
+ * R.raw.gspt_yxjm_tc						é€€å‡º
+ * R.raw.gspt_yxjm_ts1						å°æœ‹å‹ï¼Œåœ¨å³è¾¹çš„é€‰æ‹©æ é‡Œé¢æŠŠæ‹¼å›¾æ‹‰åˆ°æ­£ç¡®çš„ä½ç½®ä¸Šå§ï¼ï¼ï¼
+ * R.raw.gspt_yxjm_xyf						ä¸‹ä¸€å¹…
+ * R.raw.gspt_zjm_ts1						å°æœ‹å‹ï¼Œè®©æˆ‘ä»¬ä¹Ÿä¸€èµ·å»è¥¿æ¸¸å§ï¼ï¼ï¼
  * 
  * @time 2013.08.10;
  * @author divhee
@@ -71,71 +71,71 @@ import android.util.Log;
 public class GsptPlayMediaManager {
 
 	/**
-	 * ÉùÒô¿ª¹Ø ±³¾°ÒôÀÖ 
-	 * true Ê¹ÄÜ²¥·Å 
-	 * false ½ûÖ¹²¥·Å
+	 * å£°éŸ³å¼€å…³ èƒŒæ™¯éŸ³ä¹ 
+	 * true ä½¿èƒ½æ’­æ”¾ 
+	 * false ç¦æ­¢æ’­æ”¾
 	 */
 	private boolean blnOnOffBgSound = false;
 
 	/**
-	 * ÓÎÏ·±³¾°Òô£¬ÔÚÕâ¸öÓÎÏ·Àï±ß¹Ì¶¨ÇÒÎ¨Ò»
+	 * æ¸¸æˆèƒŒæ™¯éŸ³ï¼Œåœ¨è¿™ä¸ªæ¸¸æˆé‡Œè¾¹å›ºå®šä¸”å”¯ä¸€
 	 */
 	private MediaPlayer bgMediaPlayer = null;
 
 	/**
-	 * ±³¾°ÒôµÄID£¬¼ÇÂ¼µ±Ç°²¥·ÅµÄ±³¾°ÒôÊÇÄÄÒ»¸ö
-	 * Èç¹ûÔÚÑ­»·²¥·ÅÒ»¸ö±³¾°ÒôÔò²»ÖØĞÂ²¥·Å
+	 * èƒŒæ™¯éŸ³çš„IDï¼Œè®°å½•å½“å‰æ’­æ”¾çš„èƒŒæ™¯éŸ³æ˜¯å“ªä¸€ä¸ª
+	 * å¦‚æœåœ¨å¾ªç¯æ’­æ”¾ä¸€ä¸ªèƒŒæ™¯éŸ³åˆ™ä¸é‡æ–°æ’­æ”¾
 	 */
 	private int bgMediaPlayId = 0;
 
 	/**
-	 * ÓÎÏ·ÖĞÌáÊ¾ÒôµÄ²¥·ÅMediaPlayer
+	 * æ¸¸æˆä¸­æç¤ºéŸ³çš„æ’­æ”¾MediaPlayer
 	 */
 	private MediaPlayer userIngameMediaPlayer = null;
 	
 	/**
-	 * µã»÷°´Å¥µÄÉùÒô£¬¶Ì¶ÌµÄÒôĞ§
+	 * ç‚¹å‡»æŒ‰é’®çš„å£°éŸ³ï¼ŒçŸ­çŸ­çš„éŸ³æ•ˆ
 	 */
 	private SoundPool btnSoundPool = null;
 	
 	/**
-	 * ¼ÓÔØµÄµã»÷µÄÉùÒôĞòºÅ
+	 * åŠ è½½çš„ç‚¹å‡»çš„å£°éŸ³åºå·
 	 */
 	private int loadSoundPoolId = 0;
 	
 	/**
-	 * ²¥·ÅºóµÄ·µ»ØÖµ
+	 * æ’­æ”¾åçš„è¿”å›å€¼
 	 */
 	private int playSoundPoolId = 0;
 	
 	/**
-	 * ÒôÁ¿¿ØÖÆ
+	 * éŸ³é‡æ§åˆ¶
 	 */
 	private AudioManager amSoundPool = null;
 	
 	/**
-	 * ÒôÁ¿´óĞ¡
+	 * éŸ³é‡å¤§å°
 	 */
 	private int currentVolume = 0;
 	
 	/**
-	 * ÉÏÏÂÎÄContext
+	 * ä¸Šä¸‹æ–‡Context
 	 */
 	private Context mpManagerContext = null;
 	
 	/**
-	 * ÓÎÏ·Ê¤Àûºó²¥·ÅµÄÉùÒô
+	 * æ¸¸æˆèƒœåˆ©åæ’­æ”¾çš„å£°éŸ³
 	 */
 	private MediaPlayer mediaPlayWin = null;
 	
 	/**
-	 * ÉùÒô¹ÜÀíÊµÀı
+	 * å£°éŸ³ç®¡ç†å®ä¾‹
 	 */
 	private static GsptPlayMediaManager mediaManager = null;
 	
 	
 	/**
-	 * ¹¹Ôì³õÊ¼»¯
+	 * æ„é€ åˆå§‹åŒ–
 	 */
 	private GsptPlayMediaManager(Context context) {
 		mpManagerContext = context;
@@ -150,9 +150,9 @@ public class GsptPlayMediaManager {
 	}
 
 	/**
-	 * @aim ²¥·Å°´Å¥ÒôĞ§
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @aim æ’­æ”¾æŒ‰é’®éŸ³æ•ˆ
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	public void playBtnSoundPool() {
 		try {
@@ -166,9 +166,9 @@ public class GsptPlayMediaManager {
 	}
 	
 	/**
-	 * @aim ÊÍ·Åsoundpool¼ÓÔØµÄÒôĞ§×ÊÔ´
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @aim é‡Šæ”¾soundpoolåŠ è½½çš„éŸ³æ•ˆèµ„æº
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	public void releaseBtnSoundPool() {
 		try {
@@ -187,9 +187,9 @@ public class GsptPlayMediaManager {
 	}
 
 	/***
-	 * @aim »ñÈ¡MediaManagerµÄÊµÀı£¬Î¨Ò»ÊµÀı
-	 * @param ÎŞ
-	 * @return GsptPlayMediaManager Î¨Ò»ÉùÒô²¥·ÅÊµÀı
+	 * @aim è·å–MediaManagerçš„å®ä¾‹ï¼Œå”¯ä¸€å®ä¾‹
+	 * @param æ— 
+	 * @return GsptPlayMediaManager å”¯ä¸€å£°éŸ³æ’­æ”¾å®ä¾‹
 	 */
 	public static GsptPlayMediaManager getInstance(Context context) {
 		if (mediaManager == null) {
@@ -199,11 +199,11 @@ public class GsptPlayMediaManager {
 	}
 
 	/**
-	 * @aim ÉèÖÃÊ¹ÄÜ»ò½ûÖ¹±³¾°Òô²¥·Å
+	 * @aim è®¾ç½®ä½¿èƒ½æˆ–ç¦æ­¢èƒŒæ™¯éŸ³æ’­æ”¾
 	 * @param bgSound
-	 *            true Ê¹ÄÜ²¥·Å
-	 *            false ½ûÖ¹²¥·Å
-	 * @return ÎŞ
+	 *            true ä½¿èƒ½æ’­æ”¾
+	 *            false ç¦æ­¢æ’­æ”¾
+	 * @return æ— 
 	 */
 	public void setOnOffBgState(boolean bgSound) {
 
@@ -211,7 +211,7 @@ public class GsptPlayMediaManager {
 		if (bgMediaPlayer != null) {
 			if (!bgSound) {
 				try {
-					// ½ûÖ¹²¥·ÅµÄÊ±ºòÉèÖÃ±³¾°ÒôÔİÍ£²¥·Å
+					// ç¦æ­¢æ’­æ”¾çš„æ—¶å€™è®¾ç½®èƒŒæ™¯éŸ³æš‚åœæ’­æ”¾
 					bgMediaPlayer.pause();
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -221,12 +221,12 @@ public class GsptPlayMediaManager {
 	}
 
 	/**
-	 * @aim ÊÇ·ñ¿ªÆôÇ°¾°±³¾°ÒôÀÖÑ­»·²¥·Å
+	 * @aim æ˜¯å¦å¼€å¯å‰æ™¯èƒŒæ™¯éŸ³ä¹å¾ªç¯æ’­æ”¾
 	 * @param bgLooping
-	 *            ÉèÖÃ±³¾°ÒôÑ­»·²¥·Å
-	 *            true Ñ­»·
-	 *            false ²»Ñ­»·
-	 * @return ÎŞ
+	 *            è®¾ç½®èƒŒæ™¯éŸ³å¾ªç¯æ’­æ”¾
+	 *            true å¾ªç¯
+	 *            false ä¸å¾ªç¯
+	 * @return æ— 
 	 */
 	public void setLoopingBgState(boolean bgLooping) {
 
@@ -240,23 +240,23 @@ public class GsptPlayMediaManager {
 	}
 
 	/**
-	 * @aim Í¨¹ı×ÊÔ´IDºÅÀ´²¥·ÅÒ»¸ö±³¾°Òô
+	 * @aim é€šè¿‡èµ„æºIDå·æ¥æ’­æ”¾ä¸€ä¸ªèƒŒæ™¯éŸ³
 	 * @param mediaResId
-	 *            µ±Ç°Òª²¥·ÅµÄ±³¾°ÒôµÄÉùÒô×ÊÔ´IDºÅ
+	 *            å½“å‰è¦æ’­æ”¾çš„èƒŒæ™¯éŸ³çš„å£°éŸ³èµ„æºIDå·
 	 * @param bgLooping
-	 *            ÊÇ·ñÑ­»·²¥·Å
-	 *            true Ñ­»·
-	 *            false ²»Ñ­»·
-	 * @return ÎŞ
+	 *            æ˜¯å¦å¾ªç¯æ’­æ”¾
+	 *            true å¾ªç¯
+	 *            false ä¸å¾ªç¯
+	 * @return æ— 
 	 */
 	public void playBgMedia(int mediaResId, boolean bgLooping) {
 
-		// Ğ£ÑéÊÇ·ñÊ¹ÄÜÁË²¥·Å£¬Èç¹ûÊÇ½ûÖ¹²¥·Å±³¾°ÒôÔòÍÆ³ö
+		// æ ¡éªŒæ˜¯å¦ä½¿èƒ½äº†æ’­æ”¾ï¼Œå¦‚æœæ˜¯ç¦æ­¢æ’­æ”¾èƒŒæ™¯éŸ³åˆ™æ¨å‡º
 		if (!blnOnOffBgSound) {
 			return;
 		}
 		
-		// Èç¹û¸Ã±³¾°ÒôÀÖÊÇÑ­»·²¥·ÅµÄ£¬ÔÙ´Î²¥·ÅÔò²»ÖØĞÂ²¥·ÅÁË£¬Ö±½ÓÍË³ö
+		// å¦‚æœè¯¥èƒŒæ™¯éŸ³ä¹æ˜¯å¾ªç¯æ’­æ”¾çš„ï¼Œå†æ¬¡æ’­æ”¾åˆ™ä¸é‡æ–°æ’­æ”¾äº†ï¼Œç›´æ¥é€€å‡º
 		if (bgMediaPlayer != null && bgMediaPlayId == mediaResId){
 			if (!bgMediaPlayer.isPlaying()){
 				bgMediaPlayer.start();
@@ -264,27 +264,27 @@ public class GsptPlayMediaManager {
 			return;
 		}
 		
-		// ²¥·ÅĞÂµÄ±³Ó°ÒôÀÖ
+		// æ’­æ”¾æ–°çš„èƒŒå½±éŸ³ä¹
 		try {
-			// ÏÈÍ£Ö¹µ±Ç°²¥·ÅµÄ±³¾°Òô
-			// MediaPlayer Ò»´ÎÖ»ÄÜ²¥·ÅÒ»ÖÖÉùÒô
+			// å…ˆåœæ­¢å½“å‰æ’­æ”¾çš„èƒŒæ™¯éŸ³
+			// MediaPlayer ä¸€æ¬¡åªèƒ½æ’­æ”¾ä¸€ç§å£°éŸ³
 			stopBgMedia();
 			
-			// ¼ÇÂ¼±³¾°ÒôµÄIDºÅ£¬¿ªÊ¼¼ÓÔØ±³¾°Òô
+			// è®°å½•èƒŒæ™¯éŸ³çš„IDå·ï¼Œå¼€å§‹åŠ è½½èƒŒæ™¯éŸ³
 			bgMediaPlayId = mediaResId;
 			bgMediaPlayer = MediaPlayer.create(mpManagerContext, mediaResId);
 			
-			// ÉèÖÃÊÇ·ñĞèÒªÑ­»·²¥·Å
+			// è®¾ç½®æ˜¯å¦éœ€è¦å¾ªç¯æ’­æ”¾
 			bgMediaPlayer.setLooping(bgLooping);
 			
-			// ÉèÖÃ×ÊÔ´ÊÇ·ñ×¼±¸ºÃµÄ¼àÌı×¼±¸ºÃÁËÔÙ¿ªÊ¼²¥·Å
+			// è®¾ç½®èµ„æºæ˜¯å¦å‡†å¤‡å¥½çš„ç›‘å¬å‡†å¤‡å¥½äº†å†å¼€å§‹æ’­æ”¾
 			bgMediaPlayer.setOnPreparedListener(new OnPreparedListener() {
 
 				@Override
 				public void onPrepared(MediaPlayer mp) {
-					// ÒÑ¾­×¼±¸ºÃÁË²¥·Å£¬ÕıÊ½¿ªÊ¼²¥·Å
+					// å·²ç»å‡†å¤‡å¥½äº†æ’­æ”¾ï¼Œæ­£å¼å¼€å§‹æ’­æ”¾
 					mp.start();
-					// ÕâÀïÎªÊ²Ã´ÒªÕâÃ´×öÄØ£¬ÒòÎªingameactivityÔÚonResumedÖ®ºó²Å²¥·ÅÉùÒô£¬·ñÔò²»ĞĞµÄ¡£
+					// è¿™é‡Œä¸ºä»€ä¹ˆè¦è¿™ä¹ˆåšå‘¢ï¼Œå› ä¸ºingameactivityåœ¨onResumedä¹‹åæ‰æ’­æ”¾å£°éŸ³ï¼Œå¦åˆ™ä¸è¡Œçš„ã€‚
 					if (!GsptRunDataFrame.bMainCurrentOnResumed && !GsptRunDataFrame.bIngameCurrentOnResumed){
 						mp.pause();
 					}
@@ -296,9 +296,9 @@ public class GsptPlayMediaManager {
 	}
 
 	/**
-	 * @aim ÔİÍ£±³¾°MediaPlayerµÄ²¥·Å
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @aim æš‚åœèƒŒæ™¯MediaPlayerçš„æ’­æ”¾
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	public void pauseBgMedia() {
 		try {
@@ -311,15 +311,15 @@ public class GsptPlayMediaManager {
 	}
 
 	/**
-	 * @aim Í£Ö¹±³¾°MediaPlayerµÄ²¥·Å£¬²¢ÇÒÊÍ·Å×ÊÔ´
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @aim åœæ­¢èƒŒæ™¯MediaPlayerçš„æ’­æ”¾ï¼Œå¹¶ä¸”é‡Šæ”¾èµ„æº
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	public void stopBgMedia() {
 
 		if (bgMediaPlayer != null) {
 			try {
-				// Í£Ö¹±³¾°Òô²¥·Å²¢ÊÍ·Å×ÊÔ´
+				// åœæ­¢èƒŒæ™¯éŸ³æ’­æ”¾å¹¶é‡Šæ”¾èµ„æº
 				bgMediaPlayer.setLooping(false);
 				if (bgMediaPlayer.isPlaying()) {
 					bgMediaPlayer.stop();
@@ -335,33 +335,33 @@ public class GsptPlayMediaManager {
 	}	
 
 	/**
-	 * @aim Í¨¹ıÉùÒôIDºÅÀ´²¥·ÅMediaPlayerÒôÀÖ
+	 * @aim é€šè¿‡å£°éŸ³IDå·æ¥æ’­æ”¾MediaPlayeréŸ³ä¹
 	 * @param mediaResId
-	 *            ÉùÒô×ÊÔ´µÄID
+	 *            å£°éŸ³èµ„æºçš„ID
 	 * @param onlyLooping
-	 *            ÉùÒô²¥·ÅÊÇ·ñÑ­»·
-	 *            true Ñ­»·
-	 *            false ²»Ñ­»·
-	 * @return MediaPlayer ²¥·ÅÉùÒôµÄÊµÀı
+	 *            å£°éŸ³æ’­æ”¾æ˜¯å¦å¾ªç¯
+	 *            true å¾ªç¯
+	 *            false ä¸å¾ªç¯
+	 * @return MediaPlayer æ’­æ”¾å£°éŸ³çš„å®ä¾‹
 	 */
 	public MediaPlayer playMediaOnlyById(int mediaResId, boolean onlyLooping) {
 
 //		Log.w("divhee_edugame", "playMediaOnlyById=====" + mediaResId);
 
-		// ¿ªÊ¼²¥·ÅÉùÒô
+		// å¼€å§‹æ’­æ”¾å£°éŸ³
 		try {
-			// Í¨¹ı×ÊÔ´IDºÅ¼ÓÔØ×ÊÔ´
+			// é€šè¿‡èµ„æºIDå·åŠ è½½èµ„æº
 			MediaPlayer mOnlyPlayer = MediaPlayer.create(mpManagerContext, mediaResId);
 
-			// Ñ­»·²¥·ÅÓë·ñ true Ñ­»· false ²»Ñ­»·
+			// å¾ªç¯æ’­æ”¾ä¸å¦ true å¾ªç¯ false ä¸å¾ªç¯
 			mOnlyPlayer.setLooping(onlyLooping);
 			
-			// ÉèÖÃÕı³£²¥·ÅÍê³ÉµÄ¼àÌı
+			// è®¾ç½®æ­£å¸¸æ’­æ”¾å®Œæˆçš„ç›‘å¬
 			mOnlyPlayer.setOnCompletionListener(new OnCompletionListener() {
 
 				@Override
 				public void onCompletion(MediaPlayer mp) {
-					// Õı³£²¥·Å½áÊø£¬ÏàÓ¦µÄ´¦Àí
+					// æ­£å¸¸æ’­æ”¾ç»“æŸï¼Œç›¸åº”çš„å¤„ç†
 					try {
 						if (mediaPlayWin == mp){
 							mediaPlayWin.release();
@@ -382,12 +382,12 @@ public class GsptPlayMediaManager {
 				}
 			});
 			
-			// ÉèÖÃ²¥·Å³ö´íµÄ¼àÌı
+			// è®¾ç½®æ’­æ”¾å‡ºé”™çš„ç›‘å¬
 			mOnlyPlayer.setOnErrorListener(new OnErrorListener() {
 
 				@Override
 				public boolean onError(MediaPlayer mp, int what, int extra) {
-					// ²Ù×÷´íÎó»òÆäËûÔ­Òòµ¼ÖÂµÄ´íÎó»áÔÚÕâÀï±»Í¨Öª
+					// æ“ä½œé”™è¯¯æˆ–å…¶ä»–åŸå› å¯¼è‡´çš„é”™è¯¯ä¼šåœ¨è¿™é‡Œè¢«é€šçŸ¥
 					try {
 						Log.w("edugame", "===setOnErrorListener====");
 						if (mediaPlayWin == mp){
@@ -410,14 +410,14 @@ public class GsptPlayMediaManager {
 				}
 			});
 			
-			// ÉèÖÃ¼ÓÔØÓë·ñÊÇ·ñ×¼±¸ºÃ¿ª·Å²¥·ÅµÄ¼àÌı
+			// è®¾ç½®åŠ è½½ä¸å¦æ˜¯å¦å‡†å¤‡å¥½å¼€æ”¾æ’­æ”¾çš„ç›‘å¬
 			mOnlyPlayer.setOnPreparedListener(new OnPreparedListener() {
 
 				@Override
 				public void onPrepared(MediaPlayer mp) {
-					// Ò»ÇĞ¾ÍĞ÷¿ÉÒÔ¿ª·Å²¥·ÅÁË£¬ÕıÊ½¿ªÊ¼²¥·Å
+					// ä¸€åˆ‡å°±ç»ªå¯ä»¥å¼€æ”¾æ’­æ”¾äº†ï¼Œæ­£å¼å¼€å§‹æ’­æ”¾
 					mp.start();
-					// ÕâÀïÎªÊ²Ã´ÒªÕâÃ´×öÄØ£¬ÒòÎªingameactivityÔÚonResumedÖ®ºó²Å²¥·ÅÉùÒô£¬·ñÔò²»ĞĞµÄ¡£
+					// è¿™é‡Œä¸ºä»€ä¹ˆè¦è¿™ä¹ˆåšå‘¢ï¼Œå› ä¸ºingameactivityåœ¨onResumedä¹‹åæ‰æ’­æ”¾å£°éŸ³ï¼Œå¦åˆ™ä¸è¡Œçš„ã€‚
 					if (!GsptRunDataFrame.bMainCurrentOnResumed && !GsptRunDataFrame.bIngameCurrentOnResumed){
 						mp.pause();
 					}
@@ -433,10 +433,10 @@ public class GsptPlayMediaManager {
 	}
 
 	/**
-	 * @aim Í£Ö¹MediaPlayer²¥·ÅµÄÉùÒô»òÕßÒôĞ§²¢ÇÒÊÍ·Å×ÊÔ´
+	 * @aim åœæ­¢MediaPlayeræ’­æ”¾çš„å£°éŸ³æˆ–è€…éŸ³æ•ˆå¹¶ä¸”é‡Šæ”¾èµ„æº
 	 * @param mOnlyPlayer
-	 *            MediaPlayerÉùÒô²¥·ÅµÄÊµÀı
-	 * @return ÎŞ
+	 *            MediaPlayerå£°éŸ³æ’­æ”¾çš„å®ä¾‹
+	 * @return æ— 
 	 */
 	public void stopMediaOnly(MediaPlayer mOnlyPlayer) {
 		if (mOnlyPlayer != null) {
@@ -455,9 +455,9 @@ public class GsptPlayMediaManager {
 	}
 	
 	/**
-	 * @aim »ñÈ¡µ±Ç°ÕıÔÚºóÌ¨²¥·ÅµÄ±³¾°ÒôÀÖµÄÉùÒô×ÊÔ´IDºÅ
-	 * @param ÎŞ
-	 * @return int µ±Ç°²¥·ÅµÄºóÌ¨×ÊÔ´µÄIDºÅ(bgMediaPlayId)
+	 * @aim è·å–å½“å‰æ­£åœ¨åå°æ’­æ”¾çš„èƒŒæ™¯éŸ³ä¹çš„å£°éŸ³èµ„æºIDå·
+	 * @param æ— 
+	 * @return int å½“å‰æ’­æ”¾çš„åå°èµ„æºçš„IDå·(bgMediaPlayId)
 	 */
 	public int getMediaPlayId() {
 		if (bgMediaPlayer != null) {
@@ -469,13 +469,13 @@ public class GsptPlayMediaManager {
 	}
 	
 	/**
-	 * @aim Í£Ö¹IngameActivityÖĞÖ¸¶¨ÌáÊ¾ÒôµÄ²¥·Å
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @aim åœæ­¢IngameActivityä¸­æŒ‡å®šæç¤ºéŸ³çš„æ’­æ”¾
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	public void IngameStopMediaPlayer() {
 		
-		// Í£Ö¹ÉùÒô²¥·Å£¬²¢ÇÒÇå¿ÕuserIngameMediaPlayer
+		// åœæ­¢å£°éŸ³æ’­æ”¾ï¼Œå¹¶ä¸”æ¸…ç©ºuserIngameMediaPlayer
 		if (mediaManager != null) {
 			if (userIngameMediaPlayer != null) {
 				stopMediaOnly(userIngameMediaPlayer);
@@ -485,28 +485,28 @@ public class GsptPlayMediaManager {
 	}
 
 	/**
-	 * @aim Æ´Í¼ÓÎÏ·ÖĞ£¬Í¨¹ıÉùÒôµÄIDºÅ²¥·ÅÏàÓ¦µÄÌáÊ¾Òô
-	 * @param srcid ĞèÒª²¥·ÅµÄÉùÒôµÄIDºÅ
-	 * @return ÎŞ
+	 * @aim æ‹¼å›¾æ¸¸æˆä¸­ï¼Œé€šè¿‡å£°éŸ³çš„IDå·æ’­æ”¾ç›¸åº”çš„æç¤ºéŸ³
+	 * @param srcid éœ€è¦æ’­æ”¾çš„å£°éŸ³çš„IDå·
+	 * @return æ— 
 	 */
 	public void IngamePlayMediaPlayer(int srcid) {
 		
-		// Í£Ö¹ÕıÔÚ²¥·ÅµÄÉùÒô
+		// åœæ­¢æ­£åœ¨æ’­æ”¾çš„å£°éŸ³
 		IngameStopMediaPlayer();
 		
-		// ²¥·ÅĞèÒª²¥·ÅµÄÉùÒô
+		// æ’­æ”¾éœ€è¦æ’­æ”¾çš„å£°éŸ³
 		if (mediaManager != null) {
 			userIngameMediaPlayer = playMediaOnlyById(srcid, false);
 		}
 	}
 	
 	/**
-	 * @aim Í£Ö¹IngameActivityÖĞÖ¸¶¨ÌáÊ¾ÒôµÄ²¥·Å
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @aim åœæ­¢IngameActivityä¸­æŒ‡å®šæç¤ºéŸ³çš„æ’­æ”¾
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	public void winStopMediaPlayer() {
-		// Í£Ö¹ÉùÒô²¥·Å£¬²¢ÇÒÇå¿ÕuserIngameMediaPlayer
+		// åœæ­¢å£°éŸ³æ’­æ”¾ï¼Œå¹¶ä¸”æ¸…ç©ºuserIngameMediaPlayer
 		if (mediaManager != null) {
 			if (mediaPlayWin != null) {
 				stopMediaOnly(mediaPlayWin);
@@ -516,12 +516,12 @@ public class GsptPlayMediaManager {
 	}
 	
 	/**
-	 * @aim ÔİÍ£IngameActivityÖĞÖ¸¶¨ÌáÊ¾ÒôµÄ²¥·Å
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @aim æš‚åœIngameActivityä¸­æŒ‡å®šæç¤ºéŸ³çš„æ’­æ”¾
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	public void winPauseMediaPlayer() {
-		// ÔİÍ£ÉùÒô²¥·Å
+		// æš‚åœå£°éŸ³æ’­æ”¾
 		try {
 			if (mediaManager != null) {
 				if (mediaPlayWin != null && mediaPlayWin.isPlaying()) {
@@ -534,12 +534,12 @@ public class GsptPlayMediaManager {
 	}	
 	
 	/**
-	 * @aim Í£Ö¹IngameActivityÖĞÖ¸¶¨ÌáÊ¾ÒôµÄ²¥·Å
-	 * @param ÎŞ
-	 * @return ÎŞ
+	 * @aim åœæ­¢IngameActivityä¸­æŒ‡å®šæç¤ºéŸ³çš„æ’­æ”¾
+	 * @param æ— 
+	 * @return æ— 
 	 */
 	public void winRestartMediaPlayer() {
-		// ÖØĞÂ¿ªÊ¼ÉùÒô²¥·Å
+		// é‡æ–°å¼€å§‹å£°éŸ³æ’­æ”¾
 		try {
 			if (mediaManager != null) {
 				if (mediaPlayWin != null && !mediaPlayWin.isPlaying()) {
@@ -551,22 +551,22 @@ public class GsptPlayMediaManager {
 		}
 	}
 	/**
-	 * @aim Æ´Í¼ÓÎÏ·ÖĞ£¬Í¨¹ıÉùÒôµÄIDºÅ²¥·ÅÏàÓ¦µÄÌáÊ¾Òô
-	 * @param srcid ĞèÒª²¥·ÅµÄÉùÒôµÄIDºÅ
-	 * @return ÎŞ
+	 * @aim æ‹¼å›¾æ¸¸æˆä¸­ï¼Œé€šè¿‡å£°éŸ³çš„IDå·æ’­æ”¾ç›¸åº”çš„æç¤ºéŸ³
+	 * @param srcid éœ€è¦æ’­æ”¾çš„å£°éŸ³çš„IDå·
+	 * @return æ— 
 	 */
 	public void winPlayMediaPlayer(int srcid) {
-		// Í£Ö¹ÕıÔÚ²¥·ÅµÄÉùÒô
+		// åœæ­¢æ­£åœ¨æ’­æ”¾çš„å£°éŸ³
 		winStopMediaPlayer();
 		
-		// ²¥·ÅĞèÒª²¥·ÅµÄÉùÒô
+		// æ’­æ”¾éœ€è¦æ’­æ”¾çš„å£°éŸ³
 		if (mediaManager != null) {
 			mediaPlayWin = playMediaOnlyById(srcid, false);
 		}
 	}	
 	
 	/**
-	 * GsptPlayMediaManager¶¨Òå½áÊø
+	 * GsptPlayMediaManagerå®šä¹‰ç»“æŸ
 	 */
 
 }

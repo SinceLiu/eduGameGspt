@@ -3,48 +3,48 @@ package com.readboy.Q.db;
 import java.io.Serializable;
 
 /**
- * (ÓÃ»§×Ô¼ºÏûÏ¢ pid == 10000) (ÏµÍ³ÏûÏ¢ pid == 10010)
- * ÕâÀïÒª×¢ÒâÇø·ÖÀ²
+ * (ç”¨æˆ·è‡ªå·±æ¶ˆæ¯ pid == 10000) (ç³»ç»Ÿæ¶ˆæ¯ pid == 10010)
+ * è¿™é‡Œè¦æ³¨æ„åŒºåˆ†å•¦
  * @author Divhee
  *
  */
 public class MessageCenter implements Serializable{
 
-	/** ĞòÁĞºÅ */
+	/** åºåˆ—å· */
 	private static final long serialVersionUID = -8895927731980355686L;
 
-	/** ÏûÏ¢ÈÕÆÚ */
+	/** æ¶ˆæ¯æ—¥æœŸ */
 	public String msgc_time;
 	
-	/** ÏûÏ¢±êÌâ */
+	/** æ¶ˆæ¯æ ‡é¢˜ */
 	public String msgc_title;
 	
-	/** ÏûÏ¢ÄÚÈİ */
+	/** æ¶ˆæ¯å†…å®¹ */
 	public String msgc_content;
 	
-	/** ÏûÏ¢ÄÚÈİ */
+	/** æ¶ˆæ¯å†…å®¹ */
 	public String msgc_face;
 	
-	/** ÏûÏ¢µÄÎ¨Ò»ID  */
+	/** æ¶ˆæ¯çš„å”¯ä¸€ID  */
 	public String msgc_vid;
 	
-	/** ÏûÏ¢µÄÍêÕûĞÔ */
+	/** æ¶ˆæ¯çš„å®Œæ•´æ€§ */
 	public int msgc_full;
 
-	/** É¾³ıÑ¡¶¨£¬²»ÓÃ¼ÇÂ¼µ½Êı¾İ¿â */
+	/** åˆ é™¤é€‰å®šï¼Œä¸ç”¨è®°å½•åˆ°æ•°æ®åº“ */
 	public boolean msgc_del;
 	
-	/** ¼Æ»®ID (ÓÃ»§×Ô¼ºÏûÏ¢ pid == 10000) (ÏµÍ³ÏûÏ¢ pid == 10010) */
+	/** è®¡åˆ’ID (ç”¨æˆ·è‡ªå·±æ¶ˆæ¯ pid == 10000) (ç³»ç»Ÿæ¶ˆæ¯ pid == 10010) */
 	public int pid;
 	
-	/** Ä¿Â¼ID */
+	/** ç›®å½•ID */
 	public int cid;
 	
-	/** ÓÃ»§ID  */
+	/** ç”¨æˆ·ID  */
 	public int uid;
 	
 //	/**
-//	 * @aim ±ê×¼»¯
+//	 * @aim æ ‡å‡†åŒ–
 //	 */
 //	public void sqliteStandard(boolean bEscape) {
 //		service_url = sqliteEscape(service_url, bEscape);
@@ -53,7 +53,7 @@ public class MessageCenter implements Serializable{
 //	}
 //	
 //	/**
-//	 * @aim ×Ö·û´®Ìæ»»
+//	 * @aim å­—ç¬¦ä¸²æ›¿æ¢
 //	 * @param keyWord
 //	 * @return
 //	 */
