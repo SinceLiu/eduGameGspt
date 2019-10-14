@@ -2,7 +2,7 @@
 平板分支:pad更新说明：
 签名文件:readboy1.key
 Alias:g200
-keyPassword:soft@readboy.com
-storePassword:23378528
+storePassword:soft@readboy.com
+keyPassword:23378528
 
 

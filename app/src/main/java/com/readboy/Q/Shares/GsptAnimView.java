@@ -283,8 +283,9 @@ public class GsptAnimView extends ReadboySurfaceView implements SurfaceHolder.Ca
 	 *            assert中的图片路径
 	 */
 	private void drawOnePic(int resId) {
-		if (bMyOwnerActPause())
+		if (bMyOwnerActPause()) {
 			return;
+		}
 
 		Canvas canvas = null;
 		try {

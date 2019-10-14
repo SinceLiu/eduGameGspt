@@ -1629,6 +1629,7 @@ public class GsptMainActivity extends ReadboyActivity {
 	 */
 	public class GsptMainSurfaceViewCallBack implements SurfaceViewCallBack {
 		
+		@Override
 		public void UpdataStateRepaint(Canvas cvs) {
 			if (gsptMainRunData == null || !GsptRunDataFrame.bMainCurrentOnResumed) {
 				return;
