@@ -14,7 +14,7 @@ android {
         config {
             keyAlias 'g200'
             keyPassword '23378528'
-            storeFile file('/Users/zhouwei/Downloads/clevercourse/eduGameGspt/keyfile/readboy1.key')
+            storeFile file('F:/AndroidStudioWorkSpace/eduGameGspt/keyfile/readboy1.key')
             storePassword 'soft@readboy.com'
         }
     }

@@ -1072,7 +1072,7 @@ public class GsptMainActivity extends ReadboyActivity {
 	};
 	
 	/**
-	 * @aim 设置下边显示页码的小圆点按钮哪一个为选中状态耙桓鲅≈邪磁ト∠≈凶刺�
+	 * @aim 设置下边显示页码的小圆点按钮哪一个为选中状态,前一个选中按钮取消选中状态
 	 * @param position
 	 *            要显示为选中状态的小圆点位置
 	 * @return 无

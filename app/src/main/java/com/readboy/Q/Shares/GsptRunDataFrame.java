@@ -2173,7 +2173,7 @@ public class GsptRunDataFrame {
 			getHardRealRectangleSharp_Son(rtF1);
 		}
 		
-		// 生成第二个匦涡巫�
+		// 生成第二个矩形形状
 		if (rtF2 != null && !rtF2.isEmpty()) {
 			getHardRealRectangleSharp_Son(rtF2);
 		}
