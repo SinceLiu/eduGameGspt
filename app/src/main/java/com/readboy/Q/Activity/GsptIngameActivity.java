@@ -77,6 +77,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.view.animation.Animation.AnimationListener;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -328,11 +329,18 @@ public class GsptIngameActivity extends ReadboyActivity {
 		if (App.getInstance().mScale>1.0f) {
 			ViewGroup.LayoutParams lp;
 			lp = scrollViewContainer.getLayoutParams();
+
 			lp.width = App.getInstance().dip2px(this, 188);
 			lp.height = App.getInstance().dip2px(this, 430);
 			scrollViewContainer.setLayoutParams(lp);
 		}
 		relativeLayoutConsole = (RelativeLayout) findViewById(R.id.RelativeLayoutConsole);
+		if (App.getInstance().mMachineType.equalsIgnoreCase("Readboy_C20")){
+			ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) relativeLayoutConsole.getLayoutParams();
+			lp.setMargins(App.getInstance().dip2px(this,50),0,
+					0,0);
+			relativeLayoutConsole.setLayoutParams(lp);
+		}
 		imgViewChoose = (ImageView) findViewById(R.id.imgViewSharpsChoose);
 		// 欢呼动画
 		imgViewCheer = (ImageView) findViewById(R.id.imgViewCheer);
@@ -342,6 +350,11 @@ public class GsptIngameActivity extends ReadboyActivity {
 		// 获取要拼图的背景图片的ID号
 		int imgViewbgIndex = R.drawable.gspt_error_state_0;
 		imgViewbg = (ImageView) findViewById(R.id.imgViewbg);
+		if (App.getInstance().mMachineType.equalsIgnoreCase("Readboy_C20")){
+			ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) imgViewbg.getLayoutParams();
+			lp.setMargins(App.getInstance().dip2px(this,40),0,0,0);
+			imgViewbg.setLayoutParams(lp);
+		}
 		if (tmpImgBtnAuto != null && tmpImgBtnAuto.currentindex != -1 && tmpImgBtnAuto.imgdstptid != null) {
 			// 真实要拼图的背景图片的ID号
 			imgViewbgIndex = tmpImgBtnAuto.imgdstptid[tmpImgBtnAuto.currentindex];
@@ -1605,7 +1618,12 @@ public class GsptIngameActivity extends ReadboyActivity {
 									Canvas cvs = new Canvas(gsptBitmap);
 									cvs.save();
 									// 加载奖励背景
-									Bitmap winnerCupBg = gsptIngameRunData.loadResById(R.drawable.gspt_winner_bg_000,App.getInstance().mScale);
+									Bitmap winnerCupBg=null;
+									if (App.getInstance().mScale==App.getInstance().mScaleY) {
+										winnerCupBg = gsptIngameRunData.loadResById(R.drawable.gspt_winner_bg_000, App.getInstance().mScale);
+									}else {
+										winnerCupBg = gsptIngameRunData.loadResById(R.drawable.gspt_winner_bg_000, App.getInstance().mScale,App.getInstance().mScaleY);
+									}
 									if (winnerCupBg != null) {
 										cvs.drawBitmap(winnerCupBg, 0, 0, null);
 										winnerCupBg.recycle();

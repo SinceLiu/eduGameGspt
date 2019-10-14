@@ -376,7 +376,7 @@ public class GsptMainActivity extends ReadboyActivity {
 		while (!(timeExitLast == 0 || timeExitLast > currentTime || timeExitLast < currentTime - 1)){
 			currentTime = System.currentTimeMillis();
 		}
-		Log.w("edugame", "==main==onInit====" + (currentTime - timeExitLast));
+		Log.w("edugame", "==main==onInit====" + (currentTime - timeExitLast)+":"+currentTime+":"+timeExitLast);
 		
 		//super.onCreate(getSavedInstanceState());
 		
@@ -386,7 +386,10 @@ public class GsptMainActivity extends ReadboyActivity {
 		setScreenWidthHeight(screenPoint.x, screenPoint.y);
 
 		float mScale = screenPoint.x/1280f;
+
 		App.getInstance().mScale = mScale;//screenPoint.x/1280;
+		App.getInstance().mScaleY = screenPoint.y/800f;
+		App.getInstance().mMachineType = App.getInstance().getMachineModule();
 		setContentView(R.layout.activity_gspt_main);
 		
 		// 创建消息实例
@@ -474,9 +477,10 @@ public class GsptMainActivity extends ReadboyActivity {
 		// 刚一进去有一个背景图片界面，有悟空，八戒，沙僧，唐僧的界面
 		relativeLayoutMain = (RelativeLayout) findViewById(R.id.relativeLayoutRootMain);
 		relativeLayoutMain.setOnClickListener(imgViewBgOnClickListener);
-		relativeLayoutMain.setBackgroundDrawable(new BitmapDrawable(gsptMainRunData.loadResById(R.drawable.gspt_startin_bg_000)));
-		
-		// 动画按钮，隐藏动画
+//		relativeLayoutMain.setBackgroundDrawable(new BitmapDrawable(gsptMainRunData.loadResById(R.drawable.gspt_startin_bg_000)));
+		relativeLayoutMain.setBackground(getResources().getDrawable(R.drawable.gspt_startin_bg_000));
+
+		// 动画按钮，隐藏动画s
 		animMainBee = (GsptAnimView) findViewById(R.id.animMainBee);
 		animMainBee.setVisibility(View.INVISIBLE);
 		animMainBee.setOnOwnerActivtiyStateCallback(animMainOwnerActivtiyState);
@@ -605,8 +609,10 @@ public class GsptMainActivity extends ReadboyActivity {
 			// 释放按钮状态资源
 			if (optStateDrawableArray != null) {
 				for (int iOrder = 0; iOrder < optStateDrawableArray.length; iOrder++) {
-					optStateDrawableArray[iOrder].setCallback(null);
-					optStateDrawableArray[iOrder] = null;
+					if (optStateDrawableArray[iOrder]!=null) {
+						optStateDrawableArray[iOrder].setCallback(null);
+						optStateDrawableArray[iOrder] = null;
+					}
 				}
 				optStateDrawableArray = null;
 			}
@@ -971,7 +977,8 @@ public class GsptMainActivity extends ReadboyActivity {
 				
 				Log.w("edugame", "=====imgBtnExitOnClickEvent====end=====" + bEspExit);
 				if (!bEspExit){
-					// 不是强制退出的时候调用，在onExit的时候不调用这个
+					// 不是强制退出的时候调用
+					// ，在onExit的时候不调用这个
 					finish();
 				}
 			}
@@ -1072,7 +1079,7 @@ public class GsptMainActivity extends ReadboyActivity {
 	};
 	
 	/**
-	 * @aim 设置下边显示页码的小圆点按钮哪一个为选中状态,前一个选中按钮取消选中状态
+	 * @aim 设置下边显示页码的小圆点按钮哪一个为选中状态耙桓鲅≈邪磁ト∠≈凶刺�
 	 * @param position
 	 *            要显示为选中状态的小圆点位置
 	 * @return 无

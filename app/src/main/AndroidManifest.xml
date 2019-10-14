@@ -15,16 +15,15 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:name="com.readboy.Q.app.App"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:label="@string/app_name">
         <activity
             android:name="com.readboy.Q.Activity.GsptMainActivity"
             android:configChanges="keyboard|orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:screenOrientation="sensorLandscape"
-            android:theme="@style/NoTitleBarFullTheme"
-            android:windowSoftInputMode="stateAlwaysHidden" >
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:theme="@style/NoTitleBarFullTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.readboy.APPLICATION.FLAG" />

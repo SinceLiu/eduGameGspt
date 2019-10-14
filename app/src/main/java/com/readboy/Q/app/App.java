@@ -85,6 +85,8 @@ public class App extends Application {
 	/** 外边磁盘 */
 	public String mExterDevice = null;
 	public float mScale = 1.0f;
+	public float mScaleY = 1.0f;
+	public String mMachineType="";
 
 //	/** 服务器请求实例 */
 //	private RequestQueue mRequestQueue;

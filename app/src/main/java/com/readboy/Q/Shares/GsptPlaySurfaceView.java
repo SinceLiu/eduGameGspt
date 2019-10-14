@@ -251,20 +251,25 @@ public class GsptPlaySurfaceView extends ReadboySurfaceView implements
 							if (mThOnResumeCount > 6) {
 								// 锁定画布，一般在锁定后就可以通过其返回的画布对象Canvas，
 								// 在其上面画图等操作了。
-								cvs = threadHolder.lockCanvas();
-								
-								// 这一句很重要，真正背景透明
-								cvs.drawColor(Color.TRANSPARENT, Mode.CLEAR);
-								
-								// 刷新动画的回调
-								rePaintSurfaceViewByCallBack(cvs);
-								
-								// 结束锁定画面，关键点在这里
-								if (cvs != null) {
-									// 结束锁定画图，并提交改变
-									threadHolder.unlockCanvasAndPost(cvs);
+								if (threadHolder.getSurface().isValid()) {
+									cvs = threadHolder.lockCanvas();
+								} else{
 									cvs = null;
+						    	}
+								if (cvs!=null) {
+									// 这一句很重要，真正背景透明
+									cvs.drawColor(Color.TRANSPARENT, Mode.CLEAR);
+
+									// 刷新动画的回调
+									rePaintSurfaceViewByCallBack(cvs);
 								}
+
+									// 结束锁定画面，关键点在这里
+									if (cvs != null) {
+										// 结束锁定画图，并提交改变
+										threadHolder.unlockCanvasAndPost(cvs);
+										cvs = null;
+									}
 								
 								// 睡眠时间为threadDelayTime设置时长
 								Thread.sleep(threadDelayTime);

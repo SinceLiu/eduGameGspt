@@ -510,6 +510,10 @@ public class GsptRunDataFrame {
 	}
 
 	public Bitmap loadResById(int resID,float scale) {
+		return loadResById(resID, scale,  scale);
+	}
+
+	public Bitmap loadResById(int resID,float scalex, float scaley) {
 		BitmapFactory.Options opt = new BitmapFactory.Options();
 		opt.inPreferredConfig = Bitmap.Config.RGB_565;
 		opt.inPurgeable = true;
@@ -517,11 +521,15 @@ public class GsptRunDataFrame {
 		opt.inJustDecodeBounds = false;
 		InputStream is = frameContext.getResources().openRawResource(resID);
 		Bitmap bitmap = BitmapFactory.decodeStream(is, null, opt);
-		if (scale>1.0f) {
+		if (scalex>1.0f) {
 			int w = bitmap.getWidth();
 			int h = bitmap.getHeight();
 			Matrix matrix = new Matrix();
-			matrix.postScale(scale, scale, 0, 0);
+			if (scalex==scaley){
+				matrix.postScale(scalex, scalex, 0, 0);
+			}else {
+				matrix.postScale(scalex, scaley, 0, 0);
+			}
 			Bitmap bmp = Bitmap.createBitmap(bitmap, 0, 0, w, h, matrix, true);
 			if (bitmap != null && !bitmap.equals(bmp) && !bitmap.isRecycled()) {
 				bitmap.recycle();
