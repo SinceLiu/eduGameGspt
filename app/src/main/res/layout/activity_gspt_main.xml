@@ -19,9 +19,9 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="@dimen/gspt_main_viewpager_margin_top"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="100dp" />
+        android:layout_marginBottom="@dimen/gspt_main_viewpager_margin_bottom" />
 
     <ImageButton
         android:id="@+id/imgBtnExit"
@@ -36,9 +36,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="80dp"
+        android:layout_marginRight="@dimen/gspt_main_ll_level_margin_right"
         android:layout_above="@+id/LinearLayoutDots"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="@dimen/gspt_main_ll_level_margin_bottom"
         android:orientation="horizontal" >
 
         <ImageButton
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:background="@drawable/btn_level_easy_selector"
-            android:layout_marginRight="27.0dp" />
+            android:layout_marginRight="@dimen/gspt_main_ib_level_margin_right" />
 
         <ImageButton
             android:id="@+id/imgBtnLevelNormal"
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:background="@drawable/btn_level_normal_selector"
-            android:layout_marginRight="27.0dp" />
+            android:layout_marginRight="@dimen/gspt_main_ib_level_margin_right" />
 
         <ImageButton
             android:id="@+id/imgBtnLevelHard"
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:background="@drawable/btn_level_hard_selector"
-            android:layout_marginRight="27.0dp" />
+            android:layout_marginRight="@dimen/gspt_main_ib_level_margin_right" />
     </LinearLayout>    
     
     <LinearLayout
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32.0dp"
+        android:layout_marginBottom="@dimen/gspt_main_ll_dots_margin_bottom"
         android:orientation="horizontal" >
 
         <ImageButton
@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:background="@drawable/btn_dot1_selector"
-            android:padding="15.0dp" />
+            android:padding="@dimen/gspt_main_ib_dot_padding" />
 
         <ImageButton
             android:id="@+id/imgBtnDot2"
@@ -89,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:background="@drawable/btn_dot2_selector"
-            android:padding="15.0dp" />
+            android:padding="@dimen/gspt_main_ib_dot_padding" />
 
         <ImageButton
             android:id="@+id/imgBtnDot3"
@@ -97,18 +97,18 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:background="@drawable/btn_dot3_selector"
-            android:padding="15.0dp" />
+            android:padding="@dimen/gspt_main_ib_dot_padding" />
 
     </LinearLayout>
 
     <com.readboy.Q.Shares.GsptAnimView
         android:id="@+id/animMainBee"
-        android:layout_width="76dp"
-        android:layout_height="76dp"
+        android:layout_width="@dimen/gspt_main_anim_bee_size"
+        android:layout_height="@dimen/gspt_main_anim_bee_size"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginLeft="@dimen/gspt_main_anim_bee_margin_left"
+        android:layout_marginTop="@dimen/gspt_main_anim_bee_margin_top"
         resCBStartId="@drawable/gspt_anim_bee_000"
         resCBPicNumber="29"
         resStartId="@drawable/gspt_anim_bee_000"
@@ -117,16 +117,15 @@
     
     <com.readboy.Q.Shares.GsptAnimView
         android:id="@+id/animMainBird"
-        android:layout_width="86dp"
-        android:layout_height="89dp"
+        android:layout_width="@dimen/gspt_main_anim_bird_size"
+        android:layout_height="@dimen/gspt_main_anim_bird_size"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="504dp"
+        android:layout_marginTop="@dimen/gspt_main_anim_bird_margin_top"
         resCBStartId="@drawable/gspt_anim_bird_000"
         resCBPicNumber="11"
         resStartId="@drawable/gspt_anim_bird_000"
         resPicNumber="11"
         android:visibility="visible" />     
-    
-    
+
 </RelativeLayout>

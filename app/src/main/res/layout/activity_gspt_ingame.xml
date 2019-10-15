@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayoutIngame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null" >
+
+    <ImageView
+        android:id="@+id/imgViewCheer"
+        android:layout_width="@dimen/gspt_ingame_cheer_width"
+        android:layout_height="@dimen/gspt_ingame_cheer_height"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/gspt_ingame_cheer_margin_top"
+        android:background="@null"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/imgViewXinXin"
+        android:layout_width="@dimen/gspt_ingame_xinxin_width"
+        android:layout_height="@dimen/gspt_ingame_xinxin_height"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutIngame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@null"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:id="@+id/FrameLayoutLeft"
+            android:layout_width="@dimen/gspt_ingame_fl_left_width"
+            android:layout_height="match_parent"
+            android:background="@null" >
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/FrameLayoutAction"
+            android:layout_width="@dimen/gspt_ingame_fl_action_width"
+            android:layout_height="match_parent"
+            android:background="@null" >
+
+            <ImageView
+                android:id="@+id/imgViewbg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/gspt_ingame_iv_bg_margin_top"/>
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayoutConsole"
+            android:layout_width="@dimen/gspt_ingame_rl_console_width"
+            android:layout_height="match_parent"
+            android:background="@null" >
+
+            <ImageButton
+                android:id="@+id/imgBtnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/btn_back_selector"
+                android:onClick="imgBtnOnClickListener" />
+
+            <ScrollView
+                android:id="@+id/scrollViewContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/imgBtnDown"
+                android:layout_below="@+id/imgBtnUp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/gspt_ingame_sv_margin_bottom"
+                android:layout_marginTop="@dimen/gspt_ingame_sv_margin_top"
+                android:background="@null"
+                android:visibility="invisible" >
+
+                <LinearLayout
+                    android:id="@+id/LinearLayoutSharps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+                </LinearLayout>
+            </ScrollView>
+
+            <ImageButton
+                android:id="@+id/imgBtnUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgBtnBack"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/gspt_ingame_ib_up_margin_top"
+                android:background="@drawable/btn_up_selector"
+                android:onClick="imgBtnOnClickListener"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/imgBtnDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/btn_down_selector"
+                android:onClick="imgBtnOnClickListener"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <com.readboy.Q.Shares.GsptAnimView
+        android:id="@+id/animIngameBee"
+        android:layout_width="@dimen/gspt_ingame_anim_bee_size"
+        android:layout_height="@dimen/gspt_ingame_anim_bee_size"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/gspt_ingame_anim_bee_margin_left"
+        android:layout_marginTop="@dimen/gspt_ingame_anim_bee_margin_top"
+        resCBStartId="@drawable/gspt_anim_bee_000"
+        resCBPicNumber="29"
+        resStartId="@drawable/gspt_anim_bee_000"
+        resPicNumber="29"
+        android:visibility="visible" />
+    
+    <com.readboy.Q.Shares.GsptAnimView
+        android:id="@+id/animIngameBird"
+        android:layout_width="@dimen/gspt_ingame_anim_bird_size"
+        android:layout_height="@dimen/gspt_ingame_anim_bird_size"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/gspt_ingame_anim_bird_margin_top"
+        resCBStartId="@drawable/gspt_anim_bird_000"
+        resCBPicNumber="11"
+        resStartId="@drawable/gspt_anim_bird_000"
+        resPicNumber="11"
+        android:visibility="visible" /> 
+        
+    <com.readboy.Q.Shares.GsptAnimView
+        android:id="@+id/animIngameMice"
+        android:layout_width="@dimen/gspt_ingame_anim_mice_width"
+        android:layout_height="@dimen/gspt_ingame_anim_mice_height"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/gspt_ingame_anim_mice_margin_left"
+        resCBStartId="@drawable/gspt_anim_cbmice_000"
+        resCBPicNumber="16"
+        resStartId="@drawable/gspt_anim_mice_000"
+        resPicNumber="23"
+        android:visibility="visible" />    
+    
+    <ImageView
+        android:id="@+id/imgViewSharpsChoose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@null"
+        android:visibility="invisible" />
+    
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="gspt_ingame_cheer_width">304dp</dimen>
+    <dimen name="gspt_ingame_cheer_height">504dp</dimen>
+    <dimen name="gspt_ingame_cheer_margin_top">-504dp</dimen>
+    <dimen name="gspt_ingame_xinxin_width">1046dp</dimen>
+    <dimen name="gspt_ingame_xinxin_height">410dp</dimen>
+    <dimen name="gspt_ingame_fl_left_width">71dp</dimen>
+    <dimen name="gspt_ingame_fl_action_width">1008dp</dimen>
+    <dimen name="gspt_ingame_iv_bg_margin_top">132dp</dimen>
+    <dimen name="gspt_ingame_rl_console_width">361dp</dimen>
+    <dimen name="gspt_ingame_sv_margin_bottom">-48dp</dimen>
+    <dimen name="gspt_ingame_sv_margin_top">-48dp</dimen>
+    <dimen name="gspt_ingame_ib_up_margin_top">-12dp</dimen>
+    <dimen name="gspt_ingame_anim_bee_size">91dp</dimen>
+    <dimen name="gspt_ingame_anim_bee_margin_left">72dp</dimen>
+    <dimen name="gspt_ingame_anim_bee_margin_top">53dp</dimen>
+    <dimen name="gspt_ingame_anim_bird_size">103dp</dimen>
+    <dimen name="gspt_ingame_anim_bird_margin_top">605dp</dimen>
+    <dimen name="gspt_ingame_anim_mice_width">219dp</dimen>
+    <dimen name="gspt_ingame_anim_mice_height">110dp</dimen>
+    <dimen name="gspt_ingame_anim_mice_margin_left">180dp</dimen>
+    <dimen name="gspt_main_viewpager_margin_top">120dp</dimen>
+    <dimen name="gspt_main_viewpager_margin_bottom">120dp</dimen>
+    <dimen name="gspt_main_ll_level_margin_right">90dp</dimen>
+    <dimen name="gspt_main_ll_level_margin_bottom">60dp</dimen>
+    <dimen name="gspt_main_ib_level_margin_right">30dp</dimen>
+    <dimen name="gspt_main_ll_dots_margin_bottom">38dp</dimen>
+    <dimen name="gspt_main_ib_dot_padding">18dp</dimen>
+    <dimen name="gspt_main_anim_bee_size">91dp</dimen>
+    <dimen name="gspt_main_anim_bee_margin_left">146dp</dimen>
+    <dimen name="gspt_main_anim_bee_margin_top">48dp</dimen>
+    <dimen name="gspt_main_anim_bird_size">103dp</dimen>
+    <dimen name="gspt_main_anim_bird_margin_top">605dp</dimen>
+    <dimen name="gspt_viewpager_page_horizontal_spacing">45dp</dimen>
+    <dimen name="gspt_viewpager_page_padding_left">197dp</dimen>
+    <dimen name="gspt_viewpager_page_padding_right">197dp</dimen>
+    <dimen name="gspt_viewpager_page_verical_spacing">48dp</dimen>
+</resources>
+

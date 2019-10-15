@@ -14,13 +14,13 @@
         android:divider="@color/pagertrans_white"
         android:dividerHeight="0dp"
         android:gravity="center"
-        android:horizontalSpacing="40dp"
+        android:horizontalSpacing="@dimen/gspt_viewpager_page_horizontal_spacing"
         android:listSelector="@null"
         android:longClickable="false"
         android:numColumns="3"
-        android:paddingLeft="175dp"
-        android:paddingRight="175dp"
+        android:paddingLeft="@dimen/gspt_viewpager_page_padding_left"
+        android:paddingRight="@dimen/gspt_viewpager_page_padding_right"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="40dp" />
+        android:verticalSpacing="@dimen/gspt_viewpager_page_verical_spacing" />
 
 </RelativeLayout>
