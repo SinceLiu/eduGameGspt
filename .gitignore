@@ -7,6 +7,7 @@
 /build
 /app/build
 /app/debug
+/app/release
 /**/build
 /**.class
 /captures
